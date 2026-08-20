@@ -1,0 +1,58 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layouts/content/for-CTF-con.astro";
+import { getEntry } from "astro:content";
+
+export async function getStaticPaths()
+{
+    const posts = await getCollection("CTF");
+    return posts.map((post) =>
+    {
+        return {
+            params: { slug: post.id },
+        };
+    });
+}
+
+const { slug } = Astro.params;
+
+if (!slug)
+{
+    return Astro.redirect("/404");
+}
+
+const entry = await getEntry("CTF", slug);
+
+if (!entry)
+{
+    return Astro.redirect("/404");
+}
+
+const { Content, headings } = await render(entry);
+
+console.log('entry.body 前100字符:', entry.body?.slice(0, 200));
+---
+
+<Layout title={entry.data.title} headings={headings}>
+    <div slot="header">
+        {entry.data.title}
+    </div>
+
+    <article>
+        <Content />
+    </article>
+</Layout>
+
+<style>
+    article
+    {
+        max-width: 100%;
+    }
+
+    article img
+    {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+</style>

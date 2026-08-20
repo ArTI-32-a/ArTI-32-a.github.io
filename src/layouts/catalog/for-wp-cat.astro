@@ -1,0 +1,30 @@
+---
+import bg from "@/assets/pictures/background/ctf_cat_bg.svg?raw";
+---
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <title>
+            Wp Catalog
+        </title>
+    </head>
+    <body>
+        <div set:html={bg} style="position:fixed; inset:0; z-index:-1000; overflow:hidden;" />
+
+
+        <slot />
+    </body>
+</html>
+
+
+<style>
+    body
+    {
+        background-color: #1f1e33;
+    }
+</style>

@@ -1,0 +1,60 @@
+---
+import toContent from "@/assets/pictures/button/to_content.svg?raw";
+
+const { id = "", href = "/", text = "Empty", x = "0%", y = "0%" } = Astro.props;
+---
+
+<a id={id} class="btn" style={`position: fixed; top: ${y}; left: ${x};`} href={href}>
+    <div set:html={toContent} class="btn-bg"/>
+    <span class="btn-text">
+        {text}
+    </span>
+</a>
+
+<style>
+    .btn
+    {
+        position: absolute;
+
+        display: inline-flex;
+        flex-direction: column;
+        padding: clamp(8px, 1.5vw, 16px) clamp(16px, 4vw, 40px);
+
+        background-color: transparent;
+
+        text-decoration: none;
+
+        transition: 0.3s ease;
+    }
+    .btn:hover
+    {
+        transform: scale(1.03);
+    }
+    .btn:hover .btn-text
+    {
+        opacity: 1;
+    }
+
+    .btn-bg
+    {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn-text
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+        text-decoration: none;
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition: 0.3s ease;
+    }
+</style>

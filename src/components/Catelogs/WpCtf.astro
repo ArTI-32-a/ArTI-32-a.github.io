@@ -1,0 +1,169 @@
+---
+import { getCollection } from "astro:content";
+import type { JSX } from "astro/jsx-runtime";
+
+import ToEntry from "@/components/Buttons/wps/ToEntry.astro";
+
+const { showElli = false } = Astro.props;
+
+
+interface ConData
+{
+    title: string,
+    pubDate?: Date,
+    tags: string[],
+
+    type: "Misc" | "Crypto" | "Reverse" | "Web" | "PWN" | "Digit Safety",
+    status: "draft" | "published",
+}
+
+interface Info
+{
+    key: string,
+    href: string | null,
+    data: ConData | null,
+    children: Info[] | null,
+}
+
+
+const COLLECTION: "CTF" = "CTF";
+const allPosts = await getCollection(COLLECTION);
+
+const articleInfs = allPosts.map((p) =>
+{
+    return { id: p.id, data: p.data };
+});
+
+
+
+const flatInfs: Info[] = [];
+articleInfs.forEach((p) =>
+{
+    const parts: string[] = p.id.split(/[\/\\]/);
+
+    let pointer: Info[] = flatInfs;
+
+    parts.forEach((part, index) =>
+    {
+        if (index >= 0 && index < parts.length - 1)
+        {
+            if (pointer && !(pointer.some((p) => p.key === part)))
+            {
+                const currInfo: Info = { key: part, href: null, data: null, children: [] };
+                pointer.push(currInfo);
+
+                if (currInfo.children !== null)
+                {
+                    pointer = currInfo.children;
+                }
+            }
+            else if (pointer)
+            {
+                const child: Info | undefined = pointer.find((p) => p.key === part);
+
+                if (!child)
+                {
+                    throw new Error("哪出错了, 一个永远也不可能是undefined的变成undefined了");
+                }
+
+                if (!child.children)
+                {
+                    pointer = child.children = [];
+                }
+                else
+                {
+                    pointer = child.children;
+                }
+            }
+            else
+            {
+                throw new Error("flatInfs或其他啥东西实例化失败了, pointer变成null了");
+            }
+        }
+        else if (index === parts.length - 1)
+        {
+            if (pointer)
+            {
+                pointer.push({ key: part, href: `/wps/${COLLECTION}/${p.id.replace(".md", "")}`, data: p.data, children: null });
+            }
+            else
+            {
+                throw new Error("flatInfs或其他啥东西实例化失败了, pointer变成null了. 此处是处理目录的位置报错");
+            }
+        }
+        else
+        {
+            throw new RangeError("index超出索引, how could you do that????");
+        }
+    });
+});
+
+
+function getStyle(index: number): string
+{
+    switch (index)
+    {
+        case 0: return "title-Lv0";
+        case 1: return "title-Lv1";
+        default: return "title-LvElse";
+    }
+}
+
+let idNum: number = 4900;
+---
+<article id="WpCtfCate">
+    {(() =>
+    {
+        function renderTree(infos: Info[], level: number = 0): JSX.Element[]
+        {
+            return infos.map((info) =>
+            {
+                if (info.href)
+                {
+                    idNum += 100;
+                    return (
+                        <div style={`padding-left: ${10}px`}>
+                            <ToEntry id={`${idNum} E`} class="" href={info.href} text={info.data?.title || info.key} showElli={showElli} level={level} />
+                        </div>
+                    );
+                }
+                else
+                {
+                    return (
+                        <div style={`padding-left: ${30}px`}>
+                            <div class={getStyle(level)}>
+                                {info.key}
+                            </div>
+                            {info.children && info.children.length > 0 && renderTree(info.children, level + 1)}
+                        </div>
+                    );
+                }
+            });
+        }
+
+        return renderTree(flatInfs, 0);
+    })()}
+</article>
+
+
+
+<style>
+    .title-Lv0
+    {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .title-Lv1
+    {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .title-LvElse
+    {
+        color: white;
+        font-size: 1rem;
+        font-weight: normal;
+    }
+</style>

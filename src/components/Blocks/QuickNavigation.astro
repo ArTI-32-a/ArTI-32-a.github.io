@@ -1,0 +1,43 @@
+---
+import QNBlock from "./__ForQN/block.astro";
+---
+
+<aside>
+    <div class="transparent">
+    </div>
+    <QNBlock id="1000" slantMove={true}>
+        <slot name="QNI">
+        </slot>
+    </QNBlock>
+
+    <div class="transparent">
+    </div>
+    <QNBlock id="2000" slantMove={true}>
+        <slot name="QNII">
+        </slot>
+    </QNBlock>
+</aside>
+
+<style>
+    aside
+    {
+        position: sticky;
+        top: 20vh;
+
+        max-height: 80vh;
+
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+    aside::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+    .transparent
+    {
+        height: 35px;
+
+        background-color: transparent;
+    }
+</style>
