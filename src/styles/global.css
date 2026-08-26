@@ -1,0 +1,14 @@
+html
+{
+    overscroll-behavior: none;
+}
+
+body
+{
+    background-color: #1f1e33;
+}
+
+a 
+{
+    text-decoration: none;
+}

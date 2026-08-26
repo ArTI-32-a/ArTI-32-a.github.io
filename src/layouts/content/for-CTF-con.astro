@@ -1,7 +1,7 @@
 ---
-import type { MarkdownHeading } from 'astro';
+import "@/styles/global.css";
 
-import bg from "@/assets/pictures/background/ctf_entry_bg.svg?raw";
+
 import bTitle from "@/assets/pictures/background/wp/wp_title_bg.png?url";
 import bUp from "@/assets/pictures/background/wp/wp_up_bg.png?url";
 import bDown from "@/assets/pictures/background/wp/wp_down_bg.png?url";
@@ -17,6 +17,7 @@ import aDownRuler from "@/assets/pictures/background/wp/article_bg_down_ruler.pn
 import aMidRuler from "@/assets/pictures/background/wp/article_bg_middle_ruler.png?url";
 
 import QN from "@/components/Blocks/QuickNavigation.astro";
+import HN from "@/components/Blocks/HeadNavigation.astro"
 
 import Cat from "@/components/Catelogs/WpCtf.astro";
 import TOC from "@/components/Catelogs/TOC.astro"
@@ -36,9 +37,9 @@ const { title = "Anryo Senko", headings = [] } = Astro.props;
         </title>
     </head>
     <body>
-        <div set:html={bg} style="position:fixed; inset:0; z-index:-1000; overflow:hidden;" />
-
         <header class="mask" style={`background-image: url(${bUp})`}>
+            <HN />
+
             <div class="titleBox" style={`background-image: url(${bTitle}); text-align: center;`}>
                 <h3>
                     <slot name="header">
@@ -66,20 +67,6 @@ const { title = "Anryo Senko", headings = [] } = Astro.props;
             <div class="wrapper">
                 <QN>
                     <div slot="QNI">
-                        <!-- {headings && headings.length > 0 && 
-                        (
-                            <nav class="toc">
-                                <ul>
-                                    {headings.map((h: MarkdownHeading) => 
-                                    (
-                                        <li style={`padding-left: ${(h.depth - 1) * 0.8}rem;`}>
-                                            <a href={`#${h.slug}`}>{h.text}</a>
-                                        </li>
-                                    ))};
-                                </ul>
-                            </nav>
-                        )}; -->
-                        <>
                         <TOC headings={headings}>
                     </div>
 
@@ -102,6 +89,7 @@ const { title = "Anryo Senko", headings = [] } = Astro.props;
 
 <script>
     import { rollerListener } from "@/utils/controller/roller-listener";
+    import { hnListener } from "@/utils/controller/headNav-listener";
 
     const header = document.querySelector(".mask");
 
@@ -115,6 +103,22 @@ const { title = "Anryo Senko", headings = [] } = Astro.props;
     }
 
     rollerListener(header);
+
+
+
+    const headerNavigation = document.getElementById("headerNavigation");
+
+    if (!headerNavigation)
+    {
+        throw new Error("header navigation is null");
+    }
+    if (!(headerNavigation instanceof HTMLElement))
+    {
+        throw new Error("header navigation is not HTMLElement");
+    }
+
+    hnListener(headerNavigation);
+
 
 
     const rulers = document.querySelectorAll(".article-measurement");
