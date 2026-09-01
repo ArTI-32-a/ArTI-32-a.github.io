@@ -3,13 +3,23 @@ let hasPressed: boolean = false;
 
 async function indexListener(): Promise<void>
 {
+    // // 在 indexListener 的开头添加
+    // window.addEventListener("pageshow", (event: PageTransitionEvent) =>
+    // {
+    //     if (event.persisted)
+    //     {
+    //         // 从 BFCache 恢复 → 强制刷新，重设所有状态
+    //         window.location.reload();
+    //     }
+    // });
+
     if (isInitialized)
     {
         return;
     }
     isInitialized = true;
 
-    const { buttonAction } = await import("@/utils/svg-controller/index-button");
+    const { buttonAction } = await import("@/utils/Index/index-button");
 
     document.addEventListener("click", (event: MouseEvent) =>
     {
@@ -23,7 +33,7 @@ async function indexListener(): Promise<void>
             return;
         }
 
-        const btn: Element | null = target.closest(".btn");
+        const btn: Element | null = target.closest(".grid-item");
         if (!btn)
         {
             return;
@@ -48,6 +58,7 @@ async function indexListener(): Promise<void>
         setTimeout(() =>
         {
             window.location.href = btn.href;
+            hasPressed = false
         }, sleep * 1000);
     });
 }

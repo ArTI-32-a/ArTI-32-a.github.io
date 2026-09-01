@@ -22,7 +22,7 @@ function hnListener(element: HTMLElement): void
         {
             if (isHidden)
             {
-                element.style.transform = 'translateY(0)';
+                element.style.transform = "translateY(0)";
                 isHidden = false;
 
                 sum = 0;
@@ -51,14 +51,14 @@ function hnListener(element: HTMLElement): void
 
         if (sum > HIDE_THRESHOLD && !isHidden)
         {
-            element.style.transform = 'translateY(-95%)';
+            element.style.transform = "translateY(-95%)";
             isHidden = true;
 
             sum = 0;
         }
         else if (sum < -SHOW_THRESHOLD && isHidden)
         {
-            element.style.transform = 'translateY(0)';
+            element.style.transform = "translateY(0)";
             isHidden = false;
 
             sum = 0;
@@ -107,7 +107,7 @@ function hnListener(element: HTMLElement): void
         {
             if (isShowedFromHover)
             {
-                element.style.transform = 'translateY(-95%)';
+                element.style.transform = "translateY(-95%)";
                 isHidden = true;
                 isShowedFromHover = false;
             }
@@ -115,8 +115,8 @@ function hnListener(element: HTMLElement): void
 
     });
     
-    element.style.transition = 'transform 0.3s ease';
-    element.style.transform = 'translateY(0)';
+    element.style.transition = "transform 0.3s ease";
+    element.style.transform = "translateY(0)";
 }
 
 
