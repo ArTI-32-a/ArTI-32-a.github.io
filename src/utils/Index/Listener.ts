@@ -19,8 +19,6 @@ async function indexListener(): Promise<void>
     }
     isInitialized = true;
 
-    const { buttonAction } = await import("@/utils/Index/index-button");
-
     document.addEventListener("click", (event: MouseEvent) =>
     {
         const target: EventTarget | null = event.target;
@@ -53,7 +51,7 @@ async function indexListener(): Promise<void>
 
         buttonAction();
 
-        const sleep: number = 3;
+        const sleep: number = 1;
 
         setTimeout(() =>
         {
@@ -64,3 +62,9 @@ async function indexListener(): Promise<void>
 }
 
 export { indexListener };
+
+
+function buttonAction(): void
+{
+    console.log("test");
+}

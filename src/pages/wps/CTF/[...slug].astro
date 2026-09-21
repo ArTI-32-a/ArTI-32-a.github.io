@@ -1,7 +1,12 @@
 ---
 import { getCollection, render } from "astro:content";
-import Layout from "@/layouts/content/for-CTF-con.astro";
 import { getEntry } from "astro:content";
+
+import Layout from "@/layouts/WPs/CTFSlug.astro";
+
+import bUp from "@/assets/pictures/background/wp/wp_up_bg.png?url";
+
+import Hero from "@/components/WPs/Hero.astro";
 
 export async function getStaticPaths()
 {
@@ -29,30 +34,15 @@ if (!entry)
 }
 
 const { Content, headings } = await render(entry);
-
-console.log("entry.body 前100字符:", entry.body?.slice(0, 200));
 ---
 
 <Layout title={entry.data.title} headings={headings}>
     <div slot="header">
-        {entry.data.title}
+        <Hero data={entry.data} headings={headings} backgroundImage={bUp} />
     </div>
+    
 
     <article>
         <Content />
     </article>
 </Layout>
-
-<style>
-    article
-    {
-        max-width: 100%;
-    }
-
-    article img
-    {
-        display: block;
-        max-width: 100%;
-        height: auto;
-    }
-</style>

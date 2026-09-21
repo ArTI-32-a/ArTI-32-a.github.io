@@ -1,0 +1,242 @@
+---
+import type { MarkdownHeading } from "astro";
+
+export interface Props
+{
+    headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+
+
+let minDepth = Infinity;
+for (const h of headings)
+{
+    if (h.depth < minDepth)
+    {
+        minDepth = h.depth;
+    }
+}
+---
+
+
+<nav class="toc">
+    <div class="toc-title">
+        Catalog / 目录
+    </div>
+
+    <ul class="toc-list">
+        {headings.map(h => (
+            <li class="toc-item" style={`padding-left: ${(h.depth - minDepth) * 0.8}rem;`}>
+                <a href={`#${h.slug}`} class="toc-link" data-slug={h.slug}>
+                    {h.text}
+                </a>
+            </li>
+        ))}
+    </ul>
+</nav>
+
+<style>
+    html 
+    {
+        scroll-behavior: smooth;
+        scroll-padding-top: 25vh;
+    }
+
+    .toc
+    {
+        /* 3. 盒模型 - 间距 */
+        padding: 0.8rem;
+    }
+
+    .toc-title
+    {
+        /* 3. 盒模型 - 间距 */
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+
+        /* 4. 边框圆角 */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        /* 6. 文字 */
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .toc-list
+    {
+        /* 2. 盒模型 - 尺寸 */
+        list-style: none;
+
+        /* 3. 盒模型 - 间距 */
+        margin: 0;
+        padding: 0;
+    }
+
+    .toc-item
+    {
+        /* 3. 盒模型 - 间距 */
+        margin: 0.15rem 0;
+    }
+
+    .toc-link
+    {
+        /* 2. 盒模型 - 尺寸 */
+        display: block;
+
+        /* 3. 盒模型 - 间距 */
+        padding: 0.1rem 0;
+
+        /* 6. 文字 */
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+
+        /* 10. 动画过渡 */
+        transition: color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .toc-link:hover
+    {
+        /* 5. 背景（半透明光晕底色） */
+        background-color: rgba(154, 138, 255, 0.12);
+        box-shadow:
+            inset 0 0 12px rgba(154, 138, 255, 0.3),
+            0 0 12px rgba(154, 138, 255, 0.45),
+            0 0 24px rgba(154, 138, 255, 0.2);
+        
+        /* 6. 文字 */
+        color: #9a8aff;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-color: rgba(154, 138, 255, 0.6);
+        text-decoration-thickness: 1px;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+
+        /* 10. 动画过渡 */
+        transform: translateX(4px);
+    }
+
+    .toc-link.active:not(:hover)
+    {
+        /* 5. 背景 */
+        background-color: rgba(255, 216, 102, 0.12);
+        box-shadow:
+            inset 0 0 12px rgba(255, 216, 102, 0.2),
+            0 0 12px rgba(255, 216, 102, 0.3);
+
+        /* 6. 文字 */
+        color: #ffd866;
+    }
+</style>
+
+<script>
+    (() =>
+    {
+        const links: HTMLAnchorElement[] = Array.from(
+            document.querySelectorAll<HTMLAnchorElement>(".toc-link")
+        );
+        const headings: { el: HTMLElement; slug: string }[] = [];
+
+        for (const link of links)
+        {
+            const slug = link.dataset.slug;
+            if (!slug) continue;
+
+            const el = document.getElementById(slug);
+            if (el) headings.push({ el, slug });
+        }
+
+        if (headings.length === 0) return;
+
+        let OFFSET: number = window.innerHeight * 0.25;
+        window.addEventListener("resize", () =>
+        {
+            OFFSET = window.innerHeight * 0.25;
+        });
+
+        // 向上找第一个可滚动的祖先元素
+        function findScrollContainer(el: HTMLElement): HTMLElement | null
+        {
+            let parent: HTMLElement | null = el.parentElement;
+            while (parent)
+            {
+                const overflowY = getComputedStyle(parent).overflowY;
+                if (overflowY === "auto" || overflowY === "scroll")
+                {
+                    return parent;
+                }
+                parent = parent.parentElement;
+            }
+            return null;
+        }
+
+        let lastActiveSlug: string | null = null;
+
+        function updateActive(): void
+        {
+            let activeSlug: string | null = null;
+
+            for (const { el, slug } of headings)
+            {
+                const top = el.getBoundingClientRect().top;
+                if (top <= OFFSET)
+                {
+                    activeSlug = slug;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            if (!activeSlug && headings.length > 0)
+            {
+                activeSlug = headings[0].slug;
+            }
+
+            // 更新类名
+            for (const link of links)
+            {
+                link.classList.toggle("active", link.dataset.slug === activeSlug);
+            }
+
+            // 高亮切换时，让它滚动到 TOC 容器中央
+            if (activeSlug !== lastActiveSlug)
+            {
+                lastActiveSlug = activeSlug;
+
+                const activeLink = links.find(l => l.dataset.slug === activeSlug);
+                if (!activeLink) return;
+
+                const container = findScrollContainer(activeLink);
+                if (!container) return;
+
+                const containerRect = container.getBoundingClientRect();
+                const linkRect = activeLink.getBoundingClientRect();
+
+                // 目标：让 activeLink 在容器里垂直居中
+                const targetScrollTop =
+                    container.scrollTop +
+                    (linkRect.top - containerRect.top) -
+                    (containerRect.height / 2) +
+                    (linkRect.height / 2);
+
+                container.scrollTo({
+                    top: targetScrollTop,
+                    behavior: "smooth",
+                });
+            }
+        }
+
+        window.addEventListener("scroll", updateActive, { passive: true });
+        updateActive();
+    })();
+</script>

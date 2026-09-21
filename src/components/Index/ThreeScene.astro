@@ -7,12 +7,12 @@
 
 
 <script>
-    import * as THREE from 'three';
+    import * as THREE from "three";
 
-    const container: HTMLElement | null = document.getElementById('three-container');
+    const container: HTMLElement | null = document.getElementById("three-container");
     if (!container)
     {
-        throw new Error('Three.js container not found.');
+        throw new Error("Three.js container not found.");
     }
 
     const scene: THREE.Scene = new THREE.Scene();
@@ -110,7 +110,7 @@
             renderer.setSize(width, height);
         }
     }
-    window.addEventListener('resize', resizeRenderer);
+    window.addEventListener("resize", resizeRenderer);
 </script>
 
 

@@ -19,8 +19,10 @@ import aMidRuler from "@/assets/pictures/background/wp/article_bg_middle_ruler.p
 import QN from "@/components/Blocks/QuickNavigation.astro";
 import HN from "@/components/Blocks/HeadNavigation.astro"
 
-import Cat from "@/components/Catelogs/WpCtf.astro";
-import TOC from "@/components/Catelogs/TOC.astro"
+// import Cat from "@/components/Catelogs/WpCtf.astro";
+// import TOC from "@/components/Catelogs/TOC.astro"
+import TOC from "@/components/WPs/CTFs/TOC.astro";
+import Hero from "@/components/WPs/Hero.astro";
 
 const { title = "Anryo Senko", headings = [] } = Astro.props;
 ---
@@ -37,7 +39,7 @@ const { title = "Anryo Senko", headings = [] } = Astro.props;
         </title>
     </head>
     <body>
-        <header class="mask" style={`background-image: url(${bUp})`}>
+        <!-- <header class="mask" style={`background-image: url(${bUp})`}>
             <HN />
 
             <div class="titleBox" style={`background-image: url(${bTitle}); text-align: center;`}>
@@ -49,7 +51,15 @@ const { title = "Anryo Senko", headings = [] } = Astro.props;
             </div>
 
             <div class="article-enclave-up" style={`background-image: url(${aEncUp})`} />
-        </header>
+        </header> -->
+        <div class="mask">
+            <slot name="header">
+
+            </slot>
+        </div>
+        <!-- <div class="mask" style={`background-image: url(${bUp});`}>
+        </div> -->
+
 
         <article id="ctfArt">
             <img id="aur" class="article-measurement" src={aUpRuler} />
@@ -71,7 +81,7 @@ const { title = "Anryo Senko", headings = [] } = Astro.props;
                     </div>
 
                     <div slot="QNII">
-                        <Cat showElli={true}/>
+                        <!-- <Cat showElli={true}/> -->
                     </div>
                 </QN>
 
@@ -88,94 +98,96 @@ const { title = "Anryo Senko", headings = [] } = Astro.props;
 </html>
 
 <script>
-    import { rollerListener } from "@/utils/controller/roller-listener";
-    import { hnListener } from "@/utils/controller/headNav-listener";
+    // import { rollerListener } from "@/utils/controller/roller-listener";
+    // import { hnListener } from "@/utils/controller/headNav-listener";
 
-    const header = document.querySelector(".mask");
+    // const header = document.querySelector(".mask");
 
-    if (!header)
-    {
-        throw new Error("header is null");
-    }
-    if (!(header instanceof HTMLElement))
-    {
-        throw new Error("header is not HTMLElement");
-    }
+    // if (!header)
+    // {
+    //     throw new Error("header is null");
+    // }
+    // if (!(header instanceof HTMLElement))
+    // {
+    //     throw new Error("header is not HTMLElement");
+    // }
 
-    rollerListener(header);
-
-
-
-    const headerNavigation = document.getElementById("headerNavigation");
-
-    if (!headerNavigation)
-    {
-        throw new Error("header navigation is null");
-    }
-    if (!(headerNavigation instanceof HTMLElement))
-    {
-        throw new Error("header navigation is not HTMLElement");
-    }
-
-    hnListener(headerNavigation);
+    // rollerListener(header);
 
 
 
-    const rulers = document.querySelectorAll(".article-measurement");
+    // const headerNavigation = document.getElementById("headerNavigation");
 
-    if (!rulers || rulers.length == 0)
-    {
-        throw new Error("measurements are null");
-    }
-    if (rulers.length != 3)
-    {
-        throw new Error("measurements are missing or extra");
-    }
+    // if (!headerNavigation)
+    // {
+    //     throw new Error("header navigation is null");
+    // }
+    // if (!(headerNavigation instanceof HTMLElement))
+    // {
+    //     throw new Error("header navigation is not HTMLElement");
+    // }
 
-    const topH = rulers[0].getBoundingClientRect().height;
-    const bottomH = rulers[1].getBoundingClientRect().height;
-    const midH = rulers[2].getBoundingClientRect().height;
+    // hnListener(headerNavigation);
 
-    if (topH <= 0 || midH <= 0 || bottomH <= 0) 
-    {
-        throw new Error("the height of image is lower than 0!!");
-    }
 
-    const article = document.getElementById("ctfArt");
-    const articleBg = document.getElementById("ctfArtBg");
-    if (!article || !articleBg)
-    {
-        throw new Error("the article can't be found by id");
-    }
 
-    const currentH = article.scrollHeight;
-    let sum = topH + bottomH;
+    // const rulers = document.querySelectorAll(".article-measurement");
 
-    while (sum < currentH) 
-    {
-        sum += midH;
-    }
-    sum += midH;
+    // if (!rulers || rulers.length == 0)
+    // {
+    //     throw new Error("measurements are null");
+    // }
+    // if (rulers.length != 3)
+    // {
+    //     throw new Error("measurements are missing or extra");
+    // }
 
-    article.style.height = `${sum}px`;
-    articleBg.style.height = `${sum}px`;
-    console.log(article.getBoundingClientRect(), articleBg.getBoundingClientRect());
+    // const topH = rulers[0].getBoundingClientRect().height;
+    // console.log("topH = ", topH);
 
-    const upDiv = article.querySelector(".article-background-up");
-    const midDiv = article.querySelector(".article-background-middle");
-    const downDiv = article.querySelector(".article-background-down");
+    // const bottomH = rulers[1].getBoundingClientRect().height;
+    // const midH = rulers[2].getBoundingClientRect().height;
 
-    if ((!upDiv) || (!midDiv) || (!downDiv))
-    {
-        throw new Error("the background parts of article can't be found");
-    }
-    if (!(upDiv instanceof HTMLElement) || !(midDiv instanceof HTMLElement) || !(downDiv instanceof HTMLElement))
-    {
-        throw new Error("the type of the background parts of article aren't right");
-    }
+    // if (topH <= 0 || midH <= 0 || bottomH <= 0) 
+    // {
+    //     throw new Error("the height of image is lower than 0!!");
+    // }
 
-    upDiv.style.height = `${topH - 1}px`;
-    downDiv.style.height = `${bottomH}px`;
+    // const article = document.getElementById("ctfArt");
+    // const articleBg = document.getElementById("ctfArtBg");
+    // if (!article || !articleBg)
+    // {
+    //     throw new Error("the article can't be found by id");
+    // }
+
+    // const currentH = article.scrollHeight;
+    // let sum = topH + bottomH;
+
+    // while (sum < currentH) 
+    // {
+    //     sum += midH;
+    // }
+    // sum += midH;
+
+    // article.style.height = `${sum}px`;
+    // articleBg.style.height = `${sum}px`;
+    // console.log(article.getBoundingClientRect(), articleBg.getBoundingClientRect());
+
+    // const upDiv = article.querySelector(".article-background-up");
+    // const midDiv = article.querySelector(".article-background-middle");
+    // const downDiv = article.querySelector(".article-background-down");
+
+    // if ((!upDiv) || (!midDiv) || (!downDiv))
+    // {
+    //     throw new Error("the background parts of article can't be found");
+    // }
+    // if (!(upDiv instanceof HTMLElement) || !(midDiv instanceof HTMLElement) || !(downDiv instanceof HTMLElement))
+    // {
+    //     throw new Error("the type of the background parts of article aren't right");
+    // }
+
+    // upDiv.style.height = `${topH - 1}px`;
+    // downDiv.style.height = `${bottomH}px`;
 </script>
 
 
@@ -192,6 +204,7 @@ const { title = "Anryo Senko", headings = [] } = Astro.props;
     article
     {
         position: relative;
+        z-index: 0;
     }
     .article-enclave-up
     {
@@ -347,6 +360,9 @@ const { title = "Anryo Senko", headings = [] } = Astro.props;
         background-position: center 20%;
         background-size: cover;
         background-repeat: no-repeat;
+        box-shadow:
+            0 0 40px rgba(154, 138, 255, 1),
+            0 0 80px rgba(154, 138, 255, 0.8);
     }
 
     .wrapper

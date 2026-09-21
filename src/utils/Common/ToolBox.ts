@@ -41,6 +41,22 @@ class ToolBox
             }
         }
     }
+
+
+
+    public static normalizedPaths(raw: string): string
+    {
+        let key: string = "";
+
+        // const normalizedPath = path.replace(/\\/g, "/");
+        key = raw.replace(/\\/g, "/");
+        key = key.replace(/\.md$/i, "");
+        key = key.replace(/\.$/i, "");
+        key = key.replace(/ /g, "-");
+        key = key.toLowerCase();
+
+        return key;
+    }
 }
 
 

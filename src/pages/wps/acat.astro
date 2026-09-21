@@ -1,10 +1,13 @@
 ---
-import Cat from "@/components/Catelogs/WpCtf.astro";
+import Layout from "@/layouts/WPs/Catalog.astro";
 
-import Layout from "@/layouts/catalog/for-wp-cat.astro";
+import C from "@/components/WPs/Catalog.astro";
+import { buildTree } from "@/utils/WPs/Catalog";
+
+
+const tree = await buildTree("CTF");
 ---
 
 <Layout>
-    <Cat>
-    </Cat>
+    <C tree={tree} />
 </Layout>

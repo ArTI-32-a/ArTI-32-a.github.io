@@ -16,7 +16,10 @@
         "@expressive-code/plugin-line-numbers": "^0.44.1",
         "astro": "^6.4.7",
         "astro-expressive-code": "^0.44.1",
-        "three": "^0.185.1"
+        "gray-matter": "^4.0.3",
+        "remark": "^15.0.1",
+        "three": "^0.185.1",
+        "unist-util-visit": "^5.1.0"
     },
     "devDependencies": {
         "@types/node": "^26.1.1",
