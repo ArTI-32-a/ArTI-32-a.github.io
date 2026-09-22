@@ -156,7 +156,7 @@ for (const h of headings)
 
         if (headings.length === 0) return;
 
-        let OFFSET: number = window.innerHeight * 0.25;
+        let OFFSET: number = window.innerHeight * 0.25 + 2;
         window.addEventListener("resize", () =>
         {
             OFFSET = window.innerHeight * 0.25;

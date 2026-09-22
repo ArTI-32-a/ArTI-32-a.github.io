@@ -3,7 +3,7 @@ import { Common as C } from "@/utils/Common/Common"
 
 import PC from "@/components/WPs/__ForCatalog/__ForToEntry/PreviewCard.astro"
 
-import type { ConData } from "@/utils/WPs/Catalog"
+import type { WPCTFFormatter } from "@/utils/Common/Type"
 
 interface Props
 {
@@ -11,7 +11,7 @@ interface Props
     href: string;
     text: string;
     level?: number;
-    data?: ConData
+    data?: WPCTFFormatter
 }
 
 

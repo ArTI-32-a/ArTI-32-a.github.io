@@ -11,7 +11,12 @@ interface TOCController
 
 
 
-function initHero(mask: HTMLElement, threshold: number): HeroController
+function initHero(
+    mask: HTMLElement, 
+    titleBox: HTMLElement, 
+    metaBlock: HTMLElement, 
+    tocSpacer: HTMLElement, 
+    threshold: number): HeroController
 {
     return {
         onScroll: (y: number): void =>
@@ -19,10 +24,16 @@ function initHero(mask: HTMLElement, threshold: number): HeroController
             if (y > threshold)
             {
                 mask.classList.add("shrunk");
+                titleBox.classList.add("shrink");
+                metaBlock.classList.add("shrink");
+                tocSpacer.classList.add("shrink");
             }
-            else if (y < 50)
+            else if (y < threshold)
             {
                 mask.classList.remove("shrunk");
+                titleBox.classList.remove("shrink");
+                metaBlock.classList.remove("shrink");
+                tocSpacer.classList.remove("shrink");
             }
         }
     };
@@ -58,11 +69,17 @@ function initTOC(mainArea: HTMLElement, tocToggle: HTMLElement, threshold: numbe
     };
 }
 
-function articleController(mask: HTMLElement, mainArea: HTMLElement, tocToggle: HTMLElement): void
+function articleController(
+    mask: HTMLElement, 
+    mainArea: HTMLElement, 
+    tocToggle: HTMLElement, 
+    titleBox: HTMLElement, 
+    metaBlock: HTMLElement,
+    tocSpacer: HTMLElement): void
 {
     const THRESHOLD: number = 200;
 
-    const hero = initHero(mask, THRESHOLD);
+    const hero = initHero(mask, titleBox, metaBlock, tocSpacer, THRESHOLD);
     const toc = initTOC(mainArea, tocToggle, THRESHOLD);
 
     window.addEventListener("scroll", () =>
