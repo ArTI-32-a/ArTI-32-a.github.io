@@ -1,3 +1,5 @@
+import { Common as C } from "@/utils/Common/Common"; 
+
 export interface WPCTFFormatter
 {
     title: string;
@@ -16,4 +18,18 @@ export interface WPInfo
     href: string | null;
     data: WPCTFFormatter | null;
     children: WPInfo[] | null;
+}
+
+
+
+export interface WpBtnState
+{
+    completed: boolean;
+    disabled: boolean;
+}
+
+export interface WpBtnStateDetail
+{
+    event: string;
+    state: Partial<WpBtnState>;
 }

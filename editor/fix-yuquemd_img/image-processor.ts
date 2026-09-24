@@ -1,249 +1,188 @@
-/// <reference types="node" />
+import * as fs from "fs";
+import * as path from "path";
 
-import * as fs from 'fs';
-import * as path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+const PREPARE_DIR: string = path.join(process.cwd(), "src", "content", "_Prepare");
 
-// 获取当前文件的目录
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
-/**
- * 递归获取所有 .md 文件
- */
-function getAllMarkdownFiles(dir: string): string[] {
-    const files: string[] = [];
-    
-    if (!fs.existsSync(dir)) {
-        return files;
+function getAllMarkdownFiles(dir: string): string[]
+{
+    if (!fs.existsSync(dir))
+    {
+        return [];
     }
-    
-    const items = fs.readdirSync(dir);
-    
-    for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
-        
-        if (stat.isDirectory()) {
+
+    const files: string[] = [];
+    const items = fs.readdirSync(dir, { withFileTypes: true });
+
+    for (const item of items)
+    {
+        const fullPath: string = path.join(dir, item.name);
+
+        if (item.isDirectory())
+        {
             files.push(...getAllMarkdownFiles(fullPath));
-        } else if (item.endsWith('.md')) {
+        }
+        else if (item.isFile() && item.name.endsWith(".md"))
+        {
             files.push(fullPath);
         }
     }
-    
+
     return files;
 }
 
+
 /**
- * 解析 frontmatter
+ * 剥离 frontmatter，返回 { frontmatter, body }
+ * 如果没有 frontmatter，frontmatter 为空字符串
  */
-function parseFrontmatter(content: string): { hasFrontmatter: boolean; data: any; content: string } {
-    const frontmatterRegex = /^---\n([\s\S]*?)\n---/;
-    const match = content.match(frontmatterRegex);
-    
-    if (!match) {
-        return {
-            hasFrontmatter: false,
-            data: {},
-            content: content
-        };
+function splitFrontmatter(content: string): { frontmatter: string; body: string }
+{
+    const match: RegExpMatchArray | null = content.match(/^(---\n[\s\S]*?\n---\n?)/);
+
+    if (!match)
+    {
+        return { frontmatter: "", body: content };
     }
-    
-    const frontmatterStr = match[1];
-    const data: any = {};
-    
-    // 简单的 YAML 解析
-    const lines = frontmatterStr.split('\n');
-    for (const line of lines) {
-        const colonIndex = line.indexOf(':');
-        if (colonIndex > 0) {
-            const key = line.substring(0, colonIndex).trim();
-            let value = line.substring(colonIndex + 1).trim();
-            
-            // 移除引号
-            if ((value.startsWith('"') && value.endsWith('"')) ||
-                (value.startsWith("'") && value.endsWith("'"))) {
-                value = value.slice(1, -1);
-            }
-            
-            data[key] = value;
-        }
-    }
-    
+
     return {
-        hasFrontmatter: true,
-        data,
-        content: content.substring(match[0].length)
+        frontmatter: match[1],
+        body: content.substring(match[1].length),
     };
 }
 
-/**
- * 下载图片并转换为 base64
- */
-async function downloadImageAsBase64(url: string): Promise<string | null> {
-    try {
+
+async function downloadAsBase64(url: string): Promise<string | null>
+{
+    try
+    {
         const response = await fetch(url);
-        
-        if (!response.ok) {
+
+        if (!response.ok)
+        {
             return null;
         }
-        
+
         const arrayBuffer = await response.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
-        
-        // 获取 MIME 类型
-        const contentType = response.headers.get('content-type') || 'image/png';
-        
-        const base64 = buffer.toString('base64');
-        
-        return `data:${contentType};base64,${base64}`;
-    } catch (error) {
+        const contentType = response.headers.get("content-type") || "image/png";
+
+        return `data:${contentType};base64,${buffer.toString("base64")}`;
+    }
+    catch
+    {
         return null;
     }
 }
 
-/**
- * 替换 markdown 中的图片链接为 base64 格式
- */
-async function replaceImages(content: string): Promise<string> {
-    // 匹配 markdown 图片语法: ![alt](url)
-    const imageRegex = /!\[([^\]]*)\]\((https?:\/\/[^)]+)\)/g;
-    
+
+async function replaceImages(content: string): Promise<string>
+{
+    const regex: RegExp = /!\[([^\]]*)\]\((https?:\/\/[^)]+)\)/g;
+
     const matches: Array<{ full: string; alt: string; url: string }> = [];
-    let match;
-    
-    while ((match = imageRegex.exec(content)) !== null) {
+    let match: RegExpExecArray | null;
+
+    while ((match = regex.exec(content)) !== null)
+    {
         matches.push({
             full: match[0],
             alt: match[1],
-            url: match[2]
+            url: match[2],
         });
     }
-    
-    // 下载并替换每个图片
-    for (const imgMatch of matches) {
-        const base64 = await downloadImageAsBase64(imgMatch.url);
-        
-        if (base64) {
-            const htmlImg = `<img src="${base64}" alt="${imgMatch.alt}" style="max-width: 80%; height: auto;">`;
-            content = content.replace(imgMatch.full, htmlImg);
+
+    for (const img of matches)
+    {
+        const base64 = await downloadAsBase64(img.url);
+
+        if (base64)
+        {
+            const html = `<img src="${base64}" alt="${img.alt}" style="max-width: 80%; height: auto;">`;
+            content = content.replace(img.full, html);
         }
     }
-    
+
     return content;
 }
 
-/**
- * 替换链接为 base64 格式（针对附件）
- */
-async function replaceLinks(content: string): Promise<string> {
-    // 匹配 markdown 链接语法: [text](url)
-    const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
-    
+
+async function replaceLinks(content: string): Promise<string>
+{
+    const regex: RegExp = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
+
     const matches: Array<{ full: string; text: string; url: string }> = [];
-    let match;
-    
-    while ((match = linkRegex.exec(content)) !== null) {
-        // 跳过已经被处理过的（包含 data: 的）
-        if (!match[2].startsWith('data:')) {
+    let match: RegExpExecArray | null;
+
+    while ((match = regex.exec(content)) !== null)
+    {
+        if (!match[2].startsWith("data:"))
+        {
             matches.push({
                 full: match[0],
                 text: match[1],
-                url: match[2]
+                url: match[2],
             });
         }
     }
-    
-    // 下载并替换每个链接
-    for (const linkMatch of matches) {
-        const base64 = await downloadImageAsBase64(linkMatch.url);
-        
-        if (base64) {
-            // 根据文件类型决定如何显示
-            if (linkMatch.url.includes('/attachments/')) {
-                // 附件链接，保持原样或转换
-                const htmlLink = `<a href="${base64}" download="${linkMatch.text}">${linkMatch.text}</a>`;
-                content = content.replace(linkMatch.full, htmlLink);
-            }
+
+    for (const link of matches)
+    {
+        if (!link.url.includes("/attachments/"))
+        {
+            continue;
+        }
+
+        const base64 = await downloadAsBase64(link.url);
+
+        if (base64)
+        {
+            const html = `<a href="${base64}" download="${link.text}">${link.text}</a>`;
+            content = content.replace(link.full, html);
         }
     }
-    
+
     return content;
 }
 
-/**
- * 处理单个文件
- */
-async function processFile(filePath: string): Promise<void> {
-    try {
-        const content = fs.readFileSync(filePath, 'utf-8');
-        
-        // 解析 frontmatter（如果有）
-        const parsed = parseFrontmatter(content);
-        
-        // 检查 status 是否为 draft（如果有 frontmatter）
-        if (parsed.hasFrontmatter && parsed.data.status !== 'draft') {
-            return; // 跳过非 draft 文件
-        }
-        
-        // 替换图片和链接
-        let newContent = await replaceImages(parsed.content);
-        newContent = await replaceLinks(newContent);
-        
-        // 重新组装文件内容
-        let newFileContent: string;
-        
-        if (parsed.hasFrontmatter) {
-            const frontmatterLines = Object.entries(parsed.data)
-                .map(([key, value]) => `${key}: "${value}"`)
-                .join('\n');
-            
-            newFileContent = `---\n${frontmatterLines}\n---${newContent}`;
-        } else {
-            newFileContent = newContent;
-        }
-        
-        // 写回文件
-        fs.writeFileSync(filePath, newFileContent, 'utf-8');
-        
-        console.log(`${path.basename(filePath)} complete`);
-    } catch (error) {
-        console.error(`Error processing ${filePath}:`, error);
+
+async function processFile(filePath: string): Promise<void>
+{
+    const original: string = fs.readFileSync(filePath, "utf-8");
+
+    // 剥离 frontmatter
+    const { frontmatter, body } = splitFrontmatter(original);
+
+    // 只处理正文
+    let newBody: string = await replaceImages(body);
+    newBody = await replaceLinks(newBody);
+
+    // 装回 frontmatter
+    const newContent: string = frontmatter + newBody;
+
+    if (original !== newContent)
+    {
+        fs.writeFileSync(filePath, newContent, "utf-8");
+        console.log(`已处理: ${filePath}`);
     }
 }
 
-/**
- * 主函数
- */
-export async function entry(): Promise<void> {
-    const prepareDir = path.join(process.cwd(), 'src', 'content', '_Prepare');
-    
-    // 检查目录是否存在
-    if (!fs.existsSync(prepareDir)) {
-        console.log('Directory not found:', prepareDir);
-        return;
-    }
-    
-    // 获取所有 markdown 文件
-    const mdFiles = getAllMarkdownFiles(prepareDir);
-    
-    if (mdFiles.length === 0) {
-        console.log('No markdown files found');
-        return;
-    }
-    
-    console.log(`Found ${mdFiles.length} markdown files`);
-    
-    // 处理每个文件
-    for (const filePath of mdFiles) {
-        await processFile(filePath);
-    }
-    
-    console.log('All files processed');
-}
 
-// 如果直接运行此脚本（ESM 模式）
-if (import.meta.url === `file://${process.argv[1].replace(/\\/g, '/')}`) {
-    entry().catch(console.error);
+export async function entry(): Promise<void>
+{
+    if (!fs.existsSync(PREPARE_DIR))
+    {
+        console.log(`目录不存在: ${PREPARE_DIR}`);
+        return;
+    }
+
+    const files: string[] = getAllMarkdownFiles(PREPARE_DIR);
+    console.log(`找到 ${files.length} 个 markdown 文件`);
+
+    for (const file of files)
+    {
+        await processFile(file);
+    }
+
+    console.log("完成");
 }

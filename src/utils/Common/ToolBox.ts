@@ -51,7 +51,7 @@ class ToolBox
         // const normalizedPath = path.replace(/\\/g, "/");
         key = raw.replace(/\\/g, "/");
         key = key.replace(/\.md$/i, "");
-        key = key.replace(/\.$/i, "");
+        key = key.replace(/\./g, "");
         key = key.replace(/ /g, "-");
         key = key.toLowerCase();
 

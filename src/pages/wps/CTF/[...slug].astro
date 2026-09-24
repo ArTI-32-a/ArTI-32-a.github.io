@@ -8,6 +8,8 @@ import bUp from "@/assets/pictures/background/wp/wp_up_bg.png?url";
 
 import Hero from "@/components/WPs/Hero.astro";
 
+import { buildTree } from "@/utils/WPs/Catalog";
+
 export async function getStaticPaths()
 {
     const posts = await getCollection("CTF");
@@ -34,11 +36,14 @@ if (!entry)
 }
 
 const { Content, headings } = await render(entry);
+
+
+const tree = await buildTree("CTF");
 ---
 
 <Layout title={entry.data.title} headings={headings}>
     <div slot="header">
-        <Hero data={entry.data} headings={headings} backgroundImage={bUp} />
+        <Hero data={entry.data} headings={headings} backgroundImage={bUp} treeInfo={tree}/>
     </div>
     
 

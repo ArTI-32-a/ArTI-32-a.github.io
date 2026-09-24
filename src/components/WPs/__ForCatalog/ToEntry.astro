@@ -11,11 +11,12 @@ interface Props
     href: string;
     text: string;
     level?: number;
-    data?: WPCTFFormatter
+    data?: WPCTFFormatter;
+    showPreview?: boolean; 
 }
 
 
-const { id = "0", href = "/", text = "...", level = 0, data } = Astro.props;
+const { id = "0", href = "/", text = "...", level = 0, data, showPreview = true } = Astro.props;
 
 ---
 
@@ -25,7 +26,7 @@ const { id = "0", href = "/", text = "...", level = 0, data } = Astro.props;
     </span>
 </a>
 
-<PC id={id} data={data} />
+{showPreview && data && <PC id={id} data={data} />}
 
 
 

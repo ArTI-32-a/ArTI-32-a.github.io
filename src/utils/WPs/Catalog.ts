@@ -19,6 +19,7 @@ function isValidConData(data: unknown): data is WPCTFFormatter
 {
     if (typeof data !== "object" || data === null)
     {
+        console.log("obj!");
         return false;
     }
 
@@ -26,6 +27,7 @@ function isValidConData(data: unknown): data is WPCTFFormatter
     // 检查 title
     if (!("title" in data) || typeof data.title !== "string")
     {
+        console.log("title!");
         return false;
     }
 
@@ -33,6 +35,7 @@ function isValidConData(data: unknown): data is WPCTFFormatter
     // 检查 tags
     if (!("tags" in data) || !Array.isArray(data.tags) || !data.tags.every((tag) => typeof tag === "string"))
     {
+        console.log("tags!");
         return false;
     }
 
@@ -40,12 +43,14 @@ function isValidConData(data: unknown): data is WPCTFFormatter
     // 检查 type
     if (!("type" in data) || typeof data.type !== "string")
     {
+        console.log("type!");
         return false;
     }
 
     const allowedTypes = ["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety"] as const;
     if (!allowedTypes.includes(data.type as any))
     {
+        console.log("type II!");
         return false;
     }
 
@@ -53,12 +58,15 @@ function isValidConData(data: unknown): data is WPCTFFormatter
     // 检查 status
     if (!("status" in data) || typeof data.status !== "string")
     {
+        console.log("status!");
         return false;
     }
 
     const allowedStatuses = ["draft", "published"] as const;
     if (!allowedStatuses.includes(data.status as any))
     {
+        
+        console.log("status II!");
         return false;
     }
 
@@ -66,11 +74,13 @@ function isValidConData(data: unknown): data is WPCTFFormatter
     // 检查 pubDate
     if ("pubDate" in data && !(data.pubDate instanceof Date))
     {
+        console.log("date!");
         return false;
     }
     
     if (data.status === "published" && !("pubDate" in data))
     {
+        console.log("date II!");
         return false;
     }
 
@@ -153,7 +163,33 @@ async function buildTree(collectionName: "CTF"): Promise<WPInfo[]>
     }
 
 
-    // 获取所有文章
+
+    // 2. 尝试读 catalog.json
+    const catalogPath = join(process.cwd(), "src/data/Content/WPs/CTF/catalog.json");
+    if (existsSync(catalogPath))
+    {
+        try
+        {
+            const raw = readFileSync(catalogPath, "utf-8");
+            const parsed: unknown = JSON.parse(raw);
+
+            if (Array.isArray(parsed))
+            {
+                console.log("[buildTree] 使用 catalog.json 缓存");
+                return processCachedTree(parsed);
+            }
+
+            console.warn("[buildTree] catalog.json 结构不是数组，降级");
+        }
+        catch (e)
+        {
+            console.warn("[buildTree] catalog.json 读取失败，降级", e);
+        }
+    }
+
+
+
+    // 3 获取所有文章
     const allPosts = await getCollection(collectionName);
 
     const rootNodes: WPInfo[] = [];
@@ -230,6 +266,80 @@ async function buildTree(collectionName: "CTF"): Promise<WPInfo[]>
             );
             // 你也可以选择 throw new Error() 来强制中断
         }
+    }
+
+    function processCachedTree(rawNodes: unknown[]): WPInfo[]
+    {
+        const result: WPInfo[] = [];
+
+        for (const raw of rawNodes)
+        {
+            if (typeof raw !== "object" || raw === null)
+            {
+                continue;
+            }
+
+            const node = raw as Record<string, unknown>;
+
+            // 文件夹节点：有 children
+            if (Array.isArray(node.children))
+            {
+                result.push({
+                    key: String(node.key ?? ""),
+                    href: null,
+                    data: null,
+                    children: processCachedTree(node.children),
+                });
+                continue;
+            }
+
+            // 文件节点：有 href
+            if (typeof node.href === "string")
+            {
+                const data = node.data;
+                if (typeof data === "object" && data !== null && "pubDate" in data)
+                {
+                    const raw = data as Record<string, unknown>;
+                    if (typeof raw.pubDate === "string")
+                    {
+                        const parsed = new Date(raw.pubDate);
+                        if (!isNaN(parsed.getTime()))
+                        {
+                            raw.pubDate = parsed;
+                        }
+                        else
+                        {
+                            // 无法解析的日期，删掉该字段，让守卫处理
+                            delete raw.pubDate;
+                        }
+                    }
+                }
+
+                // 守卫：data 结构不对就跳过
+                if (!isValidConData(data))
+                {
+                    console.warn(`[buildTree] catalog.json 中 data 无效，跳过: ${node.href}`);
+                    continue;
+                }
+
+                // 从 href 截 key 查 questions
+                const key = node.href.replace(/^\/wps\/CTF\//, "");
+                const questions = questionsCache[key];
+
+                result.push({
+                    key: String(node.key ?? ""),
+                    href: node.href,
+                    data: {
+                        ...data,
+                        questions: questions,
+                    },
+                    children: null,
+                });
+            }
+        }
+
+        console.log("json is valid. success!");
+        return result;
     }
 
 

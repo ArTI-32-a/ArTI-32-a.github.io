@@ -1,17 +1,21 @@
 ---
 import type { MarkdownHeading } from "astro";
 
-import type { WPCTFFormatter } from "@/utils/Common/Type";
+import type { WPCTFFormatter, WPInfo } from "@/utils/Common/Type";
+
+import C from "@/components/WPs/Catalog.astro"
 
 export interface Props
 {
     data: WPCTFFormatter;
     headings: MarkdownHeading[];
     backgroundImage: string;
+    treeInfo: WPInfo[];
 }
 
-const { data, headings, backgroundImage } = Astro.props;
+const { data, headings, backgroundImage, treeInfo } = Astro.props;
 
+const tree = treeInfo ?? [];
 
 let minDepth = Infinity;
 for (const h of headings)
@@ -30,19 +34,28 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         <div class="title-box">
             {data.title}
         </div>
+        
 
-        <div class="meta-block">
-            <div class="type-tags">
-                {data.type} : {data.tags.join(' ')}
+
+        <div class="hero-columns">
+            <div class="hero-left">
+                <C tree={tree} compact={true} />
             </div>
 
-            <div class="heading-links">
-                {topHeadings.map(h => (
-                    <a href={`#${h.slug}`} class="heading-link">
-                        {h.text}
-                    </a>
-                ))}
+            <div class="meta-block">
+                <div class="type-tags">
+                    {data.type} : {data.tags.join(" ")}
+                </div>
+                <div class="heading-links">
+                    {topHeadings.map(h => (
+                        <a href={`#${h.slug}`} class="heading-link">
+                            {h.text}
+                        </a>
+                    ))}
+                </div>
             </div>
+
+            <div class="hero-right"></div>
         </div>
     </div>
 </header>
@@ -76,11 +89,11 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
 
         /* 2. 盒模型 - 尺寸 */
         width: 100%;
-        max-width: 800px;
+        max-width: 90vw;
         box-sizing: border-box;
 
         /* 3. 盒模型 - 间距 */
-        padding: 0 2rem;
+        /* padding: 0 2rem; */
 
         /* 10. 动画过渡 */
         transform: translate(-50%, -50%);
@@ -120,11 +133,32 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
-    .meta-block
+
+
+    .hero-columns
     {
-        /* 3. 盒模型 - 间距 */
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: start;
+        gap: 2rem;
+        min-width: 0;
+        max-height: 30vh;
+
         margin-top: 1.5rem;
+
+        /* 10. 动画过渡 */
+        transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+                    opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    .hero-left
+    {
+        height: 100%;
+
+        /* 3. 盒模型 */
         padding: 1rem 1.5rem;
+        /* max-width: 10vw; */
+        max-height: 30vh;
 
         /* 4. 边框圆角 */
         border-radius: 12px;
@@ -136,12 +170,50 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 
         /* 6. 文字 */
-        text-indent: 4em;
+        text-indent: 2em;
 
-        /* 10. 动画过渡 */
-        transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
-                    opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        overflow-y: auto;
+        scrollbar-width: none;       /* Firefox */
+        -ms-overflow-style: none;    /* IE/Edge */
     }
+
+    .meta-block
+    {
+        /* 3. 盒模型 - 间距 */
+        /* margin-top: 1.5rem; */
+        padding: 1rem 1.5rem;
+        width: 25vw;
+        max-height: 30vh;
+
+        /* 4. 边框圆角 */
+        border-radius: 12px;
+
+        /* 5. 背景 */
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(154, 138, 255, 0.15);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+        /* 6. 文字 */
+        text-indent: 2em;
+
+        overflow-y: auto;
+        scrollbar-width: none;       /* Firefox */
+        -ms-overflow-style: none;    /* IE/Edge */
+    }
+
+    .hero-right
+    {
+        /* 空占位，保持 meta-block 居中 */
+    }
+
+    .hero-left::-webkit-scrollbar,
+    .meta-block::-webkit-scrollbar,
+    .hero-right::-webkit-scrollbar
+    {
+        display: none;               /* Chrome/Safari */
+    }
+
 
     .type-tags
     {
@@ -216,7 +288,7 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         transform: translateY(-40px);
     }
 
-    .meta-block.shrink
+    .hero-columns.shrink
     {
         transform: translateY(-40px);
         opacity: 0;

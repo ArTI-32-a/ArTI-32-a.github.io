@@ -1,0 +1,233 @@
+---
+---
+
+<div class="menu-container" id="menu-container">
+    <button class="main-btn" id="main-btn">≡</button>
+
+    <div class="menu-stack menu-up" id="menu-up">
+        <slot name="up" />
+    </div>
+
+    <div class="menu-stack menu-left" id="menu-left">
+        <slot name="left" />
+    </div>
+</div>
+
+
+<script>
+    (() =>
+    {
+        const container = document.getElementById("menu-container");
+        const mainBtn = document.getElementById("main-btn");
+        const menuUp = document.getElementById("menu-up");
+        const menuLeft = document.getElementById("menu-left");
+
+        if (!container || !mainBtn || !menuUp || !menuLeft) 
+        { 
+            return; 
+        }
+
+        let isOpen: boolean = true;
+        let isAnimating: boolean = false;
+
+        container.classList.toggle("open", isOpen);
+
+        function toggle(container: HTMLElement, mainBtn: HTMLElement): void
+        {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            isOpen = !isOpen;
+
+            container.classList.toggle("open", isOpen);
+
+            // 主按钮旋转：先移除类，强制重绘，再加回去
+            mainBtn.classList.remove("rotate-cw", "rotate-ccw");
+            void mainBtn.offsetWidth;
+            mainBtn.classList.add(isOpen ? "rotate-cw" : "rotate-ccw");
+
+            setTimeout(() =>
+            {
+                isAnimating = false;
+            }, 600);
+        }
+
+        mainBtn.addEventListener("click", () => toggle(container, mainBtn));
+    })();
+</script>
+
+<style>
+    /*
+        ---------- 1. 主按钮 ----------
+    */
+    .main-btn
+    {
+        /* 1. 布局定位 */
+        position: fixed;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        z-index: 1001;
+
+        /* 2. 盒模型 - 尺寸 */
+        width: 3rem;
+        height: 3rem;
+
+        /* 4. 边框圆角 */
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+
+        /* 5. 背景 */
+        background-color: rgba(31, 30, 51, 0.9);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+
+        /* 6. 文字 */
+        color: #ffffff;
+        font-size: 1.5rem;
+
+        /* 9. 交互 */
+        cursor: pointer;
+
+        /* 10. 动画过渡 */
+        transition: background-color 0.2s;
+    }
+
+    .main-btn:hover
+    {
+        /* 5. 背景 */
+        background-color: rgba(60, 55, 90, 0.9);
+    }
+
+    .main-btn.rotate-cw
+    {
+        animation: spin-cw 0.6s ease;
+    }
+
+    .main-btn.rotate-ccw
+    {
+        animation: spin-ccw 0.6s ease;
+    }
+
+    @keyframes spin-cw
+    {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+    }
+
+    @keyframes spin-ccw
+    {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(-360deg); }
+    }
+
+    /*
+        ---------- 2. 按钮栈容器（两个 stack 共用） ----------
+    */
+    .menu-stack
+    {
+        /* 1. 布局定位 */
+        position: fixed;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        z-index: 1000;
+
+        /* 2. 盒模型 - 尺寸 */
+        display: flex;
+
+        /* 3. 盒模型 - 间距 */
+        gap: 1rem;
+
+        /* 7. 视觉效果 */
+        opacity: 0;
+
+        /* 9. 交互 */
+        pointer-events: none;
+
+        /* 10. 动画过渡 */
+        transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1),
+                    opacity 0.3s ease;
+    }
+
+    /*
+        ---------- 3. 往上的栈 ----------
+    */
+    .menu-up
+    {
+        /* 2. 盒模型 - 尺寸 */
+        flex-direction: column-reverse;
+        align-items: center;
+
+        /* 10. 动画过渡（收起时停在主按钮位置） */
+        transform: translateY(0);
+    }
+
+    .open .menu-up
+    {
+        /* 10. 动画过渡（展开时上移） */
+        transform: translateY(-4rem);
+    }
+
+    /*
+        ---------- 4. 往左的栈 ----------
+    */
+    .menu-left
+    {
+        /* 2. 盒模型 - 尺寸 */
+        flex-direction: row-reverse;
+        align-items: center;
+
+        /* 10. 动画过渡（收起时停在主按钮位置） */
+        transform: translateX(0);
+    }
+
+    .open .menu-left
+    {
+        /* 10. 动画过渡（展开时左移） */
+        transform: translateX(-4rem);
+    }
+
+    /*
+        ---------- 5. 展开状态 ----------
+    */
+    .open .menu-stack
+    {
+        /* 7. 视觉效果 */
+        opacity: 1;
+
+        /* 9. 交互 */
+        pointer-events: auto;
+    }
+
+
+
+    /*
+        ---------- up 栈的 tooltip：往左 ----------
+    */
+    .menu-up :global(.btn-tip)
+    {
+        right: 100%;
+        top: 50%;
+        margin-right: 8px;
+        transform: translateY(-50%) translateX(8px);
+    }
+
+    .menu-up :global(.btn:hover .btn-tip)
+    {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    /*
+        ---------- left 栈的 tooltip：往上 ----------
+    */
+    .menu-left :global(.btn-tip)
+    {
+        bottom: 100%;
+        left: 50%;
+        margin-bottom: 8px;
+        transform: translateX(-50%) translateY(8px);
+    }
+
+    .menu-left :global(.btn:hover .btn-tip)
+    {
+        transform: translateX(-50%) translateY(0);
+    }
+</style>

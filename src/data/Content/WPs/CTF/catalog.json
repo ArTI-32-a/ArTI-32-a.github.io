@@ -1,0 +1,101 @@
+[
+    {
+        "key": "Competition",
+        "href": null,
+        "data": null,
+        "children": [
+            {
+                "key": "LitCtf - 2026",
+                "href": null,
+                "data": null,
+                "children": [
+                    {
+                        "key": "Reverse",
+                        "href": "/wps/CTF/competition/litctf---2026/reverse",
+                        "data": {
+                            "title": "Reverse",
+                            "pubDate": "2026-06-14T00:00:00.000Z",
+                            "tags": [
+                                "rc4",
+                                "tea",
+                                "xor",
+                                "xtea",
+                                "base64"
+                            ],
+                            "type": "Reverse",
+                            "status": "draft"
+                        },
+                        "children": null
+                    }
+                ]
+            },
+            {
+                "key": "ZeroG - 2026",
+                "href": null,
+                "data": null,
+                "children": [
+                    {
+                        "key": "Reverse",
+                        "href": "/wps/CTF/competition/zerog---2026/reverse",
+                        "data": {
+                            "title": "Reverse",
+                            "pubDate": "2026-06-09T00:00:00.000Z",
+                            "tags": [
+                                "algorithm-reverse",
+                                "rc4",
+                                "tea",
+                                "stream-cipher",
+                                "block-cipher",
+                                "symmetric-crypto",
+                                "xor",
+                                "pkcs7"
+                            ],
+                            "type": "Reverse",
+                            "status": "draft"
+                        },
+                        "children": null
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "key": "Practice",
+        "href": null,
+        "data": null,
+        "children": [
+            {
+                "key": "CTF Plus",
+                "href": null,
+                "data": null,
+                "children": [
+                    {
+                        "key": "Reverse",
+                        "href": null,
+                        "data": null,
+                        "children": [
+                            {
+                                "key": "2026.24 周常",
+                                "href": "/wps/CTF/practice/ctf-plus/reverse/202624-周常",
+                                "data": {
+                                    "title": "2026.24 周常",
+                                    "pubDate": "2026-08-20T00:00:00.000Z",
+                                    "tags": [
+                                        "rc4",
+                                        "tea",
+                                        "xor",
+                                        "xtea",
+                                        "base64"
+                                    ],
+                                    "type": "Reverse",
+                                    "status": "draft"
+                                },
+                                "children": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
