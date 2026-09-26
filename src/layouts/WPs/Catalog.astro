@@ -15,6 +15,131 @@ import "@/styles/global.css";
         </title>
     </head>
     <body>
-        <slot />
+        <header class="catalog-header">
+
+        </header>
+
+        <article class="catalog-wrapper">
+            <div class="catalog-body">
+                <slot />
+            </div>
+
+            <div class="scroll-fade top" />
+            <div class="scroll-fade bottom" />
+        </article>
     </body>
 </html>
+
+
+<style>
+    *
+    {
+        /* 2. 盒模型 - 尺寸 */
+        box-sizing: border-box;
+    }
+
+    html,
+    body
+    {
+        /* 2. 盒模型 - 尺寸 */
+        height: 100%;
+
+        /* 3. 盒模型 - 间距 */
+        margin: 0;
+        padding: 0;
+
+        /* 8. 溢出滚动 */
+        overflow: hidden;
+    }
+
+    :root
+    {
+        --header-height: 25vh;
+    }
+
+    body
+    {
+        /* 9. 交互 */
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .catalog-header
+    {
+        /* 1. 布局定位 */
+        z-index: 2000;
+
+        /* 2. 盒模型 - 尺寸 */
+        width: 100%;
+        height: var(--header-height);
+
+        /* 3. 盒模型 - 间距 */
+        padding: 1rem 2rem;
+
+        /* 5. 背景 */
+        background-color: #1f1e33;
+    }
+
+    .catalog-wrapper
+    {
+        /* 1. 布局定位 */
+        position: relative;
+
+        /* 2. 盒模型 - 尺寸 */
+        height: calc(100vh - var(--header-height));
+
+        /* 8. 溢出滚动 */
+        overflow: hidden;
+    }
+
+    .catalog-body
+    {
+        /* 1. 布局定位 */
+        position: absolute;
+        inset: 0;
+
+        /* 8. 溢出滚动 */
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .catalog-body::-webkit-scrollbar
+    {
+        /* 7. 视觉效果 */
+        display: none;
+    }
+
+    .scroll-fade
+    {
+        /* 1. 布局定位 */
+        position: absolute;
+        left: 0;
+        z-index: 1000;
+
+        /* 2. 盒模型 - 尺寸 */
+        width: 100%;
+        height: 12vh;
+
+        /* 9. 交互 */
+        pointer-events: none;
+    }
+
+    .scroll-fade.top
+    {
+        /* 1. 布局定位 */
+        top: 0;
+
+        /* 5. 背景 */
+        background: linear-gradient(to bottom, #1f1e33 0%, rgba(31, 30, 51, 0) 100%);
+    }
+
+    .scroll-fade.bottom
+    {
+        /* 1. 布局定位 */
+        bottom: 0;
+
+        /* 5. 背景 */
+        background: linear-gradient(to top, #1f1e33 0%, rgba(31, 30, 51, 0) 100%);
+    }
+</style>

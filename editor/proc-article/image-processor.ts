@@ -1,7 +1,11 @@
 import * as fs from "fs";
 import * as path from "path";
 
-const PREPARE_DIR: string = path.join(process.cwd(), "src", "content", "_Prepare");
+
+function getPrepareDir(collectionName: string): string
+{
+    return path.join(process.cwd(), "src", "content", collectionName, "_Prepare");
+}
 
 
 function getAllMarkdownFiles(dir: string): string[]
@@ -34,7 +38,6 @@ function getAllMarkdownFiles(dir: string): string[]
 
 /**
  * 剥离 frontmatter，返回 { frontmatter, body }
- * 如果没有 frontmatter，frontmatter 为空字符串
  */
 function splitFrontmatter(content: string): { frontmatter: string; body: string }
 {
@@ -150,14 +153,11 @@ async function processFile(filePath: string): Promise<void>
 {
     const original: string = fs.readFileSync(filePath, "utf-8");
 
-    // 剥离 frontmatter
     const { frontmatter, body } = splitFrontmatter(original);
 
-    // 只处理正文
     let newBody: string = await replaceImages(body);
     newBody = await replaceLinks(newBody);
 
-    // 装回 frontmatter
     const newContent: string = frontmatter + newBody;
 
     if (original !== newContent)
@@ -168,21 +168,23 @@ async function processFile(filePath: string): Promise<void>
 }
 
 
-export async function entry(): Promise<void>
+export async function entry(collectionName: string): Promise<void>
 {
-    if (!fs.existsSync(PREPARE_DIR))
+    const prepareDir: string = getPrepareDir(collectionName);
+
+    if (!fs.existsSync(prepareDir))
     {
-        console.log(`目录不存在: ${PREPARE_DIR}`);
+        console.log(`目录不存在: ${prepareDir}`);
         return;
     }
 
-    const files: string[] = getAllMarkdownFiles(PREPARE_DIR);
-    console.log(`找到 ${files.length} 个 markdown 文件`);
+    const files: string[] = getAllMarkdownFiles(prepareDir);
+    console.log(`[${collectionName}] 找到 ${files.length} 个 markdown 文件`);
 
     for (const file of files)
     {
         await processFile(file);
     }
 
-    console.log("完成");
+    console.log(`[${collectionName}] 完成`);
 }

@@ -140,11 +140,11 @@ function getQuestions(markdown: string, fileId: string): string[] | undefined
     return texts.length > 0 ? texts : undefined;
 }
 
-async function buildTree(collectionName: "CTF"): Promise<WPInfo[]>
+async function buildTree(collectionName: "CTF" | "DF"): Promise<WPInfo[]>
 {
     try
     {
-        const cachePath = join(process.cwd(), "src/data/Content/WPs/CTF/questions.json");
+        const cachePath = join(process.cwd(), "src/data/Content/WPs", collectionName, "questions.json");
 
         if (existsSync(cachePath))
         {
@@ -165,7 +165,7 @@ async function buildTree(collectionName: "CTF"): Promise<WPInfo[]>
 
 
     // 2. 尝试读 catalog.json
-    const catalogPath = join(process.cwd(), "src/data/Content/WPs/CTF/catalog.json");
+    const catalogPath = join(process.cwd(), "src/data/Content/WPs", collectionName, "catalog.json");
     if (existsSync(catalogPath))
     {
         try

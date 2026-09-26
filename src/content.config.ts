@@ -53,11 +53,23 @@ const CtfWpCollection = defineCollection(
     schema: CtfScheme,
 });
 
+const DFWpCollection = defineCollection(
+{
+    // type: "content",
+    loader: glob(
+    {
+        pattern: "**/*.md",
+        base: new URL("./content/DF", import.meta.url).pathname,
+    }),
+    schema: DFScheme,
+});
+
 // 下面是导出
 
 const collections =
 {
     "CTF": CtfWpCollection,
+    "DF": DFWpCollection,
 };
 
 export { collections };

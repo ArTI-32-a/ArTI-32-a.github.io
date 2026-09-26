@@ -39,7 +39,7 @@ function process(target)
 
 
     newContent = fixTag(target, content, "svg");
-    newContent = fixTag(target, content, "image");
+    newContent = fixTag(target, newContent, "image");
 }
 
 

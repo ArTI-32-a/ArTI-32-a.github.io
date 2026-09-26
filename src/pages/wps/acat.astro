@@ -1,15 +1,21 @@
 ---
 import Layout from "@/layouts/WPs/Catalog.astro";
 
-import C from "@/components/WPs/Catalog.astro";
+import Cs from "@/components/WPs/CatalogSwitcher.astro"
 import { buildTree } from "@/utils/WPs/Catalog";
 
 
-const tree = await buildTree("CTF");
-
-console.log(tree);
+const ctfTree = await buildTree("CTF");
+const dfTree = await buildTree("DF");
 ---
 
 <Layout>
-    <C tree={tree} />
+    <Cs 
+        entries=
+        {[
+            { title: "CTF", tree: ctfTree },
+            { title: "Digital Forensic", tree: dfTree },
+        ]}
+        defaultIndex={0} 
+    />
 </Layout>

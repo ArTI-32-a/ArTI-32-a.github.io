@@ -6,51 +6,52 @@ import type { WPCTFFormatter, WPInfo } from "../../src/utils/Common/Type";
 import { ToolBox as TB } from "../../src/utils/Common/ToolBox.ts";
 
 
-const CTF_DIR: string = "src/content/CTF";
-const OUTPUT_PATH: string = "src/data/Content/WPs/CTF/catalog.json";
-
-
-/**
- * 递归读取所有 .md 文件，跳过 _ 开头的目录和文件。
- * key 是相对于 CTF_DIR 的路径（用 / 分隔），value 是文件原始内容。
- */
-function readAllMarkdowns(dir: string): Record<string, string>
+function getContentDir(collectionName: string): string
 {
-    const result: Record<string, string> = {};
+    return `src/content/${collectionName}`;
+}
 
-    function walk(current: string): void
-    {
-        const entries = readdirSync(current, { withFileTypes: true });
-
-        for (const entry of entries)
-        {
-            if (entry.name.startsWith("_"))
-            {
-                continue;
-            }
-
-            const fullPath: string = join(current, entry.name);
-
-            if (entry.isDirectory())
-            {
-                walk(fullPath);
-            }
-            else if (entry.isFile() && entry.name.endsWith(".md"))
-            {
-                const rel: string = relative(CTF_DIR, fullPath).split(sep).join("/");
-                result[rel] = readFileSync(fullPath, "utf-8");
-            }
-        }
-    }
-
-    walk(dir);
-    return result;
+function getOutputPath(collectionName: string): string
+{
+    return `src/data/Content/WPs/${collectionName}/catalog.json`;
 }
 
 
 /**
- * 解析 frontmatter，失败则返回 null 并警告
+ * 递归读取所有 .md 文件，跳过 _ 开头的目录和文件。
+ * key 是相对于 baseDir 的路径（用 / 分隔），value 是文件原始内容。
  */
+function readAllMarkdowns(baseDir: string, currentDir: string): Record<string, string>
+{
+    const result: Record<string, string> = {};
+
+    const entries = readdirSync(currentDir, { withFileTypes: true });
+
+    for (const entry of entries)
+    {
+        if (entry.name.startsWith("_"))
+        {
+            continue;
+        }
+
+        const fullPath: string = join(currentDir, entry.name);
+
+        if (entry.isDirectory())
+        {
+            const subResult = readAllMarkdowns(baseDir, fullPath);
+            Object.assign(result, subResult);
+        }
+        else if (entry.isFile() && entry.name.endsWith(".md"))
+        {
+            const rel: string = relative(baseDir, fullPath).split(sep).join("/");
+            result[rel] = readFileSync(fullPath, "utf-8");
+        }
+    }
+
+    return result;
+}
+
+
 function parseFrontmatter(content: string, filePath: string): WPCTFFormatter | null
 {
     try
@@ -65,7 +66,7 @@ function parseFrontmatter(content: string, filePath: string): WPCTFFormatter | n
             status: parsed.data.status,
         } as WPCTFFormatter;
     }
-    catch (e)
+    catch
     {
         console.warn(`[build-catalog] 解析失败，跳过: ${filePath}`);
         return null;
@@ -73,10 +74,7 @@ function parseFrontmatter(content: string, filePath: string): WPCTFFormatter | n
 }
 
 
-/**
- * 从文件集合构建树
- */
-function buildTree(files: Record<string, string>): WPInfo[]
+function buildTree(files: Record<string, string>, collectionName: string): WPInfo[]
 {
     const root: WPInfo[] = [];
 
@@ -85,7 +83,7 @@ function buildTree(files: Record<string, string>): WPInfo[]
         const parts: string[] = relPath.split("/");
         const fileName: string = parts.pop() ?? "";
         const fileNameWithoutExt: string = fileName.replace(/\.md$/, "");
-        const href: string = `/wps/CTF/${TB.normalizedPaths(relPath)}`;
+        const href: string = `/wps/${collectionName}/${TB.normalizedPaths(relPath)}`;
 
         let currentLevel: WPInfo[] = root;
 
@@ -126,9 +124,6 @@ function buildTree(files: Record<string, string>): WPInfo[]
 }
 
 
-/**
- * 排序：文件夹优先，同类型按名称字母序
- */
 function sortTree(nodes: WPInfo[]): void
 {
     nodes.sort((a, b) =>
@@ -152,29 +147,32 @@ function sortTree(nodes: WPInfo[]): void
 }
 
 
-function entry(): void
+function entry(collectionName: string): void
 {
-    if (!existsSync(CTF_DIR))
+    const contentDir: string = getContentDir(collectionName);
+    const outputPath: string = getOutputPath(collectionName);
+
+    if (!existsSync(contentDir))
     {
-        console.error(`目录不存在: ${CTF_DIR}`);
+        console.error(`目录不存在: ${contentDir}`);
         process.exit(1);
     }
 
-    console.log(`扫描: ${CTF_DIR}`);
-    const files = readAllMarkdowns(CTF_DIR);
-    console.log(`找到 ${Object.keys(files).length} 个 markdown 文件`);
+    console.log(`[${collectionName}] 扫描: ${contentDir}`);
+    const files = readAllMarkdowns(contentDir, contentDir);
+    console.log(`[${collectionName}] 找到 ${Object.keys(files).length} 个 markdown 文件`);
 
-    const tree = buildTree(files);
+    const tree = buildTree(files, collectionName);
     sortTree(tree);
 
-    const outputDir: string = dirname(OUTPUT_PATH);
+    const outputDir: string = dirname(outputPath);
     if (!existsSync(outputDir))
     {
         mkdirSync(outputDir, { recursive: true });
     }
 
-    writeFileSync(OUTPUT_PATH, JSON.stringify(tree, null, 4), "utf-8");
-    console.log(`已写入: ${OUTPUT_PATH}`);
+    writeFileSync(outputPath, JSON.stringify(tree, null, 4), "utf-8");
+    console.log(`[${collectionName}] 已写入: ${outputPath}`);
 }
 
 

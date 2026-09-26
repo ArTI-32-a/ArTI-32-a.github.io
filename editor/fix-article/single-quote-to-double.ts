@@ -6,6 +6,7 @@ const __filename: string = fileURLToPath(import.meta.url);
 const __dirname: string = path.dirname(__filename);
 
 const SRC_DIR: string = path.resolve(__dirname, "../../src");
+const EDITOR_DIR: string = path.resolve(__dirname, "..");
 
 function getAllFiles(dir: string, extensions: string[]): string[]
 {
@@ -17,6 +18,12 @@ function getAllFiles(dir: string, extensions: string[]): string[]
 
         for (const item of items)
         {
+            // 跳过 _ 开头的文件/目录
+            if (item.startsWith("_"))
+            {
+                continue;
+            }
+
             const fullPath: string = path.join(currentDir, item);
             const stat: fs.Stats = fs.statSync(fullPath);
 
@@ -41,23 +48,20 @@ function getAllFiles(dir: string, extensions: string[]): string[]
 
 function replaceSingleQuotes(content: string): string
 {
-    const lines: string[] = content.split("\n");
-    const result: string[] = [];
+    // 匹配 'xxx' 形式，xxx 里允许 \' 这种转义
+    // (?:[^'\\]|\\.)* 表示：要么是非引号非反斜杠的普通字符，要么是 \ 后跟任意字符（转义序列）
+    const regex: RegExp = /'(?:[^'\\]|\\.)*'/g;
 
-    for (const line of lines)
+    return content.replace(regex, (match: string): string =>
     {
-        let newLine: string = line;
+        // 去掉外层两个单引号
+        const inner: string = match.slice(1, -1);
 
-        const stringLiteralRegex: RegExp = /'([^'\\]*(\\.[^'\\]*)*)'/g;
-        newLine = newLine.replace(stringLiteralRegex, (_match: string, p1: string) =>
-        {
-            return `"${p1}"`;
-        });
+        // 把内部未转义的 " 转成 \"，因为外层要从 ' 变 "
+        const escaped: string = inner.replace(/"/g, '\\"');
 
-        result.push(newLine);
-    }
-
-    return result.join("\n");
+        return `"${escaped}"`;
+    });
 }
 
 function processFile(filePath: string): boolean
@@ -75,14 +79,18 @@ function processFile(filePath: string): boolean
 
 function entry(): void
 {
-    const extensions: string[] = [".ts", ".js", ".astro"];
-    const files: string[] = getAllFiles(SRC_DIR, extensions);
+    const extensions: string[] = [".ts", ".js", ".astro", ".mjs"];
 
-    console.log(`Found ${files.length} files to process.`);
+    const srcFiles: string[] = getAllFiles(SRC_DIR, extensions);
+    const editorFiles: string[] = getAllFiles(EDITOR_DIR, extensions);
+
+    const allFiles: string[] = [...srcFiles, ...editorFiles];
+
+    console.log(`Found ${allFiles.length} files to process.`);
 
     const modifiedFiles: string[] = [];
 
-    for (const file of files)
+    for (const file of allFiles)
     {
         if (processFile(file))
         {
