@@ -1,11 +1,11 @@
-import { readFileSync, writeFileSync, readdirSync, statSync } from 'fs';
-import { join, extname, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { readFileSync, writeFileSync, readdirSync, statSync } from "fs";
+import { join, extname, dirname } from "path";
+import { fileURLToPath } from "url";
 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const superDir = join(__dirname, '..', '..', 'src', 'assets', 'pictures');
+const superDir = join(__dirname, "..", "..", "src", "assets", "pictures");
 const targetI = "background/wp"
 
 
@@ -23,7 +23,7 @@ function walk(target)
         {
             walk(curr);
         }
-        else if (extname(curr) === '.svg')
+        else if (extname(curr) === ".svg")
         {
             process(curr);
         }
@@ -33,7 +33,7 @@ function walk(target)
 
 function process(target)
 {
-    const content = readFileSync(target, 'utf8');
+    const content = readFileSync(target, "utf8");
 
     let newContent = content;
 
@@ -45,24 +45,24 @@ function process(target)
 
 function fixTag(path, content, tagName)
 {
-    const regex = new RegExp(`<${tagName}([^>]*)>`, 'g');
+    const regex = new RegExp(`<${tagName}([^>]*)>`, "g");
 
     const original = content;
 
     const newContent = content.replace(regex, (match, attrs) => 
     {
-        const hasPreserve = /preserveAspectRatio\s*=\s*["'][^"']*["']/.test(attrs);
+        const hasPreserve = /preserveAspectRatio\s*=\s*[""][^\""]*[""]/.test(attrs);
         let newAttrs = attrs;
 
         if (hasPreserve)
         {
             newAttrs = newAttrs.replace(
-                /preserveAspectRatio\s*=\s*["'][^"']*["']/,
-                'preserveAspectRatio="xMinYMin slice"');
+                /preserveAspectRatio\s*=\s*[\""][^""]*[\""]/,
+                "preserveAspectRatio=\"xMinYMin slice\"");
         }
         else
         {
-            newAttrs = ' preserveAspectRatio="xMinYMin slice" ' + attrs;
+            newAttrs = " preserveAspectRatio=\"xMinYMin slice\" " + attrs;
         }
 
         return `<${tagName}${newAttrs}>`;
@@ -70,12 +70,12 @@ function fixTag(path, content, tagName)
 
     if (original !== newContent)
     {
-        writeFileSync(path, newContent, 'utf8');
-        console.log('fixed:', path);
+        writeFileSync(path, newContent, "utf8");
+        console.log("fixed:", path);
     }
     else 
     {
-        console.log('fix-passed:', path);
+        console.log("fix-passed:", path);
     }
 
     return newContent;
