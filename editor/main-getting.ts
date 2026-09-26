@@ -12,3 +12,5 @@ async function main()
         await getWpCatalogs(collectionName);
     }
 }
+
+main();
