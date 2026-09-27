@@ -10,8 +10,8 @@
                 "data": null,
                 "children": [
                     {
-                        "key": "Reverse",
-                        "href": "/wps/CTF/competition/litctf---2026/reverse",
+                        "key": "LitReverse",
+                        "href": "/wps/CTF/competition/litctf---2026/litreverse",
                         "data": {
                             "title": "Reverse",
                             "pubDate": "2026-06-14T00:00:00.000Z",
@@ -35,8 +35,8 @@
                 "data": null,
                 "children": [
                     {
-                        "key": "Reverse",
-                        "href": "/wps/CTF/competition/zerog---2026/reverse",
+                        "key": "ZGReverse",
+                        "href": "/wps/CTF/competition/zerog---2026/zgreverse",
                         "data": {
                             "title": "Reverse",
                             "pubDate": "2026-06-09T00:00:00.000Z",

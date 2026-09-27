@@ -1,0 +1,189 @@
+---
+export interface Props
+{
+    event: string;
+    font?: number;
+    tip?: string;  
+}
+
+const { event = "empty-btn", font = 1.5, tip } = Astro.props;
+---
+
+<button class="btn" style=`--btn-font-size:${font}rem` data-btnmenu-event={event}>
+    <slot />
+
+    {tip && <span class="btn-tip">{tip}</span>}
+</button>
+
+
+
+<script>
+    import type { WpBtnState, WpBtnStateDetail } from "@/utils/Common/Type";
+    import { WpBtnStateEvent } from "@/utils/Common/Event";
+
+    import { Common as C } from "@/utils/Common/Common"
+    import { EventName as EN } from "@/utils/Common/Event";
+    
+
+
+    const btnStates = new WeakMap<HTMLButtonElement, WpBtnState>();
+
+    function applyState(btn: HTMLButtonElement, state: WpBtnState): void
+    {
+        for (const [key, value] of Object.entries(state))
+        {
+            btn.classList.toggle(key, value);
+        }
+    }
+
+    function getState(btn: HTMLButtonElement): WpBtnState
+    {
+        return btnStates.get(btn) ?? { ...C.WP_BTN_DEFAULT_STATE };
+    }
+
+    function setState(btn: HTMLButtonElement, state: WpBtnState): void
+    {
+        btnStates.set(btn, state);
+        applyState(btn, state);
+    }
+
+    function updateState(btn: HTMLButtonElement, partial: Partial<WpBtnState>): void
+    {
+        const next: WpBtnState = { ...getState(btn), ...partial };
+        setState(btn, next);
+    }
+
+    
+
+    if (!window.__menuBtnDelegation)
+    {
+        window.__menuBtnDelegation = true;
+
+        document.addEventListener("click", (e: MouseEvent) =>
+        {
+            const target = e.target;
+            if (!target) return;
+            if (!(target instanceof Element)) return;
+
+            const btn = target.closest("button[data-btnmenu-event]");
+            if (!(btn instanceof HTMLElement)) return;
+
+            const eventName = btn.dataset.btnmenuEvent;
+            if (!eventName) return;
+
+            console.log(eventName);
+            document.dispatchEvent(new CustomEvent(eventName));
+        });
+
+        console.log("button click listener is on!");
+    }
+
+
+
+    document.addEventListener(EN.WP_BTN_STATE_EVENT, (e: Event) =>
+    {
+        if (!(e instanceof WpBtnStateEvent)) return;
+
+        const detail = e.detail;   // BtnStateDetail 类型，自动推导
+
+        if (!detail.event) return;
+
+        const btns = document.querySelectorAll(`button[data-btnmenu-event="${detail.event}"]`);
+
+        btns.forEach(btn =>
+        {
+            if (!(btn instanceof HTMLButtonElement)) return;
+            updateState(btn, detail.state);
+        });
+    });
+</script>
+
+
+
+<style>
+    .btn
+    {
+        position: relative;
+        width: 3rem;
+        height: 3rem;
+        flex-shrink: 0;
+
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+
+        background-color: rgba(31, 30, 51, 0.9);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+
+        color: var(--btn-color, #ffffff);
+        font-size: var(--btn-font-size, 1.5rem);
+
+        cursor: pointer;
+
+        transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
+    }
+
+    .btn:hover
+    {
+        background-color: rgba(60, 55, 90, 0.9);
+
+        transform: scale(1.05);
+    }
+
+    .btn.disabled
+    {
+        opacity: 0.35;
+        pointer-events: none;
+    }
+
+    .btn.completed
+    {
+        background-color: rgba(255, 216, 102, 0.25);
+        color: #ffd866;
+        box-shadow:
+            0 0 12px rgba(255, 216, 102, 0.4),
+            0 4px 16px rgba(0, 0, 0, 0.5);
+    }
+
+
+
+    .btn-tip
+    {
+        /* 1. 布局定位 */
+        position: absolute;
+        z-index: 10;
+
+        /* 2. 盒模型 - 尺寸 */
+        white-space: nowrap;
+
+        /* 3. 盒模型 - 间距 */
+        padding: 4px 8px;
+
+        /* 4. 边框圆角 */
+        border-radius: 6px;
+
+        /* 5. 背景 */
+        background-color: rgba(31, 30, 51, 0.95);
+        border: 1px solid rgba(154, 138, 255, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+        /* 6. 文字 */
+        color: #ffffff;
+        font-size: 0.75rem;
+        font-family: "Segoe UI", "PingFang SC", sans-serif;
+
+        /* 7. 视觉效果 */
+        opacity: 0;
+
+        /* 9. 交互 */
+        pointer-events: none;
+
+        /* 10. 动画过渡 */
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover .btn-tip
+    {
+        /* 7. 视觉效果 */
+        opacity: 1;
+    }
+</style>

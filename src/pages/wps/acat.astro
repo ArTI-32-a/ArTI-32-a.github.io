@@ -1,7 +1,9 @@
 ---
 import Layout from "@/layouts/WPs/Catalog.astro";
 
-import Cs from "@/components/WPs/CatalogSwitcher.astro"
+import Cs from "@/components/WPs/Shared/Catalog/Switcher.astro";
+import Hero from "@/components/WPs/Shared/Catalog/Hero.astro";
+
 import { buildTree } from "@/utils/WPs/Catalog";
 
 
@@ -10,7 +12,12 @@ const dfTree = await buildTree("DF");
 ---
 
 <Layout>
-    <Cs 
+    <!-- <div slot="header"> -->
+        <Hero slot="header" titles={["CTF", "DF"]} />
+    <!-- </div> -->
+
+
+    <Cs slot="article"
         entries=
         {[
             { title: "CTF", tree: ctfTree },

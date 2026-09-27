@@ -1,0 +1,331 @@
+---
+import { Common as C } from "@/utils/Common/Common";
+---
+
+<div class="switcher-beam" id="beam">
+    <svg viewBox={`0 0 ${100 * C.WP_CAT_SVG_SCALE} ${100 * C.WP_CAT_SVG_SCALE}`} xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+            <filter id="beam-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation={0.4 * C.WP_CAT_SVG_SCALE} result="b1" />
+                <feGaussianBlur stdDeviation={1.2 * C.WP_CAT_SVG_SCALE} result="b2" />
+                <feMerge>
+                    <feMergeNode in="b2" />
+                    <feMergeNode in="b1" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+
+            <linearGradient id="beam-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7acfff" stop-opacity="0" />
+                <stop offset="12%" stop-color="#a0e0ff" stop-opacity="1" />
+                <stop offset="50%" stop-color="#c0f0ff" stop-opacity="1" />
+                <stop offset="88%" stop-color="#a0e0ff" stop-opacity="1" />
+                <stop offset="100%" stop-color="#7acfff" stop-opacity="0" />
+            </linearGradient>
+        </defs>
+
+        <polygon
+            id="beam-mask"
+            fill="#1f1e33"
+            points={`${C.WP_CAT_BEAM_TOP_X * C.WP_CAT_SVG_SCALE},0 ${500 * C.WP_CAT_SVG_SCALE},0 ${500 * C.WP_CAT_SVG_SCALE},${100 * C.WP_CAT_SVG_SCALE} ${C.WP_CAT_BEAM_BOTTOM_X * C.WP_CAT_SVG_SCALE},${100 * C.WP_CAT_SVG_SCALE}`}
+            style="opacity: 0;"
+        />
+
+        <line
+            x1={C.WP_CAT_BEAM_TOP_X * C.WP_CAT_SVG_SCALE}
+            y1="0"
+            x2={C.WP_CAT_BEAM_BOTTOM_X * C.WP_CAT_SVG_SCALE}
+            y2={100 * C.WP_CAT_SVG_SCALE}
+            stroke="#1f1e33"
+            stroke-width={15 * C.WP_CAT_SVG_SCALE}
+            style="filter: blur(15vw);"
+        />
+
+        <line
+            x1={C.WP_CAT_BEAM_TOP_X * C.WP_CAT_SVG_SCALE}
+            y1="0"
+            x2={C.WP_CAT_BEAM_BOTTOM_X * C.WP_CAT_SVG_SCALE}
+            y2={100 * C.WP_CAT_SVG_SCALE}
+            stroke="url(#beam-gradient)"
+            stroke-width={0.5 * C.WP_CAT_SVG_SCALE}
+            filter="url(#beam-glow)"
+        />
+
+        <line
+            class="beam-hitarea"
+            x1={C.WP_CAT_BEAM_TOP_X * C.WP_CAT_SVG_SCALE}
+            y1="0"
+            x2={C.WP_CAT_BEAM_BOTTOM_X * C.WP_CAT_SVG_SCALE}
+            y2={100 * C.WP_CAT_SVG_SCALE}
+            stroke="transparent"
+            stroke-width={5 * C.WP_CAT_SVG_SCALE}
+        />
+    </svg>
+</div>
+
+<div class="switcher-flash" id="beam-flash" />
+
+
+<script>
+    
+    import { Common as C } from "@/utils/Common/Common";
+    import { EventName as EN } from "@/utils/Common/Event";
+
+    (() =>
+    {
+        const beamEl = document.getElementById("beam");
+        const flashEl = document.getElementById("beam-flash");
+        const maskEl = document.getElementById("beam-mask");
+
+        if (!beamEl || !flashEl || !maskEl) return;
+
+        const beam: HTMLElement = beamEl;
+        const flash: HTMLElement = flashEl;
+        const mask: HTMLElement = maskEl;
+
+        // const TIMEOUT_MS = 800;
+
+        let counter: number = 0;
+        let currentOffset: number = 0;
+        let dragStartX: number = 0;
+        let isDragging: boolean = false;
+
+        let titleDone: boolean = false;
+        let treeDone: boolean = false;
+        let timeoutId: number | null = null;
+
+        let switchStartTime: number = 0;
+
+        // 只注册一次 transitionend
+        beam.addEventListener("transitionend", (e: TransitionEvent) =>
+        {
+            if (e.propertyName !== "transform") return;
+
+            if (currentOffset < C.PX_EPSILON)
+            {
+                mask.style.opacity = "0";
+            }
+        });
+
+        function applyBeam(offset: number): void
+        {
+            currentOffset = offset;
+            beam.style.transform = `translateX(${offset}px)`;
+
+            if (Math.abs(offset) > C.PX_EPSILON)
+            {
+                mask.style.opacity = "1";
+            }
+        }
+
+        function isOnBeam(clientX: number, clientY: number): boolean
+        {
+            const sw = window.innerWidth;
+            const sh = window.innerHeight;
+
+            const topX = (C.WP_CAT_BEAM_TOP_X / 100) * sw + currentOffset;
+            const bottomX = (C.WP_CAT_BEAM_BOTTOM_X / 100) * sw + currentOffset;
+
+            const t = clientY / sh;
+            const lineX = topX + t * (bottomX - topX);
+
+            return Math.abs(clientX - lineX) < C.WP_CAT_ON_BEAM_INTERVAL;
+        }
+
+        function onPointerDown(e: PointerEvent): void
+        {
+            if (isDragging) return;
+            if (currentOffset !== 0) return;
+            if (!isOnBeam(e.clientX, e.clientY)) return;
+
+            isDragging = true;
+            dragStartX = e.clientX;
+            beam.classList.add("dragging");
+            mask.style.opacity = "1";
+        }
+
+        function onPointerMove(e: PointerEvent): void
+        {
+            if (!isDragging) return;
+
+            const sw = window.innerWidth;
+            const maxDrag = sw * (C.WP_CAT_BEAM_TOP_X - C.WP_CAT_BEAM_MIN_TOP_X) / 100;
+
+            let dx = e.clientX - dragStartX;
+            if (dx > 0) dx = 0;
+            if (dx < -maxDrag) dx = -maxDrag;
+
+            applyBeam(dx);
+        }
+
+        function onPointerUp(): void
+        {
+            if (!isDragging) return;
+            isDragging = false;
+            beam.classList.remove("dragging");
+
+            const sw = window.innerWidth;
+            const triggerOffset = -sw * (C.WP_CAT_BEAM_TOP_X - C.WP_CAT_BEAM_TRIGGER_TOP_X) / 100;
+
+            if (currentOffset <= triggerOffset)
+            {
+                triggerSwitch();
+            }
+            else
+            {
+                applyBeam(0);
+            }
+        }
+
+        function triggerSwitch(): void
+        {
+            switchStartTime = performance.now();
+
+            flash.classList.add("active");
+            counter += 1;
+
+            titleDone = false;
+            treeDone = false;
+
+            // 1. 先设超时兜底
+            if (timeoutId !== null)
+            {
+                window.clearTimeout(timeoutId);
+            }
+            timeoutId = window.setTimeout(() =>
+            {
+                console.warn("[CatalogBeam] 切换超时，强制回弹");
+                titleDone = true;
+                treeDone = true;
+                tryRestart();
+            }, C.WP_CAT_BEAM_SWITCH_TIMEOUT_MS);
+
+            // 2. 再派发，让 Hero / Tree 同步响应
+            document.dispatchEvent(new CustomEvent(EN.WP_CAT_SWITCH_EVENT, {
+                detail: { counter },
+            }));
+
+            // 3. flash 淡出
+            window.setTimeout(() =>
+            {
+                flash.classList.remove("active");
+            }, 600);
+        }
+
+        function tryRestart(): void
+        {
+            if (!titleDone || !treeDone) return;
+
+            if (timeoutId !== null)
+            {
+                window.clearTimeout(timeoutId);
+                timeoutId = null;
+            }
+
+            titleDone = false;
+            treeDone = false;
+
+            const elapsed = performance.now() - switchStartTime;
+            const remaining = Math.max(0, C.WP_CAT_BEAM_MIN_SWITCH_DURATION_MS - elapsed);
+
+            window.setTimeout(() =>
+            {
+                applyBeam(0);
+            }, remaining);
+        }
+
+        document.addEventListener(EN.WP_CAT_TITLE_COMPLETED_EVENT, () =>
+        {
+            titleDone = true;
+            tryRestart();
+        });
+
+        document.addEventListener(EN.WP_CAT_TREE_COMPLETED_EVENT, () =>
+        {
+            treeDone = true;
+            tryRestart();
+        });
+
+        window.addEventListener("pointerdown", onPointerDown);
+        window.addEventListener("pointermove", onPointerMove);
+        window.addEventListener("pointerup", onPointerUp);
+
+        applyBeam(0);
+    })();
+</script>
+
+
+<style>
+    .switcher-beam
+    {
+        /* 1. 布局定位 */
+        position: fixed;
+        inset: 0;
+        z-index: 5000;
+
+        /* 9. 交互 */
+        pointer-events: none;
+
+        /* 10. 动画过渡 */
+        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .switcher-beam.dragging
+    {
+        /* 10. 动画过渡 */
+        transition: none;
+    }
+
+    .switcher-beam svg
+    {
+        /* 2. 盒模型 - 尺寸 */
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        /* 8. 溢出滚动 */
+        overflow: visible;
+    }
+
+    .switcher-beam .beam-hitarea
+    {
+        /* 9. 交互 */
+        pointer-events: stroke;
+        cursor: grab;
+    }
+
+    .switcher-beam .beam-hitarea:active
+    {
+        cursor: grabbing;
+    }
+
+    .switcher-flash
+    {
+        /* 1. 布局定位 */
+        position: fixed;
+        inset: 0;
+        z-index: 1000000;
+
+        /* 7. 视觉效果 */
+        opacity: 0;
+
+        /* 5. 背景 */
+        background: radial-gradient(ellipse at center, rgba(200, 235, 255, 0.95) 0%, rgba(200, 235, 255, 0.6) 25%, rgba(31, 30, 51, 0) 70%);
+
+        /* 9. 交互 */
+        pointer-events: none;
+    }
+
+    .switcher-flash.active
+    {
+        /* 10. 动画过渡 */
+        animation: flash-pulse 0.4s ease-out;
+    }
+
+    @keyframes flash-pulse
+    {
+        0% { opacity: 0; }
+        40% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+</style>

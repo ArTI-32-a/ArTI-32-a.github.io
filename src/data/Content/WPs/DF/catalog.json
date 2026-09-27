@@ -1,1 +1,51 @@
-[]
+[
+    {
+        "key": "Competition",
+        "href": null,
+        "data": null,
+        "children": [
+            {
+                "key": "Meiya Cup",
+                "href": null,
+                "data": null,
+                "children": [
+                    {
+                        "key": "2026Individual",
+                        "href": "/wps/DF/competition/meiya-cup/2026individual",
+                        "data": {
+                            "title": "2026 - Individual",
+                            "pubDate": "2026-04-12T00:00:00.000Z",
+                            "tags": [
+                                "meiya cup",
+                                "2026"
+                            ],
+                            "status": "draft"
+                        },
+                        "children": null
+                    }
+                ]
+            },
+            {
+                "key": "Pinghang Cup",
+                "href": null,
+                "data": null,
+                "children": [
+                    {
+                        "key": "2026Group",
+                        "href": "/wps/DF/competition/pinghang-cup/2026group",
+                        "data": {
+                            "title": "2026 - Group",
+                            "pubDate": "2026-06-04T00:00:00.000Z",
+                            "tags": [
+                                "pinghang cup",
+                                "2026"
+                            ],
+                            "status": "draft"
+                        },
+                        "children": null
+                    }
+                ]
+            }
+        ]
+    }
+]

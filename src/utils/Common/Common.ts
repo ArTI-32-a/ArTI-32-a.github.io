@@ -21,9 +21,19 @@ class Common
     static readonly WP_CAT_ON_BEAM_INTERVAL: number = 100 // px
 
     /**
+     * 一个最短切换时长，completed 事件再快也要等够时间才让光柱拉杆回弹
+     */
+    static readonly WP_CAT_BEAM_MIN_SWITCH_DURATION_MS = 200; // ms
+
+    /**
+     * 上面那个是最短时间，这个就是超时时间，超时了直接往回弹
+     */
+    static readonly WP_CAT_BEAM_SWITCH_TIMEOUT_MS = 800; // ms
+
+    /**
      * 用来放大的，减弱svg锯齿效果
      */
-    static readonly WP_CAT_SVG_SCALE: number = 100;
+    static readonly WP_CAT_SVG_SCALE: number = 10;
 
     static readonly WP_CAT_BTN_PADDING: number = 30;
 
@@ -34,8 +44,6 @@ class Common
         completed: false,
         disabled: false,
     };
-
-    static readonly WP_BTN_STATE_EVENT: string = "wp-btnmenu-state";
 }
 
 export { Common };

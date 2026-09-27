@@ -1,0 +1,105 @@
+---
+export interface Props
+{
+    placeholder?: string;
+}
+
+const { placeholder = "搜索..." } = Astro.props;
+---
+
+<div class="catalog-search">
+    <input
+        type="text"
+        class="catalog-search-input"
+        id="catalog-search-input"
+        placeholder={placeholder}
+        autocomplete="off"
+    />
+</div>
+
+<script>
+    import { EventName as EN } from "@/utils/Common/Event";
+
+    (() =>
+    {
+        const input = document.getElementById("catalog-search-input");
+        if (!(input instanceof HTMLInputElement)) return;
+
+        input.addEventListener("input", () =>
+        {
+            document.dispatchEvent(new CustomEvent(EN.WP_CAT_SEARCH_EVENT, {
+                detail: { query: input.value },
+            }));
+        });
+    })();
+</script>
+
+<style>
+    .catalog-search
+    {
+        position: relative;
+        z-index: 10000;
+
+        /* 2. 盒模型 - 尺寸 */
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        /* 3. 盒模型 - 间距 */
+        margin: 0 auto 1rem;
+        padding: 0;
+    }
+
+    .catalog-search-input
+    {
+        /* 2. 盒模型 - 尺寸 */
+        display: block;
+        width: 30rem;
+        max-width: 60vw;
+        box-sizing: border-box;
+
+        /* 3. 盒模型 - 间距 */
+        padding: 10px 20px;
+
+        /* 4. 边框圆角 */
+        border-radius: 100px;
+        border: 1px solid rgba(154, 138, 255, 0.25);
+        outline: none;
+
+        /* 5. 背景 */
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+        /* 6. 文字 */
+        color: #ffffff;
+        font-size: 1rem;
+        font-family: "Segoe UI", "PingFang SC", sans-serif;
+
+        /* 9. 交互 */
+        user-select: text;
+        -webkit-user-select: text;
+
+        /* 10. 动画过渡 */
+        transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    }
+
+    .catalog-search-input::placeholder
+    {
+        /* 6. 文字 */
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .catalog-search-input:focus
+    {
+        /* 4. 边框圆角 */
+        border-color: rgba(154, 138, 255, 0.6);
+
+        /* 5. 背景 */
+        background-color: rgba(0, 0, 0, 0.55);
+        box-shadow:
+            0 4px 20px rgba(0, 0, 0, 0.4),
+            0 0 12px rgba(154, 138, 255, 0.35);
+    }
+</style>

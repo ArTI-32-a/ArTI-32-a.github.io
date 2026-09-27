@@ -1,0 +1,84 @@
+---
+export interface Props
+{
+    titles: string[];
+    defaultIndex?: number;
+}
+
+import Searcher from "@/components/WPs/Shared/Catalog/Searcher.astro";
+
+const { titles, defaultIndex = 0 } = Astro.props;
+---
+
+<header class="catalog-hero">
+    <Searcher placeholder="搜索..."/>
+    <div class="catalog-title" id="catalog-title" data-titles={JSON.stringify(titles)}>
+        {titles[defaultIndex] ?? ""}
+    </div>
+</header>
+
+<script>
+    import { EventName as EN } from "@/utils/Common/Event";
+
+    (() =>
+    {
+        const titleEl = document.getElementById("catalog-title");
+        if (!titleEl) return;
+
+        const titles: string[] = JSON.parse(titleEl.dataset.titles ?? "[]");
+        if (titles.length === 0) return;
+
+        document.addEventListener(EN.WP_CAT_SWITCH_EVENT, (e: Event) =>
+        {
+            if (!(e instanceof CustomEvent)) return;
+
+            const detail = e.detail as { counter?: number };
+            if (typeof detail.counter !== "number") return;
+
+            const index = detail.counter % titles.length;
+            titleEl.textContent = titles[index] ?? "";
+
+            document.dispatchEvent(new CustomEvent(EN.WP_CAT_TITLE_COMPLETED_EVENT));
+        });
+    })();
+</script>
+
+<style>
+    .catalog-hero
+    {
+        z-index: 3999;
+
+        /* 2. 盒模型 - 尺寸 */
+        width: 100%;
+    }
+
+    .catalog-title
+    {
+        position: relative;
+        z-index: 4000;
+
+        /* 2. 盒模型 - 尺寸 */
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        /* 3. 盒模型 - 间距 */
+        margin: 0 auto;
+        padding: 12px 32px;
+
+        /* 4. 边框圆角 */
+        border-radius: 100px;
+
+        /* 5. 背景 */
+        backdrop-filter: blur(4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+
+        /* 6. 文字 */
+        color: #ffffff;
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-align: center;
+        word-break: break-word;
+    }
+</style>

@@ -1,5 +1,9 @@
 ---
 import "@/styles/global.css";
+
+import PullRod from "@/components/WPs/Shared/Catalog/BeamRod.astro";
+import BtnMenu from "@/components/WPs/Shared/BtnMenu.astro";
+import Btn from "@/components/WPs/Shared/Btn.astro";
 ---
 
 
@@ -16,19 +20,39 @@ import "@/styles/global.css";
     </head>
     <body>
         <header class="catalog-header">
+            <slot name="header">
 
+            </slot>
         </header>
 
         <article class="catalog-wrapper">
             <div class="catalog-body">
-                <slot />
+                <slot name="article">
+
+                </slot>
             </div>
 
             <div class="scroll-fade top" />
             <div class="scroll-fade bottom" />
         </article>
+
+        <BtnMenu>
+            <Btn slot="left" event="back-to-index" font={1.2} tip="返回首页">
+                {"<<"}
+            </Btn>
+        </BtnMenu>
+
+        <PullRod />
     </body>
 </html>
+
+
+<script>
+    document.addEventListener("back-to-index", () =>
+    {
+        window.location.href = "/";
+    });
+</script>
 
 
 <style>

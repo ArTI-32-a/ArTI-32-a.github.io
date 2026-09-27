@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 
 import { join, dirname, relative, sep } from "path";
 import matter from "gray-matter";
 
-import type { WPCTFFormatter, WPInfo } from "../../src/utils/Common/Type";
+import type { WPFrontmatter, WPInfo } from "../../src/utils/Common/Type";
 import { ToolBox as TB } from "../../src/utils/Common/ToolBox.ts";
 
 
@@ -52,7 +52,7 @@ function readAllMarkdowns(baseDir: string, currentDir: string): Record<string, s
 }
 
 
-function parseFrontmatter(content: string, filePath: string): WPCTFFormatter | null
+function parseFrontmatter(content: string, filePath: string): WPFrontmatter | null
 {
     try
     {
@@ -64,7 +64,7 @@ function parseFrontmatter(content: string, filePath: string): WPCTFFormatter | n
             tags: parsed.data.tags,
             type: parsed.data.type,
             status: parsed.data.status,
-        } as WPCTFFormatter;
+        } as WPFrontmatter;
     }
     catch
     {
@@ -110,7 +110,7 @@ function buildTree(files: Record<string, string>, collectionName: string): WPInf
             currentLevel = existing.children;
         }
 
-        const data: WPCTFFormatter | null = parseFrontmatter(content, relPath);
+        const data: WPFrontmatter | null = parseFrontmatter(content, relPath);
 
         currentLevel.push({
             key: fileNameWithoutExt,

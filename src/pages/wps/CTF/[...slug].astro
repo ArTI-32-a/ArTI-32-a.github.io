@@ -4,9 +4,9 @@ import { getEntry } from "astro:content";
 
 import Layout from "@/layouts/WPs/CTFSlug.astro";
 
-import bUp from "@/assets/pictures/background/wp/wp_up_bg.png?url";
+import bUp from "@/assets/pictures/background/wp/ctf_hero_bg.png?url";
 
-import Hero from "@/components/WPs/Hero.astro";
+import Hero from "@/components/WPs/Shared/Article/Hero.astro";
 
 import { buildTree } from "@/utils/WPs/Catalog";
 
@@ -43,7 +43,7 @@ const tree = await buildTree("CTF");
 
 <Layout title={entry.data.title} headings={headings}>
     <div slot="header">
-        <Hero data={entry.data} headings={headings} backgroundImage={bUp} treeInfo={tree}/>
+        <Hero data={entry.data} headings={headings} backgroundImage={bUp} treeInfo={tree} shrinkOffset={-5}/>
     </div>
     
 

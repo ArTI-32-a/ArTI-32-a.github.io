@@ -1,0 +1,166 @@
+---
+import Catalog from "@/components/WPs/Shared/Catalog.astro";
+
+import type { WPInfo } from "@/utils/Common/Type";
+
+import { Common as C } from "@/utils/Common/Common";
+
+export interface TreeEntry
+{
+    title: string;
+    tree: WPInfo[];
+}
+
+export interface Props
+{
+    entries: TreeEntry[];
+    defaultIndex?: number;
+}
+
+const { entries, defaultIndex = 0 } = Astro.props;
+---
+
+
+<div class="directory-switcher" id="switcher" data-default-index={defaultIndex}>
+    {entries.map((entry, i) => (
+        <div class="directory-content" data-index={i}>
+            <div class="catalog-spacer-top" />
+            <Catalog tree={entry.tree} />
+            <div class="catalog-spacer-bottom" />
+        </div>
+    ))}
+</div>
+
+
+<script>
+    import { EventName as EN } from "@/utils/Common/Event";
+
+    (() =>
+    {
+        const switcherEl = document.getElementById("switcher");
+        if (!switcherEl) return;
+
+        const switcher: HTMLElement = switcherEl;
+        const contents = switcher.querySelectorAll(".directory-content");
+
+        let currentIndex: number = Number(switcher.dataset.defaultIndex ?? "0");
+
+        const resizeObserver = new ResizeObserver(() =>
+        {
+            updateSwitcherHeight();
+        });
+
+        let observedEl: HTMLElement | null = null;
+
+        function updateSwitcherHeight(): void
+        {
+            const activeEl = contents[currentIndex];
+            if (activeEl instanceof HTMLElement)
+            {
+                switcher.style.height = `${activeEl.scrollHeight}px`;
+            }
+        }
+
+        function observeActive(): void
+        {
+            const activeEl = contents[currentIndex];
+            if (!(activeEl instanceof HTMLElement)) return;
+
+            if (observedEl)
+            {
+                resizeObserver.unobserve(observedEl);
+            }
+            observedEl = activeEl;
+            resizeObserver.observe(activeEl);
+
+            updateSwitcherHeight();
+        }
+
+        function applyContent(): void
+        {
+            contents.forEach((el, i) =>
+            {
+                el.classList.toggle("active", i === currentIndex);
+            });
+
+            observeActive();
+
+            document.dispatchEvent(new CustomEvent(EN.WP_CAT_TREE_COMPLETED_EVENT));
+        }
+
+        document.addEventListener(EN.WP_CAT_SWITCH_EVENT, (e: Event) =>
+        {
+            if (!(e instanceof CustomEvent)) return;
+
+            const detail = e.detail as { counter?: number };
+            if (typeof detail.counter !== "number") return;
+
+            currentIndex = detail.counter % contents.length;
+            applyContent();
+        });
+
+        // 首次加载
+        contents.forEach((el, i) =>
+        {
+            el.classList.toggle("active", i === currentIndex);
+        });
+        observeActive();
+    })();
+</script>
+
+
+
+<style>
+    .directory-switcher
+    {
+        /* 1. 布局定位 */
+        position: relative;
+
+        /* 2. 盒模型 - 尺寸 */
+        width: 100%;
+
+        /* 8. 溢出滚动 */
+        overflow: hidden;
+    }
+
+    .directory-content
+    {
+        /* 1. 布局定位 */
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        /* 2. 盒模型 - 尺寸 */
+        width: 100%;
+
+        /* 7. 视觉效果 */
+        opacity: 0;
+
+        /* 9. 交互 */
+        pointer-events: none;
+
+        /* 10. 动画过渡 */
+        transition: opacity 0.3s ease;
+    }
+
+    .directory-content.active
+    {
+        /* 7. 视觉效果 */
+        opacity: 1;
+
+        /* 9. 交互 */
+        pointer-events: auto;
+    }
+
+    .catalog-spacer-top
+    {
+        /* 2. 盒模型 - 尺寸 */
+        height: 5vh;
+    }
+
+    .catalog-spacer-bottom
+    {
+        /* 2. 盒模型 - 尺寸 */
+        height: 10vh;
+    }
+</style>

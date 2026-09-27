@@ -16,7 +16,7 @@ const WpScheme = IEWpSchema.extend(
     pubDate: z.date().optional(),
     tags: z.array(z.string()),
 
-    type: z.enum(["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety"]),
+    
     status: z.enum(["draft", "published"]),
 });
 
@@ -38,6 +38,8 @@ const DFScheme = WpScheme.extend(
 const CtfScheme = WpScheme.extend(
 {
     title: z.string().regex(/^(Reverse|Misc|Crypto|Pwn|PWN|Web|Digit Safety|\d+\.\d+\s+.+)$/),
+
+    type: z.enum(["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety"]),
 }).refine(WpRefined);
     
 // 下面是开头定义

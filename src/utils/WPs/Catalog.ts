@@ -5,7 +5,7 @@ import { remark } from "remark";
 import { visit } from "unist-util-visit";
 import type { Heading } from "mdast";
 
-import type { WPCTFFormatter, WPInfo } from "@/utils/Common/Type";
+import type { WPFrontmatter, WPInfo } from "@/utils/Common/Type";
 
 
 
@@ -15,76 +15,63 @@ let questionsCache: Record<string, string[] | undefined> = {};
 
 
 
-function isValidConData(data: unknown): data is WPCTFFormatter
+function isValidConData(data: unknown, collectionName: string): data is WPFrontmatter
 {
     if (typeof data !== "object" || data === null)
     {
-        console.log("obj!");
         return false;
     }
-
 
     // 检查 title
     if (!("title" in data) || typeof data.title !== "string")
     {
-        console.log("title!");
         return false;
     }
-
 
     // 检查 tags
     if (!("tags" in data) || !Array.isArray(data.tags) || !data.tags.every((tag) => typeof tag === "string"))
     {
-        console.log("tags!");
         return false;
     }
 
-
-    // 检查 type
-    if (!("type" in data) || typeof data.type !== "string")
+    // 检查 type（仅 CTF）
+    if (collectionName === "CTF")
     {
-        console.log("type!");
-        return false;
-    }
+        if (!("type" in data) || typeof data.type !== "string")
+        {
+            return false;
+        }
 
-    const allowedTypes = ["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety"] as const;
-    if (!allowedTypes.includes(data.type as any))
-    {
-        console.log("type II!");
-        return false;
+        const allowedTypes = ["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety"] as const;
+        if (!allowedTypes.includes(data.type as any))
+        {
+            return false;
+        }
     }
-
 
     // 检查 status
     if (!("status" in data) || typeof data.status !== "string")
     {
-        console.log("status!");
         return false;
     }
 
     const allowedStatuses = ["draft", "published"] as const;
     if (!allowedStatuses.includes(data.status as any))
     {
-        
-        console.log("status II!");
         return false;
     }
-
 
     // 检查 pubDate
     if ("pubDate" in data && !(data.pubDate instanceof Date))
     {
-        console.log("date!");
-        return false;
-    }
-    
-    if (data.status === "published" && !("pubDate" in data))
-    {
-        console.log("date II!");
         return false;
     }
 
-    
+    if (data.status === "published" && !("pubDate" in data))
+    {
+        return false;
+    }
+
     return true;
 }
 
@@ -235,15 +222,15 @@ async function buildTree(collectionName: "CTF" | "DF"): Promise<WPInfo[]>
         
         console.log(post.id);
 
-        if (isValidConData(post.data))
+        if (isValidConData(post.data, collectionName))
         {
-            const data: WPCTFFormatter = 
+            const data: WPFrontmatter = 
             {
                 title: post.data.title,
                 pubDate: post.data.pubDate,
                 tags: post.data.tags,
 
-                type: post.data.type,
+                // type: post.data.type,
                 status: post.data.status,
 
                 questions: getQuestions(post.body || "", post.id),
@@ -316,7 +303,7 @@ async function buildTree(collectionName: "CTF" | "DF"): Promise<WPInfo[]>
                 }
 
                 // 守卫：data 结构不对就跳过
-                if (!isValidConData(data))
+                if (!isValidConData(data, collectionName))
                 {
                     console.warn(`[buildTree] catalog.json 中 data 无效，跳过: ${node.href}`);
                     continue;

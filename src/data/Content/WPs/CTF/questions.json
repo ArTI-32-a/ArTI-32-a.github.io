@@ -1,12 +1,12 @@
 {
-    "competition/litctf---2026/reverse": [
+    "competition/litctf---2026/litreverse": [
         "1 Docking Check",
         "2 Lunar License",
         "3 Nebula VM",
         "4 Nebula Patch",
         "5 ZeroG Android Docking Station"
     ],
-    "competition/zerog---2026/reverse": [
+    "competition/zerog---2026/zgreverse": [
         "1 lit_rc4_variant",
         "2 lit_tea_standard",
         "3 lit_b64_alphabet",

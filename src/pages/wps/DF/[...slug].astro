@@ -1,0 +1,53 @@
+---
+import { getCollection, render } from "astro:content";
+import { getEntry } from "astro:content";
+
+import Layout from "@/layouts/WPs/DFSlug.astro";
+
+import bUp from "@/assets/pictures/background/wp/df_hero_bg.png?url";
+
+import Hero from "@/components/WPs/Shared/Article/Hero.astro";
+
+import { buildTree } from "@/utils/WPs/Catalog";
+
+export async function getStaticPaths()
+{
+    const posts = await getCollection("DF");
+    return posts.map((post) =>
+    {
+        return {
+            params: { slug: post.id },
+        };
+    });
+}
+
+const { slug } = Astro.params;
+
+if (!slug)
+{
+    return Astro.redirect("/404");
+}
+
+const entry = await getEntry("DF", slug);
+
+if (!entry)
+{
+    return Astro.redirect("/404");
+}
+
+const { Content, headings } = await render(entry);
+
+
+const tree = await buildTree("DF");
+---
+
+<Layout title={entry.data.title} headings={headings}>
+    <div slot="header">
+        <Hero data={entry.data} headings={headings} backgroundImage={bUp} treeInfo={tree} shrinkOffset={-19}/>
+    </div>
+    
+
+    <article>
+        <Content />
+    </article>
+</Layout>
