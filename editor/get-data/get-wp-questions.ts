@@ -12,9 +12,12 @@ function getContentDir(collectionName: string): string
     return `src/content/${collectionName}`;
 }
 
-function getDataPath(collectionName: string): string
+function getDataPath(collectionName: string): string[]
 {
-    return `src/data/Content/WPs/${collectionName}/questions.json`;
+    return [
+        `src/data/Content/WPs/${collectionName}/questions.json`,
+        `public/data/${collectionName}/questions.json`,
+    ];
 }
 
 
@@ -145,13 +148,20 @@ function writeCacheToFile(cache: Record<string, string[] | undefined>, outputPat
 function entry(collectionName: string): void
 {
     const contentDir: string = getContentDir(collectionName);
-    const dataPath: string = getDataPath(collectionName);
+    // const dataPath: string = getDataPath(collectionName);
 
     console.log(`[${collectionName}] 扫描: ${contentDir}`);
 
     const dir: Record<string, string> = readAllMarkdowns(contentDir);
     const cache: Record<string, string[] | undefined> = buildQuestionsCache(dir);
-    const success: boolean = writeCacheToFile(cache, dataPath);
+
+    let success = true;
+    for (const dataPath of getDataPath(collectionName))
+    {
+        const res: boolean = writeCacheToFile(cache, dataPath);
+
+        success = res && success;
+    }
 
     console.log(`[${collectionName}] success: ${success}`);
 }

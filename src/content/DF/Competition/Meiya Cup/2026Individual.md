@@ -1,8 +1,8 @@
 ---
 title: "2026 - Individual"
 pubDate: 2026-04-12
-tags: ["meiya cup", "2026"]
-status: "draft"
+tags: ["meiya-cup", "2026", "individual", "writeup", "dfir", "mobile-forensics", "usb-forensics"]
+status: "published"
 ---
  - 2026.03.20 start
 

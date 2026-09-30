@@ -11,9 +11,12 @@ function getContentDir(collectionName: string): string
     return `src/content/${collectionName}`;
 }
 
-function getOutputPath(collectionName: string): string
+function getOutputPath(collectionName: string): string[]
 {
-    return `src/data/Content/WPs/${collectionName}/catalog.json`;
+    return [
+        `src/data/Content/WPs/${collectionName}/catalog.json`,
+        `public/data/${collectionName}/catalog.json`,
+    ];
 }
 
 
@@ -150,7 +153,7 @@ function sortTree(nodes: WPInfo[]): void
 function entry(collectionName: string): void
 {
     const contentDir: string = getContentDir(collectionName);
-    const outputPath: string = getOutputPath(collectionName);
+    // const outputPath: string = getOutputPath(collectionName);
 
     if (!existsSync(contentDir))
     {
@@ -165,14 +168,17 @@ function entry(collectionName: string): void
     const tree = buildTree(files, collectionName);
     sortTree(tree);
 
-    const outputDir: string = dirname(outputPath);
-    if (!existsSync(outputDir))
+    for (const outputPath of getOutputPath(collectionName))
     {
-        mkdirSync(outputDir, { recursive: true });
-    }
+        const outputDir: string = dirname(outputPath);
+        if (!existsSync(outputDir))
+        {
+            mkdirSync(outputDir, { recursive: true });
+        }
 
-    writeFileSync(outputPath, JSON.stringify(tree, null, 4), "utf-8");
-    console.log(`[${collectionName}] 已写入: ${outputPath}`);
+        writeFileSync(outputPath, JSON.stringify(tree, null, 4), "utf-8");
+        console.log(`[${collectionName}] 已写入: ${outputPath}`);
+    }
 }
 
 

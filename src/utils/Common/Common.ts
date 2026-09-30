@@ -6,6 +6,29 @@ class Common
 
 
 
+    static readonly SEARCH_TITLE_WEIGHT: number = 0.5;
+
+    static readonly SEARCH_PER_TAG_WEIGHT: number = 0.2;
+
+    static readonly SEARCH_TAGS_WEIGHT: number = 0.5;
+
+    static readonly SEARCH_OTHER_WEIGHT: number = 0.3;
+
+    static readonly SEARCH_THRESHOLD: number = 0.15;
+
+    static readonly SEARCH_KIND_STRING_NAME: "str" = "str";
+
+    static readonly SEARCH_KIND_ARRAY_NAME: "element" = "element";
+
+    static readonly SEARCH_DEBOUNCE_MS = 150;
+
+
+    /**
+     * 这里已经是搜索的UI部分了
+     */
+    static readonly SEARCH_MAX_RESULTS = 5;
+
+
 
     static readonly WP_CAT_BEAM_TOP_X: number = 90; // %
 

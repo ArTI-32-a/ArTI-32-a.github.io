@@ -4,21 +4,20 @@ import { glob } from "astro/loaders";
 
 // 下面是对规则的定义
 
-const IEWpSchema = z.object(
+const IEBaseSchema = z.object(
 {
     title: z.string(),
-    pubDate: z.date(),
-    tags: z.array(z.string()).optional(),
-});
-
-const WpScheme = IEWpSchema.extend(
-{
-    pubDate: z.date().optional(),
     tags: z.array(z.string()),
-
     
     status: z.enum(["draft", "published"]),
+    pubDate: z.date().optional(),
 });
+
+export type BaseFrontmatter = z.infer<typeof IEBaseSchema>;
+
+
+
+
 
 const WpRefined = (data: { status: string; pubDate?: Date }) => 
 {
@@ -29,13 +28,12 @@ const WpRefined = (data: { status: string; pubDate?: Date }) =>
     return true;
 };
 
-
-const DFScheme = WpScheme.extend(
+const DFScheme = IEBaseSchema.extend(
 {
     title: z.string().regex(/^\d+ - [a-zA-Z\u4e00-\u9fa5_]+( - [a-zA-Z\u4e00-\u9fa5_]+)?$/),
 }).refine(WpRefined);
 
-const CtfScheme = WpScheme.extend(
+const CtfScheme = IEBaseSchema.extend(
 {
     title: z.string().regex(/^(Reverse|Misc|Crypto|Pwn|PWN|Web|Digit Safety|\d+\.\d+\s+.+)$/),
 

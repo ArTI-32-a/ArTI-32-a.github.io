@@ -1,8 +1,8 @@
 ---
 title: "2026 - Group"
 pubDate: 2026-06-04
-tags: ["pinghang cup", "2026"]
-status: "draft"
+tags: ["pinghang-cup", "2026", "group", "writeup", "dfir"]
+status: "published"
 ---
  - 2026.04.11 start
 

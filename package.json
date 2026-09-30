@@ -1,7 +1,7 @@
 {
     "name": "my-blog",
     "type": "module",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "engines": {
         "node": ">=22.12.0"
     },
@@ -12,7 +12,8 @@
         "astro": "astro",
         "fixing": "node editor/main-fixing.ts",
         "data": "node editor/main-getting.ts",
-        "proc": "node editor/main-processing.ts"
+        "proc": "node editor/main-processing.ts",
+        "test": "node editor/main-testing.ts"
     },
     "dependencies": {
         "@expressive-code/plugin-line-numbers": "^0.44.1",

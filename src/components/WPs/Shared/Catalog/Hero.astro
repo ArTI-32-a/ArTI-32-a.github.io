@@ -11,7 +11,7 @@ const { titles, defaultIndex = 0 } = Astro.props;
 ---
 
 <header class="catalog-hero">
-    <Searcher placeholder="搜索..."/>
+    <Searcher placeholder="搜索...（用;（中英皆可）作为搜索分隔符）"/>
     <div class="catalog-title" id="catalog-title" data-titles={JSON.stringify(titles)}>
         {titles[defaultIndex] ?? ""}
     </div>
