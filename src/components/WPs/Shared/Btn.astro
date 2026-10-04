@@ -55,9 +55,9 @@ const { event = "empty-btn", font = 1.5, tip } = Astro.props;
 
     
 
-    if (!window.__menuBtnDelegation)
+    if (!window.__wpMenuBtnDelegation)
     {
-        window.__menuBtnDelegation = true;
+        window.__wpMenuBtnDelegation = true;
 
         document.addEventListener("click", (e: MouseEvent) =>
         {

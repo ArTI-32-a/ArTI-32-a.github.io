@@ -1,3 +1,5 @@
+import { Common as C } from "@/utils/Common/Common";
+
 let isInitialized: boolean = false;
 let hasPressed: boolean = false;
 
@@ -51,13 +53,11 @@ async function indexListener(): Promise<void>
 
         buttonAction();
 
-        const sleep: number = 1;
-
         setTimeout(() =>
         {
             window.location.href = btn.href;
             hasPressed = false
-        }, sleep * 1000);
+        }, C.IND_BTN_FEEDBACK_DELAY_MS);
     });
 }
 

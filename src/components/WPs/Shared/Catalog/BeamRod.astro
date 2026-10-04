@@ -71,6 +71,8 @@ import { Common as C } from "@/utils/Common/Common";
     import { Common as C } from "@/utils/Common/Common";
     import { EventName as EN } from "@/utils/Common/Event";
 
+    import { CatalogJumpEvent } from "@/utils/Common/Event";
+
     (() =>
     {
         const beamEl = document.getElementById("beam");
@@ -89,10 +91,13 @@ import { Common as C } from "@/utils/Common/Common";
         let currentOffset: number = 0;
         let dragStartX: number = 0;
         let isDragging: boolean = false;
+        let isAutoSliding: boolean = false;
 
         let titleDone: boolean = false;
         let treeDone: boolean = false;
         let timeoutId: number | null = null;
+
+        let pendingJumpIndex: number | null = null;
 
         let switchStartTime: number = 0;
 
@@ -101,9 +106,26 @@ import { Common as C } from "@/utils/Common/Common";
         {
             if (e.propertyName !== "transform") return;
 
+
+            if (isAutoSliding && currentOffset < -C.PX_EPSILON)
+            {
+                if (pendingJumpIndex !== null)
+                {
+                    triggerSwitch(pendingJumpIndex);
+                    pendingJumpIndex = null;
+                }
+                else
+                {
+                    triggerSwitch(counter + 1);
+                }
+                return;
+            }
+
+
             if (currentOffset < C.PX_EPSILON)
             {
                 mask.style.opacity = "0";
+                isAutoSliding = false;
             }
         });
 
@@ -134,6 +156,7 @@ import { Common as C } from "@/utils/Common/Common";
 
         function onPointerDown(e: PointerEvent): void
         {
+            if (isAutoSliding) return;
             if (isDragging) return;
             if (currentOffset !== 0) return;
             if (!isOnBeam(e.clientX, e.clientY)) return;
@@ -169,7 +192,7 @@ import { Common as C } from "@/utils/Common/Common";
 
             if (currentOffset <= triggerOffset)
             {
-                triggerSwitch();
+                triggerSwitch(counter + 1);
             }
             else
             {
@@ -177,12 +200,15 @@ import { Common as C } from "@/utils/Common/Common";
             }
         }
 
-        function triggerSwitch(): void
+        function triggerSwitch(nextCounter: number): void
         {
+            isAutoSliding = false; 
+
             switchStartTime = performance.now();
 
             flash.classList.add("active");
-            counter += 1;
+            counter = nextCounter;
+            // counter += 1;
 
             titleDone = false;
             treeDone = false;
@@ -244,6 +270,39 @@ import { Common as C } from "@/utils/Common/Common";
         {
             treeDone = true;
             tryRestart();
+        });
+
+        document.addEventListener(EN.WP_CAT_AUTO_SWITCH_EVENT, () =>
+        {
+            if (isAutoSliding) return;
+            if (isDragging) return;
+            if (currentOffset !== 0) return;
+
+            isAutoSliding = true;
+
+            const sw = window.innerWidth;
+            const maxDrag = sw * (C.WP_CAT_BEAM_TOP_X - C.WP_CAT_BEAM_MIN_TOP_X) / 100;
+
+            applyBeam(-maxDrag);
+        });
+
+        document.addEventListener(EN.WP_CAT_JUMP_EVENT, (e: Event) =>
+        {
+            if (!(e instanceof CatalogJumpEvent)) return;
+
+            const index = e.detail.index;
+
+            if (isAutoSliding) return;
+            if (isDragging) return;
+            if (currentOffset !== 0) return;
+
+            isAutoSliding = true;
+            pendingJumpIndex = index;
+
+            const sw = window.innerWidth;
+            const maxDrag = sw * (C.WP_CAT_BEAM_TOP_X - C.WP_CAT_BEAM_MIN_TOP_X) / 100;
+
+            applyBeam(-maxDrag);
         });
 
         window.addEventListener("pointerdown", onPointerDown);

@@ -1,0 +1,88 @@
+{
+    "0": [
+        {
+            "type" : "title",
+            "level" : 2,
+            "text" : "∅"
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "这里空空如也喵~"
+                }
+            ]
+        }
+    ],
+    "1": [
+        {
+            "type": "title",
+            "level": 2,
+            "text": "QQ"
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "QQ号：2264584031"
+                }
+            ]
+        },
+        {
+            "type": "image",
+            "src": "/Picture/InfBoard/QQ/QQ.jpg",
+            "alt": "二维码"
+        }
+    ],
+    "2": [
+        {
+            "type": "title",
+            "level": 2,
+            "text": "友链？"
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "临天牧风："
+                },
+                {
+                    "type": "link",
+                    "text": "qian-mf.github.io",
+                    "href": "https://qian-mf.github.io"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "？："
+                },
+                {
+                    "type": "link",
+                    "text": "好康的",
+                    "href": "https://www.bilibili.com/video/BV1GJ411x7h7/?spm_id_from=333.337.search-card.all.click"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "？："
+                },
+                {
+                    "type": "link",
+                    "text": "也是好康的",
+                    "href": "https://www.bilibili.com/video/BV1fEy8BoEbj/?spm_id_from=333.788.recommend_more_video.0&trackid=web_related_0.router-related-2589621-49mtn.1791097961629.532"
+                }
+            ]
+        }
+    ]
+}

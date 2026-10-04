@@ -4,6 +4,8 @@ import "@/styles/global.css";
 import PullRod from "@/components/WPs/Shared/Catalog/BeamRod.astro";
 import BtnMenu from "@/components/WPs/Shared/BtnMenu.astro";
 import Btn from "@/components/WPs/Shared/Btn.astro";
+
+import { EventName as EN } from "@/utils/Common/Event";
 ---
 
 
@@ -37,6 +39,10 @@ import Btn from "@/components/WPs/Shared/Btn.astro";
         </article>
 
         <BtnMenu>
+            <Btn slot="up" event={EN.WP_CAT_AUTO_SWITCH_EVENT} tip="切换目录树"> 
+                →
+            </Btn>
+
             <Btn slot="left" event="back-to-index" font={1.2} tip="返回首页">
                 {"<<"}
             </Btn>

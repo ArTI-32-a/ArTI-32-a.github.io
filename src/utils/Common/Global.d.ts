@@ -4,6 +4,8 @@ declare global
 {
     interface Window
     {
-        __menuBtnDelegation?: boolean;
+        __wpMenuBtnDelegation?: boolean;
+        __infButtonDelegation?: boolean;
+        __infBoardDelegation?: boolean;
     }
 }

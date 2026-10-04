@@ -4,17 +4,19 @@ import Layout from "@/layouts/WPs/Catalog.astro";
 import Cs from "@/components/WPs/Shared/Catalog/Switcher.astro";
 import Hero from "@/components/WPs/Shared/Catalog/Hero.astro";
 
+import IT from "@/components/WPs/Shared/Catalog/IndexTable.astro";
+
 import { buildTree } from "@/utils/WPs/Catalog";
 
 
 const ctfTree = await buildTree("CTF");
 const dfTree = await buildTree("DF");
+
+const titles = ["CTF", "Digital Forensic"];
 ---
 
 <Layout>
-    <!-- <div slot="header"> -->
-        <Hero slot="header" titles={["CTF", "DF"]} />
-    <!-- </div> -->
+    <Hero slot="header" titles={titles} />
 
 
     <Cs slot="article"
@@ -25,4 +27,7 @@ const dfTree = await buildTree("DF");
         ]}
         defaultIndex={0} 
     />
+
+    <IT slot="article" titles={titles}>
+    </IT>
 </Layout>

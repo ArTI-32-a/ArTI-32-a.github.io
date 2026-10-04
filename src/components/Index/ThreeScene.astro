@@ -2,18 +2,24 @@
 ---
 
 <div id="three-container">
+    <div class="three-tooltip">
+        信息面板
+    </div>
 </div>
 
 
 
 <script>
+    import { EventName as EN } from "@/utils/Common/Event";
+    import { Common as C} from "@/utils/Common/Common";
     import * as THREE from "three";
 
-    const container: HTMLElement | null = document.getElementById("three-container");
-    if (!container)
+    const containerEl: HTMLElement | null = document.getElementById("three-container");
+    if (!containerEl)
     {
         throw new Error("Three.js container not found.");
     }
+    const container: HTMLElement = containerEl;
 
     const scene: THREE.Scene = new THREE.Scene();
 
@@ -69,12 +75,17 @@
     scene.add(backLight);
 
     // ----- 8. 动画循环 -----
-    const DELTA_SCALE = 0.0005;
+    type Phase = "breathing" | "expanding" | "shrinking";
 
-    let isShrinking: boolean = true;
+    const DELTA_SCALE = C.IND_3D_BREATH_DELTA;
+
+    let phase: Phase = "breathing";
     let currScale: number = 1;
+    let isShrinkingBreath: boolean = true;
+    let phaseStartTime: number = 0;
+    let phaseStartScale: number = 1;
     
-    function animate(): void
+    function animate(timestamp: number): void
     {
         requestAnimationFrame(animate);
 
@@ -82,21 +93,55 @@
         torusKnot.rotation.x += 0.005;
         torusKnot.rotation.y += 0.01;
 
-        currScale += isShrinking ? -DELTA_SCALE : DELTA_SCALE;
-        torusKnot.scale.set(currScale, currScale, currScale);
+        if (phase === "breathing")
+        {   
+            currScale += isShrinkingBreath ? -DELTA_SCALE : DELTA_SCALE;
 
-        if (currScale > 1)
-        {
-            isShrinking = true;
+            if (currScale > C.IND_3D_BREATH_MAX)
+            {
+                isShrinkingBreath = true;
+            }
+            else if (currScale < C.IND_3D_BREATH_MIN)
+            {
+                isShrinkingBreath = false;
+            }
         }
-        else if (currScale < 0.8)
+        else if (phase === "expanding")
         {
-            isShrinking = false;
+            const elapsed = timestamp - phaseStartTime;
+            const t = Math.min(elapsed / C.IND_3D_CLICK_DURATION_MS, 1);
+            currScale = phaseStartScale + (C.IND_3D_CLICK_EXP_SCALE - phaseStartScale) * t;
+
+            if (t >= 1)
+            {
+                phase = "shrinking";
+                phaseStartTime = timestamp;
+                phaseStartScale = currScale;
+
+                // 缩回刚开始 → 通知菜单打开
+                document.dispatchEvent(new CustomEvent(EN.INF_MENU_OPEN_EVENT));
+            }
         }
+        else if (phase === "shrinking")
+        {
+            const elapsed = timestamp - phaseStartTime;
+            const t = Math.min(elapsed / C.IND_3D_CLICK_DURATION_MS, 1);
+            currScale = phaseStartScale + (C.IND_3D_CLICK_SHR_SCALE - phaseStartScale) * t;
+
+            if (t >= 1)
+            {
+                phase = "breathing";
+                currScale = C.IND_3D_BREATH_MAX;
+                isShrinkingBreath = true;
+            }
+        }
+
+        
+        torusKnot.scale.set(currScale, currScale, currScale);
 
         renderer.render(scene, camera);
     }
-    animate();
+    requestAnimationFrame(animate);
 
     // ----- 9. 处理窗口大小变化 -----
     function resizeRenderer(): void
@@ -110,7 +155,18 @@
             renderer.setSize(width, height);
         }
     }
+
+
     window.addEventListener("resize", resizeRenderer);
+
+    container.addEventListener("click", () =>
+    {
+        if (phase !== "breathing") return;
+
+        phase = "expanding";
+        phaseStartTime = performance.now();
+        phaseStartScale = currScale;
+    });
 </script>
 
 
@@ -129,7 +185,8 @@
         height: 160px;
 
         /* 9. 交互 */
-        pointer-events: none; /* 让鼠标穿透，不阻挡卡片点击 */
+        pointer-events: auto; /* 让鼠标穿透，不阻挡卡片点击 */
+        cursor: pointer;
 
         /* 10. 动画过渡 */
         transform: translate(-50%, -50%);
@@ -141,5 +198,63 @@
         display: block;
         width: 100%;
         height: 100%;
+    }
+
+
+
+    .three-tooltip
+    {
+        /* 1. 布局定位 */
+        position: absolute;
+        top: -2.5rem;
+        left: 50%;
+        z-index: 1;
+
+        /* 2. 盒模型 - 尺寸 */
+        display: block;
+        white-space: nowrap;
+
+        /* 3. 盒模型 - 间距 */
+        padding: 0.4rem 0.8rem;
+
+        /* 4. 边框圆角 */
+        border-radius: 0.5rem;
+
+        /* 5. 背景 */
+        background-color: rgba(20, 20, 40, 0.9);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(154, 138, 255, 0.4);
+        box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.4);
+
+        /* 6. 文字 */
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-family: "Segoe UI", "PingFang SC", sans-serif;
+
+        /* 7. 视觉效果 */
+        opacity: 0;
+        visibility: hidden;
+
+        /* 9. 交互 */
+        pointer-events: none;
+
+        /* 10. 动画过渡 */
+        transform: translateX(-50%) translateY(0.5rem);
+        transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    }
+
+    #three-container:hover .three-tooltip
+    {
+        /* 7. 视觉效果 */
+        opacity: 1;
+        visibility: visible;
+
+        /* 10. 动画过渡 */
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .contact-menu[data-state="open"] ~ #three-container .three-tooltip
+    {
+        
     }
 </style>

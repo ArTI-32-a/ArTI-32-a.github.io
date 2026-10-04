@@ -38,3 +38,15 @@ export interface WpBtnStateDetail
     event: string;
     state: Partial<WpBtnState>;
 }
+
+
+
+export type ContentBlock =
+    | { type: "title"; level: number; text: string }
+    | { type: "text"; text: string }
+    | { type: "paragraph"; children: ContentBlock[] }
+    | { type: "image"; src: string; alt?: string }
+    | { type: "link"; text: string; href: string }
+    | { type: "other"; text: string };
+
+export type ContactsData = Record<string, ContentBlock[]>;
