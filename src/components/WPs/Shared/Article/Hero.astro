@@ -11,10 +11,11 @@ export interface Props
     headings: MarkdownHeading[];
     backgroundImage: string;
     treeInfo: WPInfo[];
-    shrinkOffset?: number;   
+    shrinkOffset?: number;  
+    collectionName: string; 
 }
 
-const { data, headings, backgroundImage, treeInfo, shrinkOffset = 0 } = Astro.props;
+const { data, headings, backgroundImage, treeInfo, shrinkOffset = 0, collectionName = "" } = Astro.props;
 
 const tree = treeInfo ?? [];
 
@@ -40,7 +41,7 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
 
         <div class="hero-columns">
             <div class="hero-left">
-                <C tree={tree} compact={true} />
+                <C tree={tree} compact={true} collectionName={collectionName} />
             </div>
 
             <div class="meta-block">

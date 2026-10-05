@@ -21,7 +21,7 @@ export interface WPInfo
 {
     key: string;
     href: string | null;
-    data: WPFormatter | null;
+    data: WPFrontmatter | null;
     children: WPInfo[] | null;
 }
 

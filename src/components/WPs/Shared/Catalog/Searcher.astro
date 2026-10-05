@@ -132,7 +132,7 @@ const { placeholder = "搜索..." } = Astro.props;
     async function runSearch(query: string): Promise<void>
     {
         await ensureDocs();
-        const results = search(query);
+        const results = search(query, false, true);
         // console.log("[search]", query, results);
         // console.log("1");
         renderResults(results);

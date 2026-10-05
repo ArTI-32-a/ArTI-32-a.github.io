@@ -84,18 +84,26 @@
     let isShrinkingBreath: boolean = true;
     let phaseStartTime: number = 0;
     let phaseStartScale: number = 1;
+
+    let lastTimestamp: number | null = null;
     
     function animate(timestamp: number): void
     {
         requestAnimationFrame(animate);
 
+        const frameFactor = lastTimestamp === null
+            ? 1
+            : Math.min((timestamp - lastTimestamp) / (1000 / 60), 3);
+
         // 让环面结缓慢旋转
-        torusKnot.rotation.x += 0.005;
-        torusKnot.rotation.y += 0.01;
+        torusKnot.rotation.x += 0.01 * frameFactor;
+        torusKnot.rotation.y += 0.02 * frameFactor;
+
+        lastTimestamp = timestamp;
 
         if (phase === "breathing")
         {   
-            currScale += isShrinkingBreath ? -DELTA_SCALE : DELTA_SCALE;
+            currScale += (isShrinkingBreath ? -DELTA_SCALE : DELTA_SCALE) * frameFactor;
 
             if (currScale > C.IND_3D_BREATH_MAX)
             {
@@ -131,7 +139,7 @@
             if (t >= 1)
             {
                 phase = "breathing";
-                currScale = C.IND_3D_BREATH_MAX;
+                // currScale = C.IND_3D_BREATH_MAX;
                 isShrinkingBreath = true;
             }
         }

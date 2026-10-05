@@ -218,7 +218,7 @@ async function processFile(
             replacement = img.full.replace(img.src, newRef);
         }
 
-        newBody = newBody.replace(img.full, replacement);
+        newBody = newBody.replaceAll(img.full, () => replacement);
         console.log(`  [${successIndex}] → ${fileName}`);
     }
 

@@ -10,15 +10,16 @@ export interface Props
 {
     tree: WPInfo[];
     compact?: boolean;
+    collectionName: string;
 }
 
-const { tree, compact = false } = Astro.props;
+const { tree, compact = false, collectionName = "" } = Astro.props;
 
 let idNum: number = 4900;
 ---
 
 
-<article id="wp-catalog" class:list={compact ? "compact" : ""}>
+<article class:list={["wp-catalog", { compact }]}>
     {(() =>
     {
         function renderTree(nodes: WPInfo[], level: number = 0): JSX.Element[]
@@ -29,7 +30,7 @@ let idNum: number = 4900;
                 {
                     idNum += 100;
                     return (<ToEntry 
-                        id={`${idNum}`} 
+                        id={`${collectionName}-${idNum}`} 
                         href={node.href} 
                         text={node.data?.title ?? node.key} 
                         level={level} 
@@ -62,7 +63,7 @@ let idNum: number = 4900;
     /*
         ---------- 1. 容器 ----------
     */
-    #wp-catalog
+    .wp-catalog
     {
         display: block;
         width: 100%;
@@ -72,7 +73,7 @@ let idNum: number = 4900;
         background-color: transparent;
     }
 
-    #wp-catalog.compact
+    .wp-catalog.compact
     {
         max-width: none;
         margin: 0;

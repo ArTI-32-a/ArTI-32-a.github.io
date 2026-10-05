@@ -28,38 +28,7 @@ function splitFrontmatter(content: string): { frontmatter: string; body: string 
 
 function parseFrontmatterFields(frontmatter: string): Record<string, unknown>
 {
-    const data: Record<string, unknown> = {};
-    const normalized = frontmatter.replace(/\r\n/g, "\n");
-    const inner = normalized.replace(/^---\n/, "").replace(/\n---\n?$/, "");
-
-    // title: "xxx" 或 title: xxx
-    const titleMatch = inner.match(/^title\s*:\s*["']?(.+?)["']?\s*$/m);
-    if (titleMatch) data.title = titleMatch[1];
-
-    // pubDate: 2026-06-14 或 pubDate: "2026-06-14"
-    const pubDateMatch = inner.match(/^pubDate\s*:\s*["']?(\d{4}[-.]\d{2}[-.]\d{2})["']?\s*$/m);
-    if (pubDateMatch) data.pubDate = pubDateMatch[1];
-
-    // tags: ["a", "b", "c"]
-    const tagsMatch = inner.match(/^tags\s*:\s*\[(.+)\]\s*$/m);
-    if (tagsMatch)
-    {
-        const items = tagsMatch[1]
-            .split(",")
-            .map((s) => s.trim().replace(/^["']|["']$/g, ""))
-            .filter(Boolean);
-        data.tags = items;
-    }
-
-    // type: "Reverse"
-    const typeMatch = inner.match(/^type\s*:\s*["']?(.+?)["']?\s*$/m);
-    if (typeMatch) data.type = typeMatch[1];
-
-    // status: "draft"
-    const statusMatch = inner.match(/^status\s*:\s*["']?(.+?)["']?\s*$/m);
-    if (statusMatch) data.status = statusMatch[1];
-
-    return data;
+    return matter(frontmatter).data;
 }
 
 
@@ -68,7 +37,10 @@ function formatDate(input: string): string | null
     const trimmed = input.trim();
     const m = trimmed.match(/^(\d{4})[-.](\d{2})[-.](\d{2})$/);
     if (!m) return null;
-    return `${m[1]}-${m[2]}-${m[3]}`;
+    const formatted = `${m[1]}-${m[2]}-${m[3]}`;
+    const date = new Date(`${formatted}T00:00:00.000Z`);
+    if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== formatted) return null;
+    return formatted;
 }
 
 
@@ -136,7 +108,17 @@ async function processFile(
     const relativePath = path.relative(process.cwd(), filePath);
     const original = fs.readFileSync(filePath, "utf-8");
     const { frontmatter, body } = splitFrontmatter(original);
-    const data = frontmatter ? parseFrontmatterFields(frontmatter) : {};
+    let data: Record<string, unknown>;
+    try
+    {
+        data = frontmatter ? parseFrontmatterFields(frontmatter) : {};
+    }
+    catch (error)
+    {
+        console.error(`元数据解析失败，未修改: ${relativePath}`, error);
+        process.exitCode = 1;
+        return;
+    }
 
     console.log(`\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
     console.log(`📄 ${relativePath}`);
@@ -304,21 +286,22 @@ async function processFile(
     }
 
     // ---------- 构建新 frontmatter ----------
-    const lines: string[] = ["---"];
-    lines.push(`title: "${title}"`);
+    const updatedData: Record<string, unknown> = { ...data, title, tags, status };
     if (pubDate)
     {
-        lines.push(`pubDate: ${pubDate}`);
+        // 使用 YAML 日期类型，保持与内容集合的 z.date() 一致。
+        updatedData.pubDate = new Date(`${pubDate}T00:00:00.000Z`);
     }
-    lines.push(`tags: [${tags.map((t) => `"${t}"`).join(", ")}]`);
+    else
+    {
+        delete updatedData.pubDate;
+    }
     if (type !== null)
     {
-        lines.push(`type: "${type}"`);
+        updatedData.type = type;
     }
-    lines.push(`status: "${status}"`);
-    lines.push("---");
-
-    const newFrontmatter = lines.join("\n") + "\n";
+    // 只序列化元数据，去掉空正文的占位换行，保留原正文不变。
+    const newFrontmatter = matter.stringify("", updatedData).replace(/\n$/, "");
     const newContent = newFrontmatter + body;
 
     if (original !== newContent)

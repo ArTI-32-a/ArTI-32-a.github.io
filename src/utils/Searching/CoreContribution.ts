@@ -44,6 +44,7 @@ interface SearchOptions
     docs: SearchDocument[];
     titleWeight?: number;
     otherWeight?: number;
+    tagsWeight?: number;
     threshold?: number;
 }
 
@@ -116,6 +117,7 @@ class SearchCoreContribution
         config: FieldConfig[],
         docs: SearchDocument[],
         titleWeight: number,
+        tagsWeight: number,
         otherWeight: number,
     ): SearchResult[]
     {
@@ -123,7 +125,7 @@ class SearchCoreContribution
 
         return docs.map(d => ({
             doc: d,
-            score: this.matchDocument(d, segments, config, titleWeight, otherWeight),
+            score: this.matchDocument(d, segments, config, titleWeight, tagsWeight, otherWeight),
         }));
     }
 
@@ -132,6 +134,7 @@ class SearchCoreContribution
         config: FieldConfig[],
         docs: SearchDocument[],
         titleWeight: number,
+        tagsWeight: number,
         otherWeight: number,
     ): SearchResult[]
     {
@@ -139,7 +142,7 @@ class SearchCoreContribution
         const split = this.parseQuerySplit(segments);
         return docs.map(d => ({
             doc: d,
-            score: this.matchDocumentSplit(d, split, config, titleWeight, otherWeight),
+            score: this.matchDocumentSplit(d, split, config, titleWeight, tagsWeight, otherWeight),
         }));
     }
 
@@ -657,6 +660,7 @@ class SearchCoreContribution
         strScores: Map<string, number>,
         arrayMatches: Map<string, Array<{ textLen: number; elementLen: number }>>,
         titleWeight: number,
+        tagsWeight: number,
         otherWeight: number,
     ): MatchResult
     {
@@ -714,7 +718,7 @@ class SearchCoreContribution
 
         const totalScore =
             titleScore * titleWeight +
-            tagsScore * (1 - titleWeight) +
+            tagsScore * tagsWeight +
             otherScore;
 
         return { titleScore, tagsScore, totalScore };
@@ -725,6 +729,7 @@ class SearchCoreContribution
         segments: Segment[],
         config: FieldConfig[],
         titleWeight: number,
+        tagsWeight: number,
         otherWeight: number,
     ): MatchResult
     {
@@ -764,7 +769,7 @@ class SearchCoreContribution
             }
         }
 
-        return SearchCoreContribution.aggregate(doc, strScores, arrayMatches, titleWeight, otherWeight);
+        return SearchCoreContribution.aggregate(doc, strScores, arrayMatches, titleWeight, tagsWeight, otherWeight);
     }
 
     private static matchDocumentSplit(
@@ -772,6 +777,7 @@ class SearchCoreContribution
         split: SplitQuery,
         config: FieldConfig[],
         titleWeight: number,
+        tagsWeight: number,
         otherWeight: number,
     ): MatchResult
     {
@@ -824,7 +830,7 @@ class SearchCoreContribution
             }
         }
 
-        return SearchCoreContribution.aggregate(doc, strScores, arrayMatches, titleWeight, otherWeight);
+        return SearchCoreContribution.aggregate(doc, strScores, arrayMatches, titleWeight, tagsWeight, otherWeight);
     }
 }
 

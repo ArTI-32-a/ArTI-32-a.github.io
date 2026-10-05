@@ -25,7 +25,7 @@ export function search(query: string, includeDraft: boolean = false, filterZero:
         : allDocs.filter(d => d.status !== "draft");
 
     // 1. 普通模式
-    let results = SCC.runNormal(query, config, docs, C.SEARCH_TITLE_WEIGHT, C.SEARCH_OTHER_WEIGHT);
+    let results = SCC.runNormal(query, config, docs, C.SEARCH_TITLE_WEIGHT, C.SEARCH_TAGS_WEIGHT, C.SEARCH_OTHER_WEIGHT);
 
     // 2. 找最高分
     let maxNormal = 0;
@@ -37,7 +37,7 @@ export function search(query: string, includeDraft: boolean = false, filterZero:
     // 3. 拆分模式（若需要）
     if (maxNormal < C.SEARCH_THRESHOLD)
     {
-        const splitResults = SCC.runSplit(query, config, docs, C.SEARCH_TITLE_WEIGHT, C.SEARCH_OTHER_WEIGHT);
+        const splitResults = SCC.runSplit(query, config, docs, C.SEARCH_TITLE_WEIGHT,C.SEARCH_TAGS_WEIGHT, C.SEARCH_OTHER_WEIGHT);
 
         let maxSplit = 0;
         for (const r of splitResults)

@@ -43,7 +43,14 @@ const tree = await buildTree("CTF");
 
 <Layout title={entry.data.title} headings={headings}>
     <div slot="header">
-        <Hero data={entry.data} headings={headings} backgroundImage={bUp} treeInfo={tree} shrinkOffset={-5}/>
+        <Hero 
+            data={entry.data} 
+            headings={headings} 
+            backgroundImage={bUp} 
+            treeInfo={tree} 
+            shrinkOffset={-5} 
+            collectionName="CTF"
+        />
     </div>
     
 

@@ -9,6 +9,7 @@ export interface TreeEntry
 {
     title: string;
     tree: WPInfo[];
+    collectionName: string;
 }
 
 export interface Props
@@ -25,7 +26,9 @@ const { entries, defaultIndex = 0 } = Astro.props;
     {entries.map((entry, i) => (
         <div class="directory-content" data-index={i}>
             <div class="catalog-spacer-top" />
-            <Catalog tree={entry.tree} />
+
+            <Catalog tree={entry.tree} collectionName={entry.collectionName} />
+
             <div class="catalog-spacer-bottom" />
         </div>
     ))}

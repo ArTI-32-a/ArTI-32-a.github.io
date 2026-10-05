@@ -47,7 +47,12 @@ const CtfWpCollection = defineCollection(
     // type: "content",
     loader: glob(
     {
-        pattern: "**/*.md",
+        pattern: 
+        [
+            "**/*.md",
+            "!**/_*/**",
+            "!**/_*.md",
+        ],
         base: new URL("./content/CTF", import.meta.url).pathname,
     }),
     schema: CtfScheme,
@@ -58,7 +63,12 @@ const DFWpCollection = defineCollection(
     // type: "content",
     loader: glob(
     {
-        pattern: "**/*.md",
+        pattern: 
+        [
+            "**/*.md",
+            "!**/_*/**",
+            "!**/_*.md",
+        ],
         base: new URL("./content/DF", import.meta.url).pathname,
     }),
     schema: DFScheme,

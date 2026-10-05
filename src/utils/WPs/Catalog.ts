@@ -230,7 +230,12 @@ async function buildTree(collectionName: "CTF" | "DF"): Promise<WPInfo[]>
                 pubDate: post.data.pubDate,
                 tags: post.data.tags,
 
-                // type: post.data.type,
+                ...(
+                    "type" in post.data && typeof post.data.type === "string"
+                        ? { type: post.data.type }
+                        : {}
+                ),
+                
                 status: post.data.status,
 
                 questions: getQuestions(post.body || "", post.id),
@@ -310,7 +315,7 @@ async function buildTree(collectionName: "CTF" | "DF"): Promise<WPInfo[]>
                 }
 
                 // 从 href 截 key 查 questions
-                const key = node.href.replace(/^\/wps\/CTF\//, "");
+                const key = node.href.slice(`/wps/${collectionName}/`.length);
                 const questions = questionsCache[key];
 
                 result.push({
