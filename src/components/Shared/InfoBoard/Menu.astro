@@ -20,10 +20,10 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO * C.INF_RING_COUNT * C.INF
     class="contact-menu"
     id="contact-menu"
     data-state="closed"
-    style={`--inf-ring-unit: ${C.INF_RING_RADIUS_UNIT_V}vmin; 
-            --inf-ring-offset: ${offsetMin}vmin; 
-            --inf-ring-fade-start: ${C.INF_RING_FADE_START_V}vmin; 
-            --inf-ring-fade-end: ${C.INF_RING_FADE_END_V}vmin;`}
+    style={`--inf-ring-unit: ${C.INF_RING_RADIUS_UNIT_V}; 
+            --inf-ring-offset: ${offsetMin}; 
+            --inf-ring-fade-start: ${C.INF_RING_FADE_START_V}; 
+            --inf-ring-fade-end: ${C.INF_RING_FADE_END_V};`}
 >
     <div class="contact-ring" id="contact-ring">
         <div class="contact-overlay" id="contact-overlay">
@@ -157,7 +157,7 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO * C.INF_RING_COUNT * C.INF
 
         function applyRingRadius(): void
         {
-            menu.style.setProperty("--inf-ring-offset", `${currentOffset}vmin`);
+            menu.style.setProperty("--inf-ring-offset", `${currentOffset}`);
         }
 
         function ringTick(): void
@@ -332,24 +332,6 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO * C.INF_RING_COUNT * C.INF
                 return;
             }
 
-            // const detail = e.detail;
-            // if (typeof detail !== "object" || detail === null)
-            // {
-            //     return;
-            // }
-            // if (!("index" in detail))
-            // {
-            //     return;
-            // }
-            // if (typeof detail.index !== "number")
-            // {
-            //     return;
-            // }
-
-            // if (activeBoardIndex === detail.index)
-            // {
-            //     closeBoard();
-            // }
             closeBoard();
         });
 
@@ -410,6 +392,11 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO * C.INF_RING_COUNT * C.INF
         pointer-events: none;
     }
 
+    .contact-menu[data-state="closed"] .contact-ring-content
+    {
+        visibility: hidden;
+    }
+
     .contact-ring
     {
         position: absolute;
@@ -446,11 +433,11 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO * C.INF_RING_COUNT * C.INF
 
 
         --ring-radius-raw: calc((var(--ring-index) + 1) * var(--inf-ring-unit) + var(--inf-ring-offset));
-        --ring-radius-clamped: max(0vmin, var(--ring-radius-raw));
+        --ring-radius-clamped: max(0, var(--ring-radius-raw));
         --ring-fade-range: calc(var(--inf-ring-fade-start) - var(--inf-ring-fade-end));
 
-        width: calc(var(--ring-radius-clamped) * 2.4);
-        height: calc(var(--ring-radius-clamped) * 2.4);
+        width: calc(var(--ring-radius-clamped) * 2.4 * 1vmin);
+        height: calc(var(--ring-radius-clamped) * 2.4 * 1vmin);
         flex-shrink: 0;
         
 

@@ -60,7 +60,7 @@ const { entries, defaultIndex = 0 } = Astro.props;
             const activeEl = contents[currentIndex];
             if (activeEl instanceof HTMLElement)
             {
-                switcher.style.height = `${activeEl.scrollHeight}px`;
+                switcher.style.height = `${activeEl.scrollHeight / window.innerHeight * 100}vh`;
             }
         }
 

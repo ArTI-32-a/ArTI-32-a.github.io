@@ -59,9 +59,7 @@ if (!isWPFormatter(data))
 <script define:vars={{ id, data }} lang="ts">
     (() => 
     {
-        const CARD_OFFSET = 15;
-        const CARD_MAX_WIDTH = 280;
-        const CARD_MAX_HEIGHT = 200;
+        const CARD_OFFSET = 0.9375; // rem
 
         const btn = document.getElementById(id);
         const preview = document.getElementById(`preview-${id}`);
@@ -73,11 +71,40 @@ if (!isWPFormatter(data))
         }
 
         let timer = null;
-        btn.addEventListener("mouseenter", () => 
+        let pointerX = 0;
+        let pointerY = 0;
+
+        function positionPreview()
         {
+            const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+            const gap = CARD_OFFSET * rootFontSize;
+            const rect = preview.getBoundingClientRect();
+            let left = pointerX + gap;
+            let top = pointerY + gap;
+
+            if (left + rect.width > window.innerWidth - gap)
+            {
+                left = pointerX - rect.width - gap;
+            }
+            if (top + rect.height > window.innerHeight - gap)
+            {
+                top = pointerY - rect.height - gap;
+            }
+
+            left = Math.max(gap, Math.min(left, window.innerWidth - rect.width - gap));
+            top = Math.max(gap, Math.min(top, window.innerHeight - rect.height - gap));
+            preview.style.left = `${left / window.innerWidth * 100}vw`;
+            preview.style.top = `${top / window.innerHeight * 100}vh`;
+        }
+
+        btn.addEventListener("mouseenter", (e) =>
+        {
+            pointerX = e.clientX;
+            pointerY = e.clientY;
             timer = window.setTimeout(() => 
             {
                 preview.style.display = "block";
+                positionPreview();
             }, 100);
         });
 
@@ -94,21 +121,9 @@ if (!isWPFormatter(data))
 
         btn.addEventListener("mousemove", (e) => 
         {
-            let left = e.clientX + CARD_OFFSET;
-            let top = e.clientY + CARD_OFFSET;
-
-            if (left + CARD_MAX_WIDTH > window.innerWidth)
-            {
-                left = e.clientX - CARD_MAX_WIDTH + 2 * CARD_OFFSET;
-            }
-
-            if (top + CARD_MAX_HEIGHT > window.innerHeight)
-            {
-                top = e.clientY - CARD_MAX_HEIGHT + 2 * CARD_OFFSET;
-            }
-
-            preview.style.left = left + "px";
-            preview.style.top = top + "px";
+            pointerX = e.clientX;
+            pointerY = e.clientY;
+            if (preview.style.display === "block") positionPreview();
         });
     })();
 
@@ -127,10 +142,13 @@ if (!isWPFormatter(data))
 
         /* 2. 盒模型 - 尺寸 */
         display: none;
-        max-width: 280px;
+        max-width: min(20vw, calc(100vw - 1.875rem));
+        max-height: min(25vh, calc(100vh - 1.875rem));
+        box-sizing: border-box;
+        overflow: auto;
 
         /* 3. 盒模型 - 间距 */
-        padding: 8px 12px;
+        padding: 0.5rem 0.75rem;
 
         /* 4. 边框圆角 */
         border-radius: 8px;
@@ -164,8 +182,8 @@ if (!isWPFormatter(data))
         flex-wrap: wrap;
 
         /* 3. 盒模型 - 间距 */
-        gap: 4px;
-        margin-bottom: 4px;
+        gap: 0.25rem;
+        margin-bottom: 0.25rem;
     }
 
     /*
@@ -174,7 +192,7 @@ if (!isWPFormatter(data))
     .tag
     {
         /* 3. 盒模型 - 间距 */
-        padding: 2px 6px;
+        padding: 0.125rem 0.375rem;
 
         /* 4. 边框圆角 */
         border-radius: 4px;

@@ -17,7 +17,8 @@ import { WpBtnStateEvent } from "@/utils/Common/Event";
 
 function initHero(
     shrinkTargets: HTMLElement[],
-    threshold: number
+    shrThreshold: number,
+    expThreshold: number
 ): HeroController
 {
     let shrunk: boolean = false;
@@ -39,11 +40,11 @@ function initHero(
             if (!autoEnabled) return;
             if (autoPaused) return;
 
-            if (!shrunk && y > threshold)
+            if (!shrunk && y > shrThreshold)
             {
                 applyShrunk(true);
             }
-            else if (shrunk && y < threshold)
+            else if (shrunk && y < expThreshold)
             {
                 applyShrunk(false);
             }
@@ -126,8 +127,8 @@ function articleController(
         state: { completed: true },   // autoEnabled 初始为 true
     }));
 
-    const hero = initHero(shrinkTargets, C.WP_CTF_HERO_SHRINKING_THRESHOLD);
-    const toc = initTOC(mainArea, C.WP_CTF_HERO_SHRINKING_THRESHOLD);
+    const hero = initHero(shrinkTargets, C.WP_HERO_SHRINKING_THRESHOLD, C.WP_HERO_EXPANDING_THRESHOLD);
+    const toc = initTOC(mainArea, C.WP_HERO_SHRINKING_THRESHOLD);
 
     toc.onReady(() =>
     {

@@ -1,5 +1,6 @@
 ---
-import type { MarkdownHeading } from "astro";
+import type { ImageMetadata, MarkdownHeading } from "astro";
+import { buildBackground } from "@/utils/Common/Background/Builder";
 
 import type { WPFrontmatter, WPInfo } from "@/utils/Common/Type";
 
@@ -9,13 +10,15 @@ export interface Props
 {
     data: WPFrontmatter;
     headings: MarkdownHeading[];
-    backgroundImage: string;
+    backgroundImage: ImageMetadata;
     treeInfo: WPInfo[];
     shrinkOffset?: number;  
     collectionName: string; 
 }
 
 const { data, headings, backgroundImage, treeInfo, shrinkOffset = 0, collectionName = "" } = Astro.props;
+
+const background = await buildBackground(backgroundImage);
 
 const tree = treeInfo ?? [];
 
@@ -31,7 +34,13 @@ for (const h of headings)
 const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth === minDepth));
 ---
 
-<header class="hero" id="hero" style={`background-image: url(${backgroundImage}); --hero-shrink-offset: ${shrinkOffset}vh;`}>
+<header 
+    class="hero" 
+    id="hero" 
+    data-background-variants={JSON.stringify(background.variants)}
+    data-background-aspect={background.aspect}
+    style={`--hero-shrink-offset: ${shrinkOffset}vh;`}
+>
     <div class="hero-content">
         <div class="title-box">
             {data.title}
@@ -57,10 +66,38 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
                 </div>
             </div>
 
-            <div class="hero-right"></div>
+            <div class="hero-right">
+
+            </div>
         </div>
     </div>
 </header>
+
+
+
+<script>
+    import { loadBackground, type BackgroundVariant } from "@/utils/Common/Background/Loader";
+
+    const hero = document.getElementById("hero");
+
+    if (hero instanceof HTMLElement) 
+    {
+        const variants: BackgroundVariant[] = JSON.parse(
+            hero.dataset.backgroundVariants ?? "[]"
+        );
+
+        void loadBackground(
+            hero,
+            variants,
+            Number(hero.dataset.backgroundAspect),
+            {
+                lowTimeout: 6000,
+                highTimeout: 10000,
+                maxPixelRatio: 2,
+            }
+        );
+    }
+</script>
 
 
 
@@ -77,6 +114,7 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         overflow: hidden;
 
         /* 5. 背景 */
+        background-color: rgba(154, 138, 255, 1);
         background-position: center 20%;
         background-size: cover;
         background-repeat: no-repeat;

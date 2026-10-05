@@ -409,7 +409,7 @@ const { placeholder = "搜索..." } = Astro.props;
 
         /* 2. 盒模型 - 尺寸 */
         display: block;
-        width: fit-content;
+        width: 35vw;
         max-width: 100%;
         box-sizing: border-box;
 
@@ -426,11 +426,11 @@ const { placeholder = "搜索..." } = Astro.props;
         left: 0;
         z-index: 11000;
 
-        width: 30rem;
-        max-width: 60vw;
+        width: 100%;
+        max-width: 100%;
         box-sizing: border-box;
 
-        padding: 10px 20px;
+        padding: 0.625rem 1.25rem;
 
         border-radius: 20px;
         border: 1px solid transparent;    /* 和 textarea 的 1px 对齐 */
@@ -450,12 +450,12 @@ const { placeholder = "搜索..." } = Astro.props;
         /* 2. 盒模型 - 尺寸 */
         position: relative;              /* ★ 新增 */
         display: block;
-        width: 30rem;
-        max-width: 60vw;
+        width: 100%;
+        max-width: 100%;
         box-sizing: border-box;
 
         /* 3. 盒模型 - 间距 */
-        padding: 10px 20px;
+        padding: 0.625rem 1.25rem;
 
         /* 4. 边框圆角 */
         border-radius: 100px;
@@ -513,7 +513,7 @@ const { placeholder = "搜索..." } = Astro.props;
         display: inline-block;
         /* transform: scale(0.9); */
         /* transform-origin: left center; */
-        padding: 2px 0px;
+        padding: 0.125rem 0;
 
         background-color: rgba(154, 138, 255, 0.2);
         border-radius: 400px;
@@ -544,7 +544,7 @@ const { placeholder = "搜索..." } = Astro.props;
         z-index: 9999;
 
         /* 2. 盒模型 - 尺寸 */
-        max-height: 20rem;
+        max-height: 40vh;
         box-sizing: border-box;
 
         /* 3. 盒模型 - 间距 */

@@ -132,7 +132,7 @@ import { Common as C } from "@/utils/Common/Common";
         function applyBeam(offset: number): void
         {
             currentOffset = offset;
-            beam.style.transform = `translateX(${offset}px)`;
+            beam.style.transform = `translateX(${offset / window.innerWidth * 100}vw)`;
 
             if (Math.abs(offset) > C.PX_EPSILON)
             {
@@ -151,7 +151,7 @@ import { Common as C } from "@/utils/Common/Common";
             const t = clientY / sh;
             const lineX = topX + t * (bottomX - topX);
 
-            return Math.abs(clientX - lineX) < C.WP_CAT_ON_BEAM_INTERVAL;
+            return Math.abs(clientX - lineX) / sw * 100 < C.WP_CAT_ON_BEAM_INTERVAL;
         }
 
         function onPointerDown(e: PointerEvent): void

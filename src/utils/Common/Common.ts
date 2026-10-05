@@ -174,9 +174,9 @@ class Common
     static readonly WP_CAT_BEAM_TRIGGER_TOP_X: number = 50; // %
 
     /**
-     * 判定是否在斜线上 单位px
+     * 判定是否在斜线上，单位为视口宽度百分比。
      */
-    static readonly WP_CAT_ON_BEAM_INTERVAL: number = 100 // px
+    static readonly WP_CAT_ON_BEAM_INTERVAL: number = 7.5; // 对应 7.5vw
 
     /**
      * 一个最短切换时长，completed 事件再快也要等够时间才让光柱拉杆回弹
@@ -196,7 +196,9 @@ class Common
     static readonly WP_CAT_BTN_PADDING: number = 30;
 
     // 首屏收起阈值，单位为视口高度百分比（25 对应 25vh）。
-    static readonly WP_CTF_HERO_SHRINKING_THRESHOLD: number = 25;
+    static readonly WP_HERO_SHRINKING_THRESHOLD: number = 25;
+
+    static readonly WP_HERO_EXPANDING_THRESHOLD: number = 20;
 
     static readonly WP_BTN_DEFAULT_STATE: WpBtnState = 
     {
