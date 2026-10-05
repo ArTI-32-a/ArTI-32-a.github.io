@@ -164,7 +164,11 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO * C.INF_RING_COUNT * C.INF
         {
             const diff = targetOffset - currentOffset;
 
-            if (Math.abs(diff) < C.INF_RING_EPSILON_V)
+            const outerRadius = C.INF_RING_COUNT * C.INF_RING_RADIUS_UNIT_V + currentOffset;
+
+            const visuallyClosed = !isOpen && outerRadius <= C.INF_RING_FADE_END_V;
+
+            if (visuallyClosed || Math.abs(diff) < C.INF_RING_EPSILON_V)
             {
                 currentOffset = targetOffset;
                 applyRingRadius();
