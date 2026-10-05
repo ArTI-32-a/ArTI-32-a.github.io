@@ -88,7 +88,7 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
     .hero.shrink
     {
         /* 10. 动画过渡 */
-        background-position: center calc(calc(20% + var(--hero-shrink-offset, -2.5vh)));
+        background-position: center calc(calc(20% + var(--hero-shrink-offset, -5vh)));
     }
 
     .hero-content
@@ -300,12 +300,12 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
     /* 对接mask的 */
     .title-box.shrink
     {
-        transform: translateY(-2.5vh);
+        transform: translateY(-5vh);
     }
 
     .hero-columns.shrink
     {
-        transform: translateY(-2.5vh);
+        transform: translateY(-5vh);
         opacity: 0;
     }
 </style>

@@ -195,8 +195,8 @@ class Common
 
     static readonly WP_CAT_BTN_PADDING: number = 30;
 
-    // 首屏收起阈值，单位为视口高度百分比（10 对应 10vh）。
-    static readonly WP_CTF_HERO_SHRINKING_THRESHOLD: number = 10;
+    // 首屏收起阈值，单位为视口高度百分比（25 对应 25vh）。
+    static readonly WP_CTF_HERO_SHRINKING_THRESHOLD: number = 25;
 
     static readonly WP_BTN_DEFAULT_STATE: WpBtnState = 
     {
