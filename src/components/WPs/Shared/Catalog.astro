@@ -41,7 +41,7 @@ let idNum: number = 4900;
                 else
                 {
                     return (
-                        <div class="wp-folder" style={`padding-left: ${level * C.WP_CAT_BTN_PADDING}px`}>
+                        <div class="wp-folder" style={`padding-left: ${level * C.WP_CAT_BTN_PADDING / 16}rem`}>
                             <div class={`wp-folder-title level-${level >= 3 ? "else" : level}`}>
                                 {node.key}
                             </div>

@@ -20,7 +20,7 @@ const { id = "0", href = "/", text = "...", level = 0, data, showPreview = true 
 
 ---
 
-<a id={id} class="entry-link" href={href} style={`padding-left: ${level * C.WP_CAT_BTN_PADDING + 10}px`}>
+<a id={id} class="entry-link" href={href} style={`padding-left: ${(level * C.WP_CAT_BTN_PADDING + 10) / 16}rem`}>
     <span class="entry-text">
         {text}
     </span>
@@ -75,7 +75,7 @@ const { id = "0", href = "/", text = "...", level = 0, data, showPreview = true 
         /* 6. 文字 */
         color: #ffffff;
         text-decoration: underline;
-        text-underline-offset: 4px;
+        text-underline-offset: 0.25rem;
         text-decoration-thickness: 2px;
         text-decoration-color: #9a8aff;
     }
@@ -92,59 +92,60 @@ const { id = "0", href = "/", text = "...", level = 0, data, showPreview = true 
     /*
         ---------- 4. 悬停预览框 ----------
     */
+    /* 暂时停用：旧预览样式，当前模板没有对应元素。
     .hover-preview
     {
-        /* 2. 盒模型 - 尺寸 */
+        2. 盒模型 - 尺寸
         display: none;
 
-        /* 3. 盒模型 - 间距 */
+        3. 盒模型 - 间距
         margin-top: 100px;
         padding: 8px 12px;
         width: fit-content;
 
-        /* 4. 边框圆角 */
+        4. 边框圆角
         border-radius: 8px;
 
-        /* 5. 背景 */
+        5. 背景
         background-color: rgba(30, 30, 50, 0.85);
         border: 1px solid rgba(255, 255, 255, 0.1);
 
-        /* 6. 文字 */
+        6. 文字
         color: rgba(255, 255, 255, 0.5);
         font-size: 0.8rem;
         font-family: "Segoe UI", sans-serif;
 
-        /* 图片占位，后续替换为 <img> 或背景图 */
+        图片占位，后续替换为 <img> 或背景图
     }
 
     .entry-link:hover .hover-preview
     {
-        /* 2. 盒模型 - 尺寸 */
+        2. 盒模型 - 尺寸
         display: inline-block;
     }
 
-    /*
-        ---------- 5. 预览占位图 ----------
-    */
+    ---------- 5. 预览占位图 ----------
     .preview-placeholder
     {
-        /* 2. 盒模型 - 尺寸 */
+        2. 盒模型 - 尺寸
         display: flex;
 
-        /* 3. 盒模型 - 间距 */
+        3. 盒模型 - 间距
         padding: 4px 8px;
 
-        /* 4. 边框圆角 */
+        4. 边框圆角
         border-radius: 4px;
 
-        /* 5. 背景 */
+        5. 背景
         background-color: rgba(255, 255, 255, 0.05);
 
-        /* 2. 盒模型 - 尺寸（flex 对齐） */
+        2. 盒模型 - 尺寸（flex 对齐）
         align-items: center;
         justify-content: center;
 
-        /* 3. 盒模型 - 尺寸 */
+        3. 盒模型 - 尺寸
         min-height: 40px;
     }
+    */
+
 </style>

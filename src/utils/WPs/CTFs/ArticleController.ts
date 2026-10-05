@@ -140,7 +140,7 @@ function articleController(
 
     window.addEventListener("scroll", () =>
     {
-        const y: number = window.scrollY;
+        const y: number = window.scrollY / window.innerHeight * 100;
         hero.onScroll(y);
         toc.onScroll(y);
     }, { passive: true });

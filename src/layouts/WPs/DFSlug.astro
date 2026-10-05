@@ -167,7 +167,8 @@ const { title = "Arutiko", headings = [] } = Astro.props;
     .article-area
     {
         /* 2. 盒模型 - 尺寸 */
-        max-width: 800px;
+        max-width: 60vw;
+        box-sizing: border-box;
 
         /* 3. 盒模型 - 间距 */
         margin: 0 auto;
@@ -180,7 +181,7 @@ const { title = "Arutiko", headings = [] } = Astro.props;
     .main-area.toc-visible .article-area
     {
         /* 10. 动画过渡 */
-        transform: translateX(-125px);
+        transform: translateX(-10vw);
     }
 
     .toc-area
@@ -194,7 +195,8 @@ const { title = "Arutiko", headings = [] } = Astro.props;
         /* 2. 盒模型 - 尺寸 */
         display: flex;
         flex-direction: column;
-        width: 250px;
+        width: 20vw;
+        box-sizing: border-box;
         height: 100vh;
 
         /* 3. 盒模型 - 间距 */

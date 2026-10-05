@@ -113,7 +113,7 @@ for (const h of headings)
         /* 6. 文字 */
         color: #9a8aff;
         text-decoration: underline;
-        text-underline-offset: 3px;
+        text-underline-offset: 0.1875rem;
         text-decoration-color: rgba(154, 138, 255, 0.6);
         text-decoration-thickness: 1px;
         word-break: break-word;
@@ -121,7 +121,7 @@ for (const h of headings)
         white-space: normal;
 
         /* 10. 动画过渡 */
-        transform: translateX(4px);
+        transform: translateX(0.25rem);
     }
 
     .toc-link.active:not(:hover)
@@ -156,7 +156,7 @@ for (const h of headings)
 
         if (headings.length === 0) return;
 
-        let OFFSET: number = window.innerHeight * 0.25 + 2;
+        let OFFSET: number = window.innerHeight * 0.25;
         window.addEventListener("resize", () =>
         {
             OFFSET = window.innerHeight * 0.25;
