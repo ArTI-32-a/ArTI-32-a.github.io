@@ -1,0 +1,88 @@
+---
+import "@waline/client/waline.css";
+---
+
+<section class="article-comments" aria-label="文章评论">
+    <h2 class="comments-title">评论</h2>
+
+    <p class="comments-guide">
+        可以登录后评论，也可以填写昵称或直接匿名留言。
+    </p>
+
+    <div id="waline-comments"></div>
+</section>
+
+
+
+<script>
+    import { init } from "@waline/client";
+
+    (() => 
+    {
+        const containerEl = document.getElementById("waline-comments");
+        if (!(containerEl instanceof HTMLElement))
+        {
+            return;
+        }
+
+        const container = containerEl;
+
+        
+        const path = window.location.pathname.replace(/\/+$/, "") || "/";
+
+        init(
+        {
+            el: container,
+            serverURL: "https://blog-comments-server-six.vercel.app",
+            path,
+
+            lang: "zh-CN",
+            dark: true,
+
+            login: "enable",
+            meta: ["nick"],
+            requiredMeta: [],
+
+            search: false,
+            imageUploader: false,
+        });
+    })();
+</script>
+
+
+
+
+<style>
+    .article-comments
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        min-width: 0;
+
+        /* 3. 盒模型 - 间距 */
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+
+        /* 4. 边框圆角 */
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .comments-title
+    {
+        /* 3. 盒模型 - 间距 */
+        margin: 0 0 0.75rem;
+
+        /* 6. 文字 */
+        font-size: 1.5rem;
+    }
+
+    .comments-guide
+    {
+        /* 3. 盒模型 - 间距 */
+        margin: 0 0 1.5rem;
+
+        /* 6. 文字 */
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.875rem;
+        line-height: 1.6;
+    }
+</style>

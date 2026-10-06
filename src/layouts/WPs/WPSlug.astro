@@ -4,6 +4,7 @@ import "@/styles/global.css";
 
 import BtnMenu from "@/components/WPs/Shared/BtnMenu.astro";
 import Btn from "@/components/WPs/Shared/Btn.astro";
+import Cmt from "@/components/Shared/Comment/Comments.astro";
 
 export interface Props
 {
@@ -33,6 +34,7 @@ const { title = "Arutiko" } = Astro.props;
         <div class="main-area" id="main-area">
             <article class="article-area">
                 <slot />
+                <Cmt />
             </article>
         </div>
 

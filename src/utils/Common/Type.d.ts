@@ -41,6 +41,14 @@ export interface WpBtnStateDetail
 
 
 
+export interface BreadcrumbItem
+{
+    label: string;
+    href?: string;
+}
+
+
+
 export type ContentBlock =
     | { type: "title"; level: number; text: string }
     | { type: "text"; text: string }

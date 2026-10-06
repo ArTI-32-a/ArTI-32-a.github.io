@@ -1,0 +1,118 @@
+---
+import type { BreadcrumbItem } from "@/utils/Common/Type";
+
+export interface Props
+{
+    items: BreadcrumbItem[];
+    separator?: string;
+}
+
+const { items, separator = ">" } = Astro.props;
+---
+
+<nav class="breadcrumb" aria-label="当前位置">
+    <ol class="breadcrumb-list">
+        {items.map((item, index) => (
+            <li class="breadcrumb-item">
+                {index > 0 && (
+                    <span class="breadcrumb-separator" aria-hidden="true">
+                        {separator}
+                    </span>
+                )}
+
+                {item.href ? (
+                    <a
+                        class="breadcrumb-link"
+                        href={item.href}
+                        aria-current={
+                            index === items.length - 1 ? "page" : undefined
+                        }
+                    >
+                        {item.label}
+                    </a>
+                ) 
+                : (
+                    <span
+                        aria-current={
+                            index === items.length - 1 ? "page" : undefined
+                        }
+                    >
+                        {item.label}
+                    </span>
+                )}
+            </li>
+        ))}
+    </ol>
+</nav>
+
+<style>
+    .breadcrumb
+    {
+        /* 6. 文字 */
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+
+    .breadcrumb-list
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 0.5rem;
+
+        /* 3. 盒模型 - 间距 */
+        margin: 0;
+        padding: 0;
+
+        /* 6. 文字 */
+        list-style: none;
+    }
+
+    .breadcrumb-item
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        display: flex;
+        align-items: baseline;
+        min-width: 0;
+        gap: 0.5rem;
+
+        /* 6. 文字 */
+        overflow-wrap: anywhere;
+    }
+
+    .breadcrumb-item [aria-current="page"]
+    {
+        /* 6. 文字 */
+        color: #d0c8ff;
+        font-weight: 600;
+    }
+
+    .breadcrumb-link
+    {
+        /* 6. 文字 */
+        color: inherit;
+        text-decoration: none;
+
+        /* 10. 动画过渡 */
+        transition: color 0.2s ease;
+    }
+
+    .breadcrumb-link:focus-visible,
+    .breadcrumb-link:hover
+    {
+        /* 6. 文字 */
+        color: #c9bdff;
+        text-decoration: underline;
+        text-underline-offset: 0.2rem;
+    }
+
+    .breadcrumb-separator
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        flex-shrink: 0;
+
+        /* 6. 文字 */
+        color: rgba(255, 255, 255, 0.45);
+    }
+</style>
