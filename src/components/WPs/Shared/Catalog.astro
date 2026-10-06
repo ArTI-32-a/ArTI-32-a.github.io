@@ -43,6 +43,9 @@ let idNum: number = 4900;
                     return (
                         <div class="wp-folder" style={`padding-left: ${level * C.WP_CAT_LEVEL_INDENT_PX / 16}rem`}>
                             <div class={`wp-folder-title level-${level >= 3 ? "else" : level}`}>
+                                <span aria-hidden="true">
+                                    📁-
+                                </span>
                                 {node.key}
                             </div>
                         </div>

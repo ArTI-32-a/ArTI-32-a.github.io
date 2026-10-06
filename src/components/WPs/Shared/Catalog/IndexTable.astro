@@ -9,10 +9,14 @@ const { titles, defaultIndex = 0 } = Astro.props;
 ---
 
 <nav class="catalog-index" id="catalog-index">
+    <div class="catalog-index-label">
+        选择栏目
+    </div>
+
     {titles.map((title, i) => (
-        <div class="catalog-index-item" data-index={i}>
+        <button type="button" class="catalog-index-item" data-index={i}>
             {String(i + 1).padStart(2, "0")} / {title}
-        </div>
+        </button>
     ))}
 </nav>
 
@@ -89,6 +93,39 @@ const { titles, defaultIndex = 0 } = Astro.props;
 
         /* 10. 动画过渡 */
         transform: translateY(-50%);
+    }
+
+    .catalog-index-label
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        width: 100%;
+        box-sizing: border-box;
+
+        /* 3. 盒模型 - 间距 */
+        margin-bottom: 0.25rem;
+        padding: 0.5rem 0.75rem;
+
+        /* 4. 边框圆角 */
+        border-left: 3px solid #9a8aff;
+        border-bottom: 1px solid rgba(154, 138, 255, 0.2);
+        border-radius: 0 0.375rem 0.375rem 0;
+
+        /* 5. 背景与阴影 */
+        background: linear-gradient(
+            to right,
+            rgba(154, 138, 255, 0.15),
+            rgba(154, 138, 255, 0)
+        );
+
+        /* 6. 文字 */
+        color: #d0c8ff;
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-align: left;
+
+        /* 9. 交互 */
+        cursor: default;
     }
 
     .catalog-index-item

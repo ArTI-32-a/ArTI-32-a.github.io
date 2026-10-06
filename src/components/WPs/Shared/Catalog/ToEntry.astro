@@ -22,6 +22,10 @@ const { id = "0", href = "/", text = "...", level = 0, data, showPreview = true 
 
 <a id={id} class="entry-link" href={href} style={`padding-left: ${(level * C.WP_CAT_LEVEL_INDENT_PX + 10) / 16}rem`}>
     <span class="entry-text">
+        <span aria-hidden="true">
+            📄-
+        </span>
+
         {text}
     </span>
 </a>

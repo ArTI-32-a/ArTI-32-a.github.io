@@ -12,7 +12,10 @@ import { buildTree } from "@/utils/WPs/Catalog";
 const ctfTree = await buildTree("CTF");
 const dfTree = await buildTree("DF");
 
-const titles = ["CTF", "Digital Forensic"];
+
+const ctfTitle: string = "CTF 题解";
+const dfTitle: string = "电子取证";
+const titles: string[] = [ctfTitle, dfTitle];
 ---
 
 <Layout>
@@ -22,8 +25,8 @@ const titles = ["CTF", "Digital Forensic"];
     <Cs slot="article"
         entries=
         {[
-            { title: "CTF", tree: ctfTree, collectionName: "CTF" },
-            { title: "Digital Forensic", tree: dfTree, collectionName: "DF" },
+            { title: ctfTitle, tree: ctfTree, collectionName: "CTF" },
+            { title: dfTitle, tree: dfTree, collectionName: "DF" },
         ]}
         defaultIndex={0} 
     />
