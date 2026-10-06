@@ -1,0 +1,309 @@
+---
+import "@/styles/global.css";
+
+
+import BtnMenu from "@/components/WPs/Shared/BtnMenu.astro";
+import Btn from "@/components/WPs/Shared/Btn.astro";
+
+export interface Props
+{
+    title?: string;
+}
+
+const { title = "Arutiko" } = Astro.props;
+---
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <title>{title}</title>
+    </head>
+
+    <body>
+        <div class="mask" id="mask">
+            <div class="hero-clip">
+                <slot name="header" />
+            </div>
+        </div>
+
+        <div class="main-area" id="main-area">
+            <article class="article-area">
+                <slot />
+            </article>
+        </div>
+
+        <aside class="toc-area" id="toc-area">
+            <div class="toc-top-spacer" id="toc-top-spacer" />
+            <slot name="toc" />
+            <div class="toc-bottom-spacer" />
+        </aside>
+
+        <BtnMenu>
+            <Btn slot="up" event="toc-toggle" font={1} tip="Table of Contents">
+                TOC
+            </Btn>
+
+            <Btn slot="up" event="hero-toggle" tip="展开首屏">
+                H
+            </Btn>
+
+            <Btn slot="up" event="hero-auto-toggle" tip="首屏自动开、关">
+                A
+            </Btn>
+
+            <Btn slot="left" event="back-to-catalog" tip="返回目录">
+                {"<"}
+            </Btn>
+
+            <Btn slot="left" event="back-to-index" font={1.2} tip="返回首页">
+                {"<<"}
+            </Btn>
+        </BtnMenu>
+    </body>
+</html>
+
+<script>
+    import { articleController } from "@/utils/WPs/CTFs/ArticleController";
+
+    (() =>
+    {
+        const mask = document.getElementById("mask");
+        const mainArea = document.getElementById("main-area");
+        const titleBox = document.querySelector(".title-box");
+        const heroColumn = document.querySelector(".hero-columns");
+        const tocSpacer = document.getElementById("toc-top-spacer");
+
+        const hero = document.getElementById("hero");
+
+
+        if (!mask || !mainArea || !titleBox || !heroColumn || !tocSpacer || !hero)
+        {
+            console.warn("articleController cannot be found");
+            return;
+        }
+
+        if (!(mask instanceof HTMLElement) ||
+            !(mainArea instanceof HTMLElement) ||
+            !(titleBox instanceof HTMLElement) ||
+            !(heroColumn instanceof HTMLElement) ||
+            !(tocSpacer instanceof HTMLElement) ||
+            !(hero instanceof HTMLElement))
+        {
+            console.warn("[articleController] DOM not found");
+            return;
+        }
+
+
+        articleController(
+            [mask, titleBox, heroColumn, tocSpacer, hero],
+            mainArea
+        );
+    })();
+
+    document.addEventListener("back-to-catalog", () =>
+    {
+        window.location.href = "/wps/acat";
+    });
+
+    document.addEventListener("back-to-index", () =>
+    {
+        window.location.href = "/";
+    });
+</script>
+
+<style>
+    :global(html)
+    {
+        /* 8. 溢出滚动 */
+        overflow-anchor: none;
+        scroll-behavior: smooth;
+        scroll-padding-top: 25vh;
+    }
+
+    body
+    {
+        /* 3. 盒模型 - 间距 */
+        margin: 0;
+        padding: 0;
+
+        /* 5. 背景与阴影 */
+        background-color: #1f1e33;
+
+        /* 6. 文字 */
+        color: rgba(255, 255, 255, 0.9);
+        font-family: "Segoe UI", "PingFang SC", sans-serif;
+    }
+
+    .mask
+    {
+        /* 1. 布局定位 */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        /* 2. 盒模型 - 尺寸与排列 */
+        width: 100%;
+        height: 60vh;
+        min-height: 10vh;
+        max-height: 90vh;
+
+        /* 8. 溢出滚动 */
+        overflow: visible;
+
+        /* 10. 动画过渡 */
+        transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mask::after
+    {
+        /* 1. 布局定位 */
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        /* 2. 盒模型 - 尺寸与排列 */
+        width: 100%;
+        height: 10vh;
+
+        /* 5. 背景与阴影 */
+        background: linear-gradient(
+            to bottom,
+            rgba(154, 138, 255, 1) 0%,
+            rgba(154, 138, 255, 0.7) 30%,
+            rgba(154, 138, 255, 0.25) 65%,
+            rgba(154, 138, 255, 0) 100%
+        );
+
+        /* 9. 交互 */
+        pointer-events: none;
+
+        /* 11. 生成内容与 SVG */
+        content: "";
+    }
+
+    .mask.shrink
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        height: 20vh;
+    }
+
+    .hero-clip
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        height: 100%;
+
+        /* 8. 溢出滚动 */
+        overflow: hidden;
+    }
+
+    .main-area
+    {
+        /* 1. 布局定位 */
+        position: relative;
+
+        /* 2. 盒模型 - 尺寸与排列 */
+        min-height: 110vh;
+    }
+
+    .article-area
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        max-width: 60vw;
+        box-sizing: border-box;
+
+        /* 3. 盒模型 - 间距 */
+        margin: 0 auto;
+        padding: 2rem;
+
+        /* 10. 动画过渡 */
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .main-area.toc-visible .article-area
+    {
+        /* 10. 动画过渡 */
+        transform: translateX(-10vw);
+    }
+
+    .toc-area
+    {
+        /* 1. 布局定位 */
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 500;
+
+        /* 2. 盒模型 - 尺寸与排列 */
+        --toc-hero-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        width: 20vw;
+        box-sizing: border-box;
+        height: 100vh;
+
+        /* 3. 盒模型 - 间距 */
+        padding: 2rem 1.5rem;
+
+        /* 4. 边框圆角 */
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+        /* 5. 背景与阴影 */
+        background-color: rgba(31, 30, 51, 0.96);
+
+        /* 7. 视觉效果 */
+        backdrop-filter: blur(8px);
+
+        /* 8. 溢出滚动 */
+        overflow-y: auto;
+        scrollbar-width: none;
+
+        /* 10. 动画过渡 */
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .toc-area::-webkit-scrollbar
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        display: none;
+    }
+
+    .toc-area:has(.toc-top-spacer.shrink)
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        --toc-hero-height: 20vh;
+    }
+
+    .main-area.toc-visible ~ .toc-area
+    {
+        /* 10. 动画过渡 */
+        transform: translateX(0);
+    }
+
+    .toc-top-spacer
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        height: 60vh;
+        flex-shrink: 0;
+
+        /* 10. 动画过渡 */
+        transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .toc-top-spacer.shrink
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        height: 20vh;
+    }
+
+    .toc-bottom-spacer
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        height: 10vh;
+        flex-shrink: 0;
+    }
+</style>

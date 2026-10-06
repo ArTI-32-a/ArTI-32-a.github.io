@@ -80,13 +80,11 @@ const { titles, defaultIndex = 0 } = Astro.props;
         top: 50%;
         z-index: 10000;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: flex;
         flex-direction: column;
-        align-items: flex-end; 
+        align-items: flex-end;
         width: 15vw;
-
-        /* 3. 盒模型 - 间距 */
         gap: 0.5rem;
 
         /* 10. 动画过渡 */
@@ -95,9 +93,8 @@ const { titles, defaultIndex = 0 } = Astro.props;
 
     .catalog-index-item
     {
-        /* 2. 盒模型 - 尺寸 */
-        /* width: 14rem;*/
-        width: 100%; 
+        /* 2. 盒模型 - 尺寸与排列 */
+        width: 100%;
         height: 3rem;
         display: flex;
         align-items: center;
@@ -108,11 +105,10 @@ const { titles, defaultIndex = 0 } = Astro.props;
 
         /* 4. 边框圆角 */
         border-radius: 8px;
-
-        /* 5. 背景（默认也显示框） */
-        background-color: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(6px);
         border: 1px solid rgba(154, 138, 255, 0.25);
+
+        /* 5. 背景与阴影 */
+        background-color: rgba(0, 0, 0, 0.4);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 
         /* 6. 文字 */
@@ -121,6 +117,9 @@ const { titles, defaultIndex = 0 } = Astro.props;
         font-size: 0.85rem;
         text-align: left;
         word-break: break-word;
+
+        /* 7. 视觉效果 */
+        backdrop-filter: blur(6px);
 
         /* 9. 交互 */
         cursor: pointer;
@@ -133,39 +132,30 @@ const { titles, defaultIndex = 0 } = Astro.props;
 
     .catalog-index-item:hover
     {
-        /* 5. 背景 */
-        background-color: rgba(154, 138, 255, 0.12);
+        /* 4. 边框圆角 */
         border-color: rgba(154, 138, 255, 0.6);
-        box-shadow:
-            inset 0 0 12px rgba(154, 138, 255, 0.3),
+
+        /* 5. 背景与阴影 */
+        background-color: rgba(154, 138, 255, 0.12);
+        box-shadow: inset 0 0 12px rgba(154, 138, 255, 0.3),
             0 0 12px rgba(154, 138, 255, 0.45),
             0 0 24px rgba(154, 138, 255, 0.2);
 
         /* 6. 文字 */
         color: #9a8aff;
-
-        /* 10. 动画过渡 */
-        /* transform: scale(1.1); */
     }
 
     .catalog-index-item.active
     {
-        /* 5. 背景 */
+        /* 5. 背景与阴影 */
         background-color: rgba(255, 216, 102, 0.1);
-        box-shadow:
-            inset 0 0 12px rgba(255, 216, 102, 0.2),
+        box-shadow: inset 0 0 12px rgba(255, 216, 102, 0.2),
             0 0 12px rgba(255, 216, 102, 0.3);
 
         /* 6. 文字 */
         color: #ffd866;
 
         /* 10. 动画过渡 */
-        transform: scale(1.15);
-    }
-
-    .catalog-index-item.active:hover
-    {
-        /* 激活项悬停时保持激活样式，不再放大 */
         transform: scale(1.15);
     }
 </style>

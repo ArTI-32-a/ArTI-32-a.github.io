@@ -108,16 +108,18 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         position: relative;
         z-index: 1000;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         width: 100%;
         height: 60vh;
-        overflow: hidden;
 
-        /* 5. 背景 */
+        /* 5. 背景与阴影 */
         background-color: rgba(154, 138, 255, 1);
         background-position: center 20%;
         background-size: cover;
         background-repeat: no-repeat;
+
+        /* 8. 溢出滚动 */
+        overflow: hidden;
 
         /* 10. 动画过渡 */
         transition: background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -125,7 +127,7 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
 
     .hero.shrink
     {
-        /* 10. 动画过渡 */
+        /* 5. 背景与阴影 */
         background-position: center calc(calc(20% + var(--hero-shrink-offset, -5vh)));
     }
 
@@ -136,13 +138,10 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         top: 50%;
         left: 50%;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         width: 90%;
         max-width: 100%;
         box-sizing: border-box;
-
-        /* 3. 盒模型 - 间距 */
-        /* padding: 0 2rem; */
 
         /* 10. 动画过渡 */
         transform: translate(-50%, -50%);
@@ -154,7 +153,7 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         position: relative;
         z-index: 5;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: block;
         width: fit-content;
         max-width: 100%;
@@ -167,9 +166,8 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         /* 4. 边框圆角 */
         border-radius: 100px;
 
-        /* 5. 背景 */
+        /* 5. 背景与阴影 */
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(4px);
 
         /* 6. 文字 */
         color: #ffffff;
@@ -178,14 +176,24 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         text-align: center;
         word-break: break-word;
 
-        /* 10. 动画 */
+        /* 7. 视觉效果 */
+        backdrop-filter: blur(4px);
+
+        /* 10. 动画过渡 */
         transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
+    /* 对接mask的 */
 
+    .title-box.shrink
+    {
+        /* 10. 动画过渡 */
+        transform: translateY(-5vh);
+    }
 
     .hero-columns
     {
+        /* 2. 盒模型 - 尺寸与排列 */
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: start;
@@ -193,80 +201,94 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         min-width: 0;
         height: 30vh;
 
+        /* 3. 盒模型 - 间距 */
         margin-top: 1.5rem;
 
         /* 10. 动画过渡 */
         transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
-                    opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+            opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    .hero-columns.shrink
+    {
+        /* 7. 视觉效果 */
+        opacity: 0;
+
+        /* 10. 动画过渡 */
+        transform: translateY(-5vh);
     }
 
     .hero-left
     {
+        /* 高度由父级 .hero-columns 决定。 */
+
+        /* 2. 盒模型 - 尺寸与排列 */
         width: 100%;
         height: 100%;
         min-width: 0;
         box-sizing: border-box;
 
-        /* 3. 盒模型 */
+        /* 3. 盒模型 - 间距 */
         padding: 1rem 1.5rem;
-        /* 高度由父级 .hero-columns 决定。 */
 
         /* 4. 边框圆角 */
         border-radius: 12px;
-
-        /* 5. 背景 */
-        background-color: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(6px);
         border: 1px solid rgba(154, 138, 255, 0.15);
+
+        /* 5. 背景与阴影 */
+        background-color: rgba(0, 0, 0, 0.4);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 
         /* 6. 文字 */
         text-indent: 2em;
 
+        /* 7. 视觉效果 */
+        backdrop-filter: blur(6px);
+
+        /* 8. 溢出滚动 */
         overflow-y: auto;
-        scrollbar-width: none;       /* Firefox */
-        -ms-overflow-style: none;    /* IE/Edge */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 
     .meta-block
     {
-        /* 3. 盒模型 - 间距 */
-        /* margin-top: 1.5rem; */
-        padding: 1rem 1.5rem;
+        /* 2. 盒模型 - 尺寸与排列 */
         width: 100%;
         height: 100%;
         min-width: 0;
         box-sizing: border-box;
 
+        /* 3. 盒模型 - 间距 */
+        padding: 1rem 1.5rem;
+
         /* 4. 边框圆角 */
         border-radius: 12px;
-
-        /* 5. 背景 */
-        background-color: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(6px);
         border: 1px solid rgba(154, 138, 255, 0.15);
+
+        /* 5. 背景与阴影 */
+        background-color: rgba(0, 0, 0, 0.4);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 
         /* 6. 文字 */
         text-indent: 2em;
 
-        overflow-y: auto;
-        scrollbar-width: none;       /* Firefox */
-        -ms-overflow-style: none;    /* IE/Edge */
-    }
+        /* 7. 视觉效果 */
+        backdrop-filter: blur(6px);
 
-    .hero-right
-    {
-        /* 空占位，保持 meta-block 居中 */
+        /* 8. 溢出滚动 */
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 
     .hero-left::-webkit-scrollbar,
     .meta-block::-webkit-scrollbar,
     .hero-right::-webkit-scrollbar
     {
-        display: none;               /* Chrome/Safari */
+        /* 2. 盒模型 - 尺寸与排列 */
+        display: none;
     }
-
 
     .type-tags
     {
@@ -277,21 +299,19 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         color: rgba(255, 255, 255, 0.85);
         font-size: 0.9rem;
         line-height: 1.6;
-
-        /* 8. 溢出滚动 */
         word-break: break-word;
         overflow-wrap: break-word;
     }
 
     .heading-links
     {
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: block;
     }
 
     .heading-link
     {
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: block;
 
         /* 3. 盒模型 - 间距 */
@@ -302,8 +322,6 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
         text-decoration: none;
         font-size: 0.9rem;
         line-height: 1.6;
-
-        /* 8. 溢出滚动 */
         word-break: break-word;
         overflow-wrap: break-word;
 
@@ -313,37 +331,21 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
 
     .heading-link:hover
     {
-        /* 5. 背景（半透明光晕底色） */
+        /* 5. 背景与阴影 */
         background-color: rgba(154, 138, 255, 0.12);
-        box-shadow:
-            inset 0 0 12px rgba(154, 138, 255, 0.3),
+        box-shadow: inset 0 0 12px rgba(154, 138, 255, 0.3),
             0 0 12px rgba(154, 138, 255, 0.45),
             0 0 24px rgba(154, 138, 255, 0.2);
-        
+
         /* 6. 文字 */
         color: #9a8aff;
         text-decoration: underline;
         text-underline-offset: 0.1875rem;
         text-decoration-color: rgba(154, 138, 255, 0.6);
         text-decoration-thickness: 1px;
-        word-break: break-word;
-        overflow-wrap: break-word;
         white-space: normal;
 
         /* 10. 动画过渡 */
         transform: translateX(0.25rem);
-    }
-
-
-    /* 对接mask的 */
-    .title-box.shrink
-    {
-        transform: translateY(-5vh);
-    }
-
-    .hero-columns.shrink
-    {
-        transform: translateY(-5vh);
-        opacity: 0;
     }
 </style>

@@ -40,13 +40,14 @@ const { placeholder = "搜索..." } = Astro.props;
     }
 
 
-    const COLLECTIONS: string[] = ["CTF", "DF"];
+    // const COLLECTIONS: string[] = ["CTF", "DF"];
+    const WP_CAT_SEARCH_COLLECTIONS: string[] = ["CTF", "DF"];
 
     async function loadDocs(): Promise<SearchDocument[]>
     {
         const all: SearchDocument[] = [];
 
-        for (const name of COLLECTIONS)
+        for (const name of WP_CAT_SEARCH_COLLECTIONS)
         {
             const [catalogRes, questionsRes] = await Promise.all([
                 fetch(`/data/${name}/catalog.json`),
@@ -107,7 +108,8 @@ const { placeholder = "搜索..." } = Astro.props;
         }
     }
 
-    const SEARCH_CONFIG: FieldConfig[] =
+    // const SEARCH_CONFIG: FieldConfig[] =
+    const WP_CAT_SEARCH_FIELD_CONFIG: FieldConfig[] =
     [
         { field: "title", kind: "str", canOccupy: false },
         { field: "tags", kind: "element", formatChar: "T" },
@@ -126,7 +128,7 @@ const { placeholder = "搜索..." } = Astro.props;
         importDocs(() => docsCache!);
     }
 
-    importConfig(SEARCH_CONFIG);
+    importConfig(WP_CAT_SEARCH_FIELD_CONFIG);
     ensureDocs();
 
     async function runSearch(query: string): Promise<void>
@@ -241,7 +243,7 @@ const { placeholder = "搜索..." } = Astro.props;
             return;
         }
 
-        const max = C.SEARCH_MAX_RESULTS;
+        const max = C.WP_CAT_SEARCH_MAX_RESULTS_N;
         const shown = entries.slice(0, max);
         const moreCount = entries.length - shown.length;
 
@@ -364,7 +366,7 @@ const { placeholder = "搜索..." } = Astro.props;
                 }));
 
                 runSearch(query);
-            }, C.SEARCH_DEBOUNCE_MS);
+            }, C.WP_CAT_SEARCH_DEBOUNCE_MS);
         });
 
         input.addEventListener("focus", startSyncLoop);
@@ -404,10 +406,11 @@ const { placeholder = "搜索..." } = Astro.props;
 <style>
     .catalog-search
     {
+        /* 1. 布局定位 */
         position: relative;
         z-index: 10000;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: block;
         width: 35vw;
         max-width: 100%;
@@ -418,37 +421,79 @@ const { placeholder = "搜索..." } = Astro.props;
         padding: 0;
     }
 
-    /* ★ 新增：镜像层，和 textarea 完全重叠 */
     .search-mirror
     {
+        /* 和 textarea 的 1px 对齐 */
+
+        /* 1. 布局定位 */
         position: absolute;
         top: 0;
         left: 0;
         z-index: 11000;
 
+        /* 2. 盒模型 - 尺寸与排列 */
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
 
+        /* 3. 盒模型 - 间距 */
         padding: 0.625rem 1.25rem;
 
+        /* 4. 边框圆角 */
         border-radius: 20px;
-        border: 1px solid transparent;    /* 和 textarea 的 1px 对齐 */
+        border: 1px solid transparent;
 
+        /* 6. 文字 */
         color: #ffffff;
         font-size: 1rem;
         font-family: "Segoe UI", "PingFang SC", sans-serif;
         line-height: 1.5;
-        white-space: nowrap;      /* ★ 不换行，和 input 一致 */
+        white-space: nowrap;
         word-break: break-word;
 
+        /* 9. 交互 */
         pointer-events: none;
+    }
+
+    /* 镜像层同步 */
+
+    .catalog-search.expanded .search-mirror
+    {
+        /* 4. 边框圆角 */
+        border-radius: 20px 20px 0 0;
+    }
+
+    .search-mirror :global(.hidden)
+    {
+        /* 7. 视觉效果 */
+        visibility: hidden;
+    }
+
+    .search-mirror :global(.tag-box)
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        display: inline-block;
+
+        /* 3. 盒模型 - 间距 */
+        padding: 0.125rem 0;
+
+        /* 4. 边框圆角 */
+        border-radius: 400px;
+
+        /* 5. 背景与阴影 */
+        background-color: rgba(154, 138, 255, 0.2);
+        box-shadow: 0 0 0 1px rgba(154, 138, 255, 0.6);
+
+        /* 6. 文字 */
+        color: #d0c8ff;
     }
 
     .catalog-search-input
     {
-        /* 2. 盒模型 - 尺寸 */
-        position: relative;              /* ★ 新增 */
+        /* 1. 布局定位 */
+        position: relative;
+
+        /* 2. 盒模型 - 尺寸与排列 */
         display: block;
         width: 100%;
         max-width: 100%;
@@ -462,17 +507,19 @@ const { placeholder = "搜索..." } = Astro.props;
         border: 1px solid rgba(154, 138, 255, 0.25);
         outline: none;
 
-        /* 5. 背景 */
+        /* 5. 背景与阴影 */
         background-color: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(6px);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 
         /* 6. 文字 */
-        color: transparent;              /* ★ 改：文字透明，让镜像层显示 */
-        caret-color: #ffffff;            /* ★ 新增：光标白色 */
+        color: transparent;
+        caret-color: #ffffff;
         font-size: 1rem;
         font-family: "Segoe UI", "PingFang SC", sans-serif;
-        line-height: 1.5;                /* ★ 新增：保证和镜像层一致 */
+        line-height: 1.5;
+
+        /* 7. 视觉效果 */
+        backdrop-filter: blur(6px);
 
         /* 9. 交互 */
         user-select: text;
@@ -480,7 +527,17 @@ const { placeholder = "搜索..." } = Astro.props;
 
         /* 10. 动画过渡 */
         transition: border-radius 0.15s ease, border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-        /* transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease; */
+    }
+
+    .catalog-search-input:focus
+    {
+        /* 4. 边框圆角 */
+        border-color: rgba(154, 138, 255, 0.6);
+
+        /* 5. 背景与阴影 */
+        background-color: rgba(0, 0, 0, 0.55);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4),
+            0 0 12px rgba(154, 138, 255, 0.35);
     }
 
     .catalog-search-input::placeholder
@@ -489,53 +546,21 @@ const { placeholder = "搜索..." } = Astro.props;
         color: rgba(255, 255, 255, 0.4);
     }
 
-    .catalog-search-input:focus
-    {
-        /* 4. 边框圆角 */
-        border-color: rgba(154, 138, 255, 0.6);
-
-        /* 5. 背景 */
-        background-color: rgba(0, 0, 0, 0.55);
-        box-shadow:
-            0 4px 20px rgba(0, 0, 0, 0.4),
-            0 0 12px rgba(154, 138, 255, 0.35);
-    }
-
-    /* ★ 新增：# 隐形占位 */
-    .search-mirror :global(.hidden)
-    {
-        visibility: hidden;
-    }
-
-    /* ★ 新增：tag 的框 */
-    .search-mirror :global(.tag-box)
-    {
-        display: inline-block;
-        /* transform: scale(0.9); */
-        /* transform-origin: left center; */
-        padding: 0.125rem 0;
-
-        background-color: rgba(154, 138, 255, 0.2);
-        border-radius: 400px;
-        box-shadow: 0 0 0 1px rgba(154, 138, 255, 0.6);
-        color: #d0c8ff;
-    }
-
     .catalog-search.expanded .catalog-search-input
     {
-        border-radius: 20px 20px 0 0;
         /* 底部去掉边框，让结果框接着 */
-        border-bottom-color: transparent;
-    }
 
-    /* 镜像层同步 */
-    .catalog-search.expanded .search-mirror
-    {
+        /* 4. 边框圆角 */
         border-radius: 20px 20px 0 0;
+        border-bottom-color: transparent;
     }
 
     .search-results
     {
+        /* 和搜索框边框重叠 1px，看不出接缝 */
+
+        /* 字体 */
+
         /* 1. 布局定位 */
         position: absolute;
         top: 100%;
@@ -543,29 +568,30 @@ const { placeholder = "搜索..." } = Astro.props;
         right: 0;
         z-index: 9999;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         max-height: 40vh;
         box-sizing: border-box;
 
         /* 3. 盒模型 - 间距 */
-        margin-top: -1px;   /* 和搜索框边框重叠 1px，看不出接缝 */
+        margin-top: -1px;
         padding: 0;
 
         /* 4. 边框圆角 */
         border-radius: 0 0 20px 20px;
-
-        /* 5. 背景：和 focus 后的搜索框一样 */
-        background-color: rgba(0, 0, 0, 0.55);
-        backdrop-filter: blur(6px);
         border: 1px solid rgba(154, 138, 255, 0.6);
         border-top: none;
-        box-shadow:
-            0 4px 20px rgba(0, 0, 0, 0.4),
+
+        /* 5. 背景与阴影 */
+        background-color: rgba(0, 0, 0, 0.55);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4),
             0 0 12px rgba(154, 138, 255, 0.35);
 
-        /* 字体 */
+        /* 6. 文字 */
         color: rgba(224, 225, 204, 0.8);
         font-family: "Courier New", "Fira Code", monospace;
+
+        /* 7. 视觉效果 */
+        backdrop-filter: blur(6px);
 
         /* 8. 溢出滚动 */
         overflow-y: auto;
@@ -574,18 +600,20 @@ const { placeholder = "搜索..." } = Astro.props;
 
     .search-results::-webkit-scrollbar
     {
+        /* 2. 盒模型 - 尺寸与排列 */
         display: none;
     }
 
     .search-results[hidden]
     {
+        /* 2. 盒模型 - 尺寸与排列 */
         display: none;
     }
 
     .search-results :global(.search-result-item)
     {
         /* 1. 布局定位 */
-        position: relative;    /* ← 加这行 */
+        position: relative;
 
         /* 3. 盒模型 - 间距 */
         padding: 0.6rem 1rem;
@@ -600,18 +628,21 @@ const { placeholder = "搜索..." } = Astro.props;
         transition: background-color 0.15s ease;
     }
 
-    .search-results :global(.search-result-item:last-of-type)
-    {
-        border-bottom: none;
-    }
-
     .search-results :global(.search-result-item:hover)
     {
+        /* 5. 背景与阴影 */
         background-color: rgba(154, 138, 255, 0.15);
+    }
+
+    .search-results :global(.search-result-item:last-of-type)
+    {
+        /* 4. 边框圆角 */
+        border-bottom: none;
     }
 
     .search-results :global(.search-result-line1)
     {
+        /* 6. 文字 */
         color: #ffffff;
         font-size: 0.95rem;
         line-height: 1.4;
@@ -620,12 +651,16 @@ const { placeholder = "搜索..." } = Astro.props;
 
     .search-results :global(.search-result-line2)
     {
+        /* 2. 盒模型 - 尺寸与排列 */
         display: flex;
         justify-content: space-between;
         align-items: baseline;
         gap: 1rem;
+
+        /* 3. 盒模型 - 间距 */
         margin-top: 0.2rem;
 
+        /* 6. 文字 */
         color: rgba(255, 255, 255, 0.5);
         font-size: 0.8rem;
         line-height: 1.4;
@@ -634,20 +669,27 @@ const { placeholder = "搜索..." } = Astro.props;
 
     .search-results :global(.search-result-tags)
     {
+        /* 2. 盒模型 - 尺寸与排列 */
         flex: 1;
         min-width: 0;
     }
 
     .search-results :global(.search-result-score)
     {
+        /* 2. 盒模型 - 尺寸与排列 */
         flex-shrink: 0;
+
+        /* 6. 文字 */
         color: rgba(154, 138, 255, 0.8);
         font-family: "Courier New", monospace;
     }
 
     .search-results :global(.search-result-more)
     {
+        /* 3. 盒模型 - 间距 */
         padding: 0.5rem 1rem;
+
+        /* 6. 文字 */
         color: rgba(255, 255, 255, 0.4);
         font-size: 0.8rem;
         text-align: center;
@@ -656,6 +698,8 @@ const { placeholder = "搜索..." } = Astro.props;
 
     .search-results :global(.search-result-link)
     {
+        /* 完全透明，只用来接收点击 */
+
         /* 1. 布局定位 */
         position: absolute;
         inset: 0;
@@ -664,13 +708,10 @@ const { placeholder = "搜索..." } = Astro.props;
         /* 4. 边框圆角 */
         border-radius: inherit;
 
-        /* 7. 视觉效果 */
-        /* 完全透明，只用来接收点击 */
+        /* 6. 文字 */
+        text-decoration: none;
 
         /* 9. 交互 */
         cursor: pointer;
-
-        /* 6. 文字 */
-        text-decoration: none;
     }
 </style>

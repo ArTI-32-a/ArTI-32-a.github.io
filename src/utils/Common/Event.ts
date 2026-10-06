@@ -23,13 +23,11 @@ class EventName
 {
     static readonly INF_MENU_OPEN_EVENT: string = "inf-menu-open";
 
-    static readonly INF_MENU_CLOSE_EVENT: string = "inf-menu-closed";
+    static readonly INF_MENU_CLOSE_EVENT: string = "inf-menu-close";
 
     static readonly INF_BOARD_OPEN_EVENT: string = "inf-board-open";
 
     static readonly INF_BOARD_CLOSE_EVENT: string = "inf-board-close";
-
-    // static readonly INF_BUTTON_CONTACT_CLICK_EVENT: string = "inf-contact-button-click";
 
 
 

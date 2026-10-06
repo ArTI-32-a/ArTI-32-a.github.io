@@ -129,7 +129,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
         top: 0;
         z-index: 10000;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: flex;
         width: var(--inf-board-width, 35vw);
         height: 100vh;
@@ -137,14 +137,14 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
         /* 4. 边框圆角 */
         border-radius: 0 1rem 1rem 0;
-
-        /* 5. 背景 */
-        background-color: rgba(20, 20, 40, 0.96);
-        backdrop-filter: blur(8px);
         border-right: 1px solid rgba(154, 138, 255, 0.3);
+
+        /* 5. 背景与阴影 */
+        background-color: rgba(20, 20, 40, 0.96);
         box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
 
         /* 7. 视觉效果 */
+        backdrop-filter: blur(8px);
         visibility: hidden;
 
         /* 9. 交互 */
@@ -152,15 +152,13 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
         /* 10. 动画过渡 */
         transform: translateX(-100%);
-        transition:
-            transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+        transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
             visibility 0.4s ease;
     }
 
     .information-board::before
     {
         /* 1. 布局定位 */
-        content: "";
         position: absolute;
         top: 0;
         bottom: 0;
@@ -168,11 +166,14 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
         right: -100vw;
         z-index: -1;
 
-        /* 5. 背景 */
+        /* 5. 背景与阴影 */
         background-color: rgba(0, 0, 0, 0.4);
 
         /* 9. 交互 */
         pointer-events: none;
+
+        /* 11. 生成内容与 SVG */
+        content: "";
     }
 
     .information-board.opened
@@ -189,7 +190,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
     .information-board-content
     {
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         flex: 1;
         min-width: 0;
 
@@ -206,7 +207,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
     .information-board-content::-webkit-scrollbar
     {
-        /* 7. 视觉效果 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: none;
     }
 
@@ -218,7 +219,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
         right: 2.5rem;
         z-index: 2;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         width: 2.5rem;
         height: 2.5rem;
 
@@ -226,7 +227,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
         border-radius: 50%;
         border: none;
 
-        /* 5. 背景 */
+        /* 5. 背景与阴影 */
         background-color: rgba(200, 60, 60, 0.9);
         box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.4);
 
@@ -244,7 +245,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
     .information-board-x:hover
     {
-        /* 5. 背景 */
+        /* 5. 背景与阴影 */
         background-color: rgba(220, 80, 80, 1);
 
         /* 10. 动画过渡 */
@@ -252,17 +253,16 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
     }
 
     .information-board-bar
-    {   
-        display: grid;
-        place-items: center;
-
+    {
         /* 1. 布局定位 */
         position: absolute;
         top: 50%;
         left: calc((100% + 100vw) / 2);
         z-index: 11000;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
+        display: grid;
+        place-items: center;
         width: 5rem;
         height: 90vh;
 
@@ -271,18 +271,18 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
         /* 4. 边框圆角 */
         border-radius: 0.2rem;
-        border: 0.3rem solid rgba(255, 0, 0, 1);   
+        border: 0.3rem solid rgba(255, 0, 0, 1);
 
-        /* 5. 背景 */
+        /* 5. 背景与阴影 */
         background-color: rgba(200, 60, 60, 0.65);
         box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.4);
-        
+
         /* 6. 文字 */
         color: #ffffff;
         font-size: 1.5rem;
         line-height: 1;
         text-align: center;
-        
+
         /* 7. 视觉效果 */
         opacity: 0;
 
@@ -291,8 +291,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
         /* 10. 动画过渡 */
         transform: translate(-50%, -50%) scale(0.3);
-        transition:
-            background-color 0.2s,
+        transition: background-color 0.2s,
             width 0.2s,
             opacity 0s 0s,
             transform 0s 0s;
@@ -300,6 +299,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
     .information-board-bar:hover
     {
+        /* 5. 背景与阴影 */
         background-color: rgba(220, 80, 80, 0.85);
     }
 
@@ -310,10 +310,9 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
         /* 10. 动画过渡 */
         transform: translate(-50%, -50%) scale(1);
-        transition:
-            background-color 0.2s,
+        transition: background-color 0.2s,
             width 0.2s,
-            opacity 0.3s ease 0.4s,      /* 延迟 0.4s（等 board 滑完） */
+            opacity 0.3s ease 0.4s,
             transform 0.3s ease 0.4s;
     }
 
@@ -329,12 +328,41 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
         word-break: break-word;
     }
 
-    .ib-title-h1 { font-size: 2rem; }
-    .ib-title-h2 { font-size: 1.6rem; }
-    .ib-title-h3 { font-size: 1.3rem; }
-    .ib-title-h4 { font-size: 1.1rem; }
-    .ib-title-h5 { font-size: 1rem; }
-    .ib-title-h6 { font-size: 0.9rem; }
+    .ib-title-h1
+    {
+        /* 6. 文字 */
+        font-size: 2rem;
+    }
+
+    .ib-title-h2
+    {
+        /* 6. 文字 */
+        font-size: 1.6rem;
+    }
+
+    .ib-title-h3
+    {
+        /* 6. 文字 */
+        font-size: 1.3rem;
+    }
+
+    .ib-title-h4
+    {
+        /* 6. 文字 */
+        font-size: 1.1rem;
+    }
+
+    .ib-title-h5
+    {
+        /* 6. 文字 */
+        font-size: 1rem;
+    }
+
+    .ib-title-h6
+    {
+        /* 6. 文字 */
+        font-size: 0.9rem;
+    }
 
     .ib-text,
     .ib-paragraph
@@ -368,7 +396,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
     .ib-paragraph :global(img)
     {
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: inline-block;
         max-width: 100%;
         vertical-align: middle;
@@ -376,7 +404,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
     .ib-image
     {
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: block;
         max-width: 100%;
         height: auto;
@@ -387,13 +415,13 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
         /* 4. 边框圆角 */
         border-radius: 0.5rem;
 
-        /* 5. 背景 */
+        /* 5. 背景与阴影 */
         box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.4);
     }
 
     .ib-link
     {
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: inline-block;
 
         /* 3. 盒模型 - 间距 */

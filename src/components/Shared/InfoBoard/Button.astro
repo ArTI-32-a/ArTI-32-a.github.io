@@ -12,14 +12,14 @@ const { index, radius = C.INF_RING_RADIUS_UNIT_V } = Astro.props;
 const zeroIndex: number = index - 1;
 const ringIndex: number = Math.floor(zeroIndex / 12);
 
-const angle: number = (zeroIndex % C.INF_RING_BTN_PER_RING) * C.INF_RING_BTN_ANGLE;
-const halfAngle: number = C.INF_RING_BTN_ANGLE / 2;
-const halfStep: number = (C.INF_RING_BTN_ANGLE - C.INF_RING_BTN_GAP) / 2;
+const angle: number = (zeroIndex % C.INF_RING_BTN_COUNT_N) * C.INF_RING_BTN_ANGLE_DEG;
+const halfAngle: number = C.INF_RING_BTN_ANGLE_DEG / 2;
+const halfStep: number = (C.INF_RING_BTN_ANGLE_DEG - C.INF_RING_BTN_GAP_ANGLE_DEG) / 2;
 
 // 局部坐标系：原点在弧段中点（圆周上），x 轴沿径向向外，y 轴沿切向
 // 弧心在 (-r, 0)
 const r: number = radius;
-const thickness: number = r * C.INF_RING_THICKNESS_RATIO * C.INF_RING_BTN_RATIO;
+const thickness: number = r * C.INF_RING_THICKNESS_RATIO_P * C.INF_RING_BTN_THICKNESS_RATIO_P;
 const ri: number = r - thickness / 2;
 const ro: number = r + thickness / 2;
 
@@ -164,40 +164,63 @@ const vbH: number = r * 0.6;
         left: 0;
         top: 0;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
+        --ring-radius-raw: calc((var(--ring-index) + 1) * var(--inf-ring-unit) + var(--inf-ring-offset));
+        --ring-radius: max(0, var(--ring-radius-raw));
         display: flex;
         align-items: center;
         justify-content: center;
-
-        --ring-radius-raw: calc((var(--ring-index) + 1) * var(--inf-ring-unit) + var(--inf-ring-offset));
-        --ring-radius: max(0, var(--ring-radius-raw));
-        --ring-fade-range: calc(var(--inf-ring-fade-start) - var(--inf-ring-fade-end));
-
         width: calc(var(--ring-radius) * 0.3 * 1vmin);
         height: calc(var(--ring-radius) * 0.6 * 1vmin);
 
-
-        --btn-font-size: calc(var(--ring-radius) * 0.0625 * 1vmin);
-
-        /* 7. 视觉效果 */
+        /* 5. 背景与阴影 */
         --btn-color-edge-inner: rgba(40, 35, 70, 0.9);
         --btn-color-hl: rgba(120, 105, 200, 0.95);
         --btn-color-mid: rgba(90, 75, 150, 0.9);
         --btn-color-edge-outer: rgba(30, 25, 55, 0.95);
-        --btn-stroke: rgba(180, 165, 255, 0.4);
 
+        /* 6. 文字 */
+        --btn-font-size: calc(var(--ring-radius) * 0.0625 * 1vmin);
+
+        /* 7. 视觉效果 */
+        --ring-fade-range: calc(var(--inf-ring-fade-start) - var(--inf-ring-fade-end));
         opacity: clamp(0, calc((var(--ring-radius) - var(--inf-ring-fade-end)) / var(--ring-fade-range)), 1);
-
 
         /* 9. 交互 */
         cursor: pointer;
         pointer-events: auto;
 
         /* 10. 动画过渡 */
-        transform:
-            translate(-50%, -50%)
+        transform: translate(-50%, -50%)
             rotate(calc((var(--angle) - var(--half-angle) + 30) * -1deg))
             translateX(calc(var(--ring-radius) * 1vmin));
+
+        /* 11. 生成内容与 SVG */
+        --btn-stroke: rgba(180, 165, 255, 0.4);
+    }
+
+    .contact-button:hover
+    {
+        /* 5. 背景与阴影 */
+        --btn-color-edge-inner: rgba(60, 55, 100, 0.9);
+        --btn-color-hl: rgba(160, 145, 240, 1);
+        --btn-color-mid: rgba(130, 115, 200, 0.95);
+        --btn-color-edge-outer: rgba(50, 45, 85, 0.95);
+
+        /* 11. 生成内容与 SVG */
+        --btn-stroke: rgba(220, 210, 255, 0.9);
+    }
+
+    .contact-button.active
+    {
+        /* 5. 背景与阴影 */
+        --btn-color-edge-inner: rgba(90, 45, 105, 0.9);
+        --btn-color-hl: rgba(225, 120, 255, 1);
+        --btn-color-mid: rgba(170, 75, 200, 0.95);
+        --btn-color-edge-outer: rgba(75, 35, 90, 0.95);
+
+        /* 11. 生成内容与 SVG */
+        --btn-stroke: rgba(245, 170, 255, 1);
     }
 
     .contact-button-svg
@@ -206,7 +229,7 @@ const vbH: number = r * 0.6;
         position: absolute;
         inset: 0;
 
-        /* 2. 盒模型 - 尺寸 */
+        /* 2. 盒模型 - 尺寸与排列 */
         display: block;
         width: 100%;
         height: 100%;
@@ -215,35 +238,15 @@ const vbH: number = r * 0.6;
         pointer-events: none;
     }
 
-    .contact-button:hover
-    {
-        /* 7. 视觉效果 */
-        --btn-color-edge-inner: rgba(60, 55, 100, 0.9);
-        --btn-color-hl: rgba(160, 145, 240, 1);
-        --btn-color-mid: rgba(130, 115, 200, 0.95);
-        --btn-color-edge-outer: rgba(50, 45, 85, 0.95);
-        --btn-stroke: rgba(220, 210, 255, 0.9);
-    }
-
-    .contact-button.active
-    {
-        /* 7. 视觉效果 */
-        --btn-color-edge-inner: rgba(90, 45, 105, 0.9);
-        --btn-color-hl: rgba(225, 120, 255, 1);
-        --btn-color-mid: rgba(170, 75, 200, 0.95);
-        --btn-color-edge-outer: rgba(75, 35, 90, 0.95);
-        --btn-stroke: rgba(245, 170, 255, 1);
-    }
-
     .contact-button-label
     {
         /* 6. 文字 */
         color: #ffffff;
         font-size: var(--btn-font-size);
         font-family: 'Georgia', 'Noto Serif SC', serif;
-        user-select: none;
 
         /* 9. 交互 */
+        user-select: none;
         pointer-events: none;
 
         /* 10. 动画过渡 */

@@ -127,8 +127,8 @@ function articleController(
         state: { completed: true },   // autoEnabled 初始为 true
     }));
 
-    const hero = initHero(shrinkTargets, C.WP_HERO_SHRINKING_THRESHOLD, C.WP_HERO_EXPANDING_THRESHOLD);
-    const toc = initTOC(mainArea, C.WP_HERO_SHRINKING_THRESHOLD);
+    const hero = initHero(shrinkTargets, C.WP_ARTICLE_HERO_SHRINK_THRESHOLD_V, C.WP_ARTICLE_HERO_EXPAND_THRESHOLD_V);
+    const toc = initTOC(mainArea, C.WP_ARTICLE_HERO_SHRINK_THRESHOLD_V);
 
     toc.onReady(() =>
     {

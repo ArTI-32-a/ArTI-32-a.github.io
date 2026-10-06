@@ -41,7 +41,7 @@ let idNum: number = 4900;
                 else
                 {
                     return (
-                        <div class="wp-folder" style={`padding-left: ${level * C.WP_CAT_BTN_PADDING / 16}rem`}>
+                        <div class="wp-folder" style={`padding-left: ${level * C.WP_CAT_LEVEL_INDENT_PX / 16}rem`}>
                             <div class={`wp-folder-title level-${level >= 3 ? "else" : level}`}>
                                 {node.key}
                             </div>
@@ -60,68 +60,86 @@ let idNum: number = 4900;
 
 
 <style>
-    /*
-        ---------- 1. 容器 ----------
-    */
+    /* ---------- 1. 容器 ---------- */
+
     .wp-catalog
     {
+        /* 2. 盒模型 - 尺寸与排列 */
         display: block;
         width: 100%;
         max-width: 60vw;
         box-sizing: border-box;
+
+        /* 3. 盒模型 - 间距 */
         margin: 0 auto;
         padding: 2rem;
+
+        /* 5. 背景与阴影 */
         background-color: transparent;
     }
 
     .wp-catalog.compact
     {
+        /* 2. 盒模型 - 尺寸与排列 */
         max-width: none;
+
+        /* 3. 盒模型 - 间距 */
         margin: 0;
         padding: 0;
     }
 
-    /*
-        ---------- 2. 文件夹标题 ----------
-    */
+    /* ---------- 2. 文件夹标题 ---------- */
+
     .wp-folder-title
     {
+        /* 3. 盒模型 - 间距 */
+        padding: 0.25rem 0;
+
+        /* 6. 文字 */
         color: rgba(255, 255, 255, 0.85);
         font-family: "Segoe UI", "PingFang SC", sans-serif;
         letter-spacing: 0.03em;
-        padding: 0.25rem 0;
+
+        /* 9. 交互 */
         cursor: default;
         user-select: none;
     }
 
     .wp-folder
     {
+        /* 3. 盒模型 - 间距 */
         margin: 0.1rem 0;
     }
 
-    /*
-        ---------- 3. 文件夹层级样式 ----------
-    */
+    /* ---------- 3. 文件夹层级样式 ---------- */
+
     .level-0
     {
+        /* 6. 文字 */
         font-size: 1.4rem;
         font-weight: 700;
         color: #9a8aff;
     }
+
     .level-1
     {
+        /* 6. 文字 */
         font-size: 1.15rem;
         font-weight: 600;
         color: #b8aeff;
     }
+
     .level-2
     {
+        /* 6. 文字 */
         font-size: 1rem;
         font-weight: 500;
         color: #d0c8ff;
     }
+
     .level-else
     {
+        /* 6. 文字 */
         font-size: 1rem;
         font-weight: 600;
         color: rgba(172, 185, 244, 0.7);

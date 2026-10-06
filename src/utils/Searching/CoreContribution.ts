@@ -687,7 +687,7 @@ class SearchCoreContribution
                 const matches = arrayMatches.get("tags")!;
                 let sum: number = 0;
                 for (const m of matches) sum += m.textLen / m.elementLen;
-                tagsScore = sum * C.SEARCH_PER_TAG_WEIGHT;
+                tagsScore = sum * C.SEARCH_TAG_WEIGHT_P;
             }
         }
 

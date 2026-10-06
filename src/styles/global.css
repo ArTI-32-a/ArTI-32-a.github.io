@@ -1,14 +1,17 @@
 html
 {
+    /* 8. 溢出滚动 */
     overscroll-behavior: none;
 }
 
 body
 {
+    /* 5. 背景与阴影 */
     background-color: #1f1e33;
 }
 
-a 
+a
 {
+    /* 6. 文字 */
     text-decoration: none;
 }
