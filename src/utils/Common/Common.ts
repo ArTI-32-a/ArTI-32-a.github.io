@@ -29,16 +29,6 @@ class Common
 
     static readonly SEARCH_KIND_ARRAY_NAME: "element" = "element";
 
-    // static readonly SEARCH_DEBOUNCE_MS = 150;
-    static readonly WP_CAT_SEARCH_DEBOUNCE_MS = 150;
-
-
-    /**
-     * 这里已经是搜索的UI部分了
-     */
-    // static readonly SEARCH_MAX_RESULTS = 5;
-    static readonly WP_CAT_SEARCH_MAX_RESULTS_N = 5;
-
 
     
     /**
@@ -233,12 +223,29 @@ class Common
     // 目录层级缩进的基准像素值；使用处除以 16 转为 rem。
     static readonly WP_CAT_LEVEL_INDENT_PX: number = 30;
 
+    // static readonly SEARCH_DEBOUNCE_MS = 150;
+    static readonly WP_CAT_SEARCH_DEBOUNCE_MS = 150;
+
+    /**
+     * 这里已经是搜索的UI部分了
+     */
+    // static readonly SEARCH_MAX_RESULTS = 5;
+    static readonly WP_CAT_SEARCH_MAX_RESULTS_N = 5;
+
+
+
     // 首屏收起阈值，单位为视口高度百分比（25 对应 25vh）。
     // static readonly WP_HERO_SHRINKING_THRESHOLD: number = 25;
     static readonly WP_ARTICLE_HERO_SHRINK_THRESHOLD_V: number = 25;
 
     // static readonly WP_HERO_EXPANDING_THRESHOLD: number = 20;
     static readonly WP_ARTICLE_HERO_EXPAND_THRESHOLD_V: number = 20;
+
+    /** 正文 Hero 低清背景的加载超时：30 秒 */
+    static readonly WP_ARTICLE_HERO_BG_LOW_TIMEOUT_MS: number = 60000;
+
+    /** 正文 Hero 高清背景的加载超时：60 秒 */
+    static readonly WP_ARTICLE_HERO_BG_HIGH_TIMEOUT_MS: number = 90000;
 
     static readonly WP_BTN_DEFAULT_STATE: WpBtnState = 
     {

@@ -1,3 +1,5 @@
+import { Common as C } from "@/utils/Common/Common";
+
 export interface BackgroundVariant 
 {
     width: number;
@@ -71,8 +73,8 @@ export async function loadBackground(
     variants: BackgroundVariant[],
     aspect: number,
     {
-        lowTimeout = 6000,
-        highTimeout = 10000,
+        lowTimeout = C.WP_ARTICLE_HERO_BG_LOW_TIMEOUT_MS,
+        highTimeout = C.WP_ARTICLE_HERO_BG_HIGH_TIMEOUT_MS,
         maxPixelRatio = 2,
     }: BackgroundOptions = {}
 ): Promise<void> 
@@ -99,10 +101,14 @@ export async function loadBackground(
 
     window.addEventListener("pagehide", stop, { once: true });
 
+    // 0：纯色；1：低清；2：高清。
+    let displayedQuality = 0;
+
     async function applyImage(
         variant: BackgroundVariant,
-        timeout: number
-    ): Promise<boolean> 
+        timeout: number,
+        quality: number
+    ): Promise<void>
     {
         const ready = await loadImage(
             variant.src,
@@ -110,23 +116,33 @@ export async function loadBackground(
             controller.signal
         );
 
-        if (!ready || controller.signal.aborted) return false;
+        if (!ready || controller.signal.aborted) return;
+
+        // 高清已经显示时，忽略迟到的低清。
+        if (quality <= displayedQuality) return;
 
         element.style.backgroundImage =
             `url(${JSON.stringify(variant.src)})`;
 
-        return true;
+        displayedQuality = quality;
     }
 
-    try 
+    try
     {
-        if (!await applyImage(low, lowTimeout)) return;
-
-        if (target.src !== low.src) {
-            await applyImage(target, highTimeout);
+        if (target.src === low.src)
+        {
+            // 两档实际是同一张图片时，只加载一次。
+            await applyImage(target, highTimeout, 2);
         }
-    } 
-    finally 
+        else
+        {
+            await Promise.all([
+                applyImage(low, lowTimeout, 1),
+                applyImage(target, highTimeout, 2),
+            ]);
+        }
+    }
+    finally
     {
         window.removeEventListener("pagehide", stop);
     }
