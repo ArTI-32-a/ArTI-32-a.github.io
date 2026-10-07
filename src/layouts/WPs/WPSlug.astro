@@ -2,8 +2,8 @@
 import "@/styles/global.css";
 
 
-import BtnMenu from "@/components/WPs/Shared/BtnMenu.astro";
-import Btn from "@/components/WPs/Shared/Btn.astro";
+import Menu from "@/components/WPs/Shared/Button/Menu.astro";
+import Button from "@/components/WPs/Shared/Button/Button.astro";
 import Cmt from "@/components/Shared/Comment/Comments.astro";
 
 export interface Props
@@ -51,40 +51,40 @@ const { title = "Arutiko" } = Astro.props;
             <div class="toc-bottom-spacer" />
         </aside>
 
-        <BtnMenu>
-            <Btn slot="up" href="#page-bottom" tip="前往页面底部">
+        <Menu>
+            <Button slot="up" href="#page-bottom" tip="前往页面底部">
                 ↓
-            </Btn>
+            </Button>
 
-            <Btn slot="up" href="#page-top" tip="前往页面顶部">
+            <Button slot="up" href="#page-top" tip="前往页面顶部">
                 ↑
-            </Btn>
+            </Button>
 
-            <Btn slot="up" href="#comment-top" font={0.9} tip="前往评论区">
+            <Button slot="up" href="#comment-top" font={0.9} tip="前往评论区">
                 评论
-            </Btn>
+            </Button>
 
-            <Btn slot="up" event="toc-toggle" font={1} tip="Table of Contents">
+            <Button slot="up" event="toc-toggle" font={1} tip="Table of Contents">
                 TOC
-            </Btn>
+            </Button>
 
-            <Btn slot="up" event="hero-toggle" tip="展开首屏">
+            <Button slot="up" event="hero-toggle" tip="展开首屏">
                 H
-            </Btn>
+            </Button>
 
-            <Btn slot="up" event="hero-auto-toggle" tip="首屏自动开、关">
+            <Button slot="up" event="hero-auto-toggle" tip="首屏自动开、关">
                 A
-            </Btn>
+            </Button>
 
 
-            <Btn slot="left" href="/wps/acat" tip="返回目录">
+            <Button slot="left" href="/wps/acat" tip="返回目录">
                 {"<"}
-            </Btn>
+            </Button>
 
-            <Btn slot="left" href="/" font={1.2} tip="返回首页">
+            <Button slot="left" href="/" font={1.2} tip="返回首页">
                 {"<<"}
-            </Btn>
-        </BtnMenu>
+            </Button>
+        </Menu>
 
         <div id="page-bottom" aria-hidden="true" />
     </body>
