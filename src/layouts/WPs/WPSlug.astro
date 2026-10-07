@@ -25,6 +25,8 @@ const { title = "Arutiko" } = Astro.props;
     </head>
 
     <body>
+        <div id="page-top" aria-hidden="true" />
+
         <div class="mask" id="mask">
             <div class="hero-clip">
                 <slot name="header" />
@@ -45,6 +47,18 @@ const { title = "Arutiko" } = Astro.props;
         </aside>
 
         <BtnMenu>
+            <Btn slot="up" href="#page-bottom" tip="前往页面底部">
+                ↓
+            </Btn>
+
+            <Btn slot="up" href="#page-top" tip="前往页面顶部">
+                ↑
+            </Btn>
+
+            <Btn slot="up" href="#comment-top" font={0.9} tip="前往评论区">
+                评论
+            </Btn>
+
             <Btn slot="up" event="toc-toggle" font={1} tip="Table of Contents">
                 TOC
             </Btn>
@@ -57,14 +71,17 @@ const { title = "Arutiko" } = Astro.props;
                 A
             </Btn>
 
-            <Btn slot="left" event="back-to-catalog" tip="返回目录">
+
+            <Btn slot="left" href="/wps/acat" tip="返回目录">
                 {"<"}
             </Btn>
 
-            <Btn slot="left" event="back-to-index" font={1.2} tip="返回首页">
+            <Btn slot="left" href="/" font={1.2} tip="返回首页">
                 {"<<"}
             </Btn>
         </BtnMenu>
+
+        <div id="page-bottom" aria-hidden="true" />
     </body>
 </html>
 
@@ -106,15 +123,7 @@ const { title = "Arutiko" } = Astro.props;
         );
     })();
 
-    document.addEventListener("back-to-catalog", () =>
-    {
-        window.location.href = "/wps/acat";
-    });
 
-    document.addEventListener("back-to-index", () =>
-    {
-        window.location.href = "/";
-    });
 </script>
 
 <style>
@@ -123,6 +132,12 @@ const { title = "Arutiko" } = Astro.props;
         /* 8. 溢出滚动 */
         overflow-anchor: none;
         scroll-behavior: smooth;
+        scroll-padding-top: 65vh;
+    }
+
+    :global(html:has(#mask.shrink))
+    {
+        /* 8. 溢出滚动 */
         scroll-padding-top: 25vh;
     }
 

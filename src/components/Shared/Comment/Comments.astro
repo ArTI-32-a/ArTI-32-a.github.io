@@ -3,13 +3,17 @@ import "@waline/client/waline.css";
 ---
 
 <section class="article-comments" aria-label="文章评论">
-    <h2 class="comments-title">评论</h2>
+    <div id="comment-top" />
+
+    <h2 class="comments-title">
+        评论
+    </h2>
 
     <p class="comments-guide">
         可以登录后评论，也可以填写昵称或直接匿名留言。
     </p>
 
-    <div id="waline-comments"></div>
+    <div id="waline-comments" />
 </section>
 
 
@@ -27,7 +31,7 @@ import "@waline/client/waline.css";
 
         const container = containerEl;
 
-        
+
         const path = window.location.pathname.replace(/\/+$/, "") || "/";
 
         init(

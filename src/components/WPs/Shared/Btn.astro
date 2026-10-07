@@ -1,19 +1,64 @@
 ---
-export interface Props
+// export interface Props
+// {
+//     event: string;
+//     font?: number;
+//     tip?: string;  
+// }
+
+// const { event = "empty-btn", font = 1.5, tip } = Astro.props;
+interface BaseProps
 {
-    event: string;
     font?: number;
-    tip?: string;  
+    tip?: string;
 }
 
-const { event = "empty-btn", font = 1.5, tip } = Astro.props;
+type EventProps =
+{
+    event: string;
+    href?: never;
+};
+
+type LinkProps =
+{
+    href: string;
+    event?: never;
+};
+
+export type Props = BaseProps & (EventProps | LinkProps);
+
+const { event = "empty-btn", href, font = 1.5, tip } = Astro.props;
 ---
 
-<button class="btn" style=`--btn-font-size:${font}rem` data-btnmenu-event={event}>
+<!-- <button class="btn" style=`--btn-font-size:${font}rem` data-btnmenu-event={event}>
     <slot />
 
     {tip && <span class="btn-tip">{tip}</span>}
-</button>
+</button> -->
+{
+    href !== undefined ? (
+        <a class="btn" href={href} style={`--btn-font-size: ${font}rem`} aria-label={tip}>
+            <slot />
+
+            {tip && (
+                <span class="btn-tip" aria-hidden="true">
+                    {tip}
+                </span>
+            )}
+        </a>
+    ) 
+    : (
+        <button class="btn" type="button" data-btnmenu-event={event} style={`--btn-font-size: ${font}rem`} aria-label={tip}>
+            <slot />
+
+            {tip && (
+                <span class="btn-tip" aria-hidden="true">
+                    {tip}
+                </span>
+            )}
+        </button>
+    )
+}
 
 
 
@@ -107,21 +152,29 @@ const { event = "empty-btn", font = 1.5, tip } = Astro.props;
         position: relative;
 
         /* 2. 盒模型 - 尺寸与排列 */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         width: 3rem;
         height: 3rem;
+        box-sizing: border-box;
         flex-shrink: 0;
+
+        /* 3. 盒模型 - 间距 */
+        padding: 0;
 
         /* 4. 边框圆角 */
         border-radius: 50%;
         border: 1px solid rgba(255, 255, 255, 0.15);
 
         /* 5. 背景与阴影 */
-        background-color: rgba(31, 30, 51, 0.9);
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 
         /* 6. 文字 */
         color: var(--btn-color, #ffffff);
         font-size: var(--btn-font-size, 1.5rem);
+        line-height: 1;
+        text-decoration: none;
 
         /* 9. 交互 */
         cursor: pointer;
@@ -130,10 +183,34 @@ const { event = "empty-btn", font = 1.5, tip } = Astro.props;
         transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
     }
 
-    .btn:hover
+    button.btn
+    {
+        /* 5. 背景与阴影 */
+        background-color: rgba(31, 30, 51, 0.9);
+    }
+
+    a.btn
+    {
+        /* 5. 背景与阴影 */
+        background-color: rgba(125, 211, 252, 0.08);
+    }
+
+    button.btn:hover
     {
         /* 5. 背景与阴影 */
         background-color: rgba(60, 55, 90, 0.9);
+
+        /* 10. 动画过渡 */
+        transform: scale(1.05);
+    }
+
+    a.btn:hover
+    {
+        /* 5. 背景与阴影 */
+        background-color: rgba(125, 211, 252, 0.18);
+        box-shadow:
+            0 0 12px rgba(125, 211, 252, 0.2),
+            0 4px 16px rgba(0, 0, 0, 0.5);
 
         /* 10. 动画过渡 */
         transform: scale(1.05);
@@ -148,6 +225,15 @@ const { event = "empty-btn", font = 1.5, tip } = Astro.props;
 
         /* 6. 文字 */
         color: #ffd866;
+    }
+
+    .btn.completed:hover
+    {
+        /* 5. 背景与阴影 */
+        background-color: rgba(255, 216, 102, 0.35);
+        box-shadow:
+            0 0 16px rgba(255, 216, 102, 0.55),
+            0 4px 16px rgba(0, 0, 0, 0.5);
     }
 
     .btn.disabled
