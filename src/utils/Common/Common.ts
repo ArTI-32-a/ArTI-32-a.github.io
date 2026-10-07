@@ -206,7 +206,7 @@ class Common
      * 一个最短切换时长，completed 事件再快也要等够时间才让光柱拉杆回弹
      */
     // static readonly WP_CAT_BEAM_MIN_SWITCH_DURATION_MS = 200; // ms
-    static readonly WP_CAT_BEAM_SWITCH_MIN_DURATION_MS = 200; // ms
+    static readonly WP_CAT_BEAM_SWITCH_MIN_DURATION_MS = 50; // ms
 
     /**
      * 上面那个是最短时间，这个就是超时时间，超时了直接往回弹

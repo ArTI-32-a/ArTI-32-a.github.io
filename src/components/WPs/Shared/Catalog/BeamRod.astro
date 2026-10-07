@@ -326,7 +326,8 @@ import { Common as C } from "@/utils/Common/Common";
         pointer-events: none;
 
         /* 10. 动画过渡 */
-        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        /* transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); */
+        transition: transform 0.2s ease-in-out;
     }
 
     .switcher-beam.dragging
@@ -367,7 +368,19 @@ import { Common as C } from "@/utils/Common/Common";
         z-index: 1000000;
 
         /* 5. 背景与阴影 */
-        background: radial-gradient(ellipse at center, rgba(200, 235, 255, 0.95) 0%, rgba(200, 235, 255, 0.6) 25%, rgba(31, 30, 51, 0) 70%);
+        background:
+            radial-gradient(
+                ellipse 55% 75% at 50% 50%,
+                rgba(240, 250, 255, 0.9) 0%,
+                rgba(200, 225, 255, 0.55) 25%,
+                rgba(154, 138, 255, 0.25) 60%,
+                rgba(154, 138, 255, 0) 100%
+            ),
+            radial-gradient(
+                ellipse 85% 100% at 50% 50%,
+                rgba(154, 138, 255, 0.3) 0%,
+                rgba(154, 138, 255, 0) 90%
+            );
 
         /* 7. 视觉效果 */
         opacity: 0;
@@ -379,7 +392,7 @@ import { Common as C } from "@/utils/Common/Common";
     .switcher-flash.active
     {
         /* 10. 动画过渡 */
-        animation: flash-pulse 0.4s ease-out;
+        animation: flash-pulse 0.35s linear both;
     }
 
     @keyframes flash-pulse
@@ -388,18 +401,29 @@ import { Common as C } from "@/utils/Common/Common";
         {
             /* 7. 视觉效果 */
             opacity: 0;
+
+            /* 10. 动画过渡 */
+            transform: scale(0.9);
+            animation-timing-function: ease-out;
         }
 
-        40%
+        15%
         {
             /* 7. 视觉效果 */
             opacity: 1;
+
+            /* 10. 动画过渡 */
+            transform: scale(1);
+            animation-timing-function: ease-out;
         }
 
         100%
         {
             /* 7. 视觉效果 */
             opacity: 0;
+
+            /* 10. 动画过渡 */
+            transform: scale(1.1);
         }
     }
 </style>
