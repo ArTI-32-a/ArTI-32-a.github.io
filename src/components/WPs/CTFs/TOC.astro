@@ -25,6 +25,10 @@ for (const h of headings)
         Catalog / 目录
     </div>
 
+    <a class="toc-section-link" href="#article-top" data-slug="article-top" data-depth="0">
+        正文：
+    </a>
+
     <ul class="toc-list">
         {headings.map(h => (
             <li class="toc-item" style={`padding-left: ${(h.depth - minDepth) * 0.8}rem;`}>
@@ -34,6 +38,10 @@ for (const h of headings)
             </li>
         ))}
     </ul>
+
+    <a class="toc-section-link" href="#comment-top" data-slug="comment-top" data-depth="0">
+        评论：
+    </a>
 </nav>
 
 <style>
@@ -56,6 +64,57 @@ for (const h of headings)
         color: #ffffff;
         font-size: 1rem;
         font-weight: 700;
+    }
+
+    .toc-section-link
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        display: block;
+
+        /* 3. 盒模型 - 间距 */
+        margin: 1rem 0 0.75rem;
+        padding: 0.25rem 0.5rem;
+
+        /* 4. 边框圆角 */
+        border-left: 2px solid rgba(154, 138, 255, 0.5);
+        border-radius: 0 0.375rem 0.375rem 0;
+
+        /* 6. 文字 */
+        color: #c9bdff;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+
+        /* 10. 动画过渡 */
+        transition: color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .toc-section-link:focus-visible
+    {
+        /* 9. 交互 */
+        outline: 2px solid #9a8aff;
+        outline-offset: 2px;
+    }
+
+    .toc-section-link:hover
+    {
+        /* 5. 背景与阴影 */
+        background-color: rgba(154, 138, 255, 0.12);
+
+        /* 6. 文字 */
+        color: #e8e2ff;
+    }
+
+    .toc-section-link.active
+    {
+        /* 4. 边框圆角 */
+        border-left-color: #ffd866;
+
+        /* 5. 背景与阴影 */
+        background-color: rgba(255, 216, 102, 0.1);
+
+        /* 6. 文字 */
+        color: #ffd866;
     }
 
     .toc-list
@@ -127,10 +186,12 @@ for (const h of headings)
 </style>
 
 <script>
+    import { Common as C } from "@/utils/Common/Common";
+
     (() =>
     {
         const links: HTMLAnchorElement[] = Array.from(
-            document.querySelectorAll<HTMLAnchorElement>(".toc-link")
+            document.querySelectorAll<HTMLAnchorElement>(".toc-link, .toc-section-link")
         );
         const headings: { el: HTMLElement; slug: string }[] = [];
 
@@ -145,11 +206,11 @@ for (const h of headings)
 
         if (headings.length === 0) return;
 
-        let OFFSET: number = window.innerHeight * 0.25;
-        window.addEventListener("resize", () =>
-        {
-            OFFSET = window.innerHeight * 0.25;
-        });
+        // let OFFSET: number = window.innerHeight * 0.25;
+        // window.addEventListener("resize", () =>
+        // {
+        //     OFFSET = window.innerHeight * 0.25;
+        // });
 
         // 向上找第一个可滚动的祖先元素
         function findScrollContainer(el: HTMLElement): HTMLElement | null
@@ -171,12 +232,14 @@ for (const h of headings)
 
         function updateActive(): void
         {
+            const offset = Number.parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+
             let activeSlug: string | null = null;
 
             for (const { el, slug } of headings)
             {
                 const top = el.getBoundingClientRect().top;
-                if (top <= OFFSET)
+                if (top <= offset + C.WOR_EPSILON_PX)
                 {
                     activeSlug = slug;
                 }

@@ -35,7 +35,12 @@ const { title = "Arutiko" } = Astro.props;
 
         <div class="main-area" id="main-area">
             <article class="article-area">
+                <h2  id="article-top" class="article-title">
+                    正文
+                </h2>
+
                 <slot />
+                
                 <Cmt />
             </article>
         </div>
@@ -244,6 +249,21 @@ const { title = "Arutiko" } = Astro.props;
     {
         /* 10. 动画过渡 */
         transform: translateX(-10vw);
+    }
+
+    .article-title
+    {
+        /* 3. 盒模型 - 间距 */
+        margin: 0 0 1.5rem;
+        padding-left: 0.75rem;
+
+        /* 4. 边框圆角 */
+        border-left: 3px solid #9a8aff;
+
+        /* 6. 文字 */
+        color: #e8e2ff;
+        font-size: 1.5rem;
+        line-height: 1.3;
     }
 
     .toc-area

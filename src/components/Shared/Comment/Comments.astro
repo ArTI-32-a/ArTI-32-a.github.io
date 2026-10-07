@@ -64,19 +64,25 @@ import "@waline/client/waline.css";
 
         /* 3. 盒模型 - 间距 */
         margin-top: 3rem;
-        padding-top: 1.5rem;
+        padding-top: 2rem;
 
         /* 4. 边框圆角 */
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        border-top: 1px solid rgba(154, 138, 255, 0.3);
     }
 
     .comments-title
     {
         /* 3. 盒模型 - 间距 */
         margin: 0 0 0.75rem;
+        padding-left: 0.75rem;
+
+        /* 4. 边框圆角 */
+        border-left: 3px solid #9a8aff;
 
         /* 6. 文字 */
+        color: #e8e2ff;
         font-size: 1.5rem;
+        line-height: 1.3;
     }
 
     .comments-guide
@@ -85,8 +91,131 @@ import "@waline/client/waline.css";
         margin: 0 0 1.5rem;
 
         /* 6. 文字 */
-        color: rgba(255, 255, 255, 0.65);
+        color: #b4aecb;
         font-size: 0.875rem;
         line-height: 1.6;
+    }
+
+    #waline-comments
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        --waline-avatar-size: 2.75rem;
+        --waline-m-avatar-size: 2.25rem;
+
+        /* 4. 边框圆角 */
+        --waline-border-color: rgba(154, 138, 255, 0.25);
+        --waline-border: 1px solid var(--waline-border-color);
+        --waline-avatar-radius: 50%;
+
+        /* 5. 背景与阴影 */
+        --waline-bg-color: #27243e;
+        --waline-bg-color-light: #302c49;
+        --waline-bg-color-hover: #3b3557;
+        --waline-disable-bg-color: #302c49;
+        --waline-code-bg-color: #191725;
+        --waline-bq-color: #51466f;
+        --waline-info-bg-color: #302c49;
+        --waline-box-shadow: none;
+
+        /* 6. 文字 */
+        --waline-font-size: 1rem;
+        --waline-theme-color: #b5a5ff;
+        --waline-active-color: #d0c5ff;
+        --waline-color: #e5e0f2;
+        --waline-white: #211b36;
+        --waline-light-grey: #aaa2bf;
+        --waline-dark-grey: #c4badb;
+        --waline-disable-color: #8d859f;
+        --waline-info-color: #aaa2bf;
+        --waline-info-font-size: 0.75rem;
+        --waline-badge-color: #7dd3fc;
+        --waline-badge-font-size: 0.75rem;
+
+        font-family: inherit;
+    }
+
+    #waline-comments :global(.wl-panel)
+    {
+        /* 4. 边框圆角 */
+        border-radius: 0.875rem;
+
+        /* 5. 背景与阴影 */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+
+        /* 10. 动画过渡 */
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #waline-comments :global(.wl-panel:focus-within)
+    {
+        /* 4. 边框圆角 */
+        border-color: rgba(181, 165, 255, 0.65);
+
+        /* 5. 背景与阴影 */
+        box-shadow: 0 0 0 2px rgba(154, 138, 255, 0.1);
+    }
+
+    #waline-comments :global(.wl-header)
+    {
+        /* 3. 盒模型 - 间距 */
+        padding: 0 0.5rem;
+
+        /* 4. 边框圆角 */
+        border-bottom: 1px solid var(--waline-border-color);
+    }
+
+    #waline-comments :global(.wl-header label),
+    #waline-comments :global(.wl-header input)
+    {
+        /* 6. 文字 */
+        font-size: 0.875rem;
+    }
+
+    #waline-comments :global(.wl-editor)
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        min-height: 9rem;
+
+        /* 3. 盒模型 - 间距 */
+        padding: 0.75rem;
+
+        /* 6. 文字 */
+        font-family: inherit;
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    #waline-comments :global(.wl-editor::placeholder),
+    #waline-comments :global(.wl-input::placeholder)
+    {
+        /* 6. 文字 */
+        color: var(--waline-light-grey);
+        opacity: 1;
+    }
+
+    #waline-comments :global(.wl-btn)
+    {
+        /* 3. 盒模型 - 间距 */
+        padding: 0.5rem 1rem;
+
+        /* 4. 边框圆角 */
+        border-radius: 0.5rem;
+
+        /* 6. 文字 */
+        font-family: inherit;
+        font-size: 0.875rem;
+
+        /* 10. 动画过渡 */
+        transition:
+            color 0.2s ease,
+            background-color 0.2s ease,
+            border-color 0.2s ease;
+    }
+
+    #waline-comments :global(.wl-btn:focus-visible)
+    {
+        /* 9. 交互 */
+        outline: 2px solid var(--waline-theme-color);
+        outline-offset: 2px;
     }
 </style>
