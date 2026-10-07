@@ -8,7 +8,7 @@ import IM from "@/components/Shared/InfoBoard/Menu.astro";
         ≡
     </button>
     
-    <G />
+    <G class="geometry"/>
 
     <div class="menu-stack menu-up" id="menu-up">
         <slot name="up" />
@@ -129,6 +129,11 @@ import IM from "@/components/Shared/InfoBoard/Menu.astro";
         animation: spin-cw 0.6s ease;
     }
 
+    .geometry
+    {
+        z-index: 3000;
+    }
+
     @keyframes spin-ccw
     {
         from
@@ -167,7 +172,7 @@ import IM from "@/components/Shared/InfoBoard/Menu.astro";
         position: fixed;
         right: 1.5rem;
         bottom: 1.5rem;
-        z-index: 1000;
+        z-index: 5000;
 
         /* 2. 盒模型 - 尺寸与排列 */
         display: flex;
