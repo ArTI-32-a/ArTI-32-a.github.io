@@ -86,15 +86,15 @@
                 "data": null,
                 "children": [
                     {
-                        "key": "Reverse",
+                        "key": "2026.24 Weekly",
                         "href": null,
                         "data": null,
                         "children": [
                             {
-                                "key": "2026.24 周常",
-                                "href": "/wps/CTF/practice/ctf-plus/reverse/202624-周常",
+                                "key": "2624Reverse",
+                                "href": "/wps/CTF/practice/ctf-plus/202624-weekly/2624reverse",
                                 "data": {
-                                    "title": "2026.24 周常",
+                                    "title": "Reverse",
                                     "pubDate": "2026-08-20T00:00:00.000Z",
                                     "tags": [
                                         "reverse",

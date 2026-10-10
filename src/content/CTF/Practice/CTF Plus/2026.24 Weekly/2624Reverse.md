@@ -1,5 +1,5 @@
 ---
-title: "2026.24 周常"
+title: "Reverse"
 pubDate: 2026-08-20
 tags: ["reverse","java","base64","xor","random","shuffle","cpp","ida","anti-disassembly","obfuscation","patch"]
 type: "Reverse"

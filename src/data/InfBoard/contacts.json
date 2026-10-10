@@ -1,9 +1,9 @@
 {
     "0": [
         {
-            "type" : "title",
-            "level" : 2,
-            "text" : "∅"
+            "type": "title",
+            "level": 2,
+            "text": "∅"
         },
         {
             "type": "paragraph",
@@ -53,6 +53,20 @@
                     "type": "link",
                     "text": "qian-mf.github.io",
                     "href": "https://qian-mf.github.io"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "琉璃幻彩："
+                },
+                {
+                    "type": "link",
+                    "text": "fightergodnemo.github.io",
+                    "href": "https://fightergodnemo.github.io/"
                 }
             ]
         },
