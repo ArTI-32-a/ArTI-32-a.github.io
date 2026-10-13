@@ -43,6 +43,8 @@ for (const h of headings)
 const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth === minDepth));
 ---
 
+
+
 <header 
     class="hero" 
     id="hero" 
@@ -139,7 +141,7 @@ const topHeadings = (minDepth === Infinity ? [] : headings.filter(h => h.depth =
     .hero.shrink
     {
         /* 5. 背景与阴影 */
-        background-position: center calc(calc(20% + var(--hero-shrink-offset, -5vh)));
+        background-position: center calc(20% + var(--hero-shrink-offset, -5vh));
     }
 
     .hero-breadcrumb

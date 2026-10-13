@@ -60,6 +60,18 @@ class Common
      */
     static readonly INF_RING_SCROLL_STEP_V: number = 2;
 
+    /** 连续滚动停止后，重新判断滚轮操作对象的等待时间（毫秒）。 */
+    static readonly INF_RING_WHEEL_IDLE_TIME_MS: number = 500;
+
+    /** 每次滚轮事件累加的圆环目标角度（度）。 */
+    static readonly INF_RING_ROTATE_STEP_DEG: number = 5;
+
+    /** 圆环旋转每个基准帧追赶剩余角度的比例，以 60Hz 为基准。 */
+    static readonly INF_RING_ROTATE_LERP_P: number = 0.12;
+
+    /** 圆环旋转对齐目标并停止动画时的角度容差（度）。 */
+    static readonly INF_RING_ROTATE_EPSILON_DEG: number = 0.01;
+
     /**
      * 菜单打开速度
      */
@@ -131,6 +143,11 @@ class Common
      * 圆环展开 / 收起时长（毫秒）
      */
     static readonly INF_RING_OPEN_DURATION_MS: number = 400;
+
+    /**
+     * 信息菜单中央关闭几何体的点击放大时长（毫秒），结束后请求关闭菜单。
+     */
+    static readonly INF_CLOSE_BTN_EXPAND_TIME_MS: number = 200;
 
     /**
      * 信息板从按钮飞向中心的时长（毫秒）

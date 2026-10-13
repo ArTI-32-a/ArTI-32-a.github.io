@@ -110,6 +110,25 @@ function findImages(content: string): FoundImage[]
     const seen = new Set<string>();
     let m: RegExpExecArray | null;
 
+    // 导出格式：图片标记可能被转义，地址又被包成 [显示文字](实际地址)。
+    // 保留原始 full，下载成功后才将整个引用替换为正常的本地图片引用。
+    const exportedRegex = /!\\*\[([^\]\r\n]*?)\\*\]\\*\(\s*\[[^\]\r\n]*\]\((https?:\/\/[^)\s]+)\)\s*\\*\)/g;
+    while ((m = exportedRegex.exec(content)) !== null)
+    {
+        if (seen.has(m[0])) continue;
+        seen.add(m[0]);
+        result.push({ full: m[0], src: m[2], alt: m[1], isMarkdown: true });
+    }
+
+    // 转义图片格式：!\[alt](url 或 data:...)，仅识别图片引用，不清洗正文。
+    const escapedRegex = /!\\+\[([^\]\r\n]*?)\\*\]\\*\((https?:\/\/[^)]+|data:image\/[^)]+)\\*\)/g;
+    while ((m = escapedRegex.exec(content)) !== null)
+    {
+        if (seen.has(m[0])) continue;
+        seen.add(m[0]);
+        result.push({ full: m[0], src: m[2], alt: m[1], isMarkdown: true });
+    }
+
     // Markdown 格式：![alt](url 或 data:...)
     const mdRegex = /!\[([^\]]*)\]\((https?:\/\/[^)]+|data:image\/[^)]+)\)/g;
     while ((m = mdRegex.exec(content)) !== null)
@@ -211,11 +230,34 @@ async function processFile(
         let replacement: string;
         if (img.isMarkdown)
         {
-            replacement = `![${img.alt}](${newRef})`;
+            // 写入 HTML 属性前转义，避免图片说明中的引号破坏标签。
+            const alt = img.alt.replace(/&/g, "&amp;")
+                .replace(/"/g, "&quot;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;");
+            const src = newRef.replace(/&/g, "&amp;")
+                .replace(/"/g, "&quot;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;");
+            replacement = `<img src="${src}" alt="${alt}" style="max-width: 80%; height: auto;">`;
         }
         else
         {
             replacement = img.full.replace(img.src, newRef);
+            const styleRegex = /\bstyle\s*=\s*(["'])(.*?)\1/is;
+            if (styleRegex.test(replacement))
+            {
+                replacement = replacement.replace(styleRegex, (_, quote: string, style: string) =>
+                {
+                    const remaining = style.replace(/(?:^|;)\s*(?:max-width|height)\s*:[^;]*/gi, "").trim();
+                    const prefix = remaining ? `${remaining.replace(/;\s*$/, "")}; ` : "";
+                    return `style=${quote}${prefix}max-width: 80%; height: auto;${quote}`;
+                });
+            }
+            else
+            {
+                replacement = replacement.replace(/\s*(\/?>)$/, ' style="max-width: 80%; height: auto;"$1');
+            }
         }
 
         newBody = newBody.replaceAll(img.full, () => replacement);

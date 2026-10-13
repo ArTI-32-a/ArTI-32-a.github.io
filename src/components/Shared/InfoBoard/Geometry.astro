@@ -1,0 +1,425 @@
+---
+---
+
+
+
+<button id="inf-close-geometry" class="close-geometry" type="button" aria-label="关闭信息面板" title="关闭信息面板" disabled>
+
+    <svg
+        class="info-geometry-ring-label"
+        viewBox="0 0 200 200"
+        aria-hidden="true"
+    >
+        <defs>
+            <!-- 从左到右，沿下半圆排列，文字保持正向 -->
+            <path
+                id="info-geometry-label-arc"
+                d="M 20,100 A 80,80 0 0,0 180,100"
+            />
+        </defs>
+
+        <text>
+            <textPath
+                href="#info-geometry-label-arc"
+                startOffset="50%"
+                text-anchor="middle"
+            >
+                C L O S E
+            </textPath>
+        </text>
+    </svg>
+
+    <span class="geometry-fallback" aria-hidden="true">
+        ×
+    </span>
+    
+    <span class="geometry-canvas" aria-hidden="true">
+
+    </span>
+</button>
+
+
+
+<script>
+    import * as THREE from "three";
+    import { MarchingCubes } from "three/addons/objects/MarchingCubes.js";
+    import { Common as C } from "@/utils/Common/Common";
+    import { EventName as EN } from "@/utils/Common/Event";
+
+    (() =>
+    {
+        const buttonEl = document.getElementById("inf-close-geometry");
+        if (!(buttonEl instanceof HTMLButtonElement)) return;
+        const button = buttonEl;
+        const menuEl = button.closest("#contact-menu");
+        if (!(menuEl instanceof HTMLElement)) return;
+        const menu = menuEl;
+        const canvasEl = button.querySelector(".geometry-canvas");
+        if (!(canvasEl instanceof HTMLElement)) return;
+        const canvas = canvasEl;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 30);
+        camera.position.set(0, 0, 6);
+        // 用连续距离场将三个圆环融合成一张表面，交接处自然鼓起、拉连。
+        const sculpture = new THREE.Group();
+        sculpture.rotation.set(0.25, -0.35, -0.2);
+        const material = new THREE.MeshPhysicalMaterial({
+            color: 0xb51f3b,
+            emissive: 0x490918,
+            emissiveIntensity: 0.25,
+            metalness: 0.12,
+            roughness: 0.38,
+            clearcoat: 1,
+            clearcoatRoughness: 0.12,
+            flatShading: false,
+        });
+
+        const resolution = 40;
+        const extent = 1.7;
+        const surface = new MarchingCubes(resolution, material, false, false, 20000);
+        surface.isolation = 0;
+        surface.scale.setScalar(extent);
+        sculpture.add(surface);
+        const ringSettings = [
+            { radius: 1.08, x: 0.35, y: 0.15, speedX: 0.26, speedY: 0.18 },
+            { radius: 1.02, x: 1.15, y: 0.7, speedX: -0.31, speedY: 0.93 },
+            { radius: 0.96, x: -0.65, y: 1.2, speedX: 0.27, speedY: -0.84 },
+        ];
+        const rotations = ringSettings.map(() => new THREE.Matrix4());
+        const thicknessPhases = ringSettings.map(ring => ({
+            sin: Math.sin(ring.radius * 7),
+            cos: Math.cos(ring.radius * 7),
+        }));
+        const rotation = new THREE.Quaternion();
+        const orientation = new THREE.Euler();
+        const coordinates = Float32Array.from(
+            { length: resolution },
+            (_, i) => (i / resolution * 2 - 1) * extent,
+        );
+        const waveX = new Float32Array(resolution);
+        const waveZ = new Float32Array(resolution);
+        const waveYZ = new Float32Array(resolution * resolution);
+        let lastSurfaceTime = -Infinity;
+
+        function smoothUnion(a: number, b: number): number
+        {
+            const blend = 0.5;
+            const h = Math.max(blend - Math.abs(a - b), 0) / blend;
+            return Math.min(a, b) - h * h * blend * 0.25;
+        }
+
+        function updateFusedRings(time: number): void
+        {
+            // 融合网格按时间更新；旋转、呼吸和关闭动画仍按浏览器帧率运行。
+            if (time >= lastSurfaceTime && time - lastSurfaceTime < 1 / 30) return;
+            lastSurfaceTime = time;
+            ringSettings.forEach((ring, i) =>
+            {
+                orientation.set(ring.x + time * ring.speedX, ring.y + time * ring.speedY, 0);
+                rotation.setFromEuler(orientation).invert();
+                rotations[i].makeRotationFromQuaternion(rotation);
+            });
+            // 将与单个坐标有关的波形预先算好，避免每个采样点重复调用三角函数。
+            for (let i = 0; i < resolution; i++)
+            {
+                waveX[i] = Math.sin(coordinates[i] * 5 + time * 0.8);
+                waveZ[i] = Math.cos(coordinates[i] * 5 - time * 0.6);
+                for (let j = 0; j < resolution; j++)
+                {
+                    waveYZ[i + j * resolution] = Math.sin(coordinates[i] * 4 - coordinates[j] * 2);
+                }
+            }
+            for (let z = 0; z < resolution; z++)
+            {
+                for (let y = 0; y < resolution; y++)
+                {
+                    for (let x = 0; x < resolution; x++)
+                    {
+                        const px = coordinates[x];
+                        const py = coordinates[y];
+                        const pz = coordinates[z];
+                        let distance = Infinity;
+                        for (let i = 0; i < ringSettings.length; i++)
+                        {
+                            const ring = ringSettings[i];
+                            const matrix = rotations[i].elements;
+                            const localX = matrix[0] * px + matrix[4] * py + matrix[8] * pz;
+                            const localY = matrix[1] * px + matrix[5] * py + matrix[9] * pz;
+                            const localZ = matrix[2] * px + matrix[6] * py + matrix[10] * pz;
+                            const radialLength = Math.sqrt(localX * localX + localY * localY);
+                            const invLength = radialLength > 0 ? 1 / radialLength : 0;
+                            const sinAngle = localY * invLength;
+                            const cosAngle = localX * invLength;
+                            // 环身仍是圆的，粗细略有起伏，避免机械加工般的均匀感。
+                            const sinTriple = sinAngle * (3 - 4 * sinAngle * sinAngle);
+                            const cosTriple = cosAngle * (4 * cosAngle * cosAngle - 3);
+                            const thickness = 0.19 + 0.025 * (
+                                sinTriple * thicknessPhases[i].cos + cosTriple * thicknessPhases[i].sin
+                            );
+                            const radial = radialLength - ring.radius;
+                            const ringDistance = Math.sqrt(radial * radial + localZ * localZ) - thickness;
+                            distance = smoothUnion(distance, ringDistance);
+                        }
+                        // 保留缓慢起伏，减弱细碎褶皱，保证外轮廓和交接处保持弧线。
+                        const wrinkle = 0.008 * waveX[x] * waveYZ[y + z * resolution] * waveZ[z];
+                        surface.field[x + y * resolution + z * resolution * resolution] = -distance + wrinkle;
+                    }
+                }
+            }
+            // 网格变化后重新计算距离场法线，使相邻三角面的高光连续。
+            surface.normal_cache.fill(0);
+            surface.update();
+        }
+
+        updateFusedRings(0);
+        scene.add(sculpture);
+        scene.add(new THREE.AmbientLight(0xffc9d2, 1.8));
+        const light = new THREE.DirectionalLight(0xffffff, 3);
+        light.position.set(3, 4, 5);
+        scene.add(light);
+        const rim = new THREE.DirectionalLight(0xff4466, 2);
+        rim.position.set(-3, 1, -2);
+        scene.add(rim);
+
+        let renderer: THREE.WebGLRenderer | null = null;
+        try
+        {
+            renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            canvas.appendChild(renderer.domElement);
+            button.classList.add("ready");
+        }
+        catch
+        {
+            // 不支持 WebGL 时仍保留可点击的关闭入口和放大动画。
+        }
+
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        let phase: "idle" | "expanding" | "closing" = "idle";
+        let frameId: number | null = null;
+        let previousTime: number | null = null;
+        let elapsed: number = 0;
+        let scale: number = 1;
+        let expandStart: number = 0;
+        let expandFrom: number = 1;
+
+        function render(): void
+        {
+            sculpture.scale.setScalar(scale);
+            button.style.setProperty("--inf-close-expand", `${scale}`);
+            renderer?.render(scene, camera);
+        }
+
+        function animate(now: number): void
+        {
+            frameId = null;
+            const frameFactor = previousTime === null ? 0 : Math.min((now - previousTime) / (1000 / 60), 3);
+            previousTime = now;
+            if (!reducedMotion.matches)
+            {
+                elapsed += frameFactor / 60;
+                updateFusedRings(elapsed);
+                sculpture.rotation.y += 0.04 * frameFactor;
+                sculpture.rotation.x += 0.002 * frameFactor;
+            }
+            if (phase === "idle")
+            {
+                scale = reducedMotion.matches ? 1 : 0.95 + 0.05 * Math.cos(elapsed * 2);
+            }
+            else if (phase === "expanding")
+            {
+                const duration = reducedMotion.matches ? 0 : C.INF_CLOSE_BTN_EXPAND_TIME_MS;
+                const progress = duration <= 0 ? 1 : Math.min((now - expandStart) / duration, 1);
+                const eased = progress * progress * (3 - 2 * progress);
+                scale = expandFrom + (1.2 - expandFrom) * eased;
+                if (progress === 1)
+                {
+                    // 先呈现放大终点，再交给菜单控制圆环与按钮的同步缩小。
+                    render();
+                    phase = "closing";
+                    document.dispatchEvent(new CustomEvent(EN.INF_MENU_SHOULD_CLOSE_EVENT));
+                }
+            }
+            render();
+            if (menu.dataset.state === "open" && !document.hidden
+                && (!reducedMotion.matches || phase === "expanding"))
+            {
+                frameId = requestAnimationFrame(animate);
+            }
+        }
+
+        function syncState(): void
+        {
+            if (frameId !== null) cancelAnimationFrame(frameId);
+            frameId = null;
+            previousTime = null;
+            const open = menu.dataset.state === "open";
+            if (!open)
+            {
+                phase = "idle";
+                scale = 1;
+                elapsed = 0;
+                updateFusedRings(0);
+            }
+            else if (menu.dataset.closing === "true") phase = "closing";
+            else if (phase === "closing") phase = "idle";
+            button.disabled = !open || phase !== "idle";
+            render();
+            if (open && !document.hidden) frameId = requestAnimationFrame(animate);
+        }
+
+        button.addEventListener("click", () =>
+        {
+            if (phase !== "idle" || menu.dataset.state !== "open") return;
+            phase = "expanding";
+            expandStart = performance.now();
+            expandFrom = scale;
+            syncState();
+        });
+        const stateObserver = new MutationObserver(syncState);
+        stateObserver.observe(menu, { attributes: true, attributeFilter: ["data-state", "data-closing"] });
+        const resizeObserver = new ResizeObserver(() =>
+        {
+            const width = canvas.clientWidth;
+            const height = canvas.clientHeight;
+            if (!width || !height) return;
+            renderer?.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer?.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            render();
+        });
+        resizeObserver.observe(canvas);
+        document.addEventListener("visibilitychange", syncState);
+        reducedMotion.addEventListener("change", syncState);
+        window.addEventListener("pageshow", syncState);
+        window.addEventListener("pagehide", () =>
+        {
+            if (frameId !== null) cancelAnimationFrame(frameId);
+            frameId = null;
+        });
+        syncState();
+    })();
+</script>
+
+
+
+<style>
+    .close-geometry
+    {
+        /* 1. 布局定位 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 9600;
+
+        /* 2. 盒模型 - 尺寸与排列 */
+        --inf-close-size: 22.5vmin;
+        width: var(--inf-close-size);
+        height: var(--inf-close-size);
+
+        /* 3. 盒模型 - 间距 */
+        padding: 0;
+
+        /* 4. 边框圆角 */
+        border: none;
+        border-radius: 50%;
+
+        /* 5. 背景与阴影 */
+        background: transparent;
+
+        /* 6. 文字 */
+        color: #ff7791;
+        font-size: 3rem;
+
+        /* 7. 视觉效果 */
+        filter: drop-shadow(0 0 8px rgba(228, 59, 85, 0.5));
+
+        /* 9. 交互 */
+        pointer-events: auto;
+        cursor: pointer;
+
+        /* 10. 动画过渡 */
+        transform: translate(-50%, -50%) scale(var(--inf-close-scale, 1));
+    }
+
+    .close-geometry:disabled
+    {
+        /* 9. 交互 */
+        pointer-events: none;
+    }
+
+    .close-geometry:focus-visible
+    {
+        /* 4. 边框圆角 */
+        outline: 2px solid #ff7791;
+        outline-offset: 0.25rem;
+    }
+
+    :global(.contact-menu[data-state="closed"]) .close-geometry
+    {
+        /* 7. 视觉效果 */
+        visibility: hidden;
+    }
+
+    .geometry-fallback,
+    .geometry-canvas
+    {
+        /* 1. 布局定位 */
+        position: absolute;
+        inset: 0;
+
+        /* 2. 盒模型 - 尺寸与排列 */
+        display: grid;
+        place-items: center;
+
+        /* 9. 交互 */
+        pointer-events: none;
+    }
+
+    .geometry-fallback
+    {
+        /* 10. 动画过渡 */
+        transform: scale(var(--inf-close-expand, 1));
+    }
+
+    .close-geometry.ready .geometry-fallback
+    {
+        /* 7. 视觉效果 */
+        visibility: hidden;
+    }
+
+    .geometry-canvas :global(canvas)
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .info-geometry-ring-label
+    {
+        /* 1. 布局定位 */
+        position: absolute;
+        inset: -20%;
+        z-index: 1;
+
+        /* 2. 盒模型 - 尺寸与排列 */
+        width: 140%;
+        height: 140%;
+
+        /* 6. 文字 */
+        font-family: "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+
+        /* 8. 溢出滚动 */
+        overflow: visible;
+
+        /* 9. 交互 */
+        pointer-events: none;
+
+        /* 11. 生成内容与 SVG */
+        fill: #ff7791;
+    }
+</style>

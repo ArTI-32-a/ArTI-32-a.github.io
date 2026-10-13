@@ -7,6 +7,8 @@ import MG from "@/components/Index/MainGrid.astro";
 import IBM from "@/components/Shared/InfoBoard/Menu.astro";
 ---
 
+
+
 <Layout>
 
     <SI />
@@ -37,7 +39,6 @@ import IBM from "@/components/Shared/InfoBoard/Menu.astro";
 
         requestAnimationFrame((): void => 
         {
-            mainGrid.style.transition = "opacity 0.8s ease";
             mainGrid.style.opacity = "1";
         });
     });

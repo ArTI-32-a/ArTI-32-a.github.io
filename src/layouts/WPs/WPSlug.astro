@@ -1,7 +1,6 @@
 ---
 import "@/styles/global.css";
 
-
 import Menu from "@/components/WPs/Shared/Button/Menu.astro";
 import Button from "@/components/WPs/Shared/Button/Button.astro";
 import Cmt from "@/components/Shared/Comment/Comments.astro";
@@ -13,6 +12,8 @@ export interface Props
 
 const { title = "Arutiko" } = Astro.props;
 ---
+
+
 
 <!doctype html>
 <html>
@@ -90,6 +91,8 @@ const { title = "Arutiko" } = Astro.props;
     </body>
 </html>
 
+
+
 <script>
     import { articleController } from "@/utils/WPs/ArticleController";
 
@@ -131,6 +134,8 @@ const { title = "Arutiko" } = Astro.props;
 
 </script>
 
+
+
 <style>
     :global(html)
     {
@@ -151,9 +156,6 @@ const { title = "Arutiko" } = Astro.props;
         /* 3. 盒模型 - 间距 */
         margin: 0;
         padding: 0;
-
-        /* 5. 背景与阴影 */
-        background-color: #1f1e33;
 
         /* 6. 文字 */
         color: rgba(255, 255, 255, 0.9);
@@ -289,7 +291,7 @@ const { title = "Arutiko" } = Astro.props;
         border-left: 1px solid rgba(255, 255, 255, 0.08);
 
         /* 5. 背景与阴影 */
-        background-color: rgba(31, 30, 51, 0.96);
+        background-color: var(--site-panel-bg);
 
         /* 7. 视觉效果 */
         backdrop-filter: blur(8px);
@@ -342,5 +344,14 @@ const { title = "Arutiko" } = Astro.props;
         /* 2. 盒模型 - 尺寸与排列 */
         height: 10vh;
         flex-shrink: 0;
+    }
+
+
+
+    .article-area :global(img)
+    {
+        /* 2. 盒模型 - 尺寸与排列 */
+        max-width: 100%;
+        height: auto;
     }
 </style>

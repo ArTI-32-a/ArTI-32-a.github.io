@@ -1,6 +1,8 @@
 ---
 ---
 
+
+
 <button class="info-entry" id="info-entry" type="button" aria-label="探索本站 · 关于我" aria-controls="contact-menu" title="探索本站 · 关于我">
     <span class="info-entry-fallback" aria-hidden="true">
         ◇
@@ -10,6 +12,8 @@
         
     </span>
 </button>
+
+
 
 <script>
     import * as THREE from "three";
@@ -27,7 +31,7 @@
         // 入口只发送事件，沿用现有信息菜单的开关逻辑。
         container.addEventListener("click", () =>
         {
-            document.dispatchEvent(new CustomEvent(EN.INF_MENU_OPEN_EVENT));
+            document.dispatchEvent(new CustomEvent(EN.INF_MENU_SHOULD_OPEN_EVENT));
         });
 
         const sceneEl = container.querySelector(".info-entry-scene");
@@ -140,6 +144,8 @@
         syncAnimation();
     })();
 </script>
+
+
 
 <style>
     .info-entry

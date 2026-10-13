@@ -1,5 +1,5 @@
 ---
-title: "Reverse"
+title: "2026.24 Weekly"
 pubDate: 2026-08-20
 tags: ["reverse","java","base64","xor","random","shuffle","cpp","ida","anti-disassembly","obfuscation","patch"]
 type: "Reverse"
@@ -29,7 +29,7 @@ PDSCTF{Java_is_easy_to_reverse}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/1.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/1.png" alt="" style="max-width: 80%; height: auto;">
 
 把输入的字符串reverse了，然后拆成base64和encodedFlag进行比较
 
@@ -39,7 +39,7 @@ PDSCTF{Java_is_easy_to_reverse}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/2.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/2.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 flag = '}esrever_ot_ysae_si_avaJ{FTCSDP'
@@ -48,7 +48,7 @@ print(flag[::-1])
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/3.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/3.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 2 hardtest
 
@@ -72,13 +72,13 @@ flag{Bl@st1ng_1s_a_g00d_Way!!}
 
 <!-- 这是一张图片，ocr 内容为： POSITIVE SP VALUE HAS B S BEEN DETECTED, THE OUTPUT MAY BE WRONG! 2 __INT64 A2, VOID (*A3)()) FASTCALL _NORETURN START(__INT64 A1, VOID 3A 45678 _INT64 V3;// RAX INT V4;// ESI _INT64 V5; // [RSP-8H] [RBP-8H] BYREF CHAR *RETADDR; // [RSP+OH] [RBP+OH] BYREF 9 V4 三 V5; V5 V3; 10 V4, &RETADDR, INIT, FINI, A3, &V5); _LIBC_START_ 11 (MAIN T_MAIR 12 HALT(); 13 } -->
 
-<img src="/Picture/WpCTF/Practice/202624/4.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/4.png" alt="" style="max-width: 80%; height: auto;">
 
 看了即会发现
 
 <!-- 这是一张图片，ocr 内容为：PSEUDOCODE-A IDA VIEW-A HEX VIEW-1 口 LMPORTS LOCAL YPES X NS 42 PRINTF("FLAG:"); ME 43 FGETS(S,100,STDIN); S[STRCSPN(S,"N")])]-0; 44 PROC V23 : STRLEN(S); 1020 45  V24 - V23 - 1LL; 1030 46 V16V23; 47 1040 V17-0; 48 1050  V14 V23; 49 1060 V150; 50 1070 V5 : 16 * (V23 + 15LL) / 0X10ULL); 51 1080 52 14 *)(CHAR *)&V14 - (V5 & 0XFFFFFFFFFFFFFFF000LL)) ) WHILE(&V14 ! (_(_INT64 *)( 1090 53 10A0 V6 ; ALLOCA(V5 & 0XFF); 54 10B0 IF(V5&0XFF)! 55 10CO *)(CHAR *)8V14+(V5 & EXFFF) - 8)-8)-*(_INT64 *)(CHAR *)8V14+(V5 & EXFF) - 8); 56 *(_INT64 10D0 57 V25&V14; 10EO ((VOID (_FASTCALL *)(CHAR *, - INT64 *))SUB_1492)(S, &V14); 58 FINALIZE V26V23-1LL; V916; 60 V10 三 16 * (V23 + 15LL) / 0X10ULL); 61 EN V11 (CHAR *)&V14 - (V10 & OXFFFFFFFFFFFFFFF000LL); 62 TACK CHK FAIL WHILE ( &V14 !- (- INT64 *)(CHAR *)&V14 - (V10 & EXFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 63 BUF 64 NTF V12: ALLOCA(V10 & 0XFF); 65 ESPN IF(V10&OXFFF)!0)!0) 66 ND 8888 *)(CHAR *)&V14+ (V10 & EXFFF) - 8) - 8); *(__INT64 TS V27&V14; CHAR  FOR (I : 0; I < V23; +++I ) 70 OC99 SCANF V13 - SUB_13E1(*((UNSIGNED INT8 *)V25 + I), V11, V25, V9, V7, V8, V14, V15, V16, V17); 71 V9-(_INT64)V27; 72 *((_BYTE *)V27 + I) 三 V13; 73 11FO 74 1220 V19-1; 75 1260 FOR(J J 三 0; J < V23;++++ 76 77 F ( *(_BYTE *)V27 + J) !: BYTE_2120[J] ) IF(* 78 79 VERVIEW V19 0; 80 BREAK; 81 82 83 IF(V19) 84 85 PUTS("RIGHT"); 86 RETURN 0; 00001761 MAIN:56 (1761) -->
 
-<img src="/Picture/WpCTF/Practice/202624/5.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/5.png" alt="" style="max-width: 80%; height: auto;">
 
 这是个验证flag的逻辑而非输出flag
 
@@ -86,7 +86,7 @@ flag{Bl@st1ng_1s_a_g00d_Way!!}
 
 <!-- 这是一张图片，ocr 内容为：RODATA:00000000000002120 ; BYTE BYTE_2120[24] DB 97H, OD5H, 60H, 43H, 0B4H, 10H, 43H, 73H, OFH, ODAH RODATA:0000000000002120 BYTE_2120 ; DATA XREF: MAIN+38710 RODATA:0000000000002120 DB 43H, OCDH, 0D3H, OE8H, 73H, 4AH, 94H, OC3H, OCDH, 71H RODATA:000000000000212A DB OBDH, ODCH, 97H, 1AH RODATA:0000000000002134 .RODATA:0000000000002138 ; CONST CHAR FORMAT[] DB 'INPUT YOUR NUMBER(1-255): ',0 .RODATA:0000000000002138 FORMAT -->
 
-<img src="/Picture/WpCTF/Practice/202624/6.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/6.png" alt="" style="max-width: 80%; height: auto;">
 
 然后看逻辑即可
 
@@ -94,7 +94,7 @@ flag{Bl@st1ng_1s_a_g00d_Way!!}
 
 <!-- 这是一张图片，ocr 内容为：CHAR*)&V14+(V10&OXFF)-8); *)&V14+(V10&OXFF)8)8)8) INT (CHAR INT64 INT64 )(CHAR V27 &V14; FOR ( I 三0; I < V23;++++I ) INT8 *)V25 + I), V11, V25, V9, V7, V8, V14, V15, V16, V17); V13 SUB_13E1(*(UNSIGNED (__INT64)V27; V9  三 *((_BYTE *)V27 27 + I) - V13; 子 V19 三 FOR ( J 三 0; J < V23;++J ) IF ( *(_BYTE *)V27 + J) !- BYTE_2120[J] ) V19三0; BREAK; IF ( V19 ) -->
 
-<img src="/Picture/WpCTF/Practice/202624/7.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/7.png" alt="" style="max-width: 80%; height: auto;">
 
 这里能看到（并且可以确定），v27是个指针，通过指针往下增加的方式遍历v27
 
@@ -106,23 +106,23 @@ v19是bool值
 
 <!-- 这是一张图片，ocr 内容为：PSEUDOCODE-A IDA VIEW-A HEX VI PATCHED BYTES INT8 A1) FASTCALL SUB_13E1(UNSIGNED INT64 345 _INT8 V1; // AL UNSIGNED UNSIGNED _INT8 V3; 8 V3; // [RSP+15H] [RBP-3H] 6 V1 - SUB_12A9(A1 OX5AU, 3); ((3 * (V1 >> 4)) & 0XF)) | (5 * (V1 & OXP & OXF)) & OXFU); 水 7 V3 - SUB_1313((16 __INT8)SUB_12DE(V3, 2)]; 8 BYTE_2020[(UNSIGNED RETURN -->
 
-<img src="/Picture/WpCTF/Practice/202624/8.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/8.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为：PSEUD IDA VIEW-A INT64 FASTCALL 12A9( 123 SUB << A2) | (UNSIG A1 RETURN -->
 
-<img src="/Picture/WpCTF/Practice/202624/9.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/9.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为：PSEUDOCODE-A PAT IDA VIEW-A FASTCALL 1234567898 SUB_1313(UNSIGNED INT64 INT8 16 V2; // [RSP+EH] [RBP-6H] UNSIGNED INT16 INT16 V3;// [RSP+1OH] [RBP-4H] UNSIGNED [RSP+12H] UNSIGNED [RBP-2H] V4;// INT16 IF ( !A1 ) O; RETURN V2 - 1; V3 三 255; 10 11 V4 三 A1; WHILE ( V3 ) 12 } 13 IF(V3&1)!0)!0) 14 * V2 % 257; 15 V2 三 V4 V4 三 V4 * V4 % 257; 16 >>三 1; 17 V3 了 18 19 RETURN V2; 20 -->
 
-<img src="/Picture/WpCTF/Practice/202624/10.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/10.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为：PSEUDOCODE-A PATCHED BYTES IDA VIEW-A _INT8 A1, CHAR A2) FASTCALL SUB_12DE(UNSIGNED INT64 RETURN ((INT)A1 >> A2) | (A1 <(8 - A2)); 3 4} -->
 
-<img src="/Picture/WpCTF/Practice/202624/11.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/11.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为：0000201F QP _INT8 BYTE_2020[256] 00002020 UNSIGNED DB 63H, 7CH, 77H, 7BH, OF2H, 6BH, 6FH, OC5H, 30H, 1, 67H 2020 BYTE 00002020 DATA XREF: SUB_13E1+9D1O 00002020 DB 2BH, OFEH, OD7H, OABH, 76H, OO OCAH, 82H, OC9H, 7DH, OFAH 0000202B OA2H, 0AFH, 9CH, 0A4H, 72H 47H,OFOH,OADH,0D4H, DB 59H, 00002035 , OB7H, OFDH, 93H, 26H, 368 , 36H, 3FH, OF7H, OCCH, 34H DB OCOH, O 0000203F 00002049 DB OASH, 0E5H, 0F1H, 71H, OD8H, 31H, 15H, 4, OC7H, 23H 00002053 DB OC3H, 18H, 96H, 5, 9AH, 7, 12H, 80H, OE2H, OEBH, 27H DB OB2H, 75H, 9, 83H, 2CH, 1AH, 1BH, 6EH, 5AH, OAOH, 52H 0000205E DB 3BH, OD6H, OB3H, 29H, OE3H, 2FH, 84H, 53H, OD1H, 0 00002069  DB OEDH, 20H, OFCH, OB1H, 5BH, 6AH, OCBH, OBEH, 39H, 4AH 00002073  DB 4CH, 58H, OCFH, ODOH, OEFH, OAAH, OFBH, 43H, 4DH, 33H 0000207D  DB 85H, 45H, 0F9H, 2, 7FH, 50H, 3CH, 9FH, OA8H, 51H, OA3H 00002087  DB 40H, 8FH, 92H, 9DH, 38H, OF5H, OBCH, OB6H, ODAH, 21H 00002092  DB 10H, OFFH, OF3H, OD2H, OCDH, OCH, 13H, OECH, 5FH, 97H 0000209C  DB 44H, 17H, 0C4H, OA7H, 7EH, 3DH, 64H, 5DH, 19H, 73H 000020A6 DB 60H, 81H, 4FH, ODCH, 22H, 2AH, 90H, 88H, 46H, 0EEH 000020B0  DB OB8H, 14H, ODEH, 5EH, OBH, ODBH, OEOH, 32H, 3AH, OAH 000020BA DB 49H, 6, 24H, 5CH, OC2H, OD3H, OACH, 62H, 91H, 95H, 0E4H 000020C4 DB 79H, OE7H, OC8H, 37H, 6DH, 8DH, ODSH, 4EH, OA9H, 6CH 000020CF DB 56H, 0F4H, OEAH, 65H, 7AH, OAEH, 8, OBAH, 78H, 25H 000020D9 IB 2EH, 1CH, OA6H, OB4H, OC6H, OE8H, ODDH, 74H, 1FH, 4BH DB 2EH 000020E3  DB OBDH, 8BH, 8AH, 70H, 3EH, OB5H, 66H, 48H, 3, OF6H, OEH 000020ED DB 61H, 35H, 57H, OB9H, 86H, OC1H, 1DH, 9EH, OE1H, OF8H 000020F8 DB 98H, 11H, 69H, OD9H, 8EH, 94H, 9BH, 1EH, 87H, OE9H 00002102 DB OCEH, 55H, 28H, ODFH, 8CH, OA1H, 89H, ODH, OBFH, OEGH 0000210C DB 42H, 68H, 41H, 99H, 2DH, OFH, OBOH, 54H, OBBH, 16H 00002116 00002120 ;_BYTE BYTE_2120[24] DB 97H, 0D5H, 60H, 43H, 0B4H, 10H, 43H, 73H, OFH, ODAH 00002120 BYTE_2120 -->
 
-<img src="/Picture/WpCTF/Practice/202624/12.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/12.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看出来，13E1是从byte2020里面取了个值出来，索引是三个函数算出来的，通过传入的参数v18[i]
 
@@ -142,17 +142,17 @@ v19是bool值
 
 <!-- 这是一张图片，ocr 内容为：INT I; // [RSP+30H] [RBP-C8H] 14 S; // [RSP+34H] [RBE [RBP-C4H] INT 15 V16; [RBP-COH V17; // [RSP+38H] INT64 16 *V18; // [RSP+40H] 17 [RBP-B8H QWORD V19; // [RSP+48H] [RBP-BOH INT64 18 *V20; // [RSP+50H] QWORD [RBP-A8H 19 232 [RBP-AOH CHAR S[104]; // [RSP+58H] _INT64 V22; // [RSP+COH] UNSIGNED -->
 
-<img src="/Picture/WpCTF/Practice/202624/13.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/13.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为：*)(CHAR *)&V10[-1]+(V5 & 0XFFFF)); *)&V10[-1] + (V5 & 0XFFF)) 二 *(_QWORD )(CHAR *(_QWORD V18 三 V10; D_1492(S, (_INT64)V10); SUB ; V16 - 1LL; V19 V7 三 16 * (V16 + 15LL) / 0X10ULL); WHILE ( V10 !- (_QWORD *)(CHAR *)V10 - (V7 & EXFFFFFFFFFFFFFFFFF000LL) ) V8 - ALLOCA(V7 & OXFF); IF(V7&OXFFFF)!!00) *)(CHAR *)&V10[-1] + (V7 & 0XFFF)); (V7 & OXFF)) : *(_QWORD *)(CHAR *)&V10[-1] *(_QWORD V20 V10; FOR(I 二0; I <V16;++++++++I ) V9 : SUB_13E1(*((_BYTE )V18 I)); -->
 
-<img src="/Picture/WpCTF/Practice/202624/14.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/14.png" alt="" style="max-width: 80%; height: auto;">
 
 v18是个指针，其地址与v10指向同处（v18 = v10）
 
 <!-- 这是一张图片，ocr 内容为：圆 PSEUDOCODE-A X PATCHED BYTES IDA VIEW-A HEX _FASTCALL SUB_1492(CONST CHAR *A1, 123456 _INT64 A2) INT64 INT64 RESULT; // RAX SIGNED INT I; // [RSP+14H] [RBP-1CH] SIGNED INT V4; // [RSP+18H] [RBP-18H] 6789 V4 : STRLEN(AL); FOR(I -0;;++++++ 99012345 1 RESULT - (UNSIGNED INT)I; IF( I >: V4) BREAK; *)(I + A2) - SUB_12A9(A1[I], (UNSIGNED _INT8)(I % 7) + 1); BYTE * 了 RETURN RESULT; 6} -->
 
-<img src="/Picture/WpCTF/Practice/202624/15.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/15.png" alt="" style="max-width: 80%; height: auto;">
 
 （上面截屏有12A9）
 
@@ -203,7 +203,7 @@ print(''.join(result))
 
 <!-- 这是一张图片，ocr 内容为：LIS_A_GOOD_WAY: BI@SLING PS D:\_VISUAL STUDIO_CODE\_AP AP BL@ST1NG_1S_A_GOOD_WAY!! AP O PS D:\ VISUAL STUDIO CODE\ -->
 
-<img src="/Picture/WpCTF/Practice/202624/16.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/16.png" alt="" style="max-width: 80%; height: auto;">
 
 这玩意没用flag外面那个框，但是形式又意外的很符合逻辑
 于是我尝试自己在外面加了个框，结果发现算出来的答案真是没有框的（加了框就对了）
@@ -228,13 +228,13 @@ geesec{87d82d5726fe22a377d01d5b0db70c37}
 
 <!-- 这是一张图片，ocr 内容为：LUMINA FUNCTION UNEXPLORED CTION DATA INSTRUCTION EXTERNAL SYMBOL PSEUDOCODE-A IDA VIEW-A HEX VIEW-1 LOCAL TYPES X X - "UNMASK THE HIDDEN SECRET. INPUT YOUR FLAG: "; 25 V16 401220("UNMASK THE HIDDEN SECRET. INPUT YOUR FLAG: ", A2, A3); 26 SUB "FLAG LENGTH ERROR"; 27 V15 ; "INCORRECT FLAG, PLEASE TRY AGAIN."; 28 V14 S "CONGRATULATIONS! THE FLAG IS CORRECT."; 29 V13 MEMSET(S, 0, OX29U); 30 _ISOC99_SCANF("%S", S); 31 IF ( (UNSIGNED INT)SUB_4011D0(S) 三 40 ) 32 } 33 V11 34 SUB_4012D0(S); V10 : SUB_4011D0(V11); 35 IF ( V11 36 37 V9 0 ; 38 39 V8三0; SUB_4013B0(V11, V10, &V9, &V8); 40 MEMCPY(DEST, "86F;6A30:?1N>?0<'&V#%Q#U(}X,,~-(",(", OX21U); 41 IF ( (UNSIGNED INT)SUB_401260(V9, DEST, 32) 42 三 1) SUB_401220(V13, DEST, V5); 43 44 ELSE SUB_401220(V14, DEST, V5); 45 子 46 ELSE 47 } 48 49 SUB_401220(V14, S, V4); RETURN O; 50 51 52 ELSE 53 0 X 了 54 SUB_401220(V15, S, V3); 55 RETURN 0; 56 子 57 RETURN V19; 58 59} 00001543 MAIN:49 (401543) -->
 
-<img src="/Picture/WpCTF/Practice/202624/17.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/17.png" alt="" style="max-width: 80%; height: auto;">
 
 运算基本都被封装到函数里面去了
 
 <!-- 这是一张图片，ocr 内容为：LISOC99_SCANF("%S", S); F ( (UNSIGNED INT)SUB_ IF 4011D0(S) 40 三三 SUB_4012D0(S); V11 三 V10 SUB_4011D0(V11); IF ( V11 ) O; V9 川 -->
 
-<img src="/Picture/WpCTF/Practice/202624/18.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/18.png" alt="" style="max-width: 80%; height: auto;">
 
 4011D0百分百是判断长度的
 
@@ -242,7 +242,7 @@ geesec{87d82d5726fe22a377d01d5b0db70c37}
 
 <!-- 这是一张图片，ocr 内容为：12 CHAR FASTCALL 水 SUB_4012D0(CONST CHAR *A1) 丁 INT64 V1;// RDX 3 45678 // [RSP+OH] [RBP-20H] *DEST; CHAR INT V4; // [RSP+14H] [RBP-CH] V4 : STRLEN(AL); STRNCMP(A1, "GEESEC{", 7U) ]] A1[V4 - - 1] !: 125 ) IF 69 } 10 SUB 401220("FLAG FORMAT IS INCORRECT", "GEESEC(", V1); EXIT(-2); 11 子 12 *)MALLOC(0X21U); (CHAR DEST (水 13 二 IF ( !DEST 14 EXIT(0); 15 MEMSET(DEST, 0, OX21U); 16 8); 17 STRNCPY(DEST, A1 + 7, V4 - RETURN DEST; 18 19 -->
 
-<img src="/Picture/WpCTF/Practice/202624/19.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/19.png" alt="" style="max-width: 80%; height: auto;">
 
 4012D0就是判断是否符合flag格式，清空dest后，把传入的flag去除首7字符（geesec{）和最后一个字符（}）扔给dest
 
@@ -258,17 +258,17 @@ geesec{87d82d5726fe22a377d01d5b0db70c37}
 
 <!-- 这是一张图片，ocr 内容为：IDA VIEW-A PSEUDOCODE-A DWORD INT A2,_QWORI 123 A1, FASTCALL SUB 4013B0( INT64 } 345679 INT I; // [RSP+4H] [RBP-2CH] _BYTE *V6; // [RSP+8H] [RBP-28H] 6 : MALLOC(A2); V6 - IF( !V6 ) 8 FPRINTF(STDERR, "MEMORY ALLOCATION FAILED\N"); 9 EXIT(-1); 10 子 11  FOR( I 二0; I < A2;+++I ) 12 *)(AL + I);  V6[I] 三 I *(_BYTE 13 *A3 14 三 V6; *A4 三 A2; 15 16 RETURN A4; 17 -->
 
-<img src="/Picture/WpCTF/Practice/202624/20.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/20.png" alt="" style="max-width: 80%; height: auto;">
 
 这里将flag里每个值与i进行异或后传入第三个指针，将第四个指针和返回值都设置为字符串长度（虽然返回值没用）
 
 <!-- 这是一张图片，ocr 内容为：三0; V8 SUB_4013B0(V11, V10, &V9, &V8); MEMCPY(DEST, "86F;6A30:?1N>?0<'&V#%Q#%Q#U(]X,,~(", 0X21U); IF (UNSIGNED INT)SUB 401260(V9, DEST, 32) -- 1 ) SUB_401220(V13, DEST, V5); ELSE SUB_401220(V14, DEST, V5); -->
 
-<img src="/Picture/WpCTF/Practice/202624/21.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/21.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为：PSEUDOCODE-A IDA VIEW-A HEX VIEW-1 FASTCALL SUB 401260(CONST CHAR *A1, CONST CHAR *A2, INT A3) BOOL8 N A1 && A2 && A3 > 0 && STRNCMP(AL, A2, A3) -: 0; RETURN 4} -->
 
-<img src="/Picture/WpCTF/Practice/202624/22.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/22.png" alt="" style="max-width: 80%; height: auto;">
 
 然后把一串字符串传进了dest并扔进301260去判断（很明显是判断函数吧）
 
@@ -288,7 +288,7 @@ print(''.join(result))
 
 <!-- 这是一张图片，ocr 内容为：PS D:\_VISUAL_STUDIO_CODE\ APPLICATI 87D82D5726FE22A377D01D5B0DB70C37 PS D:\_VISUAL_STUDIO_CODE\_APPLICATI -->
 
-<img src="/Picture/WpCTF/Practice/202624/23.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/23.png" alt="" style="max-width: 80%; height: auto;">
 
 交答案的时候记得补上geesec{... ...}
 
@@ -312,7 +312,7 @@ print(''.join(result))
 
 <!-- 这是一张图片，ocr 内容为：PSEUDOCODE-A IDA VIEW-A MAIN(INT ARGC, CONST CHAR **ARGV, FASTCALL INT 1 CONS 2{ INT V3;// EAX 3456 CHAR STR[112]; // [RSP+20H] [RBP-70H] BYREF _MAIN(ARGC, ARGV, ENVP); 7 SRAND_O(SEED); "INPUT THE FLAG: "); PRINTF )O 8 SCANF("%S", STR); 9 V3 : STRLEN(STR); 10 )STR, V3); 水 SHUFFLE((UNSIGNED INT8 11 !STRCMP(STR, FLAG) ) IF 12 PUTS_0("CORRECT!"); 13 ELSE 14 LO("WRONG!"); 15 PUTS RETURN O; 16 了 17 -->
 
-<img src="/Picture/WpCTF/Practice/202624/24.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/24.png" alt="" style="max-width: 80%; height: auto;">
 
 用一个固定seed作为随机种子（固定seed的随机还能叫随机吗（））
 
@@ -320,11 +320,11 @@ print(''.join(result))
 
 <!-- 这是一张图片，ocr 内容为：73020 PUBLIC E SEED 93020  UNSIGNED INT SEED DATA XR 114514H X XREF: RUNTIME_ENVTW PP 93020 SEED 93020 MAIN+10FR ALIGN 20H 03024 PUBLIC FLAG 53040 03040 ; CHAR FLAG[45] 03040 FLAG DB '23-64BED6}-XM5300-{FAGA34-0E04C2E7C2A78F39A4',0 63040 DATA XREF:MA1N+SATO ALIGN 20H 306D ____DO_GLOBAL_DTORS+4个R 3080 XREF: DATA DQ OFFSET 402DF8 P_93846 QWORD DO 93080 DTORS+15个R LOBAL -->
 
-<img src="/Picture/WpCTF/Practice/202624/25.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/25.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为：STRUCTION UNEXPLORED EXTERNAL SYMBOL DATA LUMINA F PSEUDOCODE-A IDA VIEW-A SHUFFLE(UNSIGNED _INT8 *ARR, INT CDECL VOID ] 20 345678 INT V2;// EAX TEMP; // [RSP+20H] [RBP-10H] INT8 UNSIGNED INT I; // [RSP+2CH] [RBP-4H] FOR(I  N - 1; I>0;--I ) 予 RAND(); 9 V2 TEMP : ARR[I]; 10 11  ARR[I] -ARR[V2 % (I + 1)]; 12 ARR[V2 % (I + 1)] 三 T TEMP; 13 14 } -->
 
-<img src="/Picture/WpCTF/Practice/202624/26.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/26.png" alt="" style="max-width: 80%; height: auto;">
 
 真就只是打乱，seed和flag都明文写里面
 
@@ -338,7 +338,7 @@ print(''.join(result))
 
 <!-- 这是一张图片，ocr 内容为：SRAND_O(SEED); PRINTF_O("INPUT THE FLAG: "); 8 SCANF("%S", STR); 9 V3 : STRLEN(STR); SHUFFLE((UNSIGNED _INT8 *)STR, V3); L1  IF ( !STRCMP(STR, FLAG) ) 12 PUTS_O("CORRECT!"); 13 14 ELSE PUTS_0("WRONG!"); 15 16 RETURN 0; 17 XREFS TO SEED DIRECTIOL TYF ADDRESS TEXT UP RUNTIME ENV CS:SEED,666H W MOV UP MAIN+10 EAX, CS:SEED MOV LINE 1 OF 2 CANCEL SEARCH HELP OK -->
 
-<img src="/Picture/WpCTF/Practice/202624/27.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/27.png" alt="" style="max-width: 80%; height: auto;">
 
 好阴啊
 
@@ -360,7 +360,7 @@ void main()
 
 <!-- 这是一张图片，ocr 内容为：5387,  233, 29927, 31003, 236,  332,  3358,  2353,  233,  233,  2358, 233,  233,  3333,  3358,  273,  377, 333,  373, 2735,  234,  373,    37678,     234,  2347,  334,  373,  3565,   3345,  333,  3533  9125, 9011, 8777, 14579, 2990, 26679: 24187,  31286, 26734, 26669, 7637, 22878, 24498, 30367 PS C:\USERS\HUAWEI> -->
 
-<img src="/Picture/WpCTF/Practice/202624/28.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/28.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 rand = [5387, 17193, 20927, 31009, 28608, 21252, 27520, 21537, 22835, 19853, 25727, 1945, 23213, 4027, 31587, 5858, 27697, 27473, 19827, 12921, 9045, 27235, 7174, 14248, 17489, 27670, 1594, 21347, 26966, 32423, 2793, 19569, 13345, 6831, 26329, 14540, 15823, 9125, 9011, 8777, 14579, 20900, 26679, 24187, 31206, 26734, 26669, 7637, 22878, 24498, 30367]
@@ -394,7 +394,7 @@ print(''.join(cipher))
 
 <!-- 这是一张图片，ocr 内容为：PS D:\_VISUAL_STUDIO_CODE\_A A_APPLICATION\MICROSOL 1.PY 0XGAME{5FFA9030-E204-4673-B4C6-ED433ACA7228] CODE\ APPLICATION\MICROSOL O PS D:\ VISUAL STUDIO -->
 
-<img src="/Picture/WpCTF/Practice/202624/29.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/29.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 5 极客大挑战2024-CPP_flower
 
@@ -418,13 +418,13 @@ SYC{Y0u_c@n_3nJoy_yhe_Flow3r_anytime_and_anywhere}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/30.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/30.png" alt="" style="max-width: 80%; height: auto;">
 
 sub_4117F3，sub_41C780
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/31.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/31.png" alt="" style="max-width: 80%; height: auto;">
 
 然后就能发现，这是验证cookie的，肯定不是main
 
@@ -432,29 +432,29 @@ sub_41A990
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/32.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/32.png" alt="" style="max-width: 80%; height: auto;">
 
 最终return出去的是Code，Code仅在一处被赋值：sub_41AC70
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/33.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/33.png" alt="" style="max-width: 80%; height: auto;">
 
 然后就能发现sub_41166D即为main（该函数传入三个参数：argc：参数个数；argv：命令行参数列表；envp（也就是get_initial_narrow_environment return回去的参数），是典型的main函数签名）
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/34.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/34.png" alt="" style="max-width: 80%; height: auto;">
 
 然后到了41166D就会发现，这个跳板报错了，这个跳板往419D10跳过去了，但是很显然419D10这个函数没有成功被解析，那只能去看看这个地址附近的汇编代码了
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/35.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/35.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/36.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/36.png" alt="" style="max-width: 80%; height: auto;">
 
 过去以后就能发现，这下面有三块jz & jnz的花指令（jz即jump if zero，在zf（zero flag零标志位）为0时跳转，jnz即jump if not zero，当上一条计算指令结果为0时zf为1，不为0时zf为0），以第三个为例，由于这俩都是跳转到419D8F+1的位置（也就是419D90），因此419D8F对应的那个指令（即俩16进制数）call（即E8）是永远也不可能执行到的，但是由于E8存在于此，ida自动将其翻译为了call，导致接下来的翻译也会一并出错
 
@@ -462,31 +462,31 @@ sub_41A990
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/37.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/37.png" alt="" style="max-width: 80%; height: auto;">
 
 效果如上，同时，将这几处db重新翻译一下（也就是按C）
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/38.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/38.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/39.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/39.png" alt="" style="max-width: 80%; height: auto;">
 
 同理，这三处也翻译一下
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/40.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/40.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/41.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/41.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/42.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/42.png" alt="" style="max-width: 80%; height: auto;">
 
 全部翻译完后即会出现第二个类型的花指令（call return），也是一共三处
 
@@ -510,7 +510,7 @@ move，将esp的值移动给ebp，此时ebp里面存了return的地址，然后a
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/43.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/43.png" alt="" style="max-width: 80%; height: auto;">
 
 （第一处如上图所示）
 
@@ -520,7 +520,7 @@ move，将esp的值移动给ebp，此时ebp里面存了return的地址，然后a
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/44.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/44.png" alt="" style="max-width: 80%; height: auto;">
 
 不难发现，主要的验证逻辑就在此处
 
@@ -532,7 +532,7 @@ move，将esp的值移动给ebp，此时ebp里面存了return的地址，然后a
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/45.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/45.png" alt="" style="max-width: 80%; height: auto;">
 
 unk_422C30是一串硬编码的字符，双击进去就能看到
 
@@ -540,7 +540,7 @@ unk_422C30是一串硬编码的字符，双击进去就能看到
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/46.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/46.png" alt="" style="max-width: 80%; height: auto;">
 
 buf2是sub_41128A和sub_411113俩异或来的
 
@@ -550,11 +550,11 @@ buf2是sub_41128A和sub_411113俩异或来的
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/47.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/47.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/48.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/48.png" alt="" style="max-width: 80%; height: auto;">
 
 欸，有问题，417370是传入俩参数的，this并没有往里面传入
 
@@ -562,11 +562,11 @@ esc ， F5重新反编译，然后再esc ，F5
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/49.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/49.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/50.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/50.png" alt="" style="max-width: 80%; height: auto;">
 
 好，会发现这里传入了v11
 
@@ -574,7 +574,7 @@ esc ， F5重新反编译，然后再esc ，F5
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/51.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/51.png" alt="" style="max-width: 80%; height: auto;">
 
 最终变成这样
 
@@ -582,7 +582,7 @@ esc ， F5重新反编译，然后再esc ，F5
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/52.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/52.png" alt="" style="max-width: 80%; height: auto;">
 
 （4112E4的最底层）（这题怎么这么多跳板啊？！）
 
@@ -594,7 +594,7 @@ esc ， F5重新反编译，然后再esc ，F5
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/53.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/53.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 cipher = [
@@ -619,4 +619,4 @@ print("".join(answer));
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Practice/202624/54.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/202624/Reverse/54.png" alt="" style="max-width: 80%; height: auto;">

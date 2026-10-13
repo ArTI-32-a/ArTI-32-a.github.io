@@ -3,6 +3,7 @@ import { Common as C } from "@/utils/Common/Common";
 
 import B from "./Board.astro";
 import Btn from "./Button.astro";
+import G from "./Geometry.astro";
 
 export interface Props
 {
@@ -16,6 +17,7 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
 ---
 
 
+
 <div
     class="contact-menu"
     id="contact-menu"
@@ -26,6 +28,7 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
             --inf-ring-fade-end: ${C.INF_RING_FADE_END_V};`}
 >
     <div class="contact-ring" id="contact-ring">
+        <G />
         <div class="contact-overlay" id="contact-overlay">
             <button class="contact-overlay-x" type="button" aria-label="关闭">
                 ×
@@ -122,267 +125,28 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
 </div>
 
 
+
 <script>
-    import { EventName as EN } from "@/utils/Common/Event";
-    import { Common as C } from "@/utils/Common/Common";
-
-    const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P
-                            * C.INF_RING_COUNT_N
-                            * C.INF_RING_RADIUS_UNIT_V;
-
-    const offsetMax: number = C.INF_RING_OFFSET_MAX_V;
+    import { initMenuController } from "@/utils/InfoBoard/MenuController";
 
     (() =>
     {
         const menuEl = document.getElementById("contact-menu");
-        if (!(menuEl instanceof HTMLElement)) 
+        if (!(menuEl instanceof HTMLElement))
         {
             return;
         }
-        const overlayEl = document.getElementById("contact-overlay");
+
+        const menu = menuEl;
+        const overlayEl = menu.querySelector("#contact-overlay");
         if (!(overlayEl instanceof HTMLElement))
         {
             return;
         }
 
-        const menu: HTMLElement = menuEl;
-        const overlay: HTMLElement = overlayEl;
-
-        let isOpen: boolean = false;
-        let activeBoardIndex: number | null = null;
-
-        let currentOffset: number = offsetMin;
-        let targetOffset: number = offsetMin;
-        let ringRafId: number | null = null;
-
-        function applyRingRadius(): void
-        {
-            menu.style.setProperty("--inf-ring-offset", `${currentOffset}`);
-        }
-
-        function ringTick(): void
-        {
-            const diff = targetOffset - currentOffset;
-
-            const outerRadius = C.INF_RING_COUNT_N * C.INF_RING_RADIUS_UNIT_V + currentOffset;
-
-            const visuallyClosed = !isOpen && outerRadius <= C.INF_RING_FADE_END_V;
-
-            if (visuallyClosed || Math.abs(diff) < C.INF_RING_EPSILON_V)
-            {
-                currentOffset = targetOffset;
-                applyRingRadius();
-                ringRafId = null;
-
-                if (!isOpen && Math.abs(currentOffset - offsetMin) < C.INF_RING_CLOSE_EPSILON_V)
-                {
-                    menu.dataset.state = "closed";
-                    document.dispatchEvent(new CustomEvent(EN.INF_MENU_CLOSE_EVENT));
-                }
-
-                return;
-            }
-
-            const lerp = isOpen ? C.INF_RING_OPEN_LERP_P : C.INF_RING_CLOSE_LERP_P;
-            currentOffset += diff * lerp;
-            applyRingRadius();
-            ringRafId = requestAnimationFrame(ringTick);
-        }
-
-        function startRingLoop(): void
-        {
-            if (ringRafId !== null)
-            {
-                return;
-            }
-            ringRafId = requestAnimationFrame(ringTick);
-        }
-
-        function openMenu(): void
-        {
-            if (isOpen)
-            {
-                return;
-            }
-            isOpen = true;
-
-            currentOffset = offsetMin;    // 从最小开始
-            targetOffset = 0;              // 张开到 0
-            applyRingRadius();
-
-            menu.dataset.state = "open";
-            startRingLoop();
-        }
-
-        function closeMenu(): void
-        {
-            if (!isOpen)
-            {
-                return;
-            }
-            isOpen = false;
-
-            targetOffset = offsetMin;     // 缩回最小
-            startRingLoop();
-        }
-
-
-        function findBoard(index: number): HTMLElement | null
-        {
-            const primary = menu.querySelector<HTMLElement>(
-                `[data-board-index="${index}"]`
-            );
-            if (primary)
-            {
-                return primary;
-            }
-            return menu.querySelector<HTMLElement>(
-                `[data-board-index="0"]`
-            );
-        }
-
-        function openBoard(index: number): void
-        {
-            if (activeBoardIndex !== null && activeBoardIndex !== index)
-            {
-                closeBoard();
-            }
-
-            activeBoardIndex = index;
-
-            const board = findBoard(index);
-            if (board)
-            {
-                board.classList.add("opened");
-            }
-
-            const btn = menu.querySelector<HTMLElement>(
-                `.contact-button[data-index="${index}"]`
-            );
-            if (btn)
-            {
-                btn.classList.add("active");
-            }
-        }
-
-        function closeBoard(): void
-        {
-            if (activeBoardIndex === null) 
-            {
-                return;
-            }
-
-            menu.querySelectorAll<HTMLElement>(".information-board")
-                .forEach(b => 
-                {
-                    console.log(b);
-                    b.classList.remove("opened")
-                });
-
-            menu.querySelectorAll<HTMLElement>(".contact-button")
-                .forEach(b => 
-                {
-                    b.classList.remove("active")
-                });
-
-            activeBoardIndex = null;
-        }
-
-
-        document.addEventListener(EN.INF_MENU_OPEN_EVENT, () =>
-        {
-            openMenu();
-        });
-
-        overlay.addEventListener("click", (e: MouseEvent) =>
-        {
-            const target = e.target;
-            if (!(target instanceof Element)) return;
-
-            if (target.closest(".contact-overlay-x"))
-            {
-                closeMenu();
-            }
-        });
-
-        document.addEventListener(EN.INF_BOARD_OPEN_EVENT, (e: Event) =>
-        {
-            if (!(e instanceof CustomEvent))
-            {
-                return;
-            }
-
-            const detail = e.detail;
-            if (typeof detail !== "object" || detail === null)
-            {
-                return;
-            }
-            if (!("index" in detail))
-            {
-                return;
-            }
-            if (typeof detail.index !== "number")
-            {
-                return;
-            }
-
-            openBoard(detail.index);
-        });
-
-        document.addEventListener(EN.INF_BOARD_CLOSE_EVENT, (e: Event) =>
-        {
-            if (!(e instanceof CustomEvent))
-            {
-                return;
-            }
-
-            closeBoard();
-        });
-
-        document.addEventListener("keydown", (e: KeyboardEvent) =>
-        {
-            if (e.key !== "Escape")
-            {
-                return;
-            }
-            if (!isOpen)
-            {
-                return;
-            }
-
-            if (activeBoardIndex !== null)
-            {
-                closeBoard();
-            }
-            else
-            {
-                closeMenu();
-            }
-        });
-
-        document.addEventListener("wheel", (e: WheelEvent) =>
-        {
-            if (!isOpen)
-            {
-                return;
-            }
-
-            e.preventDefault();
-
-            const delta: number = e.deltaY > 0
-                ? -C.INF_RING_SCROLL_STEP_V
-                : C.INF_RING_SCROLL_STEP_V;
-
-            targetOffset = Math.max(
-                offsetMin,
-                Math.min(C.INF_RING_OFFSET_MAX_V, targetOffset + delta)
-            );
-
-            startRingLoop();
-        }, { passive: false });
+        const overlay = overlayEl;
+        initMenuController(menu, overlay);
     })();
-
-    
 </script>
 
 

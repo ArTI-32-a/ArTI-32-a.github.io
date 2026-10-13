@@ -7,6 +7,8 @@ export interface Props
 const { placeholder = "搜索..." } = Astro.props;
 ---
 
+
+
 <div class="catalog-search" id="catalog-search">
     <div class="search-mirror" id="search-mirror" aria-hidden="true">
     </div>
@@ -23,6 +25,8 @@ const { placeholder = "搜索..." } = Astro.props;
 
     </div>
 </div>
+
+
 
 <script>
     import { EventName as EN } from "@/utils/Common/Event"; 
@@ -402,6 +406,8 @@ const { placeholder = "搜索..." } = Astro.props;
         });
     })();
 </script>
+
+
 
 <style>
     .catalog-search

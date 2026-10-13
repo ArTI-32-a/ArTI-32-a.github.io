@@ -1,3 +1,10 @@
+:root
+{
+    /* 5. 背景与阴影 */
+    --site-bg: #1f1e33;
+    --site-panel-bg: color-mix(in srgb, var(--site-bg) 96%, transparent);
+}
+
 html
 {
     /* 8. 溢出滚动 */
@@ -7,7 +14,7 @@ html
 body
 {
     /* 5. 背景与阴影 */
-    background-color: #1f1e33;
+    background-color: var(--site-bg);
 }
 
 a

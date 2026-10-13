@@ -10,7 +10,7 @@ export interface Props
 const { index, radius = C.INF_RING_RADIUS_UNIT_V } = Astro.props;
 
 const zeroIndex: number = index - 1;
-const ringIndex: number = Math.floor(zeroIndex / 12);
+const ringIndex: number = Math.floor(zeroIndex / C.INF_RING_BTN_COUNT_N);
 
 const angle: number = (zeroIndex % C.INF_RING_BTN_COUNT_N) * C.INF_RING_BTN_ANGLE_DEG;
 const halfAngle: number = C.INF_RING_BTN_ANGLE_DEG / 2;
@@ -58,6 +58,8 @@ const vbH: number = r * 0.6;
 // const vbW: number = r * 0.6;
 // const vbH: number = r * 0.3;
 ---
+
+
 
 <div
     class="contact-button"
@@ -117,6 +119,7 @@ const vbH: number = r * 0.6;
 </div>
 
 
+
 <script>
     import { EventName as EN } from "@/utils/Common/Event";
 
@@ -156,6 +159,7 @@ const vbH: number = r * 0.6;
 </script>
 
 
+
 <style>
     .contact-button
     {
@@ -191,8 +195,12 @@ const vbH: number = r * 0.6;
         pointer-events: auto;
 
         /* 10. 动画过渡 */
-        transform: translate(-50%, -50%)
-            rotate(calc((var(--angle) - var(--half-angle) + 30) * -1deg))
+        transform: 
+            translate(-50%, -50%)
+            rotate(calc(
+                (var(--angle) - var(--half-angle) + 30) * -1deg
+                + var(--ring-rotation, 0deg)
+            ))
             translateX(calc(var(--ring-radius) * 1vmin));
 
         /* 11. 生成内容与 SVG */

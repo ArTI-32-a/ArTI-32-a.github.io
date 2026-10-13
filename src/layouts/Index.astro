@@ -1,6 +1,8 @@
 ---
-
+import "@/styles/global.css";
 ---
+
+
 
 <!doctype html>
 <html>
@@ -25,6 +27,7 @@
 </script>
 
 
+
 <style>
     body
     {
@@ -34,9 +37,6 @@
 
         /* 3. 盒模型 - 间距 */
         margin: 0;
-
-        /* 5. 背景与阴影 */
-        background-color: #1f1e33;
 
         /* 6. 文字 */
         color: #ffffff;
@@ -107,8 +107,8 @@
         outline: none;
 
         5. 背景与阴影
-        background: linear-gradient(to bottom, #1f1e33, transparent);
-        background-color: #1f1e33;
+        background: linear-gradient(to bottom, var(--site-bg), transparent);
+        background-color: var(--site-bg);
         background-image: url("...");
         background-position: center;
         background-size: cover;

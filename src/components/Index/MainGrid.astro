@@ -3,6 +3,7 @@ import G from "@/components/Index/Geometry.astro";
 ---
 
 
+
 <div class="main-grid">
     <G />
 
@@ -83,7 +84,7 @@ import G from "@/components/Index/Geometry.astro";
         height: 100vh;
 
         /* 5. 背景与阴影 */
-        background-color: #1f1e33;
+        background-color: var(--site-bg);
 
         /* 9. 交互 */
         user-select: none;
@@ -104,7 +105,7 @@ import G from "@/components/Index/Geometry.astro";
         padding: 2rem;
 
         /* 5. 背景与阴影 */
-        background: radial-gradient(circle at 50% 50%, #2a2744 0%, #1f1e33 100%);
+        background: radial-gradient(circle at 50% 50%, #2a2744 0%, var(--site-bg) 100%);
 
         /* 6. 文字 */
         color: rgba(255, 255, 255, 0.85);
@@ -126,7 +127,7 @@ import G from "@/components/Index/Geometry.astro";
     a.grid-item:hover
     {
         /* 5. 背景与阴影 */
-        background: radial-gradient(circle at 50% 50%, #3b375a 0%, #1f1e33 100%);
+        background: radial-gradient(circle at 50% 50%, #3b375a 0%, var(--site-bg) 100%);
 
         /* 10. 动画过渡 */
         transform: scale(1.02);

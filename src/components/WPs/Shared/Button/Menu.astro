@@ -3,12 +3,14 @@ import G from "./Geometry.astro";
 import IM from "@/components/Shared/InfoBoard/Menu.astro";
 ---
 
+
+
 <div class="menu-container" id="menu-container">
     <button class="main-btn" id="main-btn">
         ≡
     </button>
     
-    <G class="geometry"/>
+    <G />
 
     <div class="menu-stack menu-up" id="menu-up">
         <slot name="up" />
@@ -20,6 +22,7 @@ import IM from "@/components/Shared/InfoBoard/Menu.astro";
 </div>
 
 <IM />
+
 
 
 <script>
@@ -63,6 +66,8 @@ import IM from "@/components/Shared/InfoBoard/Menu.astro";
         mainBtn.addEventListener("click", () => toggle(container, mainBtn));
     })();
 </script>
+
+
 
 <style>
     /* ---------- 1. 主按钮 ---------- */
@@ -127,11 +132,6 @@ import IM from "@/components/Shared/InfoBoard/Menu.astro";
     {
         /* 10. 动画过渡 */
         animation: spin-cw 0.6s ease;
-    }
-
-    .geometry
-    {
-        z-index: 3000;
     }
 
     @keyframes spin-ccw

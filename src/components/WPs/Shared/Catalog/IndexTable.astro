@@ -8,6 +8,8 @@ export interface Props
 const { titles, defaultIndex = 0 } = Astro.props;
 ---
 
+
+
 <nav class="catalog-index" id="catalog-index">
     <div class="catalog-index-label">
         选择栏目
@@ -19,6 +21,8 @@ const { titles, defaultIndex = 0 } = Astro.props;
         </button>
     ))}
 </nav>
+
+
 
 <script>
     import { EventName as EN } from "@/utils/Common/Event";
@@ -74,6 +78,8 @@ const { titles, defaultIndex = 0 } = Astro.props;
         });
     })();
 </script>
+
+
 
 <style>
     .catalog-index

@@ -10,6 +10,8 @@ import Searcher from "@/components/WPs/Shared/Catalog/Searcher.astro";
 const { titles, defaultIndex = 0 } = Astro.props;
 ---
 
+
+
 <header class="catalog-hero">
     <Searcher placeholder="搜索文章、题目或标签…" />
 
@@ -32,6 +34,8 @@ const { titles, defaultIndex = 0 } = Astro.props;
         {titles[defaultIndex] ?? ""}
     </div>
 </header>
+
+
 
 <script>
     import { EventName as EN } from "@/utils/Common/Event";
@@ -58,6 +62,8 @@ const { titles, defaultIndex = 0 } = Astro.props;
         });
     })();
 </script>
+
+
 
 <style>
     .catalog-hero
@@ -127,7 +133,7 @@ const { titles, defaultIndex = 0 } = Astro.props;
         border-radius: 0.75rem;
 
         /* 5. 背景与阴影 */
-        background-color: #1f1e33;
+        background-color: var(--site-bg);
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 
         /* 6. 文字 */

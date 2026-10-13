@@ -9,6 +9,7 @@ import { EventName as EN } from "@/utils/Common/Event";
 ---
 
 
+
 <!doctype html>
 <html>
     <head>
@@ -53,12 +54,14 @@ import { EventName as EN } from "@/utils/Common/Event";
 </html>
 
 
+
 <script>
     document.addEventListener("back-to-index", () =>
     {
         window.location.href = "/";
     });
 </script>
+
 
 
 <style>
@@ -105,7 +108,7 @@ import { EventName as EN } from "@/utils/Common/Event";
         padding: 1rem 2rem;
 
         /* 5. 背景与阴影 */
-        background-color: #1f1e33;
+        background-color: var(--site-bg);
     }
 
     .catalog-wrapper
@@ -159,7 +162,7 @@ import { EventName as EN } from "@/utils/Common/Event";
         bottom: 0;
 
         /* 5. 背景与阴影 */
-        background: linear-gradient(to top, #1f1e33 0%, rgba(31, 30, 51, 0) 100%);
+        background: linear-gradient(to top, var(--site-bg) 0%, transparent 100%);
     }
 
     .scroll-fade.top
@@ -168,6 +171,6 @@ import { EventName as EN } from "@/utils/Common/Event";
         top: 0;
 
         /* 5. 背景与阴影 */
-        background: linear-gradient(to bottom, #1f1e33 0%, rgba(31, 30, 51, 0) 100%);
+        background: linear-gradient(to bottom, var(--site-bg) 0%, transparent 100%);
     }
 </style>

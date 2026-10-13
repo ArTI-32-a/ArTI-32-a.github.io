@@ -2,6 +2,8 @@
 // 这是一个纯展示组件，不需要额外 JS 依赖
 ---
 
+
+
 <div id="splash-overlay">
     <div id="click-blocker">
     </div>
@@ -11,6 +13,8 @@
         <span id="cursor-blink"></span>
     </div>
 </div>
+
+
 
 <script>
     // const TARGET_TEXT: string = "ΛrTI_";
@@ -171,6 +175,7 @@
 </script>
 
 
+
 <style>
     /* ---------- 1. 开场遮罩层 ---------- */
 
@@ -187,7 +192,7 @@
         justify-content: center;
 
         /* 5. 背景与阴影 */
-        background-color: #1f1e33;
+        background-color: var(--site-bg);
 
         /* 7. 视觉效果 */
         opacity: 1;
@@ -207,9 +212,6 @@
         /* 7. 视觉效果 */
         opacity: 0;
         visibility: hidden;
-
-        /* 9. 交互 */
-        pointer-events: none;
     }
 
     /* ---------- 2. 文字容器（整体居中） ---------- */

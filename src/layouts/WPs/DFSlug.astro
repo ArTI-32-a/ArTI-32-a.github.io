@@ -13,6 +13,8 @@ export interface Props
 const { title = "Arutiko", headings = [] } = Astro.props;
 ---
 
+
+
 <WPSlug title={title}>
     <slot name="header" slot="header" />
     <TOC slot="toc" headings={headings} />

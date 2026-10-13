@@ -22,6 +22,7 @@ const { entries, defaultIndex = 0 } = Astro.props;
 ---
 
 
+
 <div class="directory-switcher" id="switcher" data-default-index={defaultIndex}>
     {entries.map((entry, i) => (
         <div class="directory-content" data-index={i}>
@@ -33,6 +34,7 @@ const { entries, defaultIndex = 0 } = Astro.props;
         </div>
     ))}
 </div>
+
 
 
 <script>

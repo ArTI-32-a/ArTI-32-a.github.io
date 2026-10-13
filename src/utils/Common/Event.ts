@@ -21,8 +21,14 @@ export class CatalogJumpEvent extends CustomEvent<{ index: number }>
 
 class EventName
 {
-    static readonly INF_MENU_OPEN_EVENT: string = "inf-menu-open";
+    // static readonly INF_MENU_OPEN_EVENT: string = "inf-menu-open";
+    /** 请求信息菜单开始打开。 */
+    static readonly INF_MENU_SHOULD_OPEN_EVENT: string = "inf-menu-should-open";
 
+    /** 请求信息菜单开始关闭。 */
+    static readonly INF_MENU_SHOULD_CLOSE_EVENT: string = "inf-menu-should-close";
+
+    /** 信息菜单已完成关闭。 */
     static readonly INF_MENU_CLOSE_EVENT: string = "inf-menu-close";
 
     static readonly INF_BOARD_OPEN_EVENT: string = "inf-board-open";

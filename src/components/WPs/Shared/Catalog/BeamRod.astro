@@ -2,6 +2,8 @@
 import { Common as C } from "@/utils/Common/Common";
 ---
 
+
+
 <div class="switcher-beam" id="beam">
     <svg viewBox={`0 0 ${100 * C.WP_CAT_BEAM_SVG_SCALE_P} ${100 * C.WP_CAT_BEAM_SVG_SCALE_P}`} xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <defs>
@@ -26,7 +28,7 @@ import { Common as C } from "@/utils/Common/Common";
 
         <polygon
             id="beam-mask"
-            fill="#1f1e33"
+            fill="var(--site-bg)"
             points={`${C.WP_CAT_BEAM_TOP_X_P * C.WP_CAT_BEAM_SVG_SCALE_P},0 ${500 * C.WP_CAT_BEAM_SVG_SCALE_P},0 ${500 * C.WP_CAT_BEAM_SVG_SCALE_P},${100 * C.WP_CAT_BEAM_SVG_SCALE_P} ${C.WP_CAT_BEAM_BOTTOM_X_P * C.WP_CAT_BEAM_SVG_SCALE_P},${100 * C.WP_CAT_BEAM_SVG_SCALE_P}`}
             style="opacity: 0;"
         />
@@ -36,7 +38,7 @@ import { Common as C } from "@/utils/Common/Common";
             y1="0"
             x2={C.WP_CAT_BEAM_BOTTOM_X_P * C.WP_CAT_BEAM_SVG_SCALE_P}
             y2={100 * C.WP_CAT_BEAM_SVG_SCALE_P}
-            stroke="#1f1e33"
+            stroke="var(--site-bg)"
             stroke-width={15 * C.WP_CAT_BEAM_SVG_SCALE_P}
             style="filter: blur(15vw);"
         />
@@ -64,6 +66,7 @@ import { Common as C } from "@/utils/Common/Common";
 </div>
 
 <div class="switcher-flash" id="beam-flash" />
+
 
 
 <script>
@@ -312,6 +315,7 @@ import { Common as C } from "@/utils/Common/Common";
         applyBeam(0);
     })();
 </script>
+
 
 
 <style>

@@ -10,6 +10,8 @@ export interface Props
 const { items, separator = ">" } = Astro.props;
 ---
 
+
+
 <nav class="breadcrumb" aria-label="当前位置">
     <ol class="breadcrumb-list">
         {items.map((item, index) => (
@@ -44,6 +46,8 @@ const { items, separator = ">" } = Astro.props;
         ))}
     </ol>
 </nav>
+
+
 
 <style>
     .breadcrumb

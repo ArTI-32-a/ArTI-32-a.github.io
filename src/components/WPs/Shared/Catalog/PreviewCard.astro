@@ -42,6 +42,7 @@ if (!isWPFormatter(data))
 ---
 
 
+
 <div id={`preview-${id}`} class="preview-card">
     <div class="preview-tags">
         {data?.tags?.map(tag => <span class="tag">{tag}</span>)}
@@ -54,6 +55,7 @@ if (!isWPFormatter(data))
         }
     </div>
 </div>
+
 
 
 <script define:vars={{ id, data }} lang="ts">
@@ -129,6 +131,7 @@ if (!isWPFormatter(data))
     })();
 
 </script>
+
 
 
 <style>
@@ -221,9 +224,6 @@ if (!isWPFormatter(data))
     .preview-title-item
     {
         /* 6. 文字 */
-        color: rgba(255, 255, 255, 0.85);
-        font-weight: 500;
-        word-break: break-word;
         line-height: 1.6;
     }
 </style>

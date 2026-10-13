@@ -86,15 +86,46 @@
                 "data": null,
                 "children": [
                     {
-                        "key": "2026.24 Weekly",
+                        "key": "Crypto",
                         "href": null,
                         "data": null,
                         "children": [
                             {
-                                "key": "2624Reverse",
-                                "href": "/wps/CTF/practice/ctf-plus/202624-weekly/2624reverse",
+                                "key": "2640Crypto",
+                                "href": "/wps/CTF/practice/ctf-plus/crypto/2640crypto",
                                 "data": {
-                                    "title": "Reverse",
+                                    "title": "2026.40 Weekly",
+                                    "pubDate": "2026-10-10T00:00:00.000Z",
+                                    "tags": [
+                                        "crypto",
+                                        "rsa",
+                                        "coppersmith",
+                                        "lll",
+                                        "prng",
+                                        "xor",
+                                        "sagemath",
+                                        "common",
+                                        "modulus",
+                                        "attack",
+                                        "modulesattack"
+                                    ],
+                                    "type": "Crypto",
+                                    "status": "published"
+                                },
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "key": "Reverse",
+                        "href": null,
+                        "data": null,
+                        "children": [
+                            {
+                                "key": "2624Weekly",
+                                "href": "/wps/CTF/practice/ctf-plus/reverse/2624weekly",
+                                "data": {
+                                    "title": "2026.24 Weekly",
                                     "pubDate": "2026-08-20T00:00:00.000Z",
                                     "tags": [
                                         "reverse",
