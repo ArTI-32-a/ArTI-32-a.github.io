@@ -162,6 +162,52 @@ export function createWheelController(
 
     function onWheel(event: WheelEvent): void
     {
+        const sourceEl = event.target;
+
+        if (sourceEl instanceof Element)
+        {
+            const boardEl = sourceEl.closest(".information-board");
+
+            if (boardEl instanceof HTMLElement && menu.contains(boardEl))
+            {
+                resetWheelTarget();
+
+                const contentEl = boardEl.querySelector(
+                    ".information-board-content"
+                );
+
+                let canScroll: boolean = false;
+
+                if (
+                    contentEl instanceof HTMLElement &&
+                    contentEl.contains(sourceEl)
+                )
+                {
+                    const maxScrollY: number =
+                        contentEl.scrollHeight - contentEl.clientHeight;
+
+                    if (event.deltaY > 0)
+                    {
+                        // 向下滚动，下面还有内容。
+                        canScroll = contentEl.scrollTop < maxScrollY - 1;
+                    }
+                    else if (event.deltaY < 0)
+                    {
+                        // 向上滚动，上面还有内容。
+                        canScroll = contentEl.scrollTop > 1;
+                    }
+                }
+
+                if (!canScroll)
+                {
+                    event.preventDefault();
+                }
+
+                return;
+            }
+        }
+        
+
         if (!motion.isOpen)
         {
             return;

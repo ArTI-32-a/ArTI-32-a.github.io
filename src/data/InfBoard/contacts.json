@@ -40,6 +40,40 @@
         {
             "type": "title",
             "level": 2,
+            "text": "邮箱"
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "QQ邮箱：2264584031@qq.com"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "163邮箱：jerry07dytg@163.com"
+                }
+            ]
+        },
+        {
+            "type": "paragraph",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "126邮箱：jerry07hmyl@126.com"
+                }
+            ]
+        }
+    ],
+    "12": [
+        {
+            "type": "title",
+            "level": 2,
             "text": "友链？"
         },
         {

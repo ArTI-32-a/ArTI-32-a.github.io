@@ -162,7 +162,7 @@ async function buildTree(collectionName: "CTF" | "DF"): Promise<WPInfo[]>
 
             if (Array.isArray(parsed))
             {
-                console.log("[buildTree] 使用 catalog.json 缓存");
+                // console.log("[buildTree] 使用 catalog.json 缓存");
                 return processCachedTree(parsed);
             }
 
@@ -330,7 +330,7 @@ async function buildTree(collectionName: "CTF" | "DF"): Promise<WPInfo[]>
             }
         }
 
-        console.log("json is valid. success!");
+        // console.log("json is valid. success!");
         return result;
     }
 

@@ -29,6 +29,7 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
 >
     <div class="contact-ring" id="contact-ring">
         <G />
+
         <div class="contact-overlay" id="contact-overlay">
             <button class="contact-overlay-x" type="button" aria-label="关闭">
                 ×
@@ -40,6 +41,70 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
             {
                 const rMax = (i + 1) * C.INF_RING_RADIUS_UNIT_V;
                 const thickness = rMax * C.INF_RING_THICKNESS_RATIO_P;
+
+                const innerRadius: number = rMax - thickness / 2;
+                const outerRadius: number = rMax + thickness / 2;
+
+                // 数学坐标：正角度向上，因此 SVG 的 y 需要取负。
+                function pointAt(radius: number, angle: number): string
+                {
+                    const radians = angle * Math.PI / 180;
+
+                    return `${radius * Math.cos(radians)} ${-radius * Math.sin(radians)}`;
+                }
+
+                // 从 -60° 向 +60°，沿右侧小圆弧逆时针绘制。
+                function arcAt(radius: number): string
+                {
+                    return (
+                        `M ${pointAt(radius, -60)} ` +
+                        `A ${radius} ${radius} 0 0 0 ${pointAt(radius, 60)}`
+                    );
+                }
+
+                // 红色区域：外弧、端部、内弧，组成闭合的环带。
+                const closeAreaPath: string =
+                    `${arcAt(outerRadius)} ` +
+                    `L ${pointAt(innerRadius, 60)} ` +
+                    `A ${innerRadius} ${innerRadius} 0 0 1 ${pointAt(innerRadius, -60)} Z`;
+
+                const innerBorderPath: string = arcAt(innerRadius);
+                const outerBorderPath: string = arcAt(outerRadius);
+                const closeHitPath: string = arcAt(rMax);
+
+                const fillGradientId: string = `close-fill-${i}`;
+                const angleMaskId: string = `close-angle-mask-${i}`;
+
+                // 遮罩略大于外缘，让边框也完整处于遮罩范围内。
+                const maskRadius: number = outerRadius + thickness;
+
+                // 每片覆盖约 1°，整个区域共 120 片。
+                const angleSlices = Array.from({ length: 120 }, (_, index) =>
+                {
+                    const startAngle: number = -60 + index;
+                    const endAngle: number = startAngle + 1;
+                    const middleAngle: number = (startAngle + endAngle) / 2;
+
+                    // |角度| <= 30° 时保持 0.9，之后逐渐淡出。
+                    const progress: number = Math.max(
+                        0,
+                        Math.min(1, (Math.abs(middleAngle) - 30) / 30)
+                    );
+
+                    const eased: number = progress * progress * (3 - 2 * progress);
+                    const opacity: number = 0.9 * (1 - eased);
+
+                    // 轻微重叠，减少相邻扇形抗锯齿产生的细缝。
+                    const start: number = Math.max(-60, startAngle - 0.02);
+                    const end: number = Math.min(60, endAngle + 0.02);
+
+                    return {
+                        path:
+                            `M 0 0 L ${pointAt(maskRadius, start)} ` +
+                            `A ${maskRadius} ${maskRadius} 0 0 0 ${pointAt(maskRadius, end)} Z`,
+                        opacity,
+                    };
+                });
 
                 return (
                     <svg
@@ -94,6 +159,118 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
                             stroke-width={thickness}
                         />
                     </svg>
+
+                    <svg
+                        class="contact-ring-close-svg"
+                        data-ring={i}
+                        style={`--ring-index: ${i};`}
+                        viewBox={`${-rMax * 1.2} ${-rMax * 1.2} ${rMax * 2.4} ${rMax * 2.4}`}
+                        preserveAspectRatio="xMidYMid meet"
+                    >
+                        <defs>
+                            <!-- 第一层：沿半径变化的红色渐变 -->
+                            <radialGradient
+                                id={fillGradientId}
+                                cx="0"
+                                cy="0"
+                                r={outerRadius}
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop
+                                    class="close-color-stop"
+                                    offset={innerRadius / outerRadius}
+                                    stop-color="var(--close-edge-color)"
+                                />
+                                <stop
+                                    class="close-color-stop"
+                                    offset="0.86"
+                                    stop-color="var(--close-middle-color)"
+                                />
+                                <stop
+                                    class="close-color-stop"
+                                    offset="0.909"
+                                    stop-color="var(--close-center-color)"
+                                />
+                                <stop
+                                    class="close-color-stop"
+                                    offset="0.96"
+                                    stop-color="var(--close-middle-color)"
+                                />
+                                <stop
+                                    class="close-color-stop"
+                                    offset="1"
+                                    stop-color="var(--close-edge-color)"
+                                />
+                            </radialGradient>
+
+                            <!-- 第二层：沿角度变化的透明度遮罩 -->
+                            <mask
+                                id={angleMaskId}
+                                maskUnits="userSpaceOnUse"
+                                maskContentUnits="userSpaceOnUse"
+                                x={-maskRadius}
+                                y={-maskRadius}
+                                width={maskRadius * 2}
+                                height={maskRadius * 2}
+                                style="mask-type: alpha;"
+                            >
+                                {angleSlices.map(slice => (
+                                    <path
+                                        d={slice.path}
+                                        fill="white"
+                                        stroke="none"
+                                        opacity={slice.opacity}
+                                    />
+                                ))}
+                            </mask>
+                        </defs>
+
+                        <!-- 保留原来的事件识别类和键盘入口 -->
+                        <g
+                            class="contact-ring-close-arc"
+                            role="button"
+                            tabindex="0"
+                            aria-label="关闭当前信息板"
+                        >
+                            <title>Close</title>
+                            <!-- 填充与边框共用角度遮罩 -->
+                            <g
+                                class="contact-ring-close-visual"
+                                mask={`url(#${angleMaskId})`}
+                                pointer-events="none"
+                            >
+                                <path
+                                    d={closeAreaPath}
+                                    fill={`url(#${fillGradientId})`}
+                                    stroke="none"
+                                />
+
+                                <!-- 只画内外圆弧，没有两端的直边 -->
+                                <path
+                                    class="contact-ring-close-border"
+                                    d={innerBorderPath}
+                                    fill="none"
+                                    stroke="var(--close-border-color)"
+                                />
+
+                                <path
+                                    class="contact-ring-close-border"
+                                    d={outerBorderPath}
+                                    fill="none"
+                                    stroke="var(--close-border-color)"
+                                />
+                            </g>
+
+                            <!-- 独立点击区域，不受视觉淡出影响 -->
+                            <path
+                                class="contact-ring-close-hit"
+                                d={closeHitPath}
+                                fill="none"
+                                stroke="transparent"
+                                stroke-width={thickness}
+                            />
+                        </g>
+                    </svg>
                 );
             })}
 
@@ -102,7 +279,7 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
                     QQ
                 </Btn>
                 <Btn index={2}>
-                    友链（？）
+                    邮箱
                 </Btn>
                 <Btn index={3} />
                 <Btn index={4} />
@@ -113,7 +290,9 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
                 <Btn index={9} />
                 <Btn index={10} />
                 <Btn index={11} />
-                <Btn index={12} />
+                <Btn index={12}>
+                    友链（？）
+                </Btn>
             </div>
         </div>
     </div>
@@ -121,6 +300,8 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
     <B index={0} />
     <B index={1} />
     <B index={2} />
+
+    <B index={12} />
 
 </div>
 
@@ -157,7 +338,7 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
         /* 1. 布局定位 */
         position: fixed;
         inset: 0;
-        z-index: 9000;
+        z-index: 59000;
 
         /* 9. 交互 */
         pointer-events: none;
@@ -178,8 +359,8 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
     .contact-ring-content
     {
         /* 1. 布局定位 */
+        /* 保持默认层级，让红弧可以与信息板直接比较 z-index。 */
         position: relative;
-        z-index: 9000;
 
         /* 2. 盒模型 - 尺寸与排列 */
         display: flex;
@@ -197,21 +378,20 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
         /* 7. 视觉效果 */
         visibility: hidden;
     }
-
-    .contact-ring-svg
+    .contact-ring-svg,
+    .contact-ring-close-svg
     {
         /* 1. 布局定位 */
         position: absolute;
         left: 0;
         top: 0;
-        z-index: 9100;
+        z-index: 59100;
 
         /* 2. 盒模型 - 尺寸与排列 */
         --ring-radius-raw: calc((var(--ring-index) + 1) * var(--inf-ring-unit) + var(--inf-ring-offset));
         --ring-radius-clamped: max(0, var(--ring-radius-raw));
         width: calc(var(--ring-radius-clamped) * 2.4 * 1vmin);
         height: calc(var(--ring-radius-clamped) * 2.4 * 1vmin);
-        flex-shrink: 0;
 
         /* 7. 视觉效果 */
         --ring-fade-range: calc(var(--inf-ring-fade-start) - var(--inf-ring-fade-end));
@@ -224,13 +404,116 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
         transform: translate(-50%, -50%);
     }
 
+    .contact-ring-close-svg
+    {
+        /* 1. 布局定位 */
+        z-index: 59600;
+
+        /* 5. 背景与阴影 */
+        --close-edge-color: rgba(154, 138, 255, 0.35);
+        --close-middle-color: rgba(90, 74, 138, 0.9);
+        --close-center-color: rgba(58, 42, 106, 0.9);
+        --close-border-color: #9a8aff;
+    }
+
+    .contact-menu.board-open .contact-ring-close-svg
+    {
+        /* 1. 布局定位 */
+        z-index: 89600;
+
+        /* 5. 背景与阴影 */
+        --close-edge-color: #ff9aaa;
+        --close-middle-color: #a83d57;
+        --close-center-color: #641b36;
+        --close-border-color: #ffc2cd;
+    }
+
+    .contact-menu.board-open .contact-ring-close-svg:has(.contact-ring-close-arc:hover),
+    .contact-menu.board-open .contact-ring-close-svg:has(.contact-ring-close-arc:focus-visible)
+    {
+        /* 5. 背景与阴影 */
+        --close-edge-color: #ffc0cb;
+        --close-middle-color: #d35975;
+        --close-center-color: #922d4e;
+        --close-border-color: #ffe4e9;
+    }
+
+    .close-color-stop
+    {
+        /* 10. 动画过渡 */
+        transition: stop-color 0.25s ease;
+    }
+
+    .contact-ring-close-arc
+    {
+        /* 7. 视觉效果 */
+        outline: none;
+        visibility: hidden;
+
+        /* 9. 交互 */
+        pointer-events: none;
+        cursor: pointer;
+
+        /* 10. 动画过渡 */
+        transition: visibility 0s 0.25s;
+    }
+
+    .contact-menu.board-open .contact-ring-close-arc
+    {
+        /* 7. 视觉效果 */
+        visibility: visible;
+
+        /* 10. 动画过渡 */
+        transition-delay: 0s;
+    }
+
+    .contact-ring-close-border
+    {
+        /* 10. 动画过渡 */
+        transition: stroke 0.25s ease;
+
+        /* 11. 生成内容与 SVG */
+        stroke-width: 0.35;
+        stroke-linecap: butt;
+    }
+
+    .contact-ring-close-hit
+    {
+        /* 9. 交互 */
+        pointer-events: none;
+    }
+
+    .contact-menu.board-open .contact-ring-close-hit
+    {
+        /* 9. 交互 */
+        pointer-events: stroke;
+    }
+
+    .contact-ring-close-visual
+    {
+        /* 7. 视觉效果 */
+        opacity: 0;
+
+        /* 9. 交互 */
+        pointer-events: none;
+
+        /* 10. 动画过渡 */
+        transition: opacity 0.25s ease;
+    }
+
+    .contact-menu.board-open .contact-ring-close-visual
+    {
+        /* 7. 视觉效果 */
+        opacity: 1;
+    }
+
     .contact-ring-inner
     {
         /* 1. 布局定位 */
         position: absolute;
         left: 0;
         top: 0;
-        z-index: 9500;
+        z-index: 59500;
 
         /* 2. 盒模型 - 尺寸与排列 */
         width: 0;
@@ -245,7 +528,7 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
         /* 1. 布局定位 */
         position: absolute;
         inset: 0;
-        z-index: 8000;
+        z-index: 58000;
 
         /* 5. 背景与阴影 */
         background-color: rgba(0, 0, 0, 0.5);
@@ -277,7 +560,7 @@ const offsetMin: number = C.INF_RING_OFFSET_MIN_RATIO_P * C.INF_RING_COUNT_N * C
         position: absolute;
         top: 2rem;
         right: 2rem;
-        z-index: 1000;
+        z-index: 51000;
 
         /* 2. 盒模型 - 尺寸与排列 */
         display: grid;

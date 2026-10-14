@@ -25,6 +25,7 @@ export function createBoardController(menu: HTMLElement)
         }
 
         activeBoardIndex = index;
+        menu.classList.add("board-open");
 
         const board = findBoard(index);
         if (board)
@@ -43,6 +44,8 @@ export function createBoardController(menu: HTMLElement)
 
     function closeBoard(): void
     {
+        menu.classList.remove("board-open");
+        
         if (activeBoardIndex === null) 
         {
             return;

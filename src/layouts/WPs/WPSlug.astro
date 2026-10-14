@@ -4,6 +4,7 @@ import "@/styles/global.css";
 import Menu from "@/components/WPs/Shared/Button/Menu.astro";
 import Button from "@/components/WPs/Shared/Button/Button.astro";
 import Cmt from "@/components/Shared/Comment/Comments.astro";
+import Footer from "@/components/Shared/Footer/Base.astro";
 
 export interface Props
 {
@@ -87,6 +88,8 @@ const { title = "Arutiko" } = Astro.props;
             </Button>
         </Menu>
 
+        <Footer />
+
         <div id="page-bottom" aria-hidden="true" />
     </body>
 </html>
@@ -95,6 +98,7 @@ const { title = "Arutiko" } = Astro.props;
 
 <script>
     import { articleController } from "@/utils/WPs/ArticleController";
+    import { avoidFooter } from "@/utils/Footer/Avoider";
 
     (() =>
     {
@@ -129,6 +133,16 @@ const { title = "Arutiko" } = Astro.props;
             [mask, titleBox, heroColumn, tocSpacer, hero],
             mainArea
         );
+
+
+        const footerEl = document.querySelector("[data-site-footer]");
+        const tocEl = document.getElementById("toc-area");
+
+        
+        if (footerEl instanceof HTMLElement && tocEl instanceof HTMLElement)
+        {
+            avoidFooter(tocEl, footerEl);
+        }
     })();
 
 
@@ -277,12 +291,14 @@ const { title = "Arutiko" } = Astro.props;
         z-index: 500;
 
         /* 2. 盒模型 - 尺寸与排列 */
+        --toc-footer-space: 0vh;
         --toc-hero-height: 60vh;
+
         display: flex;
         flex-direction: column;
         width: 20vw;
         box-sizing: border-box;
-        height: 100vh;
+        height: calc(100vh - var(--toc-footer-space));
 
         /* 3. 盒模型 - 间距 */
         padding: 2rem 1.5rem;

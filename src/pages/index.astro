@@ -25,23 +25,42 @@ import IBM from "@/components/Shared/InfoBoard/Menu.astro";
 
 
 <script>
-    document.addEventListener("splash-complete", (): void => 
+    (() =>
     {
-        const mainGrid = document.getElementById("main-app");
-        if (!mainGrid)
+        const mainGridEl = document.getElementById("main-app");
+
+        if (!(mainGridEl instanceof HTMLElement))
         {
-            throw new Error("mainGrid is missing");
+            return;
         }
 
-        mainGrid.style.display = "block";
+        const mainGrid = mainGridEl;
+        let shown: boolean = false;
 
-        mainGrid.style.opacity = "0";
-
-        requestAnimationFrame((): void => 
+        function showMainApp(): void
         {
-            mainGrid.style.opacity = "1";
-        });
-    });
+            if (shown)
+            {
+                return;
+            }
+
+            shown = true;
+            mainGrid.style.display = "block";
+
+            requestAnimationFrame(() =>
+            {
+                mainGrid.style.opacity = "1";
+            });
+        }
+
+        document.addEventListener("splash-complete", showMainApp);
+
+        // 事件可能早于监听发出，此时直接读取完成状态。
+        if (document.documentElement.dataset.splashComplete === "true")
+        {
+            showMainApp();
+        }
+    })();
 
 
 

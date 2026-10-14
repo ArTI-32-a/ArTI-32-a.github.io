@@ -1,5 +1,7 @@
 ---
 import "@/styles/global.css";
+
+import Footer from "@/components/Shared/Footer/FloatBase.astro"
 ---
 
 
@@ -13,8 +15,11 @@ import "@/styles/global.css";
         <link rel="icon" href="/favicon.ico" />
         <title>Arutiko</title>
     </head>
+
     <body>
         <slot />
+
+        <Footer />
     </body>
 </html>
 

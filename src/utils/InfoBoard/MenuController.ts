@@ -16,6 +16,47 @@ export function initMenuController(menu: HTMLElement, overlay: HTMLElement): () 
     const motion: ReturnType<typeof createRingMotion> = createRingMotion(menu, () => wheel.reset(), boards.close);
     const wheel = createWheelController(menu, motion);
 
+    
+
+    function closeBoardFromArc(event: MouseEvent | KeyboardEvent): void
+    {
+        const sourceEl = event.target;
+
+        if (!(sourceEl instanceof Element))
+        {
+            return;
+        }
+
+        const arcEl = sourceEl.closest(".contact-ring-close-arc");
+
+        if (
+            !arcEl ||
+            !menu.contains(arcEl) ||
+            boards.activeIndex === null
+        )
+        {
+            return;
+        }
+
+        if (
+            event instanceof KeyboardEvent &&
+            event.key !== "Enter" &&
+            event.key !== " "
+        )
+        {
+            return;
+        }
+
+        event.preventDefault();
+
+        document.dispatchEvent(new CustomEvent(
+            EN.INF_BOARD_CLOSE_EVENT,
+            { detail: { index: boards.activeIndex } }
+        ));
+    }
+
+
+
     document.addEventListener(EN.INF_MENU_SHOULD_OPEN_EVENT, () =>
     {
         motion.open();
@@ -100,6 +141,9 @@ export function initMenuController(menu: HTMLElement, overlay: HTMLElement): () 
     window.addEventListener("blur", wheel.onBlur, { signal });
     
     document.addEventListener("click", wheel.onClick, { capture: true, signal });
+
+    menu.addEventListener("click", closeBoardFromArc, { signal });
+    menu.addEventListener("keydown", closeBoardFromArc, { signal });
 
     function dispose(): void
     {

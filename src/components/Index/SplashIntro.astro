@@ -25,6 +25,8 @@
     // const PAUSE_TIME: number = 1000;
     const IND_SPLASH_PAUSE_MS: number = 1000;
 
+    const IND_SPLASH_PLAYED_KEY: string = "index-splash-played";
+
     let state: number = 0;
     let timerHandle: number | null = null;
 
@@ -114,8 +116,7 @@
 
             overlayContainerElement.classList.add("splash-hidden");
 
-            const completeEvent: CustomEvent = new CustomEvent("splash-complete");
-            document.dispatchEvent(completeEvent);
+            completeSplash();
 
             setTimeout((): void =>
             {
@@ -129,6 +130,13 @@
         }
     }
 
+    function completeSplash(): void
+    {
+        document.documentElement.dataset.splashComplete = "true";
+
+        document.dispatchEvent(new CustomEvent("splash-complete"));
+    }
+
 
     function startAnimation(): void
     {
@@ -140,6 +148,36 @@
         if (!overlayContainerElement || !textDisplayElement) 
         {
             console.warn("Splash intro DOM elements not found.");
+            return;
+        }
+
+        let alreadyPlayed: boolean = false;
+
+        try
+        {
+            alreadyPlayed =
+                sessionStorage.getItem(IND_SPLASH_PLAYED_KEY) === "1";
+
+            // 首次开始时就记录，播放途中离开也不会再次播放。
+            sessionStorage.setItem(IND_SPLASH_PLAYED_KEY, "1");
+        }
+        catch
+        {
+            // 存储不可用时，仍按原来的流程播放。
+        }
+
+        const navigation = performance.getEntriesByType("navigation")[0];
+
+        const isReload: boolean =
+            navigation instanceof PerformanceNavigationTiming &&
+            navigation.type === "reload";
+
+        if (alreadyPlayed && !isReload)
+        {
+            overlayContainerElement.style.display = "none";
+            document.getElementById("click-blocker")?.remove();
+
+            completeSplash();
             return;
         }
 
