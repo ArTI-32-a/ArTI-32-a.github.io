@@ -1,0 +1,99 @@
+---
+import Base from "./Base.astro"
+
+const articlePath: string = Astro.url.pathname.replace(/\/+$/, "") || "/";
+---
+
+
+
+<Base>
+    <p class="footer-stat" slot="horizontal">
+        本文访问：
+        <span
+            id="article-view-count"
+            data-path={articlePath}
+        >—</span>
+        次
+    </p>
+
+    <p class="footer-stat" slot="horizontal">
+        本次阅读：
+        <span
+            id="article-reading-time"
+            data-path={articlePath}
+        >0 分 00 秒</span>
+    </p>
+</Base>
+
+
+
+<script>
+    import { pageviewCount } from "@waline/client/pageview";
+    import { startReadingTimer } from "@/utils/Footer/TimeStatistician";
+
+    (() =>
+    {
+        const readingEl = document.getElementById(
+            "article-reading-time"
+        );
+
+        if (readingEl instanceof HTMLElement)
+        {
+            const reading = readingEl;
+            const path = reading.dataset.path;
+
+            if (path)
+            {
+                startReadingTimer(reading, path);
+            }
+        }
+
+        const counterEl = document.getElementById(
+            "article-view-count"
+        );
+
+        if (!(counterEl instanceof HTMLElement))
+        {
+            return;
+        }
+
+        const counter = counterEl;
+        const path = counter.dataset.path;
+
+        if (!path)
+        {
+            return;
+        }
+
+        const hostname: string = window.location.hostname;
+
+        if (
+            hostname === "localhost" ||
+            hostname === "127.0.0.1" ||
+            hostname === "[::1]"
+        )
+        {
+            counter.textContent = "本地不统计";
+            return;
+        }
+
+        pageviewCount(
+        {
+            serverURL: "https://blog-comments-server-six.vercel.app",
+            selector: "#article-view-count",
+            path,
+            update: true,
+            lang: "zh-CN",
+        });
+    })();
+</script>
+
+
+
+<style>
+    .footer-stat
+    {
+        /* 3. 间距 */
+        margin: 0;
+    }
+</style>

@@ -10,14 +10,14 @@
                 "data": null,
                 "children": [
                     {
-                        "key": "2026Individual",
-                        "href": "/wps/DF/competition/meiya-cup/2026individual",
+                        "key": "2025Individual",
+                        "href": "/wps/DF/competition/meiya-cup/2025individual",
                         "data": {
-                            "title": "2026 - Individual",
+                            "title": "2025 - Individual",
                             "pubDate": "2026-04-12T00:00:00.000Z",
                             "tags": [
                                 "meiya-cup",
-                                "2026",
+                                "2025",
                                 "individual",
                                 "writeup",
                                 "dfir",
