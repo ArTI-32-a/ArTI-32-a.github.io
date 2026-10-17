@@ -1,10 +1,7 @@
 ---
-import type { ContactsData, ContentBlock } from "@/utils/Common/Type";
 import type { JSX } from "astro/jsx-runtime";
-
-import contactsRaw from "@/data/InfBoard/contacts.json";
-
-import { isContactsData } from "@/utils/Common/TGuards";
+import type { ContentBlock } from "@/utils/Common/Type";
+import { getBoardContent } from "@/utils/InfoBoard/BoardContent";
 
 export interface Props
 {
@@ -13,9 +10,7 @@ export interface Props
 
 const { index } = Astro.props;
 
-const contacts: ContactsData = isContactsData(contactsRaw) ? contactsRaw : {};
-const key: string = String(index);
-const blocks = contacts[key as keyof typeof contacts] ?? [];
+const { blocks } = getBoardContent(index);
 ---
 
 
@@ -75,6 +70,7 @@ const blocks = contacts[key as keyof typeof contacts] ?? [];
 
 <script>
     import { EventName as EN } from "@/utils/Common/Event";
+    
 
     if (!window.__infBoardDelegation)
     {

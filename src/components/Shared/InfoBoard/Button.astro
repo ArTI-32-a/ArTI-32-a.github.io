@@ -1,13 +1,18 @@
 ---
 import { Common as C } from "@/utils/Common/Common";
 
+import { getBoardContent } from "@/utils/InfoBoard/BoardContent";
+
 export interface Props
 {
     index: number;
     radius?: number;
+    color?: string;
 }
 
-const { index, radius = C.INF_RING_RADIUS_UNIT_V } = Astro.props;
+const { index, radius = C.INF_RING_RADIUS_UNIT_V, color } = Astro.props;
+
+const { title: boardTitle } = getBoardContent(index);
 
 const zeroIndex: number = index - 1;
 const ringIndex: number = Math.floor(zeroIndex / C.INF_RING_BTN_COUNT_N);
@@ -28,8 +33,6 @@ const cy: number = 0;
 
 const a1: number = (-halfStep) * Math.PI / 180;
 const a2: number = (+halfStep) * Math.PI / 180;
-// const a1: number = -Math.PI / 2 - (halfStep * Math.PI / 180);
-// const a2: number = -Math.PI / 2 + (halfStep * Math.PI / 180);
 
 // 内弧起点 / 终点
 const x1: number = cx + ri * Math.cos(a1);
@@ -53,10 +56,6 @@ const vbX: number = -r * 0.15;
 const vbY: number = -r * 0.3;
 const vbW: number = r * 0.3;
 const vbH: number = r * 0.6;
-// const vbX: number = -r * 0.3;
-// const vbY: number = -r * 0.15;
-// const vbW: number = r * 0.6;
-// const vbH: number = r * 0.3;
 ---
 
 
@@ -64,7 +63,14 @@ const vbH: number = r * 0.6;
 <div
     class="contact-button"
     data-index={index}
-    style={`--angle: ${angle}; --half-angle: ${halfAngle}; --ring-index: ${ringIndex};`}
+    data-custom-color={color ? "true" : undefined}
+    style={
+    {
+        "--angle": angle,
+        "--half-angle": halfAngle,
+        "--ring-index": ringIndex,
+        "--btn-theme-color": color,
+    }}
 >
     <svg
         class="contact-button-svg"
@@ -80,17 +86,12 @@ const vbH: number = r * 0.6;
                 y2="0"
                 gradientUnits="userSpaceOnUse"
             >
-            <!-- <linearGradient
-                id={`btnGradient-${index}`}
-                x1={-r * 0.15}
-                y1="0"
-                x2={r * 0.15}
-                y2="0"
-                gradientUnits="userSpaceOnUse"
-            > -->
                 <stop offset="0" style="stop-color: var(--btn-color-edge-inner, rgba(40, 35, 70, 0.9))" />
+
                 <stop offset="0.4" style="stop-color: var(--btn-color-hl, rgba(120, 105, 200, 0.95))" />
+
                 <stop offset="0.7" style="stop-color: var(--btn-color-mid, rgba(90, 75, 150, 0.9))" />
+
                 <stop offset="1" style="stop-color: var(--btn-color-edge-outer, rgba(30, 25, 55, 0.95))" />
             </linearGradient>
         </defs>
@@ -102,19 +103,12 @@ const vbH: number = r * 0.6;
             stroke="var(--btn-stroke)"
             stroke-width="0.3"
         />
-        <!-- <g transform="rotate(90)">
-            <path
-                class="contact-arc"
-                d={arcPath}
-                fill={`url(#btnGradient-${index})`}
-                stroke="var(--btn-stroke)"
-                stroke-width="0.3"
-            />
-        </g> -->
     </svg>
 
     <span class="contact-button-label">
-        <slot />
+        <slot>
+            {boardTitle}
+        </slot>
     </span>
 </div>
 
@@ -229,6 +223,57 @@ const vbH: number = r * 0.6;
 
         /* 11. 生成内容与 SVG */
         --btn-stroke: rgba(245, 170, 255, 1);
+    }
+
+    .contact-button[data-custom-color]
+    {
+        /* 5. 背景与阴影 */
+        --btn-highlight-mix: 25%;
+        --btn-color-edge-inner:
+            color-mix(in srgb, var(--btn-theme-color) 30%, #171421);
+        --btn-color-hl:
+            color-mix(
+                in srgb,
+                white var(--btn-highlight-mix),
+                var(--btn-theme-color)
+            );
+        --btn-color-mid:
+            color-mix(in srgb, var(--btn-theme-color) 70%, #171421);
+        --btn-color-edge-outer:
+            color-mix(in srgb, var(--btn-theme-color) 20%, #171421);
+
+        /* 11. 生成内容与 SVG */
+        --btn-stroke:
+            color-mix(in srgb, var(--btn-theme-color) 60%, transparent);
+    }
+
+    .contact-button[data-custom-color]:hover
+    {
+        /* 5. 背景与阴影 */
+        --btn-highlight-mix: 45%;
+
+        /* 11. 生成内容与 SVG */
+        --btn-stroke:
+            color-mix(in srgb, var(--btn-theme-color) 65%, white);
+    }
+
+    .contact-button[data-custom-color].active
+    {
+        /* 5. 背景与阴影 */
+        --btn-highlight-mix: 55%;
+
+        /* 11. 生成内容与 SVG */
+        --btn-stroke:
+            color-mix(in srgb, var(--btn-theme-color) 40%, white);
+    }
+
+    .contact-button[data-custom-color].active:hover
+    {
+        /* 5. 背景与阴影 */
+        --btn-highlight-mix: 70%;
+
+        /* 11. 生成内容与 SVG */
+        --btn-stroke: white;
     }
 
     .contact-button-svg
