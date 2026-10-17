@@ -1,7 +1,9 @@
-import { entry as getPictureFromUrl } from "./proc-article/image-processor.ts";
-import { entry as deleteArticleFont } from "./proc-article/clean-font-tags.ts";
-import { entry as removeMdDetails } from "./proc-article/remove-details.ts";
-import { entryCTF as procCTFFrontmatter, entryDF as procDFFrontmatter } from "./proc-article/add-frontmatter.ts";
+import { entry as getPictureFromUrl } from "./proc-wp/image-processor.ts";
+import { entry as deleteArticleFont } from "./proc-wp/clean-font-tags.ts";
+import { entry as removeMdDetails } from "./proc-wp/remove-details.ts";
+import { entryCTF as procCTFFrontmatter, entryDF as procDFFrontmatter } from "./proc-wp/add-frontmatter.ts";
+
+import { entry as addDownloads } from "./proc-wp/add-download-html.ts"
 
 
 async function main()
@@ -23,6 +25,25 @@ async function main()
     console.log("\n===== processing frontmatter:");
     await procCTFFrontmatter();
     await procDFFrontmatter();
+
+    console.log("\n===== processing downloads:");
+    await addDownloads();
 }
 
-main();
+main()
+    .then(() =>
+    {
+        console.log("\n全部处理完成");
+    })
+    .catch((error: unknown) =>
+    {
+        console.error("处理失败：", error);
+        process.exitCode = 1;
+    })
+    .finally(() =>
+    {
+        // 所有交互完成后，不再等待标准输入。
+        process.stdin.pause();
+
+        console.log("剩余活动资源：", process.getActiveResourcesInfo());
+    });;

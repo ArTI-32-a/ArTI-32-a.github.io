@@ -5,7 +5,7 @@ tags: ["reverse","java","base64","xor","random","shuffle","cpp","ida","anti-disa
 type: "Reverse"
 status: "published"
 ---
--2026.08.20 finished
+ - 2026.08.20 finished
 
 ### 1 baby_Java
 

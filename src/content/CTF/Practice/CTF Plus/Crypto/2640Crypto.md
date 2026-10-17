@@ -16,7 +16,7 @@ status: published
 pubDate: 2026-10-10T00:00:00.000Z
 type: Crypto
 ---
-&#x20;- 2026.10.10 finished
+ - 2026.10.10 finished
 
 ### 01 xor\_revenge
 

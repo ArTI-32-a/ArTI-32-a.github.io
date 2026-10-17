@@ -144,6 +144,38 @@
                                     "status": "published"
                                 },
                                 "children": null
+                            },
+                            {
+                                "key": "2641Weekly",
+                                "href": "/wps/CTF/practice/ctf-plus/reverse/2641weekly",
+                                "data": {
+                                    "title": "2026.41 Weekly",
+                                    "pubDate": "2026-10-17T00:00:00.000Z",
+                                    "tags": [
+                                        "algorithm",
+                                        "reverse",
+                                        "xor",
+                                        "rol",
+                                        "shuffle",
+                                        "obfuscation",
+                                        "ida",
+                                        "aes",
+                                        "cbc",
+                                        "feistel",
+                                        "sbox",
+                                        "unity",
+                                        "il2cpp",
+                                        "dnspy",
+                                        "resource",
+                                        "extraction",
+                                        "caesar",
+                                        "hex",
+                                        "encoding"
+                                    ],
+                                    "type": "Reverse",
+                                    "status": "published"
+                                },
+                                "children": null
                             }
                         ]
                     }

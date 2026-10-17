@@ -22,3 +22,45 @@ a
     /* 6. 文字 */
     text-decoration: none;
 }
+
+.article-area a
+{    
+    /* 3. 间距 */
+    padding: 0.05rem 0.2rem;
+
+    /* 4. 边框圆角 */
+    border: none;
+    border-radius: 0.2rem;
+
+    /* 5. 背景与阴影 */
+    background-color: rgba(154, 138, 255, 0.08);
+    box-shadow: none;
+
+    /* 6. 文字 */
+    color: #c9bdff;
+    text-decoration-color: rgba(201, 189, 255, 0.35);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+
+    /* 7. 视觉效果 */
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+
+    /* 10. 动画过渡 */
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        text-decoration-color 0.2s ease;
+}
+
+.article-area a:hover
+{
+    /* 5. 背景与阴影 */
+    background-color: rgba(154, 138, 255, 0.18);
+    box-shadow: none;
+
+    /* 6. 文字 */
+    color: #eee8ff;
+    text-decoration: underline;
+    text-decoration-color: #c9bdff;
+}
