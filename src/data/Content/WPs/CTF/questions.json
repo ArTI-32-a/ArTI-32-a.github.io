@@ -6,7 +6,30 @@
         "4 lit_xor_chain",
         "5 lit_xtea_tweak"
     ],
-    "competition/zerog---2026/zgreverse": [
+    "competition/quectf---2026/qreversew1": [
+        "01 intro",
+        "02 Pangbai泰拉记二周目(1)",
+        "03 艾克赛尔",
+        "04 meow~",
+        "05 Strange_rc4",
+        "06 Hello_Assemb1y"
+    ],
+    "competition/quectf---2026/qreversew2": [
+        "01 这是一个二游五灵王的陷阱",
+        "02 Mathgame",
+        "03 PangbaiOfficial",
+        "04 何为百合啊？",
+        "05 壳有壳味",
+        "06 Pangbai泰拉记二周目（2）"
+    ],
+    "competition/quectf---2026/qreversew3": [
+        "01 cpp噩梦",
+        "02 宝石魔术 ·现代刻印",
+        "03 ezHook",
+        "04 signal",
+        "05 bytecode"
+    ],
+    "competition/zerog---2026/zgreversespr": [
         "1 Docking Check",
         "2 Lunar License",
         "3 Nebula VM",

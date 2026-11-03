@@ -33,15 +33,132 @@
                 ]
             },
             {
+                "key": "QueCTF - 2026",
+                "href": null,
+                "data": null,
+                "children": [
+                    {
+                        "key": "QReverseW1",
+                        "href": "/wps/CTF/competition/quectf---2026/qreversew1",
+                        "data": {
+                            "title": "Reverse - Week1",
+                            "pubDate": "2026-10-29T00:00:00.000Z",
+                            "tags": [
+                                "algorithm",
+                                "reverse",
+                                "xor",
+                                "android",
+                                "apk",
+                                "native",
+                                "resource",
+                                "extraction",
+                                "maze",
+                                "tea",
+                                "block",
+                                "cipher",
+                                "symmetric",
+                                "crypto",
+                                "brute",
+                                "force",
+                                "black",
+                                "box",
+                                "analysis",
+                                "assembly",
+                                "ida"
+                            ],
+                            "type": "Reverse",
+                            "status": "published"
+                        },
+                        "children": null
+                    },
+                    {
+                        "key": "QReverseW2",
+                        "href": "/wps/CTF/competition/quectf---2026/qreversew2",
+                        "data": {
+                            "title": "Reverse - Week2",
+                            "pubDate": "2026-10-31T00:00:00.000Z",
+                            "tags": [
+                                "algorithm-reverse",
+                                "dynamic-analysis",
+                                "brute-force",
+                                "black-box-analysis",
+                                "prng",
+                                "sudoku",
+                                "python",
+                                "pyinstaller",
+                                "bytecode",
+                                "base64",
+                                "custom-base64",
+                                "obfuscation",
+                                "anti-disassembly",
+                                "binary-patching",
+                                "unpacking",
+                                "xor",
+                                "tea",
+                                "android",
+                                "jni",
+                                "frida",
+                                "hooking",
+                                "aes",
+                                "cbc",
+                                "ida",
+                                "x64dbg"
+                            ],
+                            "type": "Reverse",
+                            "status": "published"
+                        },
+                        "children": null
+                    },
+                    {
+                        "key": "QReverseW3",
+                        "href": "/wps/CTF/competition/quectf---2026/qreversew3",
+                        "data": {
+                            "title": "Reverse - Week3",
+                            "pubDate": "2026-11-03T00:00:00.000Z",
+                            "tags": [
+                                "algorithm-reverse",
+                                "cpp",
+                                "vtable",
+                                "dynamic-analysis",
+                                "shuffle",
+                                "xor",
+                                "elf",
+                                "hooking",
+                                "frida",
+                                "side-channel",
+                                "instruction-count",
+                                "valgrind",
+                                "callgrind",
+                                "brute-force",
+                                "black-box-analysis",
+                                "python",
+                                "pyinstaller",
+                                "bytecode",
+                                "self-modifying-code",
+                                "obfuscation",
+                                "aes",
+                                "ctr",
+                                "ecb",
+                                "tea",
+                                "ida"
+                            ],
+                            "type": "Reverse",
+                            "status": "published"
+                        },
+                        "children": null
+                    }
+                ]
+            },
+            {
                 "key": "ZeroG - 2026",
                 "href": null,
                 "data": null,
                 "children": [
                     {
-                        "key": "ZGReverse",
-                        "href": "/wps/CTF/competition/zerog---2026/zgreverse",
+                        "key": "ZGReverseSpr",
+                        "href": "/wps/CTF/competition/zerog---2026/zgreversespr",
                         "data": {
-                            "title": "Reverse",
+                            "title": "Reverse - Spring",
                             "pubDate": "2026-06-14T00:00:00.000Z",
                             "tags": [
                                 "rc4",

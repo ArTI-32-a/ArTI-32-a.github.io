@@ -1,5 +1,13 @@
 # build output
 dist/
+build/
+_editor_backups/
+_work/EditorMigration/
+_work/EditorBuild/
+_work/EditorFixture/
+_work/EditorRelease/
+_work/EditorPythonRelease/
+_work/EditorPythonBuild/
 
 # generated types
 .astro/
