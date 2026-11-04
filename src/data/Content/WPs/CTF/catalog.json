@@ -146,6 +146,18 @@
                             "status": "published"
                         },
                         "children": null
+                    },
+                    {
+                        "key": "QReverseW4",
+                        "href": "/wps/CTF/competition/quectf---2026/qreversew4",
+                        "data": {
+                            "title": "Reverse - Week4",
+                            "pubDate": "2026-11-04T00:00:00.000Z",
+                            "tags": [],
+                            "type": "Reverse",
+                            "status": "draft"
+                        },
+                        "children": null
                     }
                 ]
             },
