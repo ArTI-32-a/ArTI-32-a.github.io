@@ -152,10 +152,36 @@
                         "href": "/wps/CTF/competition/quectf---2026/qreversew4",
                         "data": {
                             "title": "Reverse - Week4",
-                            "pubDate": "2026-11-04T00:00:00.000Z",
-                            "tags": [],
+                            "pubDate": "2026-11-05T00:00:00.000Z",
+                            "tags": [
+                                "algorithm-reverse",
+                                "unity",
+                                "dotnet",
+                                "csharp",
+                                "dnspy",
+                                "resource-extraction",
+                                "code-patching",
+                                "android",
+                                "apk",
+                                "apktool",
+                                "smali",
+                                "repackaging",
+                                "frida",
+                                "hooking",
+                                "dynamic-analysis",
+                                "sm4",
+                                "vm-reverse",
+                                "bytecode",
+                                "stack-machine",
+                                "xor",
+                                "rol",
+                                "windows",
+                                "ipc",
+                                "named-pipe",
+                                "ida"
+                            ],
                             "type": "Reverse",
-                            "status": "draft"
+                            "status": "published"
                         },
                         "children": null
                     }
@@ -220,8 +246,8 @@
                         "data": null,
                         "children": [
                             {
-                                "key": "2640Crypto",
-                                "href": "/wps/CTF/practice/ctf-plus/crypto/2640crypto",
+                                "key": "2640Cr",
+                                "href": "/wps/CTF/practice/ctf-plus/crypto/2640cr",
                                 "data": {
                                     "title": "2026.40 Weekly",
                                     "pubDate": "2026-10-10T00:00:00.000Z",
@@ -251,8 +277,8 @@
                         "data": null,
                         "children": [
                             {
-                                "key": "2624Weekly",
-                                "href": "/wps/CTF/practice/ctf-plus/reverse/2624weekly",
+                                "key": "2624Re",
+                                "href": "/wps/CTF/practice/ctf-plus/reverse/2624re",
                                 "data": {
                                     "title": "2026.24 Weekly",
                                     "pubDate": "2026-08-20T00:00:00.000Z",
@@ -275,8 +301,8 @@
                                 "children": null
                             },
                             {
-                                "key": "2641Weekly",
-                                "href": "/wps/CTF/practice/ctf-plus/reverse/2641weekly",
+                                "key": "2641Re",
+                                "href": "/wps/CTF/practice/ctf-plus/reverse/2641re",
                                 "data": {
                                     "title": "2026.41 Weekly",
                                     "pubDate": "2026-10-17T00:00:00.000Z",

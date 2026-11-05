@@ -14,7 +14,6 @@ status: "published"
 
 
 
-<a href="/Download/WpCTF/Comp/LitCTF2026/Reverse/LitCTF2026-reverse-lit_rc4_variant_clean.zip" download="LitCTF2026-reverse-lit_rc4_variant_clean.zip">LitCTF2026-reverse-lit_rc4_variant_clean.zip</a>
 
 #### 答案
 LitCTF{rev05_rc4_variant_64!}
@@ -105,7 +104,6 @@ print(''.join(result))
 
 
 
-<a href="/Download/WpCTF/Comp/LitCTF2026/Reverse/LitCTF2026-reverse-lit_tea_standard_clean.zip" download="LitCTF2026-reverse-lit_tea_standard_clean.zip">LitCTF2026-reverse-lit_tea_standard_clean.zip</a>
 
 #### 答案
 LitCTF{rev03_tea_standard!!}
@@ -209,7 +207,6 @@ print(b''.join(result))
 
 
 
-<a href="/Download/WpCTF/Comp/LitCTF2026/Reverse/LitCTF2026-reverse-lit_b64_alphabet_clean.zip" download="LitCTF2026-reverse-lit_b64_alphabet_clean.zip">LitCTF2026-reverse-lit_b64_alphabet_clean.zip</a>
 
 #### 答案
 LitCTF{rev02_custom_b64_table!}
@@ -284,7 +281,6 @@ if __name__ == '__main__':
 
 
 
-<a href="/Download/WpCTF/Comp/LitCTF2026/Reverse/LitCTF2026-reverse-lit_xor_chain_clean.zip" download="LitCTF2026-reverse-lit_xor_chain_clean.zip">LitCTF2026-reverse-lit_xor_chain_clean.zip</a>
 
 #### 答案 
 LitCTF{rev01_xor_then_add_ok!}
@@ -329,7 +325,6 @@ print(''.join(result))
 
 
 
-<a href="/Download/WpCTF/Comp/LitCTF2026/Reverse/LitCTF2026-reverse-lit_xtea_tweak_cle.zip" download="LitCTF2026-reverse-lit_xtea_tweak_clean.zip">LitCTF2026-reverse-lit_xtea_tweak_clean.zip</a>
 
 #### 答案
 LitCTF{rev04_xtea_delta_twk!}

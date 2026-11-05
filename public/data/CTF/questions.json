@@ -42,21 +42,21 @@
         "4 Nebula Patch",
         "5 ZeroG Android Docking Station"
     ],
-    "practice/ctf-plus/crypto/2640crypto": [
+    "practice/ctf-plus/crypto/2640cr": [
         "01 xor_revenge",
         "02 打破时间胶囊",
         "03 极客大挑战2024-ezRSA",
         "04 极客大挑战2024-共模攻击",
         "05 Mid_LLL"
     ],
-    "practice/ctf-plus/reverse/2624weekly": [
+    "practice/ctf-plus/reverse/2624re": [
         "1 baby_Java",
         "2 hardtest",
         "3 CTF+Binary练习题-Re-Day2 [Score=1]",
         "4 Shuffle！Shuffle！",
         "5 极客大挑战2024-CPP_flower"
     ],
-    "practice/ctf-plus/reverse/2641weekly": [
+    "practice/ctf-plus/reverse/2641re": [
         "01 Night Market",
         "02 CTF+Binary练习题-Re-Day6（2） [Score=3]",
         "03 obfuscat3_revenge",

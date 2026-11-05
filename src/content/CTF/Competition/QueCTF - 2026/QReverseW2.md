@@ -36,7 +36,7 @@ tags:
 时 从不讲道理
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/challenge-genshin.exe" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/challenge-genshin.exe" download>
     文件
 </a>
 
@@ -204,7 +204,7 @@ else:
 跑起来 跑起来
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/sudu8.exe" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/sudu8.exe" download>
     文件
 </a>
 
@@ -281,7 +281,7 @@ rsp+0x1A0直接定位出来
 PangBai酱不希望别人能随意使用自己的python环境
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/main.exe" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/main.exe" download>
     文件
 </a>
 
@@ -472,15 +472,16 @@ print(result)
 #### 题目
 hey？量产的花咋办？
 
+
+<a href="/Download/WpCTF/Comp/Que26/Re/challenge-lilies.exe" download>
+    文件
+</a>
+
 #### 提示
 可以先学一学如何去除花指令，尝试去除一些。最后想想有没有其他办法呢？
 
 另外 我在10.11曾更新过附件 当时发过通知 没看到的选手记得重新下载
 
-
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/challenge-lilies.exe" download>
-    文件
-</a>
 
 #### 答案
 flag{tw1n_catgirls_flower_b1oom}
@@ -718,13 +719,14 @@ print(result)
 #### 题目
 upx -d 没味了怎么办 试试x64dbg呢
 
+
+<a href="/Download/WpCTF/Comp/Que26/Re/miniupx.exe" download>
+    文件
+</a>
+
 #### 提示
 要不先试试手脱正常的upx？
 
-
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/miniupx.exe" download>
-    文件
-</a>
 
 #### 答案
 flag{This_is_a_loli_upx}
@@ -828,7 +830,7 @@ print(bytes(a ^ b for a, b in zip(target, (0x123456789ABCDEF0).to_bytes(8, "litt
 没有方法能够在不解密、不实现对应函数的情况下拿到一个函数的返回结果？安卓要怎么动调？
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/pbterraii.apk" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/pbterraii.apk" download>
     文件
 </a>
 

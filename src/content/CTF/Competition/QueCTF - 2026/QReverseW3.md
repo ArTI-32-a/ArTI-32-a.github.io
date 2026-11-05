@@ -50,7 +50,7 @@ Every nightmare has an ending.
 Find where the program decides whether your answer is right or wrong. Sometimes, working backwards is easier than moving forward.
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/RookiesNightmare.exe" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/RookiesNightmare.exe" download>
     文件
 </a>
 
@@ -239,7 +239,7 @@ print("".join(result))
 「我、我才不是特意提醒你呢！只是看不下去你在这种地方浪费时间而已！」
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/minipe" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/minipe" download>
     文件
 </a>
 
@@ -267,7 +267,7 @@ elf文件，调试需要扔到wsl里面去
 你即将面对逆向最热门的技术之一——Hook
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/ezHook" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/ezHook" download>
     文件
 </a>
 
@@ -436,6 +436,11 @@ print([hex(x) for x in result])
 #### 题目
 它从来只给出两种结局，却藏不住判断那一刻，几乎听不见的杂音。
 
+
+<a href="/Download/WpCTF/Comp/Que26/Re/w3_signal" download>
+    文件
+</a>
+
 #### 提示
 ##### 1 
 这道题纯静态分析难度极高，预期解并不是纯静态分析
@@ -443,10 +448,6 @@ print([hex(x) for x in result])
 ##### 2
 因为现代cpu的优化，精确到微秒的计时器也可能有非常大的噪声，需要寻找一些更客观并且噪音不会太大的数据反映程序的执行情况
 
-
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/w3_signal" download>
-    文件
-</a>
 
 #### 答案
 flag{1n57ruc710n_C0un7_15_7h3_516n41_a1389f9ec346d61a96223468bcc}
@@ -598,7 +599,7 @@ for _ in range(65):
 你听我解释，他不应该是这样的TuT
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/bytecode.exe" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/bytecode.exe" download>
     文件
 </a>
 

@@ -33,7 +33,7 @@ type: Reverse
 
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/intro" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/intro" download>
     文件
 </a>
 
@@ -109,7 +109,7 @@ apk的包名是什么？有什么作用？
 
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/pbterrai.apk" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/pbterrai.apk" download>
     文件
 </a>
 
@@ -171,7 +171,7 @@ ndr01d}
 
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/siuumaze.exe" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/siuumaze.exe" download>
     文件
 </a>
 
@@ -265,7 +265,7 @@ v11高位用来遍历buffer的
 
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/meow.exe" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/meow.exe" download>
     文件
 </a>
 
@@ -355,7 +355,7 @@ print("".join([chr(c) for c in result]))
 
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/C1.zip" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/C1.zip" download>
     文件
 </a>
 
@@ -511,7 +511,7 @@ with tempfile.TemporaryDirectory(prefix="c1_probe_", dir=base) as folder:
 
 
 
-<a href="/Download/WpCTF/Comp/QueCTF2026/Reverse/Hello_Assemb1y.asm" download>
+<a href="/Download/WpCTF/Comp/Que26/Re/Hello_Assemb1y.asm" download>
     文件
 </a>
 
