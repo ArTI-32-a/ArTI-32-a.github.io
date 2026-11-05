@@ -246,8 +246,8 @@
                         "data": null,
                         "children": [
                             {
-                                "key": "2640Cr",
-                                "href": "/wps/CTF/practice/ctf-plus/crypto/2640cr",
+                                "key": "2640Crypto",
+                                "href": "/wps/CTF/practice/ctf-plus/crypto/2640crypto",
                                 "data": {
                                     "title": "2026.40 Weekly",
                                     "pubDate": "2026-10-10T00:00:00.000Z",
@@ -277,8 +277,8 @@
                         "data": null,
                         "children": [
                             {
-                                "key": "2624Re",
-                                "href": "/wps/CTF/practice/ctf-plus/reverse/2624re",
+                                "key": "2624Reverse",
+                                "href": "/wps/CTF/practice/ctf-plus/reverse/2624reverse",
                                 "data": {
                                     "title": "2026.24 Weekly",
                                     "pubDate": "2026-08-20T00:00:00.000Z",
@@ -301,8 +301,8 @@
                                 "children": null
                             },
                             {
-                                "key": "2641Re",
-                                "href": "/wps/CTF/practice/ctf-plus/reverse/2641re",
+                                "key": "2641Reverse",
+                                "href": "/wps/CTF/practice/ctf-plus/reverse/2641reverse",
                                 "data": {
                                     "title": "2026.41 Weekly",
                                     "pubDate": "2026-10-17T00:00:00.000Z",
