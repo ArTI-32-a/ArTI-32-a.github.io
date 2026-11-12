@@ -42,7 +42,7 @@ function isValidConData(data: unknown, collectionName: string): data is WPFrontm
             return false;
         }
 
-        const allowedTypes = ["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety"] as const;
+        const allowedTypes = ["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety", "Osint"] as const;
         if (!allowedTypes.includes(data.type as any))
         {
             return false;

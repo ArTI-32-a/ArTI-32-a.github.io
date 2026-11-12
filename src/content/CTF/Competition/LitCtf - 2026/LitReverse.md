@@ -22,17 +22,17 @@ LitCTF{rev05_rc4_variant_64!}
 看逻辑
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/1.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/1.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/2.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/2.png" alt="" style="max-width: 80%; height: auto;">
 
 前面加密部分一共有三个循环体
 
 第一个for循环是初始化（通过++v7和++v8来循环处理v18和v19（因为俩地址一样，等号是浅拷贝）），往v18里面按顺序赋值，往v19里面赋值key
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/3.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/3.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看到，key是12个字符
 
@@ -89,7 +89,7 @@ print(''.join(result))
 最开始的验证就是验证是否输入的flag是29位
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/4.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/4.png" alt="" style="max-width: 80%; height: auto;">
 
 因此，很容易能发现，RC4的代码逻辑十分明显（解密代码直接无脑抄就行）
 
@@ -110,7 +110,7 @@ LitCTF{rev03_tea_standard!!}
 
 #### 过程
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/5.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/5.png" alt="" style="max-width: 80%; height: auto;">
 
 很明显主逻辑在这里（输入flag前面不用看（），输入后循环前一堆地址导来导去的）
 
@@ -119,7 +119,7 @@ LitCTF{rev03_tea_standard!!}
 看看循环中的东西
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/6.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/6.png" alt="" style="max-width: 80%; height: auto;">
 
 读取v8的8个字节，左半存v9，右半存v10（DWORD指的是32位无符号整数，即4个字节，*(_DWORD *)v8 相当于是先把v8当作32位无符号整数的指针，再取这个指针的地址；v8 + 1即是取下一个4字节）
 
@@ -128,7 +128,7 @@ LitCTF{rev03_tea_standard!!}
 i在循环体中每次自减1640531527
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/7.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/7.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看到，这里是循环了32次
 
@@ -137,7 +137,7 @@ i在循环体中每次自减1640531527
 然后循环体处理完后跟g_cipher比较
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/8.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/8.png" alt="" style="max-width: 80%; height: auto;">
 
 那写代码即可
 
@@ -191,14 +191,14 @@ print(b''.join(result))
 与v10和v9同理，i也得处理，不过i不是unsigned，因此不能直接用0xFFFFFFFF进行与运算，所以这里写了一个函数用来模拟溢出
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/9.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/9.png" alt="" style="max-width: 80%; height: auto;">
 
 最后的4个\x04是填充用的
 
 具体逻辑在这里
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/10.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/10.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 3 lit_b64_alphabet
 #### 题目
@@ -215,12 +215,12 @@ LitCTF{rev02_custom_b64_table!}
 既然说是base64，那需要找的就是表和编码后的字符串
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/11.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/11.png" alt="" style="max-width: 80%; height: auto;">
 
 一个写着alphabet，一个写着判断如果一样就返回Good，那结果显而易见了吧（）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/12.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/12.png" alt="" style="max-width: 80%; height: auto;">
 
 获取一下alphabet的值
 
@@ -272,7 +272,7 @@ if __name__ == '__main__':
 得到答案
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/13.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/13.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 4 lit_xor_chain
 #### 题目
@@ -289,14 +289,14 @@ LitCTF{rev01_xor_then_add_ok!}
 逻辑就写在main里面
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/14.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/14.png" alt="" style="max-width: 80%; height: auto;">
 
 主逻辑在if里面，先判断是否是30个字符，然后在for里面对g_expected字符串依次遍历存储到i里面（循环末尾的++i），与处理后v4（即输入字符串）比较，循环体中是对v4的地址自增（++v4），比较v4是否已自增到末尾，若自增到末尾即退出（++v4 == &v8 ，v4在前面被赋值了Str，即把Str的地址给了v4，而v8被定义在Str后，或者看寄存器地址也行，因此如果v4自增后地址和v8一致，就证明遍历字符串结束了）
 
 去看g_expected的内容
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/15.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/15.png" alt="" style="max-width: 80%; height: auto;">
 
 那么根据for里面对v4的处理逻辑写代码即可
 
@@ -316,7 +316,7 @@ print(''.join(result))
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/16.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/16.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 5 lit_xtea_tweak
 #### 题目
@@ -331,21 +331,21 @@ LitCTF{rev04_xtea_delta_twk!}
 
 #### 过程
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/17.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/17.png" alt="" style="max-width: 80%; height: auto;">
 
 和tea那题很类似，显然主逻辑在这里
 
 第一个do while用来补位填充，使得plain的长度变成8的倍数，然后第二个do while里面对输入的内容进行每8个字节一次的分组处理（依旧好标准的对称加密）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/18.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/18.png" alt="" style="max-width: 80%; height: auto;">
 
 依旧是循环32次
 
 然后去看看这个逻辑里面有两个常量g_key和g_cipher
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/19.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/19.png" alt="" style="max-width: 80%; height: auto;">
 
 得到了这俩信息，仿照着第二题写代码即可
 
@@ -385,5 +385,5 @@ print(b''.join(result))
 记得在运算的时候，能打括号的都打上，防止由于优先级不同而导致的问题（或者拆开来算也行）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Lit/2026Re/20.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Lit26/Re/20.png" alt="" style="max-width: 80%; height: auto;">
 

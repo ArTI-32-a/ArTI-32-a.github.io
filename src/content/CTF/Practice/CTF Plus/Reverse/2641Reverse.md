@@ -147,17 +147,17 @@ argc是输入参数的数量，argv是输入的字符串数组
 依旧从后往前看
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/1.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/1.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看出来判断方式是逐字验证mixed[i]和want[i]是否相等（只要这俩有一个不一样，与自己做或就会使diff变成1，然后return就是false了）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/2.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/2.png" alt="" style="max-width: 80%; height: auto;">
 
 want是写死的，那看mix就行了
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/3.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/3.png" alt="" style="max-width: 80%; height: auto;">
 
 首先调用了route_at，把结果存到pos里面去，然后下面ticket的索引是pos
 
@@ -188,14 +188,14 @@ print(pos);
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/4.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/4.png" alt="" style="max-width: 80%; height: auto;">
 
 顺序也有了
 
 取了对应位置的ticket后，跟stream_at的返回值做异或
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/5.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/5.png" alt="" style="max-width: 80%; height: auto;">
 
 seed_at函数（也是自己的一套异或逻辑）计算处理过的a和b
 
@@ -204,7 +204,7 @@ seed_at函数（也是自己的一套异或逻辑）计算处理过的a和b
 然后a+i循环左移3位 和 异或b与(i * 0x29)的结果 和 state 和 p 四个值做异或
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/6.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/6.png" alt="" style="max-width: 80%; height: auto;">
 
 state由这个函数控制，其有第三个参数cipher，因此state是跟输入挂钩的
 
@@ -263,7 +263,7 @@ print("".join(result));
 注意得出的res记得跟256取模，res可能会超过256的
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/7.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/7.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 02 CTF+Binary练习题-Re-Day6（2） [Score=3]
 #### 题目
@@ -287,7 +287,7 @@ print("".join(result));
 
 QQ群：879334917
 
-<a href="/Download/WpCTF/Practice/Plus/202641/Reverse/Challenge" download>
+<a href="/Download/WpCTF/Practice/Plus/2641/Re/Challenge" download>
     文件
 </a>
 
@@ -300,15 +300,15 @@ geesec{f01504d1c05417aaf67f127e652bed76}
 出题人小时候要回家结果只找到了指向指向家的路牌的路牌
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/8.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/8.png" alt="" style="max-width: 80%; height: auto;">
 
 main
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/9.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/9.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/10.png" alt="" style="max-width: 80%; height: auto;">？  
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/10.png" alt="" style="max-width: 80%; height: auto;">？  
 怎么这么多变量？怎么这么多函数？就不能像第一题一样好好把过程写清楚吗（恼）要干嘛
 
 不难发现，有一堆黄的，肯定是ida抽风了
@@ -316,14 +316,14 @@ main
 随便进一个带黄色参数的（比方说我去406E80
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/11.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/11.png" alt="" style="max-width: 80%; height: auto;">
 
 这玩意实际上只有一个传参
 
 esc , F5
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/12.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/12.png" alt="" style="max-width: 80%; height: auto;">
 
 能正常很多
 
@@ -332,23 +332,23 @@ esc , F5
 知周所众，传入main的字符串就是第二个变量argv，这里是a2（于是我把它重命名为argv了）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/13.png" alt="" style="max-width: 80%; height: auto;">这是argv的唯一一次调用
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/13.png" alt="" style="max-width: 80%; height: auto;">这是argv的唯一一次调用
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/14.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/14.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/15.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/15.png" alt="" style="max-width: 80%; height: auto;">
 
 v6是v101地址偏移16对应的地址
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/16.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/16.png" alt="" style="max-width: 80%; height: auto;">
 
 也就是v103的地址
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/17.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/17.png" alt="" style="max-width: 80%; height: auto;">
 
 而v103指向的（或者说这个变量保存的）地址是v110的地址
 
@@ -357,24 +357,24 @@ v6是v101地址偏移16对应的地址
 然后下一行，先从*v6中取出来v110的地址，然后再偏移8位
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/18.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/18.png" alt="" style="max-width: 80%; height: auto;">
 
 得到v111的地址
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/19.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/19.png" alt="" style="max-width: 80%; height: auto;">
 
 v111里面存了v181的地址
 
 因此sub_406EB0(*v6)干的就是取出v181的地址，随后再偏移16位
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/20.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/20.png" alt="" style="max-width: 80%; height: auto;">
 
 即v182，也就是说，v182 = argv
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/21.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/21.png" alt="" style="max-width: 80%; height: auto;">
 
 然后v182又把地址传给了位于40091A0的全局变量处
 
@@ -383,7 +383,7 @@ v111里面存了v181的地址
 同理，以此逻辑再看看那四个字符串都传到哪里去了
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/22.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/22.png" alt="" style="max-width: 80%; height: auto;">
 
 1: v186[3]
 
@@ -418,21 +418,21 @@ v189 + 24 即 rsp + 0x748 即 v189[24]
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/23.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/23.png" alt="" style="max-width: 80%; height: auto;">
 
 好了于是能开始找逻辑到底写哪了
 
 这里使用了v191，而我们又知道v191指向一个字符串，不难推测4012C0就是用来输出字符串的
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/24.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/24.png" alt="" style="max-width: 80%; height: auto;">
 
 这玩意还有两处使用，
 
 （对了记得ida是可以改函数名的，我把加一个值的和输出字符串的都重命名了，看起来太坐牢了）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/25.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/25.png" alt="" style="max-width: 80%; height: auto;">
 
 第三处print的是长度不对
 
@@ -460,12 +460,12 @@ v190 + 24 即 rsp + 0x770 即 v191
 因此不妨来看看if判断的那个4014A0
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/26.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/26.png" alt="" style="max-width: 80%; height: auto;">
 
 一共两处return，地址偏移指向同样的地方即v78
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/27.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/27.png" alt="" style="max-width: 80%; height: auto;">
 
 第一处直接给v78赋值0了，那我推测很可能是判断函数，于是我找有没有 = 1，还真有，一算地址还真是v78
 
@@ -486,12 +486,12 @@ v77 + 16 即 rsp + 0x2A8 即 v78
 dest源于复制：
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/28.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/28.png" alt="" style="max-width: 80%; height: auto;">
 
 unk 407120的值是定值
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/29.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/29.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 target = bytes.fromhex(
@@ -513,22 +513,22 @@ v172 + 8 即 v173 -> v189
 首先
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/30.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/30.png" alt="" style="max-width: 80%; height: auto;">
 
 输入的内容被写入s，回车截断
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/31.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/31.png" alt="" style="max-width: 80%; height: auto;">
 
 然后唯一一次对s的引用在此处
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/32.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/32.png" alt="" style="max-width: 80%; height: auto;">
 
 验证格式，输入的s长度是40，最后189比较的却是32位，geesec{}一共8位，那么就能推测出来，这里大概率是去掉geesec{}的
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/33.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/33.png" alt="" style="max-width: 80%; height: auto;">
 
 4011B0是计算长度的
 
@@ -537,7 +537,7 @@ v172 + 8 即 v173 -> v189
 然后进入下面的if
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/34.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/34.png" alt="" style="max-width: 80%; height: auto;">
 
 改过名之后就很清楚了，除了那一大坨的偏移之外，只有三个函数的调用
 
@@ -579,7 +579,7 @@ v183 + 16 即 rsp + 0x688
 第二个函数
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/35.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/35.png" alt="" style="max-width: 80%; height: auto;">
 
 每个值跟0xC4异或
 
@@ -590,82 +590,82 @@ v183 + 16 即 rsp + 0x688
 启用调试
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/36.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/36.png" alt="" style="max-width: 80%; height: auto;">
 
 在函数入口处设置好断点后追踪RDI，会发现传入的地址是41CB30（其实看RSI也能发现这就是传入值，RSI存的是20h也就是32），这个值就是传入的字符串的第一个值所在地址
 
 追踪41CB30
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/37.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/37.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/38.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/38.png" alt="" style="max-width: 80%; height: auto;">
 
 停于此处
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/39.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/39.png" alt="" style="max-width: 80%; height: auto;">
 
 对应伪C，也就是说，这里尝试读取值并存于v122处
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/40.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/40.png" alt="" style="max-width: 80%; height: auto;">
 
 v122将值存入dl，dl又存入rax+rcx中去
 
 此时运行到断点处
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/41.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/41.png" alt="" style="max-width: 80%; height: auto;">
 
 也就是说，此处在准备往41CB60的位置写入值
 
 追踪41CB60，去掉其他所有断点，F9
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/42.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/42.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/43.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/43.png" alt="" style="max-width: 80%; height: auto;">
 
 在此处触发
 
 注意到这里是把值传入edx中，然后edx和某个值esi异或
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/44.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/44.png" alt="" style="max-width: 80%; height: auto;">
 
 esi也就是rbp + var_6EC
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/45.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/45.png" alt="" style="max-width: 80%; height: auto;">
 
 这里对应的就是异或v110
 
 不妨直接找一下110的传递链
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/46.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/46.png" alt="" style="max-width: 80%; height: auto;">
 
 （ori_vector就是v130，我改名了），v110就是v130[i]（plus_16(v169) 就写在上面while循环里面）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/47.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/47.png" alt="" style="max-width: 80%; height: auto;">
 
 v130在上面被赋值了16字节，再结合上面 < 16，现在能猜一手存在分组回绕（不然输入值处理不完了）
 
 继续F9，停在了子函数404180里面了
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/48.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/48.png" alt="" style="max-width: 80%; height: auto;">
 
 这里是字节从rax+rcx进eax了，eax又传给rbp+var_30C，然后又传给eax
 
 在404448的位置发现第二次异或，eax（刚刚传入的值）和ecx异或
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/49.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/49.png" alt="" style="max-width: 80%; height: auto;">
 
 对应的其中v137 ^ v138
 
@@ -690,7 +690,7 @@ v175 + 16 即 v177 -> v191
 在循环末尾
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/50.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/50.png" alt="" style="max-width: 80%; height: auto;">
 
 ```plain
 v167 + 32 即 v171 -> v173
@@ -710,19 +710,19 @@ v138 = a2[i];
 ecx源于rbp+var_318
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/51.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/51.png" alt="" style="max-width: 80%; height: auto;">
 
 那么在Hex View处查找RBP - 0x318的位置
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/52.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/52.png" alt="" style="max-width: 80%; height: auto;">
 
 从小端起算，这里是0x00007FFFFFFFC1D0
 
 可以发现这里和刚进入此函数时传入的RDI一致，RDI对应的是传入的第一个参数
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/53.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/53.png" alt="" style="max-width: 80%; height: auto;">
 
 也就是说，此时ecx就是s[0]
 
@@ -731,55 +731,55 @@ s是个定值
 源于函数402A00从unk_409180取的值
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/54.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/54.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/55.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/55.png" alt="" style="max-width: 80%; height: auto;">
 
 这个函数就是把409180复制到s中去
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/56.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/56.png" alt="" style="max-width: 80%; height: auto;">
 
 然后404180调用处将s传入了
 
 好了看回去
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/57.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/57.png" alt="" style="max-width: 80%; height: auto;">
 
 eax又跟ecx异或了一次，这次ecx源于rbp + rcx + var_2E0
 
 对应伪C中的这句
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/58.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/58.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/59.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/59.png" alt="" style="max-width: 80%; height: auto;">
 
 143是写好的值，后面是下标
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/60.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/60.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/61.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/61.png" alt="" style="max-width: 80%; height: auto;">
 
 xor将值存入rbp + var_301，又存入dl，又存回rax+rcx
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/62.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/62.png" alt="" style="max-width: 80%; height: auto;">
 
 写入后追踪RAX地址41CB90，和前面追踪同理
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/63.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/63.png" alt="" style="max-width: 80%; height: auto;">
 
 又写回ecx了
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/64.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/64.png" alt="" style="max-width: 80%; height: auto;">
 
 对应伪C，从byte_409070处查表替换
 
@@ -791,7 +791,7 @@ for (i = 0; i < 16; i++)
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/65.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/65.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 table = bytes([
@@ -826,17 +826,17 @@ table = bytes([
 然后追踪v144也就是RBP - 0x2D0，也就是0x7FFFFFFFBDC0，打断点
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/66.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/66.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/67.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/67.png" alt="" style="max-width: 80%; height: auto;">
 
 对应伪C
 
 这块直接看伪C就行了，比较简单
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/68.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/68.png" alt="" style="max-width: 80%; height: auto;">
 
 这里删掉地址偏移就是
 
@@ -856,29 +856,29 @@ v114 = v144[i] ^ v144[i+1] ^ v144[i+2] ^ v144[i+3];
 然后进405330
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/69.png" alt="" style="max-width: 80%; height: auto;">（我的天这么正常的一个函数）
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/69.png" alt="" style="max-width: 80%; height: auto;">（我的天这么正常的一个函数）
 
 对味了，AES的列混合，基本可以断定就是AES了，然后就是找轮密钥从哪里来的（这个循环也就干了个列混合）
 
 然后继续追踪
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/70.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/70.png" alt="" style="max-width: 80%; height: auto;">
 
 404843处写回缓冲区，在此打断点看RAX和RCX的值
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/71.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/71.png" alt="" style="max-width: 80%; height: auto;">
 
 继续追踪rax+rcx
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/72.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/72.png" alt="" style="max-width: 80%; height: auto;">
 
 于此处触发
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/73.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/73.png" alt="" style="max-width: 80%; height: auto;">
 
 对应下一个循环中的此处，这里也是直接看伪C就行了
 
@@ -893,7 +893,7 @@ v191 + 24 即 rsp + 0x400，即 v192
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/74.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/74.png" alt="" style="max-width: 80%; height: auto;">
 
 也就是说v106指向v192，最初v192是a1（C1D0），现在差了10h也就是16，也就是说这一轮是
 
@@ -904,10 +904,10 @@ buffer[i] ^= s[16 + i] ^ ((unsigned char *)v143)[i];
 这里由于是 ^= 也就是说是存回原地的，那直接继续追踪41CB90就行了
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/75.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/75.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/76.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/76.png" alt="" style="max-width: 80%; height: auto;">
 
 回到此处
 
@@ -930,7 +930,7 @@ buffer[i] ^= s[16 + i] ^ ((unsigned char *)v143)[i];
 经过9轮后会进入最后一轮
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/77.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/77.png" alt="" style="max-width: 80%; height: auto;">
 
 这里跟上面逻辑基本是一致的
 
@@ -941,43 +941,43 @@ sub_405060：原地行移位
 最后一组密钥数据与 v143 参与异或
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/78.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/78.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/79.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/79.png" alt="" style="max-width: 80%; height: auto;">
 
 而后就回到外层了，继续追踪
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/80.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/80.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/81.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/81.png" alt="" style="max-width: 80%; height: auto;">
 
 这里是跟0异或，因此不改变任何值，继续追踪
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/82.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/82.png" alt="" style="max-width: 80%; height: auto;">
 
 这里就是把值覆盖ori_vector，也就是v130了
 
 再追踪呢就会发现进比较了
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/83.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/83.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/84.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/84.png" alt="" style="max-width: 80%; height: auto;">
 
 于是这个函数处理流程就清楚了
 
 现在去看看s的值，定位RSP+0x130的位置
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/85.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/85.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/86.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/86.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 s = bytes.fromhex("""
@@ -1080,15 +1080,15 @@ print(result.hex(" "))
 通过刚进入函数时的RSI来看
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/87.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/87.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/88.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/88.png" alt="" style="max-width: 80%; height: auto;">
 
 也就是这两行，这次由于复现第一轮因此只取第一轮
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/89.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/89.png" alt="" style="max-width: 80%; height: auto;">
 
 和前面的41CB90完全一致，证明复现正确（PS，这个值是跟你的输入相关的，我的输入是geesec{12345678901234567890123456789012}，如果输入不一致这个值也是不一致的）
 
@@ -1179,7 +1179,7 @@ print(result)
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/90.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/90.png" alt="" style="max-width: 80%; height: auto;">
 
 得出（）
 
@@ -1187,7 +1187,7 @@ print(result)
 #### 题目
 私密马赛没能让re手尽兴答案
 
-<a href="/Download/WpCTF/Practice/Plus/202641/Reverse/obfuscat3_revenge" download>
+<a href="/Download/WpCTF/Practice/Plus/2641/Re/obfuscat3_revenge" download>
     文件
 </a>
 
@@ -1200,12 +1200,12 @@ SYC{Then_you_are_1mpressivse}
 先看跟谁比
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/91.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/91.png" alt="" style="max-width: 80%; height: auto;">
 
 target_enc是定值：
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/92.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/92.png" alt="" style="max-width: 80%; height: auto;">
 
 ```plain
 target_enc = bytes.fromhex(
@@ -1217,7 +1217,7 @@ target_enc = bytes.fromhex(
 然后去看逻辑
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/93.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/93.png" alt="" style="max-width: 80%; height: auto;">
 
 输入值传入s，s地址传给src后进行了第一步加密
 
@@ -1226,7 +1226,7 @@ target_enc = bytes.fromhex(
 先看src部分
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/94.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/94.png" alt="" style="max-width: 80%; height: auto;">
 
 这一步是查看是否是utf-8文本
 
@@ -1235,7 +1235,7 @@ target_enc = bytes.fromhex(
 这里不重要，后面src = src + 3也去除它了
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/95.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/95.png" alt="" style="max-width: 80%; height: auto;">
 
 初见端倪
 
@@ -1248,17 +1248,17 @@ s1被扔进real_en加密处理
 那就去real_en看看
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/96.png" alt="" style="max-width: 80%; height: auto;">？我认可你的极难定位了
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/96.png" alt="" style="max-width: 80%; height: auto;">？我认可你的极难定位了
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/97.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/97.png" alt="" style="max-width: 80%; height: auto;">
 
 总的来看一共4层
 
 1，en1处理
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/98.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/98.png" alt="" style="max-width: 80%; height: auto;">
 
 这里不妨设a2[i % 16]为y，a1[i]为x
 
@@ -1278,30 +1278,30 @@ x = ~(y | ~x | ~(y & ~x)) | (~(y | ~x) & 0x8D | (y | ~x) & 0x72) ^ (v4 & 0x8D | 
 因此这里en1就是a1依次跟a2[i % 16]进行异或
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/99.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/99.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/100.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/100.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/101.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/101.png" alt="" style="max-width: 80%; height: auto;">
 
 因此传入的a2就是main里面的v10
 
 2，for i 循环查表替换
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/102.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/102.png" alt="" style="max-width: 80%; height: auto;">
 
 使用的数组是v34，源于传入的第三个参数
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/103.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/103.png" alt="" style="max-width: 80%; height: auto;">
 
 第三个参数是v9，是一个256长度的数组，位于rsp+0x1A0的位置
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/104.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/104.png" alt="" style="max-width: 80%; height: auto;">
 
 也就是此处开始
 
@@ -1329,15 +1329,15 @@ AC E0 EF 65 B4 0B EA 95 C5 E2 EE 29 B3 A6 05 FE
 3，for j 改位置
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/105.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/105.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/106.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/106.png" alt="" style="max-width: 80%; height: auto;">
 
 结合perm的内容来看，就是循环右移1（31，0，1，2，...）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/107.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/107.png" alt="" style="max-width: 80%; height: auto;">
 
 然后存回v36，并把v36按每4个字节拆成8个整数
 
@@ -1346,70 +1346,70 @@ AC E0 EF 65 B4 0B EA 95 C5 E2 EE 29 B3 A6 05 FE
 然后调试追踪下面那一大坨
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/108.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/108.png" alt="" style="max-width: 80%; height: auto;">
 
 断点打这两处，前面是call F的位置，后面是F回来的位置
 
 第一处断点运行时：
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/109.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/109.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/110.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/110.png" alt="" style="max-width: 80%; height: auto;">
 
 也就是说此时这俩值是0xB811A358（PS，这玩意应该是跟输入值相关的，要复现的话，我传入值是12345678）
 
 然后再F9
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/111.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/111.png" alt="" style="max-width: 80%; height: auto;">
 
 v5是0x3D64AB7F
 
 然后再打断点
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/112.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/112.png" alt="" style="max-width: 80%; height: auto;">
 
 相当于直接掠过v28赋值的这一大段位操作符
 
 F9
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/113.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/113.png" alt="" style="max-width: 80%; height: auto;">
 
 得到v28新值是0x85750827
 
 这一大段位操作符里面，只有v5和v19（也就是旧的v29），鉴于前面那一大坨就是在给俩做异或，不放这里测试一下
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/114.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/114.png" alt="" style="max-width: 80%; height: auto;">
 
 对的就是异或（我真求他了）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/115.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/115.png" alt="" style="max-width: 80%; height: auto;">
 
 同理继续看下面
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/116.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/116.png" alt="" style="max-width: 80%; height: auto;">
 
 v18v27俩值是0x8F9A9C3F
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/117.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/117.png" alt="" style="max-width: 80%; height: auto;">
 
 执行完F后v7是0xE8C7AAB5
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/118.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/118.png" alt="" style="max-width: 80%; height: auto;">
 
 执行完v26的赋值后v26是0x675D368A
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/119.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/119.png" alt="" style="max-width: 80%; height: auto;">
 
 嗯对的又是异或（神了）
 
@@ -1566,11 +1566,11 @@ a, b = b, a ^ F(b, key, table)
 然后呢，在解密的时候还会发现有个坑
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/120.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/120.png" alt="" style="max-width: 80%; height: auto;">
 
 欸，key的i溢出了，为什么呢（）  
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/121.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/121.png" alt="" style="max-width: 80%; height: auto;">
 
 v10是8长度数组，因此如果真的要遍历16长度的话，会越界访问到v11去（我就说好端端的为什么不传数组要传指针，搁这等着我呢）
 
@@ -1632,7 +1632,7 @@ print(result)
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/122.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/122.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 04 极客大挑战2024-玩就行了
 #### 题目
@@ -1640,7 +1640,7 @@ print(result)
 
 链接: https://pan.baidu.com/s/1gXKEZJbRhyEfO6BHHQ1bLw?pwd=game 提取码: game
 
-<a href="/Download/WpCTF/Practice/Plus/202641/Reverse/玩就行了.rar" download>
+<a href="/Download/WpCTF/Practice/Plus/2641/Re/玩就行了.rar" download>
     文件
 </a>
 
@@ -1665,19 +1665,19 @@ Unity本身反编译比较困难（）
 然后直接查找生命周期函数，能找到五个对象：
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/123.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/123.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/124.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/124.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/125.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/125.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/126.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/126.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/127.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/127.png" alt="" style="max-width: 80%; height: auto;">
 
 把小游戏玩一下就知道几个对象干啥的了（就是个黄金矿工）（其实应该说是挂载到GameObject上的组件）
 
@@ -1694,7 +1694,7 @@ RandomCreate，大概是用来随机生成黄金用的
 这其中值得看的，首先是Hook：
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/128.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/128.png" alt="" style="max-width: 80%; height: auto;">
 
 start函数获取了transform对象，这个在Unity里是用来设置游戏对象的位置、旋转等信息的一个组件，这里从transform中获取了position
 
@@ -1705,21 +1705,21 @@ Update：
 一开始就是初始化
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/129.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/129.png" alt="" style="max-width: 80%; height: auto;">
 
 第一个判断是否按下了鼠标，是的话就将moving设置为true
 
 第二个判断如果不是moving状态就去label002f
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/130.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/130.png" alt="" style="max-width: 80%; height: auto;">
 
 002f是控制旋转的，执行完后进0035
 
 如果是moving就继续
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/131.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/131.png" alt="" style="max-width: 80%; height: auto;">
 
 判断是否需要返回，等同于
 
@@ -1733,12 +1733,12 @@ else
 然后俩情况都去label0035
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/132.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/132.png" alt="" style="max-width: 80%; height: auto;">
 
 label0035判断钱数量是否达标，如果不达标就去0079
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/133.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/133.png" alt="" style="max-width: 80%; height: auto;">
 
 然后这是如果不跳转的话的继续执行
 
@@ -1759,17 +1759,17 @@ if (find != null)
 查找find组件所在对象，找到了调用SYC函数
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/134.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/134.png" alt="" style="max-width: 80%; height: auto;">
 
 结合运行界面，这里直接去看SYC
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/135.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/135.png" alt="" style="max-width: 80%; height: auto;">
 
 在SYC的0044里写出字符
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/136.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/136.png" alt="" style="max-width: 80%; height: auto;">
 
 写出的V0源于L0
 
@@ -1799,7 +1799,7 @@ for root, dirs, files in os.walk(directory):
 那么去搜索了一下
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/137.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/137.png" alt="" style="max-width: 80%; height: auto;">
 
 除了那个1之外，Assembly-CSharp是目前在看的文件
 
@@ -1808,7 +1808,7 @@ for root, dirs, files in os.walk(directory):
 mscorlib__16.cpp这里也没有是啥，只有引用
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/138.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/138.png" alt="" style="max-width: 80%; height: auto;">
 
 Il2CppMetadataUsage.c找到了2684363953，也就是0xA00024B1，显然这不应该是字符串真正的内容
 
@@ -1819,13 +1819,13 @@ Il2CppMetadataUsage.c找到了2684363953，也就是0xA00024B1，显然这不应
 去这个文件里面找（其实就是找global-metadata.dat这个文件，可以使用命令行或python直接搜）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/139.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/139.png" alt="" style="max-width: 80%; height: auto;">
 
 根据unity对字符串的解码规则（如上图，这是我unity的editor，版本2022.3.59f1c1，里面就写了怎么解）  
 0xA00024B1解得值为0x1258也就是4696，也就是说找下标为4696的记录
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/140.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/140.png" alt="" style="max-width: 80%; height: auto;">
 
 开头字段分别对应如下规则：
 
@@ -1852,7 +1852,7 @@ Il2CppMetadataUsage.c找到了2684363953，也就是0xA00024B1，显然这不应
 所以该字符串索引应该是0x100 + 4696 * 8 = 0x93C0
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/141.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/141.png" alt="" style="max-width: 80%; height: auto;">
 
 小段解释分别是6和37 03 02，也就是说，长度是6，相对偏移0x20337
 
@@ -1861,7 +1861,7 @@ Il2CppMetadataUsage.c找到了2684363953，也就是0xA00024B1，显然这不应
 得到
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/142.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/142.png" alt="" style="max-width: 80%; height: auto;">
 
 output
 
@@ -1870,7 +1870,7 @@ output
 我这里用的是assetstudio
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/143.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/143.png" alt="" style="max-width: 80%; height: auto;">
 
 欸会发现其实只有一个字符串在里面（）就是output
 
@@ -1878,12 +1878,12 @@ output
 把\玩就行了\玩就行了_BackUpThisFolder_ButDontShipItWithYourGame\Managed\Assembly-CSharp.dll扔给DnSpy
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/144.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/144.png" alt="" style="max-width: 80%; height: auto;">
 
 找到Find类，去看SYC函数
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/145.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/145.png" alt="" style="max-width: 80%; height: auto;">
 
 好了直接告诉你了
 
@@ -1893,24 +1893,24 @@ output
 右边不知道是啥可以放到SRK里看看
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/146.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/146.png" alt="" style="max-width: 80%; height: auto;">
 
 欸那要怀疑一下是不是程序了
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/147.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/147.png" alt="" style="max-width: 80%; height: auto;">
 
 得到文件，扔给ida
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/148.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/148.png" alt="" style="max-width: 80%; height: auto;">
 
 非常清晰的main啊（）
 
 依次进三个函数看看
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/149.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/149.png" alt="" style="max-width: 80%; height: auto;">
 
 以防忘记（）
 
@@ -1921,29 +1921,29 @@ output
 比方说数字：(a2 + v3 - 48) % 10 + 48，就是说，先把这个数加上偏移20，然后减去48，这样就得到了这个数在数字中偏移后的具体位置，再模10防止移出去，+48再把ASCII移回数字区间
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/150.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/150.png" alt="" style="max-width: 80%; height: auto;">
 
 用a2也就是GEEK作为密钥循环异或上个函数处理完的字符串
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/151.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/151.png" alt="" style="max-width: 80%; height: auto;">
 
 结合下面大概能猜出来这里是做了什么处理把Str存到&v4[5]的位置，也就是说这里一个是输入一个是输出
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/152.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/152.png" alt="" style="max-width: 80%; height: auto;">
 
 这里能看出来，还是逐字符处理，但是存入v4是每次存入2长度而非1长度
 
 懒得看函数了直接开调试，然后就能发现（要复现的话，输入值123456789012345678901234567890）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/153.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/153.png" alt="" style="max-width: 80%; height: auto;">
 
 纯粹就是把上面俩函数处理完的结果转化成16进制字符输出出去
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/154.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/154.png" alt="" style="max-width: 80%; height: auto;">
 
 0A161230300C2D0A2B303D2428233005242C2D26182206233E097F133A
 
@@ -1962,18 +1962,18 @@ print(result)
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/155.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/155.png" alt="" style="max-width: 80%; height: auto;">
 
 MSW{wIhAluxoofuNcihm_gChyL:X}
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/156.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/156.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 05 影影措措
 #### 题目
 找flag
 
-<a href="/Download/WpCTF/Practice/Plus/202641/Reverse/影影措措.exe" download>
+<a href="/Download/WpCTF/Practice/Plus/2641/Re/影影措措.exe" download>
     文件
 </a>
 
@@ -1982,17 +1982,17 @@ flag{esgyh5-wcjki2-qh4e1i-orn2w-s4v3ue}
 
 #### 过程
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/157.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/157.png" alt="" style="max-width: 80%; height: auto;">
 
 去check看看吧
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/158.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/158.png" alt="" style="max-width: 80%; height: auto;">
 
 ？连异或都没有？
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Practice/Plus/2641Re/159.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Practice/Plus/2641/Re/159.png" alt="" style="max-width: 80%; height: auto;">
 
 送分题						
 

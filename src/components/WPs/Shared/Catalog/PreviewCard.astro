@@ -15,7 +15,7 @@ function isWPFormatter(data: unknown): data is WPFrontmatter
     if ("type" in data && data.type !== undefined)
     {
         if (typeof data.type !== "string") return false;
-        const allowed = ["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety"];
+        const allowed = ["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety", "Osint"];
         if (!allowed.includes(data.type)) return false;
     }
 

@@ -42,19 +42,19 @@ main在这里（事实上也只有这里能打得开）
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/1.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/1.png" alt="" style="max-width: 80%; height: auto;">
 
 然后进去看看main在干啥（把逻辑直接写在main里面还是太良心了）
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/2.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/2.png" alt="" style="max-width: 80%; height: auto;">
 
 对于前面这一坨
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/3.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/3.png" alt="" style="max-width: 80%; height: auto;">
 
 这玩意作用等同于
 
@@ -72,13 +72,13 @@ if ( v3 )
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/4.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/4.png" alt="" style="max-width: 80%; height: auto;">
 
 然后继续看下面的内容
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/5.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/5.png" alt="" style="max-width: 80%; height: auto;">
 
 第一个 ~(strlen(vars0) + 1) == -30
 
@@ -207,27 +207,27 @@ flag{ZeroG_lunar_license_reversal}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/6.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/6.png" alt="" style="max-width: 80%; height: auto;">
 
 依旧神秘main函数位置
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/7.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/7.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/8.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/8.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/9.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/9.png" alt="" style="max-width: 80%; height: auto;">
 
 依旧神秘计算字符串长度就为了验证是不是空值
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/10.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/10.png" alt="" style="max-width: 80%; height: auto;">
 
 这次后面居然继续用了（）
 
@@ -239,11 +239,11 @@ flag{ZeroG_lunar_license_reversal}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/11.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/11.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/12.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/12.png" alt="" style="max-width: 80%; height: auto;">
 
 第一部分是if (ptr == v9) 之前的while循环
 
@@ -257,11 +257,11 @@ flag{ZeroG_lunar_license_reversal}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/13.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/13.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/14.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/14.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看到，这个循环执行完后肯定会return掉，不会再回到外面的while了
 
@@ -275,11 +275,11 @@ flag{ZeroG_lunar_license_reversal}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/15.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/15.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/16.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/16.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看到第三部分就是print出flag
 
@@ -327,7 +327,7 @@ print(result)
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/17.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/17.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 3 Nebula VM
 
@@ -376,7 +376,7 @@ flag{ZeroG_nebula_vm_checker}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/18.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/18.png" alt="" style="max-width: 80%; height: auto;">
 
 此处flag依旧并非输入而是写在代码中，通过里面的运算将flag直接还原出来的
 
@@ -388,21 +388,21 @@ flag{ZeroG_nebula_vm_checker}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/19.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/19.png" alt="" style="max-width: 80%; height: auto;">
 
 预处理，并判断长度是否为20（加一并取补为-22，那原本不加即为-21，那原长度即为20）
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/20.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/20.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/21.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/21.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/22.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/22.png" alt="" style="max-width: 80%; height: auto;">
 
 给v9分配了0x1F5（即501个字节）内存，并往v9里面存入数据
 
@@ -410,7 +410,7 @@ flag{ZeroG_nebula_vm_checker}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/23.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/23.png" alt="" style="max-width: 80%; height: auto;">
 
 这里把s的值扔给si128
 
@@ -426,7 +426,7 @@ si128是一个m128i的类型，这玩意是个容器，这里当成中间值就�
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/24.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/24.png" alt="" style="max-width: 80%; height: auto;">
 
 v13是上面用来循环给v15初始化的变量，此时已经变成0了（还有复用）
 
@@ -450,7 +450,7 @@ case我就不全放了（）
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/25.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/25.png" alt="" style="max-width: 80%; height: auto;">
 
 20是直接报失败，释放指针退出
 
@@ -464,7 +464,7 @@ case我就不全放了（）
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/26.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/26.png" alt="" style="max-width: 80%; height: auto;">
 
 因此这个跳出用的v17一定是0xFE
 
@@ -487,7 +487,7 @@ for i in range(501):
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/27.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/27.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看到确实出现了0xFE
 
@@ -495,7 +495,7 @@ for i in range(501):
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/28.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/28.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看到，只有最开始的case出现了，后面再没有出现过
 
@@ -644,13 +644,13 @@ else:
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/29.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/29.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看到，一共运行了20轮，每一次（包括我没截图的）31的值都是true，这证明一件事情，即s输入的约束，完全是由这个0x30来判定的（即((v36 & 0xFF) == (v49[v35] & 0xFF))），而且，执行了20轮，回顾一下flag解密对s的需求
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/30.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/30.png" alt="" style="max-width: 80%; height: auto;">
 
 欸会发现，也是20，这因此可以合理推断，所有的s都将在此进行比较验证
 
@@ -823,7 +823,7 @@ print(f'x20_key = {x20_key}')
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/31.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/31.png" alt="" style="max-width: 80%; height: auto;">
 
 这个VM看着很唬人，实际上就是对输入的字符串，从头开始往后遍历，按照11、20、22、21、23的顺序进行加密后，进30比较
 
@@ -831,7 +831,7 @@ print(f'x20_key = {x20_key}')
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/32.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/32.png" alt="" style="max-width: 80%; height: auto;">
 
 在23这个入口，这里异或的值并不是从VM集（即v9）中取出的，而是上一次运算得到的终值（这招太狠了）
 
@@ -841,7 +841,7 @@ print(f'x20_key = {x20_key}')
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/33.png" alt="" style="max-width: 80%; height: auto;">（并非毫无意义（））
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/33.png" alt="" style="max-width: 80%; height: auto;">（并非毫无意义（））
 
 那反着求解s即可
 
@@ -849,7 +849,7 @@ print(f'x20_key = {x20_key}')
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/34.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/34.png" alt="" style="max-width: 80%; height: auto;">
 
 然后反推s
 
@@ -901,7 +901,7 @@ print(''.join(chr_s))
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/35.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/35.png" alt="" style="max-width: 80%; height: auto;">
 
 VM-NEBULA-ORBIT-9A7C
 
@@ -909,7 +909,7 @@ VM-NEBULA-ORBIT-9A7C
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/36.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/36.png" alt="" style="max-width: 80%; height: auto;">
 
 然后解flag即可
 
@@ -941,7 +941,7 @@ print(''.join(result))
 ```
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/37.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/37.png" alt="" style="max-width: 80%; height: auto;">
 
 记得把v27和0xFFFFFFFF做与运算截断
 
@@ -949,7 +949,7 @@ print(''.join(result))
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/38.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/38.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 4 Nebula Patch
 
@@ -996,17 +996,17 @@ flag{ZeroG_nebula_patch_antidebug}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/39.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/39.png" alt="" style="max-width: 80%; height: auto;">
 
 至于怎么进来的，不难发现进来的条件是if (v15 == 18)，即遍历完s的18个字符
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/40.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/40.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/41.png" alt="" style="max-width: 80%; height: auto;">这里证明了s长度是18
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/41.png" alt="" style="max-width: 80%; height: auto;">这里证明了s长度是18
 
 到这里就不用再往前看了，所有使用的变量除了s都已被展现出来了，而s正是我们需要求的
 
@@ -1014,7 +1014,7 @@ flag{ZeroG_nebula_patch_antidebug}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/42.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/42.png" alt="" style="max-width: 80%; height: auto;">
 
 看完前面那个VM加密再回来看这个加密感觉真简单啊（）
 
@@ -1043,7 +1043,7 @@ print(''.join(result))
 ```
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/43.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/43.png" alt="" style="max-width: 80%; height: auto;">
 
 这道题（我感觉）理论上来说的难点应该是如何安装，因为整个main函数前面有大量的反调试，能阻止程序在wsl（1和2都不行）、虚拟机这种东西上运行，因此理论上来说需要patch这个程序，把跳出的地方改成永False
 
@@ -1080,7 +1080,7 @@ print(''.join(flag))
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/44.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/44.png" alt="" style="max-width: 80%; height: auto;">
 
 确实不让我装，那我不装你不炸了（）
 
@@ -1114,7 +1114,7 @@ flag{ZeroG_android_vm_docking}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/45.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/45.png" alt="" style="max-width: 80%; height: auto;">
 
 确认入口的方式就是格式和上面完全对应即可，除了name这个键值对会改，剩下的内容基本不变，基本就是套模板
 
@@ -1122,7 +1122,7 @@ flag{ZeroG_android_vm_docking}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/46.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/46.png" alt="" style="max-width: 80%; height: auto;">
 
 一行一行来看
 
@@ -1157,13 +1157,13 @@ public final void onClick(View view) {
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/47.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/47.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看到，这里先查了开头结尾是否是flag{...}的形式，然后进入try块，进入了chectNotNullExpressionValue函数
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/48.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/48.png" alt="" style="max-width: 80%; height: auto;">
 
 典中典之apk挂前端，真正内容挂lib
 
@@ -1171,11 +1171,11 @@ apk后缀改zip解压，去lib文件夹找到对应的lib然后挂ida，搜索ch
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/49.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/49.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/50.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/50.png" alt="" style="max-width: 80%; height: auto;">
 
 从return往回看
 
@@ -1183,7 +1183,7 @@ apk后缀改zip解压，去lib文件夹找到对应的lib然后挂ida，搜索ch
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/51.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/51.png" alt="" style="max-width: 80%; height: auto;">
 
 虽然这里一堆调用十分混乱，但是依旧能很清晰的看出来，只有一处v12赋值了1，就是for循环，证明这个for循环即为真正的加密处（而且里面也有不等于判断即跳出的逻辑）
 
@@ -1191,17 +1191,17 @@ apk后缀改zip解压，去lib文件夹找到对应的lib然后挂ida，搜索ch
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/52.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/52.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/53.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/53.png" alt="" style="max-width: 80%; height: auto;">
 
 孩子们请注意这里是指针增加而非值增加
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/54.png" alt="" style="max-width: 80%; height: auto;">这不就ROL1吗（
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/54.png" alt="" style="max-width: 80%; height: auto;">这不就ROL1吗（
 
 OK，对着代码写即可
 
@@ -1229,4 +1229,4 @@ print(''.join(result))
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-<img src="/Picture/WpCTF/Comp/ZeroG/2026SprRe/55.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/ZeroG26Spr/Re/55.png" alt="" style="max-width: 80%; height: auto;">

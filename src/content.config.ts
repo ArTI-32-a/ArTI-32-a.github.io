@@ -37,9 +37,9 @@ const DFSchema = IEBaseSchema.extend(
 
 const CtfSchema = IEBaseSchema.extend(
 {
-    title: z.string().regex(/^(Reverse|Misc|Crypto|Pwn|PWN|Web|Digit Safety|\d+\.\d+\s+.+)(?: - [A-Za-z0-9]+)?$/),
+    title: z.string().regex(/^(Reverse|Misc|Crypto|Pwn|PWN|Web|Digit Safety|Osint|\d+\.\d+\s+.+)(?: - [A-Za-z0-9]+)?$/),
 
-    type: z.enum(["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety"]),
+    type: z.enum(["Misc", "Crypto", "Reverse", "Web", "PWN", "Digit Safety", "Osint"]),
 }).refine(BaseRefined);
 
 

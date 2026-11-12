@@ -14,7 +14,7 @@ export interface WPFrontmatter
 
 export interface WPCTFFrontmatter extends WPFrontmatter
 {
-    type: "Misc" | "Crypto" | "Reverse" | "Web" | "PWN" | "Digit Safety";
+    type: "Misc" | "Crypto" | "Reverse" | "Web" | "PWN" | "Digit Safety" | "Osint";
 }
 
 export interface WPInfo

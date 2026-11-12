@@ -33,6 +33,131 @@
                 ]
             },
             {
+                "key": "PCTF - 2026",
+                "href": null,
+                "data": null,
+                "children": [
+                    {
+                        "key": "PCryptoW1",
+                        "href": "/wps/CTF/competition/pctf---2026/pcryptow1",
+                        "data": {
+                            "title": "Crypto - Week1",
+                            "pubDate": "2026-11-12T00:00:00.000Z",
+                            "tags": [
+                                "rsa",
+                                "fermat-factorization",
+                                "elliptic-curve",
+                                "complex-multiplication",
+                                "common-modulus-attack",
+                                "modular-inverse",
+                                "crt",
+                                "discrete-log",
+                                "lcg",
+                                "caesar",
+                                "vigenere",
+                                "base64",
+                                "hex-encoding",
+                                "repeating-key-xor",
+                                "socket",
+                                "automation",
+                                "aes",
+                                "gcm",
+                                "sha256",
+                                "key-derivation",
+                                "boolean-function",
+                                "algebraic-normal-form",
+                                "walsh-hadamard-transform",
+                                "gaussian-elimination",
+                                "finite-field",
+                                "polynomial-recovery",
+                                "error-correction",
+                                "brute-force",
+                                "image-steganography",
+                                "lsb",
+                                "image-matching",
+                                "cifar-100"
+                            ],
+                            "type": "Crypto",
+                            "status": "published"
+                        },
+                        "children": null
+                    },
+                    {
+                        "key": "POsintW1",
+                        "href": "/wps/CTF/competition/pctf---2026/posintw1",
+                        "data": {
+                            "title": "Osint - Week1",
+                            "pubDate": "2026-11-07T00:00:00.000Z",
+                            "tags": [
+                                "osint",
+                                "geolocation",
+                                "image-analysis",
+                                "landmark-identification",
+                                "subway",
+                                "exif",
+                                "gps",
+                                "baidu-maps",
+                                "poi-search",
+                                "maimai"
+                            ],
+                            "type": "Osint",
+                            "status": "published"
+                        },
+                        "children": null
+                    },
+                    {
+                        "key": "POsintW2",
+                        "href": "/wps/CTF/competition/pctf---2026/posintw2",
+                        "data": {
+                            "title": "Osint - Week2",
+                            "pubDate": "2026-11-07T00:00:00.000Z",
+                            "tags": [
+                                "osint",
+                                "geolocation",
+                                "image-analysis",
+                                "landmark-identification",
+                                "poi-search",
+                                "railway-bridge",
+                                "road-signs",
+                                "route-inference"
+                            ],
+                            "type": "Osint",
+                            "status": "published"
+                        },
+                        "children": null
+                    },
+                    {
+                        "key": "PReverseW1",
+                        "href": "/wps/CTF/competition/pctf---2026/preversew1",
+                        "data": {
+                            "title": "Reverse - Week1",
+                            "pubDate": "2026-11-06T00:00:00.000Z",
+                            "tags": [
+                                "algorithm-reverse",
+                                "ida",
+                                "dynamic-analysis",
+                                "base64",
+                                "xor",
+                                "repeating-key-xor",
+                                "win32",
+                                "windows-message",
+                                "modular-inverse",
+                                "integer-wraparound",
+                                "javascript",
+                                "code-patching",
+                                "upx",
+                                "unpacking",
+                                "exception-handling",
+                                "little-endian"
+                            ],
+                            "type": "Reverse",
+                            "status": "published"
+                        },
+                        "children": null
+                    }
+                ]
+            },
+            {
                 "key": "QueCTF - 2026",
                 "href": null,
                 "data": null,

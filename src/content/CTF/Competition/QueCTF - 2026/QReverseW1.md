@@ -44,7 +44,7 @@ flag{51mp13_x0r_cr4ck3d_61371f68aaaee5251e8b3e6cf877fe92b32e6286}
 进main
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/1.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/1.png" alt="" style="max-width: 80%; height: auto;">
 
 逻辑非常清楚
 
@@ -54,7 +54,7 @@ flag{51mp13_x0r_cr4ck3d_61371f68aaaee5251e8b3e6cf877fe92b32e6286}
 那直接把期待值异或aCtf2026即可
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/2.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/2.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 key = bytearray(b'?ctf2026')
@@ -123,19 +123,19 @@ flag{W31c0m3_70_7h3_W0r1d_0f_@ndr01d}
 老规矩第一步看manifest找入口
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/3.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/3.png" alt="" style="max-width: 80%; height: auto;">
 
 然后找到了flag碎片1
 
 flag{W31
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/4.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/4.png" alt="" style="max-width: 80%; height: auto;">
 
 main在此处
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/5.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/5.png" alt="" style="max-width: 80%; height: auto;">
 
 找到了flag残片4
 
@@ -144,12 +144,12 @@ main在此处
 直接去看asset就能找到flag3
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/6.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/6.png" alt="" style="max-width: 80%; height: auto;">
 
 7h3_W0r
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/7.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/7.png" alt="" style="max-width: 80%; height: auto;">
 
 字符串放的位置一般在resources.arsc/res/values/strings.xml下面
 
@@ -158,7 +158,7 @@ main在此处
 c0m3_70_
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/8.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/8.png" alt="" style="max-width: 80%; height: auto;">
 
 so库里面flag5
 
@@ -186,12 +186,12 @@ flag{DDDDDDDDSAAAAAAAASSDDDDDDDDSWAAAAAAAASSSDDDDDDDSAAAAAAA}
 实际上是个走迷宫小游戏（）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/9.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/9.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看出来，迷宫行是20，
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/10.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/10.png" alt="" style="max-width: 80%; height: auto;">
 
 一共400，也就是说这是个20 * 20的迷宫
 
@@ -223,26 +223,26 @@ maze = [
 v10是当前位置
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/11.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/11.png" alt="" style="max-width: 80%; height: auto;">
 
 初始值是 (1, 1)（记得内存里面是小端存储）
 
 wasd非常好理解吧（）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/12.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/12.png" alt="" style="max-width: 80%; height: auto;">
 
 判断是不能出界（v10是个64位数，HIDWORD就是取高32位无符号，SHIDWORD是取高32位有符号，通过后面20 * SHIDWORD能看出来，高位是x轴，(int)v10，由于int是32位，因此这里相当于是取了低32位）
 
 格子也不能是0
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/13.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/13.png" alt="" style="max-width: 80%; height: auto;">
 
 限制步数55格
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/14.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/14.png" alt="" style="max-width: 80%; height: auto;">
 
 这里说地图上值为3、4、5的有特殊效果
 
@@ -251,14 +251,14 @@ wasd非常好理解吧（）
 v11高位用来遍历buffer的
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/15.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/15.png" alt="" style="max-width: 80%; height: auto;">
 
 最终格是 (17, 10)（依旧小端）
 
 那就走迷宫吧（）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/16.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/16.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 04 meow~
 #### 题目
@@ -274,7 +274,7 @@ flag{Meow_1ovE_y0u_m0st}
 
 #### 过程
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/17.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/17.png" alt="" style="max-width: 80%; height: auto;">
 
 v8是个bool
 
@@ -285,12 +285,12 @@ v8 = v9 == 24 -> 一共24个字符
 最后一个判断
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/18.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/18.png" alt="" style="max-width: 80%; height: auto;">
 
 比较对象
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/19.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/19.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 expected_cipher = bytes.fromhex(
@@ -301,7 +301,7 @@ expected_cipher = bytes.fromhex(
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/20.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/20.png" alt="" style="max-width: 80%; height: auto;">
 
 这里就是说，8个字节为一组调用3次，每次循环，把输入按照小端存储拆成两个32位的整形，
 
@@ -312,7 +312,7 @@ v3同理
 然后把这俩整数扔到了一个名为tea的函数中去
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/21.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/21.png" alt="" style="max-width: 80%; height: auto;">
 
 非常典型的tea加密，tea加密由于是异或，直接将顺序调换，加法变成减法就行了，异或直接照抄即可
 
@@ -364,27 +364,27 @@ flag{Y0u_cr4ck_7h3_57r4ng3_RC4}
 
 #### 过程
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/22.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/22.png" alt="" style="max-width: 80%; height: auto;">
 
 上面那个是cookie，进去看就知道了
 
 到sub_140008720也不是main，main具有标志性的三个参数argc argv envp，这里具有三个参数的是sub_140002595，也就是该程序的main，继续跟进这个函数
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/23.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/23.png" alt="" style="max-width: 80%; height: auto;">
 
 其利用了argc和argv
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/24.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/24.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/25.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/25.png" alt="" style="max-width: 80%; height: auto;">
 
 能看出来其利用方式是输入 C1.exe flag.enc <输出文件名>（虽然这里给的Usage是cmain.exe，但是下载的文件是C1.exe）
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/26.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/26.png" alt="" style="max-width: 80%; height: auto;">
 
 豪，然后后续可以有两种解法
 
@@ -394,7 +394,7 @@ flag{Y0u_cr4ck_7h3_57r4ng3_RC4}
 我发现这玩意可以爆破是因为当时拿到C1.exe后，反编译看到一堆函数遂决定debug，于是我去把flag.enc先不设断点加密了一次
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/27.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/27.png" alt="" style="max-width: 80%; height: auto;">
 
 欸？！“flag”已经给我解出来了
 
@@ -413,12 +413,12 @@ goto START
 明文 flag{123abcd 下
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/28.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/28.png" alt="" style="max-width: 80%; height: auto;">
 
 明文 flag{123+=+= 下
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/29.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/29.png" alt="" style="max-width: 80%; height: auto;">
 
 欸前面的还真不变
 
@@ -427,7 +427,7 @@ goto START
 于是明文 flag{123-=+= 
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/30.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/30.png" alt="" style="max-width: 80%; height: auto;">
 
 真的只改变了一处
 
@@ -499,7 +499,7 @@ with tempfile.TemporaryDirectory(prefix="c1_probe_", dir=base) as folder:
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/31.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/31.png" alt="" style="max-width: 80%; height: auto;">
 
 ##### 其二，正常解（空缺）
 （等什么时候愿意复盘吧）
@@ -522,12 +522,12 @@ QCTF{We1come_To_Assemb1y_Wor1d!}
 纯粹的汇编
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/32.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/32.png" alt="" style="max-width: 80%; height: auto;">
 
 输出塞到了input_buf里面，与FLAG_LEN比较长度
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/33.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/33.png" alt="" style="max-width: 80%; height: auto;">
 
 把input_buf的地址移动到si（由于输入字符[0]和[1]一般用作允许输入的长度和实际长度，[2]开始才是真正的输入内容）
 
@@ -538,12 +538,12 @@ cipher偏移地址移动到di
 把FLAG_LEN的值移动到cx，
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/34.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/34.png" alt="" style="max-width: 80%; height: auto;">
 
 由于存在此句，也就意味着cx是用作计数器的，check_loop到key_ready俩标签中间是一个循环
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/35.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/35.png" alt="" style="max-width: 80%; height: auto;">
 
 si是input，也就是说这里在做的是输入与key循环逐字节异或后加3，与cipher比较
 
@@ -563,5 +563,5 @@ print("".join([chr((c - 3) ^ ord(key[i % 5])) for i, c in enumerate(cipher)]))
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W1Re/36.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W1/Re/36.png" alt="" style="max-width: 80%; height: auto;">
 

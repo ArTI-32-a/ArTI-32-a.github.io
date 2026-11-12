@@ -59,57 +59,57 @@ flag{cpp_vtable_is_a_nightmare!}
 
 #### 过程
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/1.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/1.png" alt="" style="max-width: 80%; height: auto;">
 
 此处判断正确，判断条件是v49 == v50
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/2.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/2.png" alt="" style="max-width: 80%; height: auto;">
 
 或者是调用对应位置的函数表第一个函数，逐个检查v34，如果到达末尾即判断成功
 
 那么就是去看这个函数是啥，开debug看看对应的汇编call了啥
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/3.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/3.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/4.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/4.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/5.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/5.png" alt="" style="max-width: 80%; height: auto;">
 
 也就是说这里是调用了sub_4017A4这个函数
 
 看函数
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/6.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/6.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/7.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/7.png" alt="" style="max-width: 80%; height: auto;">
 
 先判断*(a2 + 8)是否等于32，否则直接返回0
 
 前面有写，传入a2的是v52
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/8.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/8.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/9.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/9.png" alt="" style="max-width: 80%; height: auto;">
 
 v52每个元素大小8，v52[1]对应的是Size，那么结合前面大致推测是判断输入字符串是否是32长度，并且v53应该就是输入字符串了
 
 去rsp+0x60看看内存
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/10.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/10.png" alt="" style="max-width: 80%; height: auto;">
 
 对的确实是
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/11.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/11.png" alt="" style="max-width: 80%; height: auto;">
 
 这里从a2[0]中取出了输入字符串放入*(a2+32)的位置，也就是a2[4]
 
@@ -118,7 +118,7 @@ v52每个元素大小8，v52[1]对应的是Size，那么结合前面大致推测
 然后第一轮循环执行完后进入第二次循环，依旧是查rax地址
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/12.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/12.png" alt="" style="max-width: 80%; height: auto;">
 
 4A6120
 
@@ -127,7 +127,7 @@ v52每个元素大小8，v52[1]对应的是Size，那么结合前面大致推测
 结合上面的函数表那就是sub_4016F4
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/13.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/13.png" alt="" style="max-width: 80%; height: auto;">
 
 （我把sub_4A09F0重命名为malloc_b了）
 
@@ -140,7 +140,7 @@ v5是末尾，由于v4是QWORD指针+1字节偏移8
 然后存回a2
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/14.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/14.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 table = [
@@ -154,25 +154,25 @@ table = [
 继续，第三轮循环
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/15.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/15.png" alt="" style="max-width: 80%; height: auto;">
 
 RAX是4A6148
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/16.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/16.png" alt="" style="max-width: 80%; height: auto;">
 
 函数sub_4018B2
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/17.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/17.png" alt="" style="max-width: 80%; height: auto;">
 
 跟byte_4A6180循环异或，随后与unk_4A6160比较
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/18.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/18.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/19.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/19.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 cipher = bytes.fromhex(
@@ -220,7 +220,7 @@ print("".join(result))
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/20.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/20.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 02 宝石魔术 ·现代刻印
 #### 题目
@@ -250,17 +250,17 @@ flag{M1n1PE_R3c0v3ry!}
 elf文件，调试需要扔到wsl里面去
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/21.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/21.png" alt="" style="max-width: 80%; height: auto;">
 
 长度16，比较对象是s跟s2
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/22.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/22.png" alt="" style="max-width: 80%; height: auto;">
 
 得到key
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/23.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/23.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 03 ezHook
 #### 题目
@@ -280,12 +280,12 @@ elf文件
 进main
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/24.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/24.png" alt="" style="max-width: 80%; height: auto;">
 
 比较对象是s与unk_402070
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/25.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/25.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 target = bytes.fromhex(
@@ -299,34 +299,34 @@ target = bytes.fromhex(
 s是输入字符串
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/26.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/26.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/27.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/27.png" alt="" style="max-width: 80%; height: auto;">
 
 判断长度是否是31
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/28.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/28.png" alt="" style="max-width: 80%; height: auto;">
 
 此时s还并未被加密
 
 看这个函数
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/29.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/29.png" alt="" style="max-width: 80%; height: auto;">
 
 循环逐字节异或计算出来的result（a2指针在往后移动，直到移动到v5的位置也就是a2的最后一位终止）
 
 用hook跑一遍直接把result提取出来
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/30.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/30.png" alt="" style="max-width: 80%; height: auto;">
 
 base是0x400000
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/31.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/31.png" alt="" style="max-width: 80%; height: auto;">
 
 result挂在al上面，这条指令相比于base偏移0x16A9
 
@@ -356,7 +356,7 @@ console.log(result)
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/32.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/32.png" alt="" style="max-width: 80%; height: auto;">
 
 得到了密钥流
 
@@ -396,7 +396,7 @@ print("".join(result))
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/33.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/33.png" alt="" style="max-width: 80%; height: auto;">
 
 
 
@@ -407,12 +407,12 @@ print("".join(result))
 输入前：
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/34.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/34.png" alt="" style="max-width: 80%; height: auto;">
 
 处理后：
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/35.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/35.png" alt="" style="max-width: 80%; height: auto;">
 
 ```python
 processed = bytes.fromhex(
@@ -426,7 +426,7 @@ print([hex(x) for x in result])
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/36.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/36.png" alt="" style="max-width: 80%; height: auto;">
 
 并不正确
 
@@ -511,7 +511,7 @@ for cand in candidates:
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/37.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/37.png" alt="" style="max-width: 80%; height: auto;">
 
 长度是65
 
@@ -528,7 +528,7 @@ for value in range(32, 127):
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/38.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/38.png" alt="" style="max-width: 80%; height: auto;">
 
 所有的位数差别都不大，而且都是以2开头的，但是前面获取到的65长度的测试flag refs数量却是3百万多
 
@@ -543,7 +543,7 @@ for cand in candidates:
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/39.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/39.png" alt="" style="max-width: 80%; height: auto;">
 
 因此我猜测是否是从后往前判断的
 
@@ -560,7 +560,7 @@ for value in range(32, 127):
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/40.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/40.png" alt="" style="max-width: 80%; height: auto;">
 
 猜对了
 
@@ -588,7 +588,7 @@ for _ in range(65):
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/41.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/41.png" alt="" style="max-width: 80%; height: auto;">
 
 值得一提的是第一位并不正确（大概是因为完全执行完了，因此无法很好的判断“成功”与“失败”两种情况吧）
 
@@ -614,61 +614,61 @@ pycdc challenge.pyc -o challenge.py
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/42.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/42.png" alt="" style="max-width: 80%; height: auto;">
 
 TEA
 
 但是目前不知道crypto的aes_decrypt()函数是何逻辑
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/43.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/43.png" alt="" style="max-width: 80%; height: auto;">
 
 存在这样一个被加密的crypto，于是应该寻找如何解密它
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/44.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/44.png" alt="" style="max-width: 80%; height: auto;">
 
 发现了一个key
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/45.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/45.png" alt="" style="max-width: 80%; height: auto;">
 
 真就只有一个key
 
 那就找谁调用了这个key，将文件加密
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/46.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/46.png" alt="" style="max-width: 80%; height: auto;">
 
 根据文件名pyimod01_archive.pyc推断出来可能是它（这个名字最像（））
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/47.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/47.png" alt="" style="max-width: 80%; height: auto;">
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/48.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/48.png" alt="" style="max-width: 80%; height: auto;">
 
 对于解密部分只能看出来，create这个函数创建了一个利用刚刚的key和传入参数iv，也就是data的前16字节，创建了一个AES对象，然后再decrypt中用CTR加密
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/49.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/49.png" alt="" style="max-width: 80%; height: auto;">
 
 此处cipher中不清楚的只有_aesmod
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/50.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/50.png" alt="" style="max-width: 80%; height: auto;">
 
 cipher在Zlib中被初始化
 
 现在需要找的是_aesmod，在字节码中找到
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/51.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/51.png" alt="" style="max-width: 80%; height: auto;">
 
 直接搜_aes就搜到了，就是tinyaes这个库
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/52.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/52.png" alt="" style="max-width: 80%; height: auto;">
 
 在cipher的decrypt解密结束后，调用了zlib的decompress函数处理obj
 
@@ -704,17 +704,17 @@ output.write_bytes(header + res)
 查看返回值后会发现，aes_decrypt这个函数只有开头处理了返回值，后面处理的不是返回值而是文件本身
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/53.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/53.png" alt="" style="max-width: 80%; height: auto;">
 
 对返回值也就是密钥的处理只有这么多
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/54.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/54.png" alt="" style="max-width: 80%; height: auto;">
 
 这里干了件事，把原代码中的<<跟>>反转了
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/55.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/55.png" alt="" style="max-width: 80%; height: auto;">
 
 一共改了4处
 
@@ -749,5 +749,5 @@ print(result)
 ```
 
 <!-- 这是一张图片，ocr 内容为： -->
-<img src="/Picture/WpCTF/Comp/Que/2026W3Re/56.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpCTF/Comp/Que26W3/Re/56.png" alt="" style="max-width: 80%; height: auto;">
 

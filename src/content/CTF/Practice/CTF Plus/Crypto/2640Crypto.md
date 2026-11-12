@@ -89,8 +89,8 @@ SYC{hahaha\_th1\_factor\_is\_N0t\_ha16}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/1.png)<!-- 这是一张图片，ocr 内容为： -->
-![](/Picture/WpCTF/Practice/Plus/2640Cr/2.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/1.png)<!-- 这是一张图片，ocr 内容为： -->
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/2.png)
 
 不难发现，看似有两问，但是实际上第二问只要输入一个取模不会报错的数字就能过（因为错误处没写return，只要写入了不会报错的数都能到达下面发flag的位置
 
@@ -188,11 +188,11 @@ mask是一个低 i + 1 也就是k位全都是1的掩码（1 向右移动 i + 1 �
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/3.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/3.png)
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/4.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/4.png)
 
 ### 02 打破时间胶囊
 
@@ -286,7 +286,7 @@ LHFLAG{t1m3\_s33d\_rng\_can\_b3\_gu3ss3d\_4f7c9a}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/5.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/5.png)
 
 其实题目已经告诉你解法了（）
 
@@ -296,7 +296,7 @@ LHFLAG{t1m3\_s33d\_rng\_can\_b3\_gu3ss3d\_4f7c9a}
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/6.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/6.png)
 
 一共就4个小时，精度是秒，也就是说一共就14401（算头尾）种情况，随随便便枚举就行了
 
@@ -311,7 +311,7 @@ TZ=Asia/Singapore date -d '2026-05-16 13:00:00' +%s
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/7.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/7.png)
 
 得到俩时间戳
 
@@ -358,7 +358,7 @@ print(seeds);
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/8.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/8.png)
 
 1778896043  
 然后理论上来说重建key，异或ciphertext即可得flag
@@ -414,7 +414,7 @@ if \_\_name\_\_ == "\_\_main\_\_":
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/9.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/9.png)
 
 ### 03 极客大挑战2024-ezRSA
 
@@ -547,7 +547,7 @@ $ b \\ge N^β,b \\mid N $
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/10.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/10.png)
 
 ### 04 极客大挑战2024-共模攻击
 
@@ -623,7 +623,7 @@ print(long\_to\_bytes(m));
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/11.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/11.png)
 
 ### 05 Mid\_LLL
 
@@ -676,7 +676,7 @@ with open("./output.txt", "w") as f:
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/12.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/12.png)
 
 到底是怎么注意到的（恼）
 
@@ -716,7 +716,7 @@ with open("outputLLL.txt", "w") as fL:
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/13.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/13.png)
 
 不难发现（这个是真不难发现了），第一行远远短于后面所有行
 
@@ -737,7 +737,7 @@ print(g)
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/14.png)（还真有，轻松绷住）
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/14.png)（还真有，轻松绷住）
 
 尝试用该公约数作为除数得到：
 
@@ -748,7 +748,7 @@ print(small)
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/15.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/15.png)
 
 好了，ASCII码已经出来了
 
@@ -760,7 +760,7 @@ print("".join(chr(c) for c in cipher));
 
 <!-- 这是一张图片，ocr 内容为： -->
 
-![](/Picture/WpCTF/Practice/Plus/2640Cr/16.png)
+![](/Picture/WpCTF/Practice/Plus/2640/Cr/16.png)
 
 得到答案
 

@@ -6,6 +6,31 @@
         "4 lit_xor_chain",
         "5 lit_xtea_tweak"
     ],
+    "competition/pctf---2026/pcryptow1": [
+        "01 ezRSA",
+        "02 singin",
+        "03 她没解出来",
+        "04 并案处理",
+        "05 本句已申请转为常温",
+        "06 来签个到吧",
+        "07 百景图"
+    ],
+    "competition/pctf---2026/posintw1": [
+        "01",
+        "02"
+    ],
+    "competition/pctf---2026/posintw2": [
+        "01 ljnljn的日常生活（3）",
+        "02"
+    ],
+    "competition/pctf---2026/preversew1": [
+        "01 Base64 is Re's base",
+        "02 EZWin32",
+        "03 Reverse Welcomes You！",
+        "04 TAIKO SAY YA!!!",
+        "05 Upxxor",
+        "06 testre1"
+    ],
     "competition/quectf---2026/qreversew1": [
         "01 intro",
         "02 Pangbai泰拉记二周目(1)",

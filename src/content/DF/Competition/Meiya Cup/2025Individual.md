@@ -26,7 +26,7 @@ A
 
 #### 过程
 
-<img src="/Picture/WpDF/Meiya/2026Individual/1.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/1.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 02 在这个手机中，有多少组国际移动设备识别码(IMEI)号码? (请以阿拉伯数字作答)
 #### 答案
@@ -42,9 +42,9 @@ A
 即可找到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/2.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/2.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/3.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/3.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 03 承上题，以下哪一个才是正确的国际移动设备识别码(IMEI)号码?
 #### 答案
@@ -63,7 +63,7 @@ A
 由题，去sim卡信息里面找
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/4.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/4.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 05 请指出最后使用的Apple ID是多少？(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -71,7 +71,7 @@ whoishogan@gmail.com
 
 #### 过程
 
-<img src="/Picture/WpDF/Meiya/2026Individual/5.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/5.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 06 蓝牙模组中的蓝牙地址是多少？(请以下格式作答:xx:xx:xx:xx:xx:xx)
 #### 答案
@@ -81,14 +81,14 @@ f8:38:80:bb:f5:28
 并非在火眼的分析 -> 蓝牙 里面
 
 总共1000多条（）
-<img src="/Picture/WpDF/Meiya/2026Individual/6.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/6.png" alt="" style="max-width: 80%; height: auto;">
 
 在文件里面找到CHAN MH mobile后，在根目录下面有一个iDevice_info.txt，这里面存的是设备信息
 
 可以在其中找到bluetooth
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/7.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/7.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 07 这个智能手机曾经启动「个人热点」分享网络，请问他的「热点」名称？(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -98,7 +98,7 @@ iPhone
 原理是，iPhone的热点不支持改热点名，因此热点名就是本机名（？）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/8.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/8.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 08 这个智能手机没有连接过以下哪一个服务集标识符(SSID)
 A. Hongn Home
@@ -118,7 +118,7 @@ Service Set Identifier ，即SSID，意思就是wifi名字
 在wifi连接记录里面能看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/9.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/9.png" alt="" style="max-width: 80%; height: auto;">
 
 以及，根据第9题题干得出CMHK也被用过（事实上这个网络应该并不存在吧（））
 
@@ -138,7 +138,7 @@ A
 
 #### 过程
 
-<img src="/Picture/WpDF/Meiya/2026Individual/10.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/10.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 11 承上题，请指出即时通讯软件"WhatsApp"的版本(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -152,9 +152,9 @@ A
 这坨东西，但事实上并不对
 
 错误示范（）
-<img src="/Picture/WpDF/Meiya/2026Individual/11.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/11.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/12.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/12.png" alt="" style="max-width: 80%; height: auto;">
 
 应去配置文件查找（这我怎么找得到口丫）
 
@@ -163,7 +163,7 @@ A
 CHAN_MH_mobile.tar/var/mobile/Applications/group.net.whatsapp.WhatsApp.shared/Library/Preferences/group.net.whatsapp.WhatsApp.shared.plist
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/13.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/13.png" alt="" style="max-width: 80%; height: auto;">
 
 /var/mobile/Applications/
 
@@ -188,29 +188,29 @@ B和C倒是能搜出来
 
 A
 
-<img src="/Picture/WpDF/Meiya/2026Individual/14.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/14.png" alt="" style="max-width: 80%; height: auto;">
 
 B
 
-<img src="/Picture/WpDF/Meiya/2026Individual/15.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/15.png" alt="" style="max-width: 80%; height: auto;">
 
 C
 
-<img src="/Picture/WpDF/Meiya/2026Individual/16.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/16.png" alt="" style="max-width: 80%; height: auto;">
 
 能在C的document里面确实找到文件
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/17.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/17.png" alt="" style="max-width: 80%; height: auto;">
 
 B里面的document文件夹下面没有直接存有文件，在子文件夹bigoad里面的子文件夹files里面存的文件也不太像正常传输的文件（相比于Cdocument里面的文件）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/18.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/18.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/19.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/19.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/20.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/20.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 13 承上题，与其有传送/接收过资料装置的装置ID是多少? (请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -220,16 +220,16 @@ B里面的document文件夹下面没有直接存有文件，在子文件夹bigoa
 位于/com.estmob.paprika/Library下的com.estmob.sendanywhere.sdk.database.realm这个文件
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/21.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/21.png" alt="" style="max-width: 80%; height: auto;">
 
 可以看出来，ID是
 
 5402313593439
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/22.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/22.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/23.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/23.png" alt="" style="max-width: 80%; height: auto;">
 
 上面四个文件夹，Application Support应该是依赖项，Cookies是网络应用层的文件，Webkit里面存的是WebsiteData网站数据，Preferences里面应该是没有和“传输记录”相关的
 
@@ -258,7 +258,7 @@ Samsung SM-G930F
 其中能找到一行是device id
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/24.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/24.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 16 承上题，陈民浩的手机(CHAN_MH_mobile.zip)是传送方或是接收方?
 A. 传送方
@@ -276,7 +276,7 @@ Screenshot_20250423-105307_Gallery.jpg，而且仅有这一种格式
 因此怀疑是别的手机传入的，这是Android文件的截图格式，iPhone应为IMG_xxxx的格式
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/25.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/25.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 17 根据传送档案的名称，判断是以下哪一类型? (单选)
 A. 屏幕截图
@@ -311,7 +311,7 @@ B
 虽然B依旧在加载（搜的好慢口丫），但是剩下几个都没有对应文件
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/26.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/26.png" alt="" style="max-width: 80%; height: auto;">
 
 既然已知该文件在blk0里面（主要是搜了20分钟搜不出来），又得知该文件是jpg，不妨去文件分类里面去找，然后找文件地址
 
@@ -322,9 +322,9 @@ DCIM是和相机图库相关的文件夹，略过
 这里就可以确认肯定是blk0传过去的了
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/27.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/27.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/28.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/28.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 19 承上题，传送方是通过此文档传输软件的哪个模式作出传送?
 A. SEND_PARTIALLY
@@ -352,7 +352,7 @@ C
 虽然我本来想找带transfer这种字的，结果没找到，于是从上往下翻了一下，在main.db里面找到了（其实找这种东西可以只看标题来确认有没有的）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/29.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/29.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 20 从来没有安装以下哪个网络浏览器？
 A. Safari
@@ -369,7 +369,7 @@ BCD
 #### 过程
 抱怨先抱怨一下18题怎么搜了块50分钟还没搜出来？！
 
-<img src="/Picture/WpDF/Meiya/2026Individual/30.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/30.png" alt="" style="max-width: 80%; height: auto;">
 
 既然21问了safari，肯定用过，A排除
 
@@ -382,13 +382,13 @@ chrome更是查无此人
 为了确认确实能搜出来，safari在application确实是能搜出来的
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/31.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/31.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/32.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/32.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/33.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/33.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/34.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/34.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 21 承上题，网络浏览器Safari有多少个书签(Bookmark)记录？(请以阿拉伯数字作答)
 #### 答案
@@ -398,7 +398,7 @@ chrome更是查无此人
 送分题，直接去分析里面就能看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/35.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/35.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 22 承上题，曾经通过Safari浏览器用下列哪一个字词进行过搜索?
 A. 非法处理尸体最高刑罚
@@ -418,11 +418,11 @@ ABC
 可以看出来，并没有第四个
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/36.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/36.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/37.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/37.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/38.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/38.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 23 有多少个图片文件曾经储存到iCloud?(请以阿拉伯数字作答)
 #### 答案
@@ -438,7 +438,7 @@ CHAN_MH_mobile.tar/var/mobile/Library/Mobile Documents/com~apple~CloudDocs
 里面存有两张照片
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/39.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/39.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 24 相册中有多少张图片是通过屏幕截图功能取得？(请以阿拉伯数字作答)
 #### 答案
@@ -448,7 +448,7 @@ CHAN_MH_mobile.tar/var/mobile/Library/Mobile Documents/com~apple~CloudDocs
 送分题，分析里面能直接看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/40.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/40.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 25 # 请参考参赛材料FUNG_CC_mobile.zip回答以下问题这部智能手机连接过多少个 Wi-Fi 网络？(请以阿拉伯数字作答)
 #### 答案
@@ -460,7 +460,7 @@ CHAN_MH_mobile.tar/var/mobile/Library/Mobile Documents/com~apple~CloudDocs
 解开密码就是送分题，分析里面能直接看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/41.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/41.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 26 这部智能手机曾经连接过以下哪个无线网络？i) THREE_WIFIii) wanchaiiii)iPhone(2)iv) Router
 A. 只有 i)
@@ -485,14 +485,14 @@ B
 首先，不能在WiFi连接记录里面看，因为这里显示的是最后连接时间
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/42.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/42.png" alt="" style="max-width: 80%; height: auto;">
 
 题目说非热点，前文提到过（第7题），iPhone的热点名就是iPhone，因此这里的iPhone是热点，排除
 
 全局搜索WiFi名，6条信息，有4个文件名跟wifi挂钩
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/43.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/43.png" alt="" style="max-width: 80%; height: auto;">
 
 第一个文件里面没时间信息
 
@@ -504,11 +504,11 @@ B
 
 第二个
 
-<img src="/Picture/WpDF/Meiya/2026Individual/44.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/44.png" alt="" style="max-width: 80%; height: auto;">
 
 第三个
 
-<img src="/Picture/WpDF/Meiya/2026Individual/45.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/45.png" alt="" style="max-width: 80%; height: auto;">
 
 但是由于GMT +8，所以是
 
@@ -533,7 +533,7 @@ SSID，Service Set Identifierss，人话即为名称
 那就去火眼密码里面查找就行了
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/46.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/46.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 30 相册中有两张图像互换格式图片(gif)「IMG_0057.GIF」及「IMG_0062.GIF」，请指出由哪一个软件拍摄?
 A. Infltr
@@ -551,7 +551,7 @@ A
 分析里面直接能看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/47.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/47.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 31 曾经以空投(AirDrop)方式成功传送了文件到另外一个装置，以下哪一个陈述是正确的？
 A. 传送了一个图片文件
@@ -579,11 +579,11 @@ com.apple.sharingd
 前面一项命中了1个文件，后面一项命中了5个文件
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/48.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/48.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/49.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/49.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/50.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/50.png" alt="" style="max-width: 80%; height: auto;">
 
 先查看首个文件interactionC.db（以后再有查Airdrop就可以直接找interactionC.db了（））
 
@@ -596,7 +596,7 @@ FUNG_CC_mobile.tar\var\mobile\Library\CoreDuet\People\interactionC.db
 这里面显示了两个包名，根据34，一个是文件，一个是照片，推断一个文件一个照片
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/51.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/51.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 32 . 原生APP「相片」中，有一个图片文件曾经通过空投"AirDrop"方式成功传送，请指出这个图片文件的文件全名(请包含扩展名，依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -606,14 +606,14 @@ FUNG_CC_mobile.tar\var\mobile\Library\CoreDuet\People\interactionC.db
 需要去找到相片的数据库找信息，去找数据库Photos（这个事实上直接在分析里面定位到源文件就可以直接定位到数据库，不用那么麻烦去找）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/52.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/52.png" alt="" style="max-width: 80%; height: auto;">
 
 然后找到ZASSET，里面唯一一个跟分享挂钩的是ZLASTSHAREDDATA（最后分享日期），找到唯一一个不是NULL的是IMG_0083.HEIC
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/53.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/53.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/54.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/54.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 33 承上题，请写出这个图片文件的开始传送的日期及时间？(请以GMT +8时区及以下格式作答: yyyy-MM-dd HH:mm:ss)
 #### 答案
@@ -655,16 +655,16 @@ FUNG_CC_mobile.tar/var/mobile/Applications/group.com.apple.FileProvider.LocalSto
 确认这是文件的具体路径
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/55.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/55.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/56.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/56.png" alt="" style="max-width: 80%; height: auto;">
 
 对于照片，去找带IMG_XXXX格式的文件就行，示例路径
 
 FUNG_CC_mobile.tar/var/mobile/Media/DCIM/100APPLE/IMG_0045.JPG
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/57.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/57.png" alt="" style="max-width: 80%; height: auto;">
 
 那现在得知了俩路径，去俩地方对照就行
 
@@ -675,9 +675,9 @@ FUNG_CC_mobile.tar/var/mobile/Media/DCIM/100APPLE/IMG_0045.JPG
 但是，0008的大小不一样（理论上应该要去验证哈希）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/58.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/58.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/59.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/59.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 35 请指出在APP「照片」(套件识别码: com.apple.mobileslideshow)中的图片文件「IMG_0079.JPG」是由哪一个APP拍摄？(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -687,7 +687,7 @@ Discreet
 在分析里面直接能看到这个文件是在Discreet分类下面的
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/60.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/60.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 36 承上题，已知该图片文件是由上述APP所拍摄，并其后储存在APP「照片」(套件识别码: com.apple.mobileslideshow)成「IMG_0079.JPG」，请问该图片的原文件名称？ (请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -699,7 +699,7 @@ DiscreetCameraApp_1744790959352.png
 和0079大小是一致的（理论上也要验证哈希的说（））
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/61.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/61.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 37 承上题，请指出原文件的建立时间？(请以GMT +8时区及以下格式作答: yyyy-MM-dd HH:mm:ss)
 #### 答案
@@ -728,9 +728,9 @@ B
 照片在这段时间内并未新增
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/62.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/62.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/63.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/63.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 39 承上题，以下哪个陈述是正确描述上一题的答案？
 A. 制作多媒体文件「IMG_0015.MOV」时，直接储存到隐藏相册中
@@ -748,7 +748,7 @@ C
 依旧是在视频里面可以找到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/64.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/64.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 40 ? APP「照片」(套件识别码: com.apple.mobileslideshow)中，「IMG_0027.HEIC」的原地理位置信息(WGS84)是？
 A. (22.2816569, 114.1756115)
@@ -766,7 +766,7 @@ D. (22.2826216666667, 114.168503333333)
 火眼中给出的是A，但是直接查看文件的exif显示的信息完全不在四个答案中
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/65.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/65.png" alt="" style="max-width: 80%; height: auto;">
 
 前一个大概是22.2826361，后一个大概是114.1685025，反而是和B接近
 
@@ -786,7 +786,7 @@ B
 依旧在图片里直接看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/66.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/66.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 42 多媒体文件「 IMG_0004.MOV」曾被修改后再储存成另一个文件，该文件名称是?
 A. IMG_0085.mov
@@ -808,13 +808,13 @@ A
 回到ZASSET里，82对应的是0085
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/67.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/67.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/68.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/68.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/69.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/69.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/70.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/70.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 43 曾经通过人工智能聊天APP "POE"查询一个问题，请列出这个问题的完整句子？(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -824,12 +824,12 @@ What's that mean
 在application里面找不到，上网查了后发现是开发商Quora的
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/71.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/71.png" alt="" style="max-width: 80%; height: auto;">
 
 在Application里面搜开发商确实搜出来了（命名一般是com.开发商.应用，至少安卓是这样的），在Documents里面找到一个数据库
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/72.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/72.png" alt="" style="max-width: 80%; height: auto;">
 
 搜索Message（意味用户输入信息）
 
@@ -876,7 +876,7 @@ What's that mean
 ```
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/73.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/73.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 44 承上题，请指出提问的日期及时间(答题格式: yyyy-MM-dd HH:mm:ss 作答, GMT+8)
 #### 答案
@@ -1058,7 +1058,7 @@ wxid_c9xyspglub7512
 分析里面的微信能直接看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/74.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/74.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 48 承上题，这个"WeChat ID"关注了多少个「视频号」？
 A. 1
@@ -1080,11 +1080,11 @@ B
 后面有一个followStage，1的值一共两个
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/75.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/75.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/76.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/76.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/77.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/77.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 49 请指出即时通讯软件WhatsApp的WhatsApp ID(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案 
@@ -1094,7 +1094,7 @@ B
 火眼里直接能看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/78.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/78.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 50 即时通讯软件WhatsApp中，封存了下列哪个聊天群？
 A. 凤凰VIP会员心得交流群
@@ -1114,9 +1114,9 @@ A
 找数据库的方式是，找到群组，定位源文件，这个时候就能定位到一个数据库，导出数据库就能看信息了
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/79.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/79.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/80.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/80.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 51 即时通讯软件WhatsApp中，总共追踪了多少个频道？(请以阿拉伯数字作答)
 #### 答案
@@ -1126,7 +1126,7 @@ A
 火眼直接在分析看
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/81.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/81.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 52即时通讯软件「WhatsApp」中，下列哪个是群组 "Investors" 的管理员？i) 85254974406@s.whatsapp.netii) 85260927726@s.whatsapp.netiii) 85254961408@s.whatsapp.net
 A. 只有 i)
@@ -1144,7 +1144,7 @@ B
 火眼群组成员
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/82.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/82.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 53 即时通讯软件「WhatsApp」中，群组 "Investors" 的群组ID？(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -1154,7 +1154,7 @@ B
 延续50题数据库，首先找到群组
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/83.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/83.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 54 即时通讯软件「WhatsApp」中，「社群」名称是什么？(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -1164,12 +1164,12 @@ We are 3
 在社群列表里
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/84.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/84.png" alt="" style="max-width: 80%; height: auto;">
 
 WhatsApp里的群组事实上也是通过社群建立的，或者说，如下图中的[]里面的内容，就是社群名
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/85.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/85.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 55 承上题，请指出这个社群的群组图案的哈希值（SHA256格式）。
 A. B1A3706C574F81A3EE084FB9509997E06349E86D904D1DC10B879D1D5ED83125
@@ -1191,7 +1191,7 @@ FUNG_CC_mobile.tar/var/mobile/Applications/group.net.whatsapp.WhatsApp.shared
 文件夹下面，同级文件与文件夹有如下
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/86.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/86.png" alt="" style="max-width: 80%; height: auto;">
 
 由于题目要求找图片，那么合理推断，图片文件应该位于Media下面
 
@@ -1204,7 +1204,7 @@ FUNG_CC_mobile.tar/var/mobile/Applications/group.net.whatsapp.WhatsApp.shared/Me
 然后往下翻，第二张就是，计算哈希就行
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/87.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/87.png" alt="" style="max-width: 80%; height: auto;">
 
 和题目对照，会发现哈希不对，那合理推测还有一张
 
@@ -1213,7 +1213,7 @@ FUNG_CC_mobile.tar/var/mobile/Applications/group.net.whatsapp.WhatsApp.shared/Me
 （怪不得出选择题，这搁填空题不得被骂死（））
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/88.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/88.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 56 即时通讯软件「WhatsApp」中，找出WhatsApp ID:85254961408@s.whatsapp.net曾经是在而现在已经不在的群组，请指出该群组的名称。(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -1227,7 +1227,7 @@ Sportsmen
 说句实话，做完57再做这个绝对更容易（）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/89.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/89.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 57 即时通讯软件「WhatsApp」中，总共出现了多少个「投票」活动？(请以阿拉伯数字作答)
 #### 答案
@@ -1237,11 +1237,11 @@ Sportsmen
 去聊天记录看
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/90.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/90.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/91.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/91.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/92.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/92.png" alt="" style="max-width: 80%; height: auto;">
 
 会发现投票会有[投票消息]
 
@@ -1257,9 +1257,9 @@ Sportsmen
 然后定位下一条消息Suport you，其上一条消息即为那个投票，对应的type类型是46
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/93.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/93.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/94.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/94.png" alt="" style="max-width: 80%; height: auto;">
 
 虽然我不知道为什么不能定位时间戳（？）
 
@@ -1268,14 +1268,14 @@ Sportsmen
 （后补，时间戳计算的是UTF0，但我传入的是UTF+8）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/95.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/95.png" alt="" style="max-width: 80%; height: auto;">
 
 然后检索出来的信息分别对应15次投票（其实理论上也可以试type不同数值，看看到底哪个是15的说（）)
 
 （总之搁正常测试大概率想不到）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/96.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/96.png" alt="" style="max-width: 80%; height: auto;">
 
 之后就完全卡壳了
 
@@ -1315,11 +1315,11 @@ A
 看聊天记录就行
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/97.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/97.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/98.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/98.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/99.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/99.png" alt="" style="max-width: 80%; height: auto;">
 
 这群人说要黑进CEO的电脑，发消息让CEO付虚拟币
 
@@ -1331,7 +1331,7 @@ A
 依旧群聊消息，能看到是该机机主duncan建立的
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/100.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/100.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 61 承上题，该群组的建立时间是什么？(请以GMT +8时区及以下格式作答: yyyy-MM-dd HH:mm:ss)
 #### 答案
@@ -1356,7 +1356,7 @@ A
 火眼直接看
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/101.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/101.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 63 参考LEUNG_YL_Mobile.zip，文件IMG_0021.HEIC 所拍摄的相机型号是甚么?
 A. iPhone SE (3rd generation)
@@ -1374,7 +1374,7 @@ A
 查看Exif属性，导出文件扔到exiftool里面看
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/102.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/102.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 64 参考LEUNG_YL_Mobile.zip，文件IMG_0005.JPG所拍摄的座标(WGS 84)是多少？(请以纬度,经度的顺序及以下格式作答xx.xxxxxx,xx.xxxxxx)
 #### 答案
@@ -1388,9 +1388,9 @@ latitude是纬度，longitude是经度（以防英语看不懂（））
 在IMG 0005那一行能直接看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/103.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/103.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/104.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/104.png" alt="" style="max-width: 80%; height: auto;">
 
 
 
@@ -1410,7 +1410,7 @@ C
 exif信息
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/105.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/105.png" alt="" style="max-width: 80%; height: auto;">
 
 CW是顺时针：Clockwise
 
@@ -1431,9 +1431,9 @@ CCW是逆时针：Counter-clockwise
 消息也找一下
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/106.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/106.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/107.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/107.png" alt="" style="max-width: 80%; height: auto;">
 
 定位源文件导出数据库ChatStorage.sqlite
 
@@ -1467,21 +1467,21 @@ print(timestamp - t2stamp)
 可以看到，这条消息的编号是1416
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/108.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/108.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/109.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/109.png" alt="" style="max-width: 80%; height: auto;">
 
 然后这几张表里面唯一有经纬坐标的是WaMediaItem
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/110.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/110.png" alt="" style="max-width: 80%; height: auto;">
 
 尝试搜PK会发现搜不出来，这里应该去搜message
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/111.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/111.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/112.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/112.png" alt="" style="max-width: 80%; height: auto;">
 
 
 
@@ -1490,7 +1490,7 @@ print(timestamp - t2stamp)
 在火眼的位置里面看信息（居然还有位置这种东西）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/113.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/113.png" alt="" style="max-width: 80%; height: auto;">
 
 位置信息就在后面
 ### 68 参考LEUNG_YL_Mobile.zip，在WhatsApp 与 "85254974406@s.whatsapp.net”聊天对话中，于2025-05-16 11:33:39时的信息所传送的座标(WGS 84)所指的餐厅英文名称是? (请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
@@ -1501,7 +1501,7 @@ Fai Kee Seafood Restaurant
 火眼直接在消息那里能直接看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/114.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/114.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 69 参考LEUNG_YL_Mobile.zip，在WhatsApp 中聊天群组ID 120363401289578356里，于2025-04-29 08:31:02，机主传送了一个PDF 文件，该PDF的内容是什么？(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -1519,9 +1519,9 @@ Fai Kee Seafood Restaurant
 0d32df31-b323-4d08-be55-bf15c84f8ea6.pdf
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/115.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/115.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/116.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/116.png" alt="" style="max-width: 80%; height: auto;">
 
 去这个人的文件分类pdf那里看，找到对应文件导出
 
@@ -1530,9 +1530,9 @@ Fai Kee Seafood Restaurant
 既然双击能选中，直接复制出来就行
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/117.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/117.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/118.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/118.png" alt="" style="max-width: 80%; height: auto;">
 
 这里直接复制就行
 ### 70 参考LEUNG_YL_Mobile.zip，在WhatsApp 中聊天群组ID 120363401289578356里，有多少个参加者？
@@ -1551,12 +1551,12 @@ B
 找群，依旧老朋友
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/119.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/119.png" alt="" style="max-width: 80%; height: auto;">
 
 就3个人（做了这么多应该早就清楚了吧（））
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/120.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/120.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 71 参考LEUNG_YL_Mobile.zip，于2025-04-25 17:11:37 时使用WhatsApp 所拨打的手机号码是多少?
 A. 85254962307
@@ -1574,7 +1574,7 @@ C
 火眼直接能看到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/121.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/121.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 72 参考LEUNG_YL_Mobile.zip，总共有多少个WhatsApp的通话记录? (包括拨打、接收及未接来电)
 A. 4
@@ -1605,7 +1605,7 @@ D. Happy Sharing within 3
 火眼直接搜
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/122.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/122.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 74 参考LEUNG_YL_Mobile.zip，WhatsApp 聊天群组Happy Sharing within 3 于2025-04-17 10:12:34 传送的WGS 84座标是多少?
 A. 22.323436345441, 113.276894376508
@@ -1627,14 +1627,14 @@ B
 766548754
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/123.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/123.png" alt="" style="max-width: 80%; height: auto;">
 
 然后找该时间戳对应的消息的Z_PK，然后切换到表ZWAMEDIAITEM（WaMediaItem）将Z_PK对应的数值扔到ZMESSAGE里找坐标
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/124.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/124.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/125.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/125.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 75 参考LEUNG_YL_Mobile.zip，Instagram 的版本是?
 A. 375.2.0.15.82 (722575504)
@@ -1656,12 +1656,12 @@ D. 376.0.0.17.23 (722575504)
 com.burbn.instagram
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/126.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/126.png" alt="" style="max-width: 80%; height: auto;">
 
 右键跳转到源文件查看数据库
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/127.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/127.png" alt="" style="max-width: 80%; height: auto;">
 
 很可惜的是数据库里面也没有，那就只能去找包了，在应用包里面找版本
 
@@ -1672,11 +1672,11 @@ com.burbn.instagram
 很明显肯定在Library里，很明显肯定在preference里（主要是剩下俩文件夹名字肯定和版本对不上号）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/128.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/128.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/129.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/129.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/130.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/130.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 76 参考LEUNG_YL_Mobile.zip，社交媒体软件Instagram 的安装时间?(请以GMT+8时区及格式YYYY-MM-DD hh:mm:ss作答)
 #### 答案
@@ -1703,11 +1703,11 @@ com.burbn.instagram
 注意Create这个选项一定不能选择
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/131.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/131.png" alt="" style="max-width: 80%; height: auto;">
 
 大佬的解释
 
-<img src="/Picture/WpDF/Meiya/2026Individual/132.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/132.png" alt="" style="max-width: 80%; height: auto;">
 
 我这里直接OK就行了
 
@@ -1724,43 +1724,43 @@ perfmon.exe /res
 具体流程如下组图所示（）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/133.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/133.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/134.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/134.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/135.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/135.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/136.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/136.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/137.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/137.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/138.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/138.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/139.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/139.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/140.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/140.png" alt="" style="max-width: 80%; height: auto;">
 
 对了，在显示里面有一个3D图形加速关掉
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/141.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/141.png" alt="" style="max-width: 80%; height: auto;">
 
 于是我们很开心的打开了检材（什么叫加载了10分钟？！我还以为我哪步整错了）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/142.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/142.png" alt="" style="max-width: 80%; height: auto;">
 
 进去打开文件管理器就能看到，俩磁盘
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/143.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/143.png" alt="" style="max-width: 80%; height: auto;">
 
 
 
 理论上，看火眼也能直接看出来，具体来说应该是如下
 
 火眼分区显示
-<img src="/Picture/WpDF/Meiya/2026Individual/144.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/144.png" alt="" style="max-width: 80%; height: auto;">
 
 所有未使用空间肯定不显示，排除
 
@@ -1782,9 +1782,9 @@ MBR
 对于这道题，去火眼找信息，在启动盘的文件夹里可以找到一个$MBR的文件，证明这是MBR分区的
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/145.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/145.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/146.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/146.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 79 参考LEUNG_YL_USB.E01，以下哪项描述是正确的？i) U盘的总容量是16GBii) 文件系统包括 FAT32、exFAT 和 NTFSiii) exFAT 分区的容量是 16GBiv) 分区标签名是 "SanDisk"
 A. 只有 i) 和 ii)
@@ -1808,14 +1808,14 @@ D
 exfat一个分区27.65GB，也肯定超过16GB
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/147.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/147.png" alt="" style="max-width: 80%; height: auto;">
 
 第四个去VM看
 
 TIM和WEPE
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/148.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/148.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 80 参考LEUNG_YL_USB.E01，以下哪项描述是正确的？i) 此U盘曾连接到一台名为 "PC" 的电脑ii) U盘内存有一个已加密的压缩文件iii) 已加密的压缩文件的创建日期系 2025-05-15
 A. 只有 ii)
@@ -1835,9 +1835,9 @@ i完全不知道怎么找
 ii和iii很明显，在TIM里面有个zip文件，导出后能发现是加密的
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/149.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/149.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/150.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/150.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 81 承上题，该压缩文件的解压密码是多少？(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -1847,7 +1847,7 @@ ii和iii很明显，在TIM里面有个zip文件，导出后能发现是加密的
 不就在桌面吗？
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/151.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/151.png" alt="" style="max-width: 80%; height: auto;">
 
 
 
@@ -1882,7 +1882,7 @@ due_diligence
 在WEPE\Program Files\tammy.txt
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/152.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/152.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 84 文件“xcontainer”的加密算法是什么？(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -1892,21 +1892,21 @@ AES(Twofish)
 这xcontainer就在一堆VC边上，他还好心的防止你没有VC用（bushi
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/153.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/153.png" alt="" style="max-width: 80%; height: auto;">
 
 剩下的就是去找密码
 
 事实上密码在VM里根本找不到，因为已经被删了
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/154.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/154.png" alt="" style="max-width: 80%; height: auto;">
 
 导出后用VC把xcontainer解密了
 
 然后查看加密卷属性
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/155.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/155.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 85 分析文档 "xcontainer" 的属性。关于此磁盘镜像，以下哪项描述是正确的？i) 大小为 4943872 字节ii) 文件系统是 FAT iii) 没有嵌入式备份头iv) 块大小为 128 位
 A. 只有 i) 和 ii)
@@ -1924,19 +1924,19 @@ D. 以上皆是
 1不对，大小是5,242,880 字节
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/156.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/156.png" alt="" style="max-width: 80%; height: auto;">
 
 3有的，所以也不对
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/157.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/157.png" alt="" style="max-width: 80%; height: auto;">
 
 剩下的，4是对的，就在上面的块大小中写着的
 
 2的话，挂载上后查看盘属性就行
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/158.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/158.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 86 WinPE 启动后，系统会自动将核心映像挂载在哪个虚拟机？
 A. C:
@@ -1954,7 +1954,7 @@ C
 打开虚拟机就能看到了
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/159.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/159.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 87 下列哪些 Windows PE 指令在预设环境下无法执行？i) Powershellii). Eventvwriii). HostnameiV). Diskpart
 A. 只有 i) 和 ii)
@@ -1972,7 +1972,7 @@ C
 去虚拟机里Win R cmd 试一下就行
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/160.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/160.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 88 必须包含哪个文件，才能启动 Windows PE环境？
 A. WEPE64.wim
@@ -1992,13 +1992,13 @@ A能找到
 BCD找不到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/161.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/161.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/162.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/162.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/163.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/163.png" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/164.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/164.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 89 若要判断一个U盘是否为可开机的Windows PE，以下哪些文件必须存在？i) WEPE64.wim 或 boot.wimii) bootmgriii) EFI\Boot\bootx64.efiiv) hiberfil.sys
 A. 只有 ii 和 iv
@@ -2018,7 +2018,7 @@ B
 3也能找到
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/165.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/165.png" alt="" style="max-width: 80%; height: auto;">
 
 但是4找不到，也是88告诉我们的
 
@@ -2054,7 +2054,7 @@ C
 不管怎么说，就算小版本看不大出来，大版本肯定能分辨出来的说（）
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/166.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/166.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 91 根据你综合多项通讯软件的对话记录，浏览记录及资料分析，发现冯子超、陈民浩伙同女子梁燕玲共同做了一宗涉及加密货币投资的诈骗案件，因东窗事发打算携赃而逃。女子梁燕玲负责处理有关清洗黑钱事项，警察相信梁燕玲携带同相关材料逃跑，请你运用电子数据鉴定技巧寻找与加密货币相关的材料，尽快启动冻结程序。参考LEUNG_YL_USB.E01，该U盘盘有一个加密的文件，该文件所用的加密软件名称是? (只需回答软件名称，不需要回答软件版本，(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -2071,12 +2071,12 @@ VeraCrypt
 把那个xcontainer解密挂载出来后有一个图片里面有一个二维码
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/167.jpg" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/167.jpg" alt="" style="max-width: 80%; height: auto;">
 
 然后随波逐流解一下二维码就行了
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/168.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/168.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 93 承上题，这个钱包属于哪一种加密货币(请以英文大写作答)
 #### 答案
@@ -2095,19 +2095,19 @@ BNB
 密码就是上题答案，需要爆破的文件就是检材里面最后一个从未被用过的zip文件
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/169.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/169.png" alt="" style="max-width: 80%; height: auto;">
 
 于是成功解出来两张图片
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/170.jpg" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/170.jpg" alt="" style="max-width: 80%; height: auto;">
 
-<img src="/Picture/WpDF/Meiya/2026Individual/171.jpg" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/171.jpg" alt="" style="max-width: 80%; height: auto;">
 
 这其中第二张能找到货币信息
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/172.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/172.png" alt="" style="max-width: 80%; height: auto;">
 
 
 
@@ -2121,7 +2121,7 @@ BNB
 就一次，看图片就行
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/173.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/173.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 95 承上题，存入款项的支账地址是什么？(请依照参赛材料中的原文作答，注意区分大小写、空格及符号)
 #### 答案
@@ -2133,7 +2133,7 @@ BNB
 [https://bscscan.com/address/0x548dafDe4B17d7d3C9485E79B3B5018801C7855E#tokentxns](https://bscscan.com/address/0x548dafDe4B17d7d3C9485E79B3B5018801C7855E#tokentxns)
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/174.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/174.png" alt="" style="max-width: 80%; height: auto;">
 
 ### 96 承上题，这项交易传送了多少BEP-20 IQ Coin?(请以阿拉伯数字依照参赛材料中的原文作答，注意区分大小写、空格及符号和不用标点符号 )
 #### 答案
@@ -2165,7 +2165,7 @@ Mnemonics with less than 12 words have low entropy and may be guessed by an atta
 就92那图片边上有个txt文件（当时打开就觉得应该是助记词（））
 
 
-<img src="/Picture/WpDF/Meiya/2026Individual/175.png" alt="" style="max-width: 80%; height: auto;">
+<img src="/Picture/WpDF/Meiya/26Ind/175.png" alt="" style="max-width: 80%; height: auto;">
 
 一眼盯真鉴定为助记词文件
 
